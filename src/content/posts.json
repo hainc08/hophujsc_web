@@ -150,39 +150,42 @@
   "kind": "product",
   "url": "/san-pham/tui-dung-rac-tu-huy/",
   "slug": "tui-dung-rac-tu-huy",
-  "h1": "Túi đựng rác y tế (chất thải lây nhiễm)",
+  "h1": "Túi đựng rác tự huỷ",
   "name": "Túi đựng rác y tế",
   "category": null,
   "published": "2021-08-10",
   "modified": "2025-07-19",
   "image": "2021/08/anh-nen-2-scaled.jpg",
-  "summary": "Túi đựng rác y tế chuyên dụng cho bệnh viện, phòng khám và cơ sở sản xuất có phát sinh rác thải lây nhiễm. Chất liệu HDPE, LDPE, PP dai bền, chống rò rỉ, có logo y tế chuẩn.",
+  "summary": "Kích thước: 30*60, 40*70, 50*100, 90*120 cm,.. Có logo y tế Màu sắc: vàng – đựng rác thải lây nhiễm Chất liệu túi: nhựa HDPE, PE, PP Hàng sản xuất mới 100%…",
   "blocks": [
    {
     "type": "h2",
-    "text": "Mô tả túi đựng rác y tế"
+    "text": "Mô tả túi đựng rác y tế:"
    },
    {
     "type": "list",
     "items": [
-     "Kích thước thông dụng: 30×60 cm, 40×70 cm, 50×100 cm, 90×120 cm hoặc sản xuất theo yêu cầu.",
-     "In biểu tượng cảnh báo nguy hại sinh học (logo y tế) và vạch giới hạn chứa rác.",
-     "Màu sắc: Vàng (đựng chất thải lây nhiễm theo quy chế quản lý chất thải y tế).",
-     "Chất liệu: Nhựa HDPE, LDPE hoặc PP nguyên sinh, đường hàn đáy chịu lực tốt.",
-     "Độ bền cơ học cao, chống rách thủng và chống rò rỉ dịch thải."
+     "Kích thước: 30*60, 40*70, 50*100, 90*120 cm,..",
+     "Có logo y tế",
+     "Màu sắc: vàng – đựng rác thải lây nhiễm",
+     "Chất liệu túi: nhựa HDPE, PE, PP",
+     "Hàng sản xuất mới 100%"
     ]
    },
    {
     "type": "h2",
-    "text": "Phạm vi sử dụng"
+    "text": "Vị trí sử dụng:"
    },
    {
     "type": "list",
     "items": [
-     "Bệnh viện, trung tâm y tế, viện nghiên cứu, phòng khám đa khoa và chuyên khoa.",
-     "Cơ sở sản xuất, khu công nghiệp có phát sinh rác thải nguy hại và lây nhiễm.",
-     "Lưu ý: Túi đựng rác lây nhiễm y tế sử dụng màng nhựa nguyên sinh chuyên dụng chống rò rỉ, tuyệt đối không dùng màng tự huỷ nhằm bảo đảm an toàn sinh học."
+     "Các bệnh viện, trung tâm y tế, phòng khám.",
+     "Các công ty sản xuất có phát sinh các loại rác thải lây nhiễm."
     ]
+   },
+   {
+    "type": "h2",
+    "text": "Daniel"
    }
   ]
  },

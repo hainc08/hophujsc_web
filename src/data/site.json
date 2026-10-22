@@ -51,24 +51,24 @@
       }
     },
     "handle": {
-      "src": "clean/ep-quai.jpg",
+      "src": "2025/07/TUI-EP-QUAI-NAU.jpg",
       "alt": {
         "vi": "Túi ép quai PE màu kem với quai nâu",
         "en": "Cream PE bag with brown sealed handles"
       }
     },
     "seal": {
-      "src": "clean/niem-phong.jpg",
+      "src": "2025/07/Tui-NP-2.jpg",
       "alt": {
         "vi": "Các cuộn túi niêm phong nhiều màu",
         "en": "Rolls of courier seal bags in several colours"
       }
     },
     "supermarket": {
-      "src": "clean/sieu-thi.jpg",
+      "src": "2025/07/Tui-sieu-thi-2.jpg",
       "alt": {
-        "vi": "Túi siêu thị tự huỷ màu trắng in biểu tượng tái chế, đặt trên bàn bếp cạnh rau củ",
-        "en": "White self-destructing supermarket bag printed with a recycling symbol, on a kitchen counter"
+        "vi": "Túi siêu thị tự huỷ màu trắng in biểu tượng tái chế",
+        "en": "White self-destructing supermarket bag printed with a recycling symbol"
       }
     },
     "film": {
@@ -79,7 +79,7 @@
       }
     },
     "handleGroup": {
-      "src": "clean/ep-quai-mau.jpg",
+      "src": "2025/08/TEQ-chung.jpg",
       "alt": {
         "vi": "Túi ép quai PE nhiều màu xếp chồng trên mặt gỗ",
         "en": "Stacked PE handle bags in several colours on a wooden surface"
@@ -90,13 +90,6 @@
       "alt": {
         "vi": "",
         "en": ""
-      }
-    },
-    "handleWhite": {
-      "src": "clean/ep-quai-trang.jpg",
-      "alt": {
-        "vi": "Túi ép quai PE màu trắng quai đen đặt trên bãi cỏ",
-        "en": "White PE bag with black sealed handles standing on grass"
       }
     }
   },
@@ -242,12 +235,5 @@
   "quoteForm": {
     "_note": "endpoint để trống: bản xem trước chưa gửi dữ liệu thật. Xem docs/seo-implementation.md mục Form.",
     "endpoint": ""
-  },
-  "factoryPhotos": {
-    "_note": "Khoá ảnh (trong images) cho từng vị trí ở mục 'Bên trong nhà máy'. null = hiển thị ô chờ ảnh. Chỉ điền ảnh thật đã được công ty duyệt.",
-    "toan-canh": null,
-    "may-moc": null,
-    "kiem-tra": null,
-    "kho": null
   }
 }

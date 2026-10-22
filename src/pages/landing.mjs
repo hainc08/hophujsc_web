@@ -1,7 +1,7 @@
-import { esc, button, image, categoryHref, quoteForm, resolveImage } from '../components.mjs';
+import { esc, button, image, sectionHeader, categoryTile, categoryHref, quoteForm, resolveImage } from '../components.mjs';
 
 // Bề rộng hiển thị thật của ảnh hero, để trình duyệt chọn đúng bản 768w trên mobile.
-export const HERO_SIZES = '(min-width: 64rem) 52vw, 100vw';
+export const HERO_SIZES = '(min-width: 64rem) 50vw, 100vw';
 
 export const meta = (ctx) => ({
   path: ctx.site.paths[ctx.lang],
@@ -39,154 +39,98 @@ export function schema(ctx) {
   };
 }
 
-/**
- * Ô ảnh nhà máy: ảnh thật nếu đã có trong site.factoryPhotos, ngược lại là ô chờ ảnh ghi rõ.
- * Không bao giờ thay bằng ảnh minh hoạ hay ảnh tạo bằng AI.
- */
-function factorySlot(ctx, slot, { sizes, className }) {
-  const key = ctx.site.factoryPhotos?.[slot.id];
-  const caption = esc(ctx.t(slot.caption));
-  if (key) {
-    return `<figure class="factory__photo ${className}">${image(ctx, key, { sizes })}<figcaption>${caption}</figcaption></figure>`;
-  }
-  return `<figure class="factory__photo factory__photo--pending ${className}" data-photo-slot="${slot.id}">
-          <div class="factory__pending">
-            <span class="factory__pending-tag">${esc(ctx.t(ctx.copy.factory.pending))}</span>
-            <span class="factory__pending-what">${caption}</span>
-          </div>
-        </figure>`;
-}
-
-/** Một sản phẩm trong bộ sưu tập: ảnh lớn, tên, chất liệu. Không viền, không bóng. */
-function collectionItem(ctx, cat, { sizes, className }) {
-  return `<li class="collection__item ${className}">
-        <a href="${categoryHref(ctx, cat)}">
-          <span class="collection__media">${image(ctx, cat.image, { sizes })}</span>
-          <span class="collection__caption"><span class="collection__name">${esc(ctx.t(cat.name))}</span><span class="collection__material">${esc(ctx.t(cat.material))}</span></span>
-        </a>
-      </li>`;
-}
-
 export function render(ctx) {
   const { site, copy, t } = ctx;
-  const { hero, products, process, capability, applications, quote, about, factory } = copy;
+  const { hero, products, process, capability, applications, quote } = copy;
   const cats = site.categories;
   const byId = Object.fromEntries(cats.map((c) => [c.id, c]));
   const c = site.company;
-  const withPhoto = cats.filter((cat) => cat.image);
-  const withoutPhoto = cats.filter((cat) => !cat.image);
-  // Vị trí từng ảnh trong lưới bất đối xứng 12 cột (desktop). Thứ tự theo site.categories.
-  const placement = ['collection__item--a', 'collection__item--b', 'collection__item--c', 'collection__item--d', 'collection__item--e'];
-  const slots = factory.slots;
+
+  // Lưới catalogue: hàng 1 có ba ô rộng khác nhau, hàng 2 và 3 ba ô đều; ô cuối là thẻ báo giá.
+  const layout = ['tile--wide', 'tile--mid', 'tile--narrow', '', '', '', '', ''];
+  const tileSizes = '(min-width: 64rem) 34vw, 50vw';
 
   return `<main id="noi-dung">
   <section class="hero" aria-labelledby="hero-title">
-    <div class="container hero__grid">
-      <h1 id="hero-title" class="hero__title">${esc(t(hero.title))}</h1>
-      <figure class="hero__aside">
-        ${image(ctx, 'handleWhite', { sizes: '(min-width: 64rem) 22vw, 40vw' })}
-      </figure>
+    <div class="hero__inner">
       <div class="hero__copy">
+        <h1 id="hero-title">${esc(t(hero.title))}</h1>
         <p class="hero__lead">${esc(t(hero.lead))}</p>
         <div class="hero__actions">
           ${button(t(hero.primary), '#san-pham')}
           ${button(t(copy.ui.quote), '#bao-gia', 'secondary')}
         </div>
-        <dl class="hero__facts">
-          ${hero.facts.map((f) => `<div><dt>${esc(t(f.label))}</dt><dd>${esc(t(f.value))}</dd></div>`).join('\n          ')}
-        </dl>
+        <p class="hero__note">${esc(t(hero.note))}</p>
       </div>
-      <figure class="hero__main">
+      <div class="hero__media">
         ${image(ctx, 'hero', { sizes: HERO_SIZES, priority: true })}
-      </figure>
+      </div>
     </div>
   </section>
 
-  <section class="section collection-section" id="san-pham" aria-labelledby="san-pham-title">
+  <section class="section" aria-labelledby="san-pham">
     <div class="container">
-      <header class="split-head">
-        <h2 id="san-pham-title">${esc(t(products.title))}</h2>
-        <p>${esc(t(products.lead))}</p>
-      </header>
-      <ul class="collection">
-      ${withPhoto.map((cat, i) => collectionItem(ctx, cat, { sizes: '(min-width: 64rem) 40vw, 50vw', className: placement[i] || '' })).join('\n      ')}
-        <li class="collection__more">
-          <h3>${esc(t(products.moreTitle))}</h3>
-          <ul>
-            ${withoutPhoto.map((cat) => `<li><a href="${categoryHref(ctx, cat)}"><span>${esc(t(cat.name))}</span><small>${esc(t(cat.material))}</small></a></li>`).join('\n            ')}
-          </ul>
-          <a class="text-link" href="${ctx.url('products')}">${esc(t(copy.ui.allProducts))}</a>
+      ${sectionHeader(ctx, { id: 'san-pham', title: products.title, lead: products.lead })}
+      <ul class="catalogue">
+      ${cats.map((cat, i) => categoryTile(ctx, cat, { sizes: tileSizes, className: layout[i] })).join('\n      ')}
+        <li class="tile tile--cta">
+          <div class="tile__cta-body">
+            <p class="tile__cta-title">${esc(t(products.ctaTitle))}</p>
+            <p>${esc(t(products.ctaBody))}</p>
+            <a class="text-link text-link--light" href="#bao-gia">${esc(t(products.ctaLink))}</a>
+          </div>
         </li>
       </ul>
-    </div>
-  </section>
-
-  <section class="section motto" aria-labelledby="motto-title">
-    <div class="container motto__grid">
-      <p class="motto__label" id="motto-title">${esc(t(about.label))}</p>
-      <div>
-        <p class="motto__text">${esc(t(about.motto))}</p>
-        <p class="motto__body">${esc(t(about.body))}</p>
-        <a class="text-link" href="${ctx.url('about')}">${esc(t(about.link))}</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="factory" id="nang-luc" aria-labelledby="nang-luc-title">
-    <div class="container">
-      <header class="factory__head">
-        <h2 id="nang-luc-title">${esc(t(factory.title))}</h2>
-        <div>
-          <p class="factory__subtitle">${esc(t(factory.subtitle))}</p>
-          <p class="factory__body">${esc(t(factory.body))}</p>
-        </div>
-      </header>
-      <div class="factory__gallery">
-        ${factorySlot(ctx, slots[0], { sizes: '100vw', className: 'factory__photo--wide' })}
-        ${slots.slice(1).map((s) => factorySlot(ctx, s, { sizes: '(min-width: 48rem) 33vw, 100vw', className: '' })).join('\n        ')}
-      </div>
-      <dl class="factory__facts">
-        ${capability.items.map((it) => `<div><dt>${esc(t(it.title))}</dt><dd>${esc(t(it.body))}</dd></div>`).join('\n        ')}
-      </dl>
     </div>
   </section>
 
   <section class="section section--surface" id="quy-trinh" aria-labelledby="quy-trinh-title">
     <div class="container process">
       <div class="process__text">
-        <h2 id="quy-trinh-title">${esc(t(process.title))}</h2>
-        <p class="process__lead">${esc(t(process.lead))}</p>
+        ${sectionHeader(ctx, { id: 'quy-trinh-title', title: process.title, lead: process.lead })}
         <ol class="steps">
-          ${process.steps.map((s) => `<li class="steps__item"><h3>${esc(t(s.title))}</h3><p>${esc(t(s.body))}</p></li>`).join('\n          ')}
+          ${process.steps.map((s) => `<li class="steps__item" data-reveal><h3>${esc(t(s.title))}</h3><p>${esc(t(s.body))}</p></li>`).join('\n          ')}
         </ol>
       </div>
       <figure class="process__media" data-reveal>
-        ${image(ctx, 'handleGroup', { sizes: '(min-width: 64rem) 42vw, 100vw' })}
+        ${image(ctx, 'film', { sizes: '(min-width: 64rem) 45vw, 100vw' })}
         <figcaption>${esc(t(process.caption))}</figcaption>
       </figure>
     </div>
   </section>
 
-  <section class="section" id="ung-dung" aria-labelledby="ung-dung-title">
+  <section class="section section--dark" id="nang-luc" aria-labelledby="nang-luc-title">
     <div class="container">
-      <header class="split-head">
-        <h2 id="ung-dung-title">${esc(t(applications.title))}</h2>
-      </header>
-      <ul class="uses">
-        ${applications.items.map((a) => {
-          const href = a.link ? ctx.url(a.link) || `${ctx.local(ctx.lang)}?product=khac#bao-gia` : categoryHref(ctx, byId[a.category]);
-          return `<li class="uses__row">
-          <h3>${esc(t(a.title))}</h3>
-          <p>${esc(t(a.body))}</p>
-          <a class="text-link" href="${href}">${esc(t(applications.seeProduct))}<span class="visually-hidden">: ${esc(t(a.title))}</span></a>
-        </li>`;
-        }).join('\n        ')}
-      </ul>
+      ${sectionHeader(ctx, { id: 'nang-luc-title', title: capability.title, lead: capability.lead, light: true })}
+      <dl class="capability">
+        ${capability.items.map((it) => `<div class="capability__item" data-reveal><dt>${esc(t(it.title))}</dt><dd>${esc(t(it.body))}</dd></div>`).join('\n        ')}
+      </dl>
+      <p class="capability__more"><a class="text-link text-link--light" href="${ctx.url('about')}">${esc(t(capability.link))}</a></p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ung-dung">
+    <div class="container applications">
+      <figure class="applications__media" data-reveal>
+        ${image(ctx, 'handleGroup', { sizes: '(min-width: 64rem) 40vw, 100vw' })}
+      </figure>
+      <div class="applications__body">
+        ${sectionHeader(ctx, { id: 'ung-dung', title: applications.title })}
+        <ul class="industries">
+          ${applications.items.map((a) => {
+            const href = a.link ? ctx.url(a.link) || `${ctx.local(ctx.lang)}?product=khac#bao-gia` : categoryHref(ctx, byId[a.category]);
+            return `<li class="industries__item" data-reveal>
+            <h3>${esc(t(a.title))}</h3>
+            <p>${esc(t(a.body))}</p>
+            <a class="text-link" href="${href}">${esc(t(applications.seeProduct))}<span class="visually-hidden">: ${esc(t(a.title))}</span></a>
+          </li>`;
+          }).join('\n          ')}
+        </ul>
+      </div>
     </div>
   </section>
 
   <section class="section section--surface quote" id="bao-gia" aria-labelledby="bao-gia-title" tabindex="-1">
-    <span id="lien-he" class="visually-hidden" aria-hidden="true"></span>
     <div class="container quote__grid">
       <div class="quote__intro">
         <h2 id="bao-gia-title">${esc(t(quote.title))}</h2>

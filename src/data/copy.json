@@ -108,7 +108,7 @@
         "vi": "Liên hệ",
         "en": "Contact"
       },
-      "link": "contact"
+      "href": "#lien-he"
     }
   ],
   "hero": {
@@ -127,29 +127,7 @@
     "note": {
       "vi": "Nhà xưởng tại Như Quỳnh, Hưng Yên, trên trục Quốc lộ 5",
       "en": "Factory in Nhu Quynh, Hung Yen, on National Highway 5"
-    },
-    "facts": [
-      {
-        "label": {
-          "vi": "Chất liệu",
-          "en": "Materials"
-        },
-        "value": {
-          "vi": "HDPE, LDPE, PP, OPP",
-          "en": "HDPE, LDPE, PP, OPP"
-        }
-      },
-      {
-        "label": {
-          "vi": "Nhà xưởng",
-          "en": "Factory"
-        },
-        "value": {
-          "vi": "Như Quỳnh, Hưng Yên, trên Quốc lộ 5",
-          "en": "Nhu Quynh, Hung Yen, on National Highway 5"
-        }
-      }
-    ]
+    }
   },
   "products": {
     "title": {
@@ -171,10 +149,6 @@
     "ctaLink": {
       "vi": "Gửi yêu cầu báo giá",
       "en": "Send a quote request"
-    },
-    "moreTitle": {
-      "vi": "Các dòng khác",
-      "en": "Other lines"
     }
   },
   "process": {
@@ -193,8 +167,8 @@
           "en": "Receive your request"
         },
         "body": {
-          "vi": "Gửi quy cách túi, kích thước, số lượng và yêu cầu in qua form hoặc hotline/Zalo.",
-          "en": "Submit bag type, size, quantity, and print requirements via form or hotline/Zalo."
+          "vi": "Bạn gửi loại túi, kích thước, số lượng và mẫu in qua form, điện thoại hoặc Zalo.",
+          "en": "You send the bag type, size, quantity and artwork through the form, by phone or on Zalo."
         }
       },
       {
@@ -203,8 +177,8 @@
           "en": "Advise on material and specification"
         },
         "body": {
-          "vi": "Tư vấn chọn chất liệu HDPE, LDPE, PP hoặc OPP và độ dày tối ưu cho sản phẩm.",
-          "en": "Expert advice on selecting HDPE, LDPE, PP, or OPP with optimal thickness for your goods."
+          "vi": "Hợp Phú tư vấn chọn HDPE, LDPE, PP hay OPP, độ dày và kiểu túi phù hợp với hàng hoá.",
+          "en": "Hop Phu helps you choose HDPE, LDPE, PP or OPP, the thickness and the bag style that suit your goods."
         }
       },
       {
@@ -213,8 +187,8 @@
           "en": "Confirm the specification"
         },
         "body": {
-          "vi": "Thống nhất thông số kỹ thuật, màu sắc, bản in và tiến độ trước khi chạy máy.",
-          "en": "Finalize technical specifications, colors, artwork, and delivery schedule before production."
+          "vi": "Hai bên thống nhất kích thước, màu, nội dung in và số lượng trước khi sản xuất.",
+          "en": "We agree on size, colour, print and quantity before production starts."
         }
       },
       {
@@ -223,14 +197,14 @@
           "en": "Produce and deliver"
         },
         "body": {
-          "vi": "Thổi màng, in ấn, cắt dán, kiểm soát chất lượng nghiêm ngặt và giao hàng đúng hẹn.",
-          "en": "Extrusion, printing, bag converting, strict quality inspection, and on-time delivery."
+          "vi": "Sản xuất, kiểm tra chất lượng, đóng gói và giao hàng theo tiến độ đã hẹn.",
+          "en": "We produce, check quality, pack and deliver on the agreed schedule."
         }
       }
     ],
     "caption": {
-      "vi": "Túi ép quai PE nhiều màu, thành phẩm của Hợp Phú",
-      "en": "Coloured PE handle bags made by Hop Phu"
+      "vi": "Cuộn màng HD/PE/PP, đóng gói 50 kg/cuộn hoặc theo yêu cầu",
+      "en": "HD/PE/PP film rolls, packed 50 kg per roll or as requested"
     }
   },
   "capability": {
@@ -524,71 +498,5 @@
       "vi": "Sơ đồ trang",
       "en": "Sitemap"
     }
-  },
-  "about": {
-    "label": {
-      "vi": "Phương châm của Hợp Phú",
-      "en": "Our motto"
-    },
-    "motto": {
-      "vi": "Trách nhiệm, Uy tín, Đổi mới.",
-      "en": "Responsibility, Prestige, Innovation."
-    },
-    "body": {
-      "vi": "Công ty Cổ phần Sản xuất và Thương mại Hợp Phú sản xuất bao bì, túi ni-lon, màng bọc, túi xốp và bao lót từ HD, PE, PP, OPP cho các ngành chế biến thực phẩm, dược phẩm, hoá mỹ phẩm và nhiều ngành khác.",
-      "en": "Hop Phu Production and Trading Joint Stock Company manufactures packaging, plastic bags, wrapping film, foam bags and liner bags from HD, PE, PP and OPP for food processing, pharmaceutical, cosmetics and many other industries."
-    },
-    "link": {
-      "vi": "Tìm hiểu về Hợp Phú",
-      "en": "About Hop Phu"
-    }
-  },
-  "factory": {
-    "title": {
-      "vi": "Bên trong nhà máy Hợp Phú",
-      "en": "Inside the Hop Phu factory"
-    },
-    "subtitle": {
-      "vi": "Chất lượng bắt đầu từ nơi sản xuất.",
-      "en": "Quality starts where things are made."
-    },
-    "body": {
-      "vi": "Nhà xưởng tại xã Như Quỳnh, tỉnh Hưng Yên, nằm trên trục Quốc lộ 5. Hợp Phú sản xuất từ hạt nhựa nguyên sinh nhập khẩu, trên máy móc thiết bị nhập khẩu, và kiểm soát chất lượng trước khi giao hàng.",
-      "en": "Our factory is in Nhu Quynh, Hung Yen, on National Highway 5. Hop Phu produces from imported virgin resin on imported machinery, and checks quality before delivery."
-    },
-    "pending": {
-      "vi": "Ảnh thật đang chờ chụp",
-      "en": "Awaiting real photo"
-    },
-    "slots": [
-      {
-        "id": "toan-canh",
-        "caption": {
-          "vi": "Toàn cảnh xưởng sản xuất",
-          "en": "Factory floor overview"
-        }
-      },
-      {
-        "id": "may-moc",
-        "caption": {
-          "vi": "Máy móc sản xuất",
-          "en": "Production machinery"
-        }
-      },
-      {
-        "id": "kiem-tra",
-        "caption": {
-          "vi": "Kiểm tra chất lượng",
-          "en": "Quality checks"
-        }
-      },
-      {
-        "id": "kho",
-        "caption": {
-          "vi": "Thành phẩm và kho hàng",
-          "en": "Finished goods and warehouse"
-        }
-      }
-    ]
   }
 }

@@ -37,7 +37,7 @@ const [site, copy, pages, posts, images, redirects] = await Promise.all(
   ['src/data/site.json', 'src/data/copy.json', 'src/content/pages.json', 'src/content/posts.json', 'src/data/images.json', 'src/data/redirects.json'].map(json),
 );
 // CSS nhỏ (khoảng 8 KB sau nén) nên nhúng thẳng vào HTML, bỏ một request chặn hiển thị.
-const css = (await Promise.all(['tokens', 'base', 'components', 'landing', 'content', 'home'].map((n) => read(`src/styles/${n}.css`)))).join('\n');
+const css = (await Promise.all(['tokens', 'base', 'components', 'landing', 'content'].map((n) => read(`src/styles/${n}.css`)))).join('\n');
 const js = await read('src/scripts/site.js');
 // Mã băm trong URL để trình duyệt tải lại JS mỗi khi nội dung đổi (máy chủ cache tài nguyên lâu).
 const jsVersion = createHash('sha256').update(js).digest('hex').slice(0, 10);
