@@ -71,6 +71,7 @@ build.mjs              xuất dist/index.html (vi) và dist/en/index.html (en)
 ## Bẫy đã gặp
 
 - **Thuộc tính `pattern` của input**: Chrome biên dịch với cờ `v`, nên `( ) -` trong lớp ký tự phải escape. Trong template literal, dấu `\` bị nuốt mất, nên viết bằng `String.raw`. Nếu không, Chrome báo lỗi console, `checkValidity()` ném lỗi và kiểm tra form dừng giữa chừng. `check_page.py` có kiểm tra mục này.
+- **Đường dẫn gốc**: bản xem trước chạy dưới `/hophujsc_web/` trên GitHub Pages. Liên kết tới trang của chính bản dựng phải dùng `ctx.local(lang)` hoặc `${BASE}` trong `build.mjs`, không viết cứng `/` hay `/en/`. Canonical và hreflang thì vẫn trỏ về `https://hopphujsc.com`.
 - **Cache JS**: `serve.mjs` cache tài nguyên 1 năm, nên `build.mjs` gắn `?v=<hash>` vào URL `site.js`. Giữ cơ chế này khi thêm file tĩnh.
 - **Kiểm thử bằng Playwright**: điều hướng chỉ khác `#hash` sẽ không tải lại trang. Thêm query (`?t=1`) hoặc đi qua `about:blank` trước khi kiểm thử lại sau khi build.
 - **Dấu `\` khi sửa file**: chèn code qua heredoc của shell trong môi trường này có thể làm mất hoặc đổi dấu `\` (ví dụ `\b` thành ký tự backspace). Code có regex hay escape thì sửa bằng công cụ Edit/Write, rồi kiểm tra lại byte thật.

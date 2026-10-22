@@ -7,12 +7,15 @@ Repo này chứa bản thiết kế lại website https://hopphujsc.com/ của C
 - **Đang làm**: landing page HTML tĩnh song ngữ Việt/Anh, tham khảo chất lượng bố cục của https://www.hengforpacking.com/. Brief đầy đủ: `docs/prompts/redesign-landing-hengfor.md`.
 - **Site thật** chạy WordPress + Betheme + Elementor Pro + Polylang + Yoast. Repo **không có** source WordPress, database hay quyền quản trị. Chưa tích hợp, chưa deploy.
 - Bản trang chủ v1 (màu đỏ mận, font Barlow) đã lưu ở `archive/v1/`, không còn được build.
+- **Repo**: https://github.com/hainc08/hophujsc_web (công khai). Mỗi lần push lên `main`, workflow `.github/workflows/pages.yml` dựng lại và deploy bản xem trước (noindex) lên https://hainc08.github.io/hophujsc_web/. Đây không phải production.
+- Vì repo công khai: không commit ảnh chụp trang của bên thứ ba (`docs/reference/hengfor/` đã nằm trong `.gitignore`), dữ liệu Facebook thô, hay thông tin cá nhân.
 
 ## Lệnh
 
 ```bash
 node build.mjs            # dựng dist/index.html (vi) và dist/en/index.html (en), noindex
 node build.mjs --index    # cho phép index, chỉ dùng khi đo Lighthouse
+node build.mjs --base=hophujsc_web   # dựng cho đường dẫn con như GitHub Pages (viết không có "/" đầu: Git Bash trên Windows tự đổi "/x" thành "C:/Program Files/Git/x")
 node serve.mjs            # http://localhost:4173 (hoặc preview tool, cấu hình "preview")
 python .claude/skills/hopphu-web-design/scripts/check_page.py dist/index.html dist/en/index.html
 bash .claude/skills/hopphu-web-design/scripts/lighthouse.sh /      # hoặc /en/
