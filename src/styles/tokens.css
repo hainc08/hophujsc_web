@@ -1,0 +1,70 @@
+/* Font dự phòng chỉnh bề rộng cho gần với Be Vietnam Pro (đo bằng canvas trên chuỗi tiếng Việt),
+   để chữ không xô lệch bố cục khi webfont tải xong. */
+@font-face {
+  font-family: "Be Vietnam Fallback";
+  src: local("Arial");
+  size-adjust: 107%;
+}
+
+/* Design tokens. Nguồn duy nhất cho màu, chữ, khoảng cách. Xem docs/design-system.md. */
+:root {
+  /* Nhận diện: đỏ, trắng, xám. Đỏ dùng tiết chế. */
+  --red: #c51f2b;
+  --red-hover: #a71924;
+  --white: #fff;
+  --surface: #f4f5f6;
+  --ink: #272b30;
+  --ink-deep: #1d2024;
+  --muted: #5c636b;
+  --line: #dadde1;
+  --input-border: #868d95;
+
+  --color-text: var(--ink);
+  --color-text-muted: var(--muted);
+  --color-bg: var(--white);
+  --color-action: var(--red);
+  --color-action-hover: var(--red-hover);
+  --color-focus: #0b57d0;
+  --color-focus-on-dark: #9ec5ff;
+  --color-error: #b3141f;
+  --color-success: #17603a;
+
+  /* Chữ: một họ, ba độ đậm */
+  --font: "Be Vietnam Pro", "Be Vietnam Fallback", system-ui, sans-serif;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --text-2xl: clamp(1.875rem, 1.3rem + 2.2vw, 3.25rem);
+  --text-3xl: clamp(2.375rem, 1.4rem + 4vw, 4.75rem);
+  /* Dấu tiếng Việt xếp chồng cần line-height tối thiểu khoảng 1.12 ở cỡ lớn */
+  --leading-tight: 1.12;
+  --leading-snug: 1.3;
+  --leading-body: 1.65;
+
+  /* Khoảng cách, bội số của 4px */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --section-y: clamp(4rem, 2.5rem + 6vw, 8rem);
+
+  /* Lưới */
+  --container: 80rem; /* 1280px */
+  --gutter: clamp(1.25rem, 0.6rem + 2.6vw, 2.5rem);
+  --gap: clamp(0.75rem, 0.4rem + 1.4vw, 1.5rem);
+
+  --radius: 6px;
+  --header-h: 4.75rem;
+  --contact-bar-h: 3.75rem;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur: 180ms;
+}
+
+/* Breakpoint mobile-first: 36rem (576px), 48rem (768px), 64rem (1024px), 80rem (1280px) */

@@ -1,0 +1,362 @@
+/* Bố cục riêng của trang chủ */
+
+/* ---------- Hero ---------- */
+.hero {
+  overflow: hidden;
+}
+
+@media (min-width: 56rem) {
+  .hero {
+    padding-top: clamp(2rem, 1rem + 4vw, 4.5rem);
+  }
+}
+
+.hero__inner {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.hero__lead {
+  margin: var(--space-5) 0 0;
+  max-width: 34rem;
+  font-size: var(--text-lg);
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+/* Tấm nền màu màng PE kéo tràn sang mép phải màn hình.
+   Trên mobile ảnh đứng trước chữ: khi webfont tải xong, tiêu đề có thể đổi số dòng,
+   và ảnh nằm phía trên thì không bị đẩy (giữ CLS thấp). */
+.hero__media {
+  order: -1;
+  position: relative;
+  margin-right: calc(-1 * var(--gutter));
+  padding: var(--space-5) var(--gutter) var(--space-5) var(--space-5);
+  background: var(--film);
+}
+
+.hero__media img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+}
+
+.hero__media figcaption {
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--steel);
+}
+
+@media (min-width: 56rem) {
+  .hero__inner {
+    grid-template-columns: 1.05fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .hero__media {
+    order: 0;
+    margin-right: calc(-1 * max(var(--gutter), (100vw - var(--container)) / 2));
+    padding-right: max(var(--gutter), (100vw - var(--container)) / 2);
+  }
+}
+
+/* ---------- Dải chất liệu ---------- */
+.materials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5) var(--grid-gap);
+  margin-top: var(--space-7);
+  padding-block: var(--space-6);
+  border-top: 2px solid var(--graphite);
+}
+
+.materials dt {
+  font: 600 var(--text-2xl) / 1 var(--font-display);
+  color: var(--oxblood);
+}
+
+.materials dd {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.materials__uses {
+  display: block;
+  margin-top: var(--space-1);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 56rem) {
+  .materials {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---------- Giới thiệu ---------- */
+.intro__grid {
+  display: grid;
+  gap: var(--space-5) var(--space-8);
+}
+
+.intro__body p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 56rem) {
+  .intro__grid {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+
+/* ---------- Bảng quy cách danh mục ---------- */
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.spec-table thead {
+  display: none;
+}
+
+.spec-table tr {
+  display: block;
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--line);
+}
+
+.spec-table tbody tr:first-child {
+  border-top: 2px solid var(--graphite);
+}
+
+.spec-table th,
+.spec-table td {
+  display: block;
+  padding: 0;
+  font-weight: 400;
+}
+
+.spec-table th[scope="row"] {
+  margin-bottom: var(--space-2);
+  font: 600 var(--text-xl) / var(--leading-snug) var(--font-display);
+}
+
+.spec-table th a {
+  text-decoration: none;
+}
+
+.spec-table th a:hover {
+  color: var(--oxblood);
+  text-decoration: underline;
+}
+
+.spec-table td {
+  font-size: var(--text-sm);
+}
+
+.spec-table td::before {
+  content: attr(data-label) ": ";
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 56rem) {
+  .spec-table thead {
+    display: table-header-group;
+  }
+
+  .spec-table tr {
+    display: table-row;
+    transition: background-color var(--dur) var(--ease);
+  }
+
+  .spec-table tbody tr:hover {
+    background: var(--white);
+  }
+
+  .spec-table th,
+  .spec-table td {
+    display: table-cell;
+    padding: var(--space-4) var(--space-4) var(--space-4) 0;
+    vertical-align: baseline;
+    border-top: 1px solid var(--line);
+  }
+
+  .spec-table thead th {
+    padding-block: var(--space-3);
+    border-top: 0;
+    border-bottom: 2px solid var(--graphite);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text-muted);
+  }
+
+  .spec-table tbody tr:first-child th,
+  .spec-table tbody tr:first-child td {
+    border-top: 0;
+  }
+
+  .spec-table th[scope="row"] {
+    width: 30%;
+    padding-left: var(--space-3);
+  }
+
+  .spec-table td::before {
+    content: none;
+  }
+}
+
+/* ---------- Lý do ---------- */
+.reasons__item {
+  display: grid;
+  gap: var(--space-1) var(--grid-gap);
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--line);
+}
+
+.reasons__item:first-child {
+  border-top: 2px solid var(--graphite);
+}
+
+.reasons dt {
+  font: 600 var(--text-xl) / var(--leading-snug) var(--font-display);
+}
+
+.reasons dd {
+  max-width: 60ch;
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 56rem) {
+  .reasons {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .reasons .section-header {
+    position: sticky;
+    top: calc(var(--header-h) + var(--space-6));
+    margin: 0;
+  }
+
+  .reasons__item {
+    grid-template-columns: 14rem 1fr;
+  }
+}
+
+/* ---------- Quy trình: là một chuỗi có thứ tự nên được đánh số ---------- */
+.process {
+  display: grid;
+  gap: var(--space-6) var(--grid-gap);
+  counter-reset: step;
+}
+
+.process__step {
+  counter-increment: step;
+  padding-top: var(--space-4);
+  border-top: 1px solid #55616b;
+}
+
+.process__step::before {
+  content: counter(step);
+  display: block;
+  margin-bottom: var(--space-3);
+  font: 600 var(--text-2xl) / 1 var(--font-display);
+  color: #e8a79e;
+}
+
+.process__step p {
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-sm);
+  color: #c9d1d8;
+}
+
+.process__more {
+  margin: var(--space-7) 0 0;
+}
+
+@media (min-width: 40rem) {
+  .process {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 72rem) {
+  .process {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* ---------- Khách hàng ---------- */
+.customers.section {
+  padding-block: var(--space-8);
+}
+
+.customers__grid {
+  display: grid;
+  gap: var(--space-5) var(--space-8);
+  align-items: baseline;
+}
+
+.customers__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+  font: 600 var(--text-xl) / 1.2 var(--font-display);
+  color: var(--steel);
+}
+
+@media (min-width: 56rem) {
+  .customers__grid {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* ---------- Báo giá ---------- */
+.quote__grid {
+  display: grid;
+  gap: var(--space-7) var(--space-8);
+}
+
+.quote__intro p {
+  margin-top: var(--space-4);
+  color: #c9d1d8;
+}
+
+.quote__intro .quote__direct {
+  margin-top: var(--space-6);
+  font-size: var(--text-lg);
+  color: var(--white);
+}
+
+.quote__direct a {
+  font-weight: 600;
+}
+
+.quote__intro address {
+  margin-top: var(--space-5);
+  font-size: var(--text-sm);
+  color: #c9d1d8;
+}
+
+.quote:focus {
+  outline: none;
+}
+
+@media (min-width: 56rem) {
+  .quote__grid {
+    grid-template-columns: 1fr 1.25fr;
+    align-items: start;
+  }
+}

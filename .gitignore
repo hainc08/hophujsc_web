@@ -1,0 +1,16 @@
+# Bản dựng: GitHub Actions tự dựng lại khi deploy
+/dist/
+
+# File tạm của Playwright
+.playwright-mcp/
+
+# Ảnh chụp trang tham chiếu Hengfor: nội dung có bản quyền của bên thứ ba, chỉ giữ trên máy.
+# Bản phân tích dạng chữ (docs/reference/hengfor-analysis.md) vẫn được commit.
+/docs/reference/hengfor/
+
+# Dữ liệu xuất từ Facebook có thể chứa thông tin cá nhân; chỉ commit ảnh đã chọn lọc vào nơi khác.
+/assets/facebook/
+
+node_modules/
+.DS_Store
+Thumbs.db

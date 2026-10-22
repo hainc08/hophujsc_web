@@ -1,0 +1,91 @@
+/* Font dự phòng được chỉnh bề rộng cho khớp webfont (tỷ lệ đo bằng canvas trên chuỗi tiếng Việt),
+   để chữ không xô lệch bố cục khi webfont tải xong. */
+@font-face {
+  font-family: "Barlow Fallback";
+  src: local("Arial Bold"), local("Arial");
+  font-weight: 600;
+  size-adjust: 81%;
+}
+
+@font-face {
+  font-family: "Be Vietnam Fallback";
+  src: local("Arial");
+  size-adjust: 107%;
+}
+
+/* Design tokens. Nguồn duy nhất cho màu, chữ, khoảng cách. Xem docs/design-system.md. */
+:root {
+  /* Màu thương hiệu, lấy mẫu từ logo LOGO-2.png */
+  --oxblood: #7a1508;
+  --oxblood-deep: #5a0e04;
+  --oxblood-tint: #f6ecea;
+
+  /* Trung tính */
+  --graphite: #1e252b;
+  --graphite-soft: #2b343c;
+  --steel: #55616b;
+  --line: #d6dce1;
+  --mist: #f1f3f5;
+  --film: #e3ecea;
+  --white: #fff;
+
+  /* Vai trò */
+  --color-text: var(--graphite);
+  --color-text-muted: var(--steel);
+  --color-bg: var(--white);
+  --color-bg-alt: var(--mist);
+  --color-border: var(--line);
+  --color-action: var(--oxblood);
+  --color-action-hover: var(--oxblood-deep);
+  --color-focus: #0b57d0;
+  --color-focus-on-dark: #9ec5ff;
+  --color-error: #a3170d;
+  --color-success: #17603a;
+
+  /* Chữ */
+  --font-display: "Barlow Semi Condensed", "Barlow Fallback", system-ui, sans-serif;
+  --font-body: "Be Vietnam Pro", "Be Vietnam Fallback", system-ui, sans-serif;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --text-2xl: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
+  --text-3xl: clamp(2.25rem, 1.5rem + 3.6vw, 4.25rem);
+
+  /* Dấu tiếng Việt xếp chồng cần line-height tối thiểu 1.15 ở cỡ lớn */
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-body: 1.65;
+
+  /* Khoảng cách, bội số của 4px */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --section-y: clamp(3.5rem, 2rem + 6vw, 7rem);
+
+  /* Lưới */
+  --container: 76rem;
+  --container-narrow: 46rem;
+  --gutter: clamp(1.25rem, 0.5rem + 3vw, 2.5rem);
+  --grid-gap: clamp(1rem, 0.5rem + 2vw, 2rem);
+
+  /* Hình khối: góc gần vuông, gợi tấm màng cắt */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --shadow-header: 0 1px 0 var(--line);
+  --header-h: 4.5rem;
+  --contact-bar-h: 3.5rem;
+
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur: 160ms;
+}
+
+/* Breakpoint (mobile-first): 40rem = 640px, 56rem = 896px, 72rem = 1152px */

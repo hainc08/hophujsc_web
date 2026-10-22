@@ -1,0 +1,456 @@
+/* Bố cục landing page */
+
+/* ---------- Hero: chữ trên nền trắng, ảnh lớn tràn mép phải ---------- */
+.hero__inner {
+  display: grid;
+}
+
+.hero__copy {
+  padding: clamp(2.5rem, 1.5rem + 5vw, 4rem) var(--gutter) var(--space-7);
+}
+
+.hero__lead {
+  max-width: 34rem;
+  margin-top: var(--space-5);
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.hero__note {
+  /* Trên mobile ẩn dòng này để ảnh sản phẩm lộ ra trong màn hình đầu; thông tin nhà xưởng có ở mục Năng lực */
+  display: none;
+  margin-top: var(--space-7);
+  padding-top: var(--space-4);
+  max-width: 22rem;
+  font-size: var(--text-sm);
+  color: var(--muted);
+  border-top: 2px solid var(--red);
+}
+
+.hero__media img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+@media (min-width: 40rem) {
+  .hero__media img {
+    aspect-ratio: 16 / 11;
+  }
+
+  .hero__note {
+    display: block;
+  }
+}
+
+@media (min-width: 64rem) {
+  .hero__inner {
+    grid-template-columns: 1fr 1fr;
+    min-height: min(calc(100svh - var(--header-h)), 52rem);
+  }
+
+  .hero__copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-8) clamp(2rem, 4vw, 5rem) var(--space-8) max(var(--gutter), (100vw - var(--container)) / 2);
+  }
+
+  .hero__media {
+    position: relative;
+  }
+
+  .hero__media img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+}
+
+/* ---------- Catalogue sản phẩm ---------- */
+.catalogue {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6) var(--gap);
+}
+
+.tile a {
+  display: block;
+  text-decoration: none;
+}
+
+.tile__media {
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--surface);
+  border-radius: var(--radius);
+}
+
+.tile__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: scale 500ms var(--ease);
+}
+
+.tile a:hover .tile__media img {
+  scale: 1.04;
+}
+
+.tile__name {
+  margin-top: var(--space-3);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.tile a:hover .tile__name {
+  color: var(--red);
+  text-decoration: underline;
+}
+
+.tile__meta {
+  margin-top: var(--space-1);
+  font-size: var(--text-xs);
+  color: var(--muted);
+}
+
+
+/* Ô "Ảnh tạm" cho danh mục chưa có ảnh: nhìn ra ngay là chưa hoàn thiện */
+.tile__placeholder {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 100%;
+  border: 1px dashed #b5bac0;
+  border-radius: var(--radius);
+}
+
+.tile__ph-label {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  padding: 0.125rem var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--muted);
+  background: var(--white);
+  border-radius: 3px;
+}
+
+.tile__ph-code {
+  padding: var(--space-4);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  text-align: center;
+  color: var(--muted);
+}
+
+.tile--cta {
+  grid-column: span 2;
+  display: flex;
+  background: var(--ink);
+  color: var(--white);
+  border-radius: var(--radius);
+}
+
+.tile__cta-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.tile__cta-title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.tile__cta-body p:not(.tile__cta-title) {
+  color: #c3c8ce;
+}
+
+@media (min-width: 64rem) {
+  .catalogue {
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-7) var(--gap);
+  }
+
+  .tile {
+    grid-column: span 4;
+  }
+
+  .tile__media,
+  .tile--wide .tile__media {
+    aspect-ratio: auto;
+    height: clamp(15rem, 21vw, 19rem);
+  }
+
+  .tile--wide,
+  .tile--mid,
+  .tile--narrow {
+    grid-column: span 5;
+  }
+
+  .tile--mid {
+    grid-column: span 4;
+  }
+
+  .tile--narrow {
+    grid-column: span 3;
+  }
+
+  .tile--wide .tile__media,
+  .tile--mid .tile__media,
+  .tile--narrow .tile__media {
+    height: clamp(18rem, 28vw, 25rem);
+  }
+
+  .tile--cta {
+    grid-column: span 4;
+    min-height: clamp(15rem, 21vw, 19rem);
+  }
+
+  .tile a {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: var(--space-4);
+  }
+
+  .tile__media {
+    grid-column: 1 / -1;
+  }
+
+  .tile__meta {
+    margin-top: var(--space-3);
+    align-self: baseline;
+  }
+}
+
+/* ---------- Quy trình ---------- */
+.process {
+  display: grid;
+  gap: var(--space-7) var(--space-9);
+}
+
+.steps {
+  counter-reset: step;
+}
+
+.steps__item {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  column-gap: var(--space-4);
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--line);
+}
+
+.steps__item:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.steps__item::before {
+  content: counter(step, decimal-leading-zero);
+  grid-row: span 2;
+  font-size: var(--text-xl);
+  font-weight: 500;
+  line-height: var(--leading-snug);
+  color: var(--red);
+}
+
+.steps__item p {
+  margin-top: var(--space-2);
+  color: var(--muted);
+}
+
+.process__media img {
+  width: 100%;
+  border-radius: var(--radius);
+  background: var(--white);
+}
+
+.process__media figcaption {
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--muted);
+}
+
+@media (min-width: 64rem) {
+  .process {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+/* ---------- Năng lực ---------- */
+.capability {
+  display: grid;
+  gap: var(--space-6) var(--gap);
+}
+
+.capability__item {
+  padding-top: var(--space-5);
+  border-top: 1px solid #4a5057;
+}
+
+.capability dt {
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+.capability dd {
+  margin-top: var(--space-2);
+  color: #c3c8ce;
+}
+
+.capability__more {
+  margin-top: var(--space-7);
+}
+
+@media (min-width: 48rem) {
+  .capability {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .capability {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---------- Ứng dụng ---------- */
+.applications {
+  display: grid;
+  gap: var(--space-7) var(--space-9);
+}
+
+.applications__media img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.industries {
+  display: grid;
+  gap: 0 var(--space-7);
+}
+
+.industries__item {
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--line);
+}
+
+.industries__item h3 {
+  font-size: var(--text-lg);
+}
+
+.industries__item p {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--muted);
+}
+
+.industries__item .text-link {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+@media (min-width: 48rem) {
+  .industries {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 64rem) {
+  .applications {
+    grid-template-columns: 5fr 7fr;
+    align-items: start;
+  }
+
+  .applications__media {
+    position: sticky;
+    top: calc(var(--header-h) + var(--space-6));
+  }
+
+  .applications__media img {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+/* ---------- Báo giá ---------- */
+.quote:focus {
+  outline: none;
+}
+
+.quote__grid {
+  display: grid;
+  gap: var(--space-7) var(--space-9);
+}
+
+.quote__intro p {
+  margin-top: var(--space-4);
+  font-size: var(--text-lg);
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.quote__direct {
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 2px solid var(--red);
+}
+
+.quote__direct p {
+  margin: 0;
+  font-size: var(--text-sm);
+}
+
+.quote__phone {
+  display: inline-block;
+  margin-block: var(--space-2);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.quote__phone:hover {
+  color: var(--red);
+}
+
+.quote__direct .text-link {
+  display: block;
+  width: fit-content;
+}
+
+@media (min-width: 64rem) {
+  .quote__grid {
+    grid-template-columns: 5fr 7fr;
+    align-items: start;
+  }
+}
+
+/* ---------- Hiệu ứng xuất hiện khi cuộn ----------
+   Lớp .reveal-ready do site.js gắn: nếu JS không tải được, nội dung vẫn hiện bình thường. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-ready [data-reveal] {
+    transition: opacity 600ms var(--ease), translate 600ms var(--ease);
+  }
+
+  .reveal-ready [data-reveal]:not(.is-visible) {
+    opacity: 0;
+    translate: 0 1rem;
+  }
+}

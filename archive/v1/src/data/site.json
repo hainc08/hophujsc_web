@@ -1,0 +1,85 @@
+{
+  "_note": "Mọi giá trị trong file này lấy từ nội dung đang công khai trên hopphujsc.com (crawl ngày 2026-10-08). Mục nào có \"verify\": true là thông tin chưa nhất quán trên site, cần công ty xác nhận trước khi lên production.",
+  "origin": "https://hopphujsc.com",
+  "uploads": "https://hopphujsc.com/wp-content/uploads/",
+  "company": {
+    "legalName": "Công ty Cổ phần Sản xuất và Thương mại Hợp Phú",
+    "shortName": "Hợp Phú",
+    "brand": "Hợp Phú JSC",
+    "logo": { "src": "2025/07/LOGO-2-291x300.png", "width": 291, "height": 300 },
+    "phone": { "display": "0983 771 565", "tel": "+84983771565" },
+    "zalo": "https://zalo.me/0983771565",
+    "email": null,
+    "address": {
+      "street": "Số 16 Khu Đường Tàu",
+      "locality": "Xã Như Quỳnh",
+      "region": "Tỉnh Hưng Yên",
+      "country": "VN",
+      "verify": true
+    }
+  },
+  "nav": [
+    { "label": "Sản phẩm", "href": "/san-pham/", "children": "categories" },
+    { "label": "Dịch vụ", "href": "/dich-vu/" },
+    { "label": "Về chúng tôi", "href": "/ve-chung-toi/" },
+    { "label": "Tin tức", "href": "/category/tin-tuc/" },
+    { "label": "Tuyển dụng", "href": "/category/tuyen-dung/" },
+    { "label": "Liên hệ", "href": "/lien-he/" }
+  ],
+  "materials": [
+    { "code": "HDPE", "name": "Màng HD", "trait": "Khô tay, ít bóng, độ giãn thấp, bền khi xách nặng.", "uses": "Túi hạt xoài HD, túi siêu thị, túi lồng bao" },
+    { "code": "LDPE", "name": "Màng PE", "trait": "Dẻo dai, bề mặt mịn và sáng bóng.", "uses": "Túi hạt xoài PE, túi ép quai, túi niêm phong 2 lớp" },
+    { "code": "PP", "name": "Màng PP", "trait": "Trong, mềm dẻo, chịu mài mòn.", "uses": "Túi may mặc xuất khẩu, cuộn màng" },
+    { "code": "OPP", "name": "Màng OPP", "trait": "Trong suốt, có thể kèm băng keo dán miệng.", "uses": "Túi đóng gói hàng may mặc" }
+  ],
+  "categories": [
+    { "name": "Túi hạt xoài", "href": "/category/tui-hat-xoai/", "material": "HDPE, LDPE", "sizes": "17×27 đến 40×60", "use": "Cửa hàng thời trang, giày dép, mỹ phẩm" },
+    { "name": "Túi ép quai", "href": "/category/tui-ep-quai/", "material": "LDPE", "sizes": "Theo yêu cầu", "use": "Hàng hoá, quà tặng, tài liệu, thời trang" },
+    { "name": "Túi niêm phong", "href": "/category/tui-niem-phong/", "material": "HD 1 lớp, PE 2 lớp", "sizes": "17×30 đến 45×65", "use": "Đóng hàng giao vận, bán hàng online" },
+    { "name": "Túi siêu thị", "href": "/category/tui-sieu-thi/", "material": "HDPE, LDPE", "sizes": "Loại 0,5 kg đến 20 kg", "use": "Siêu thị, nhà sách, nhà thuốc" },
+    { "name": "Túi đựng thực phẩm", "href": "/category/tui-dung-thuc-pham/", "material": "Theo yêu cầu", "sizes": "Theo yêu cầu", "use": "Thực phẩm, túi cuộn" },
+    { "name": "Túi lồng bao (túi lót)", "href": "/category/tui-long-bao/", "material": "HDPE, PE", "sizes": "Loại 5 kg đến 40 kg", "use": "Lót bao dệt đựng gạo, lương thực, thức ăn chăn nuôi" },
+    { "name": "Túi may mặc xuất khẩu", "href": "/category/tui-may-mac-xuat-khau/", "material": "PE, HD, PP, OPP", "sizes": "Theo quy cách ngành", "use": "Đóng gói hàng may mặc xuất khẩu" },
+    { "name": "Cuộn màng HD/PE/PP", "href": "/category/cuon-mang-hd-pe-pp/", "material": "HD, PE, PP", "sizes": "Theo yêu cầu, 50 kg/cuộn", "use": "Nguyên liệu cho đóng gói công nghiệp" }
+  ],
+  "hero": {
+    "image": { "src": "2021/08/CUON-1.jpg", "srcSmall": "2021/08/CUON-1-700x466.jpg", "width": 1280, "height": 853, "alt": "Các cuộn màng nhựa HD, PE, PP nhiều màu do Hợp Phú sản xuất" },
+    "caption": "Cuộn màng HD/PE/PP, đóng gói 50 kg/cuộn hoặc theo yêu cầu"
+  },
+  "reasons": [
+    { "title": "Chất lượng", "body": "Sản xuất từ hạt nhựa nguyên sinh nhập khẩu. Chất lượng được kiểm soát trong suốt quá trình sản xuất để giảm phế phẩm và hàng lỗi." },
+    { "title": "Sản xuất theo yêu cầu", "body": "Kích thước, màu sắc, độ dày và nội dung in được làm theo quy cách riêng của từng khách hàng." },
+    { "title": "Tư vấn", "body": "Hỗ trợ chọn chất liệu và mẫu mã phù hợp với sản phẩm cần đóng gói, kèm tư vấn thiết kế bao bì." },
+    { "title": "Giao hàng", "body": "Nhà xưởng tại Như Quỳnh, Hưng Yên, nằm trên trục Quốc lộ 5, thuận tiện giao hàng cho các tỉnh miền Bắc và miền Trung." },
+    { "title": "Đáp ứng đơn hàng", "body": "Tám dòng sản phẩm, từ túi bán lẻ in thương hiệu đến cuộn màng công nghiệp, nhận đơn với số lượng linh hoạt." }
+  ],
+  "process": [
+    { "title": "Nguyên liệu", "body": "Hạt nhựa HDPE, LDPE, PP nguyên sinh nhập khẩu và phụ gia ngành nhựa." },
+    { "title": "Sản xuất màng", "body": "Tạo màng theo độ dày, khổ và màu đã thống nhất với khách hàng." },
+    { "title": "In ấn", "body": "In tên công ty, logo và thông tin sản phẩm theo thiết kế riêng." },
+    { "title": "Cắt, dán, tạo quai", "body": "Gia công thành túi hạt xoài, túi ép quai, túi niêm phong hoặc để dạng cuộn." },
+    { "title": "Kiểm tra", "body": "Kiểm tra đường hàn, kích thước và ngoại quan trước khi đóng gói." },
+    { "title": "Đóng gói, giao hàng", "body": "Đóng gói theo quy cách đặt hàng và vận chuyển đến địa điểm của khách." }
+  ],
+  "products": [
+    { "name": "Túi ép quai PE", "href": "/tui-ep-quai/tui-ep-quai-pe-hop-phu-ben-dep-tien-dung-than-thien-moi-truong/", "material": "LDPE nguyên sinh", "summary": "Quai ép chắc, bề mặt láng mịn, dùng đựng hàng hoá, quà tặng, sản phẩm thời trang và mỹ phẩm.", "image": { "src": "2025/07/TUI-EP-QUAI-NAU-1200x1200.jpg", "width": 1200, "height": 1200, "alt": "Túi ép quai PE màu kem với quai nâu" } },
+    { "name": "Túi niêm phong", "href": "/san-pham/tui-niem-phong/", "material": "HD 1 lớp, PE 2 lớp", "summary": "Túi đóng hàng chống thấm, miệng có băng keo chống bóc. Kích thước thông dụng từ 17×30 đến 45×65.", "image": { "src": "2025/07/Tui-NP-2-1200x1200.jpg", "width": 1200, "height": 1200, "alt": "Các cuộn túi niêm phong nhiều màu" } },
+    { "name": "Túi hạt xoài HD", "href": "/san-pham/tui-hd/", "material": "HD nguyên sinh", "summary": "Chất liệu khô, không trơn, độ bền cao. Nhận in tên công ty và logo. Kích thước từ 17×27 đến 40×60.", "image": { "src": "2025/07/z6831832403506_14d6ba88590003036756fb828b175526-1200x1200.jpg", "width": 1200, "height": 1200, "alt": "Túi hạt xoài HD màu trắng đặt trên bục trưng bày" } },
+    { "name": "Túi siêu thị tự huỷ", "href": "/san-pham/tui-sieu-thi/", "material": "HDPE, LDPE nguyên sinh", "summary": "Độ dai và chịu lực tốt, màu sắc theo yêu cầu. Các loại từ 0,5 kg đến 20 kg.", "image": { "src": "2025/07/Tui-sieu-thi-2-1200x1200.jpg", "width": 1200, "height": 1200, "alt": "Túi siêu thị tự huỷ màu trắng in biểu tượng tái chế" } }
+  ],
+  "customers": {
+    "verify": true,
+    "names": ["Sunhouse", "VinMart", "Yody", "HomeMart", "Homicook", "Prosport", "Tuyền Tuyết"]
+  },
+  "posts": [
+    { "title": "Túi ép quai cao cấp: giải pháp bao bì cho thương hiệu hiện đại", "href": "/san-pham/tui-ep-quai-cao-cap-giai-phap-bao-bi-thoi-thuong-cho-thuong-hieu-hien-dai-2/", "date": "2025-08-08", "topic": "Kiến thức sản phẩm" },
+    { "title": "Túi siêu thị tự huỷ: lựa chọn bao bì xanh cho doanh nghiệp", "href": "/san-pham/tui-sieu-thi-tu-huy-hop-phu-lua-chon-bao-bi-xanh-cho-doanh-nghiep-hien-dai/", "date": "2025-07-26", "topic": "Kiến thức sản phẩm" },
+    { "title": "Túi niêm phong: bao bì hiệu quả cho nhà bán hàng online", "href": "/san-pham/tui-niem-phong-hop-phu-giai-phap-bao-bi-hieu-qua-cho-nha-ban-hang-online/", "date": "2025-07-26", "topic": "Kiến thức sản phẩm" },
+    { "title": "Thông báo cập nhật địa chỉ theo thay đổi địa giới hành chính", "href": "/tin-tuc/tb-cap-nhat-dia-chi-theo-thay-doi-dia-gioi-hanh-chinh/", "date": "2025-07-07", "topic": "Thông báo" }
+  ],
+  "policies": [],
+  "quoteForm": {
+    "_note": "endpoint để trống trong bản dựng thử. Khi tích hợp WordPress, form này được thay bằng widget Elementor Pro Form hiện có (đã bổ sung trường) để giữ nguyên cơ chế gửi thư.",
+    "endpoint": ""
+  }
+}
