@@ -33,7 +33,7 @@ function shell(ctx, { crumbs, h1, lead, body, cta = true, quoteParam = '' }) {
     </div>
   </div>
   ${body}
-  ${cta ? ctaBand(ctx, { title: p.ctaTitle, body: p.ctaBody, button: p.ctaButton, quoteParam }) : ''}
+  ${cta ? ctaBand(ctx, { title: quoteParam ? p.ctaTitle : p.ctaTitleGeneric, body: p.ctaBody, button: p.ctaButton, quoteParam }) : ''}
 </main>`;
 }
 
@@ -313,9 +313,24 @@ export function companyPages(data) {
 
   const a = pages.about;
   const about = { lang: 'vi', path: '/ve-chung-toi/', meta: { title: a.title, description: a.description, ogImage: site.images.handleGroup.src }, crumbs: [home, { name: 'Về chúng tôi', path: '/ve-chung-toi/' }] };
-  about.schema = (ctx) => [webPage(ctx, about, { '@type': 'AboutPage', about: orgRef(ctx) }), breadcrumbSchema(ctx, about.crumbs)];
-  about.body = (ctx) =>
-    shell(ctx, {
+  about.schema = (ctx) => [
+    webPage(ctx, about, { '@type': 'AboutPage', about: orgRef(ctx) }),
+    breadcrumbSchema(ctx, about.crumbs),
+    // Lãnh đạo do chủ dự án xác nhận; gắn vào Organization qua @id.
+    {
+      '@type': 'Organization',
+      '@id': `${site.origin}/#organization`,
+      name: site.company.legalName.vi,
+      url: `${site.origin}/`,
+      founder: site.founders.map((f) => ({ '@type': 'Person', name: f.name, jobTitle: f.role })),
+    },
+  ];
+  about.body = (ctx) => {
+    const logo = (p, hidden) => {
+      const m = resolveImage(ctx, p.logo).large;
+      return `<li class="partners__item"${hidden ? ' aria-hidden="true"' : ''}><img src="${ctx.asset(m.file)}" width="${m.width}" height="${m.height}" alt="${hidden ? '' : esc(p.name)}" loading="lazy" decoding="async"></li>`;
+    };
+    return shell(ctx, {
       crumbs: crumbsFor(ctx, about.crumbs),
       h1: a.h1,
       body: `<section class="section section--tight" aria-labelledby="gt">
@@ -327,16 +342,39 @@ export function companyPages(data) {
       <figure class="about__media">${image(ctx, 'handleGroup', { sizes: '(min-width: 64rem) 40vw, 100vw' })}</figure>
     </div>
   </section>
-  <section class="section section--dark" aria-labelledby="tn">
+  <section class="about-values" aria-label="${esc(a.labels.vision)}, ${esc(a.labels.mission)}, ${esc(a.labels.values)}">
     <div class="container">
-      <dl class="capability capability--3">
-        <div class="capability__item"><dt id="tn">${esc(a.labels.vision)}</dt><dd>${esc(a.vision)}</dd></div>
-        <div class="capability__item"><dt>${esc(a.labels.mission)}</dt><dd>${esc(a.mission)}</dd></div>
-        <div class="capability__item"><dt>${esc(a.labels.values)}</dt><dd><ul class="plain-list">${a.values.map((v) => `<li>${esc(v)}</li>`).join('')}</ul></dd></div>
-      </dl>
+      <div class="about-values__lead">
+        <div><h2>${esc(a.labels.vision)}</h2><p>${esc(a.vision)}</p></div>
+        <div><h2>${esc(a.labels.mission)}</h2><p>${esc(a.mission)}</p></div>
+      </div>
+      <h2 class="about-values__title">${esc(a.labels.values)}</h2>
+      <ul class="about-values__list">
+        ${a.values.map((v) => `<li>${esc(v)}</li>`).join('\n        ')}
+      </ul>
+    </div>
+  </section>
+  <section class="section" aria-labelledby="nsl">
+    <div class="container">
+      <h2 id="nsl" class="about-title">${esc(a.labels.founders)}</h2>
+      <ul class="founders">
+        ${site.founders.map((f) => `<li class="founders__item">${image(ctx, { src: f.image, alt: `${f.name}, ${f.role}` }, { sizes: '(min-width: 48rem) 30vw, 80vw' })}<p class="founders__name">${esc(f.name)}</p><p class="founders__role">${esc(f.role)}</p></li>`).join('\n        ')}
+      </ul>
+    </div>
+  </section>
+  <section class="section section--surface partners" aria-labelledby="dt">
+    <div class="container">
+      <h2 id="dt" class="about-title">${esc(a.labels.partners)}</h2>
+    </div>
+    <div class="partners__viewport" tabindex="0" aria-label="${esc(a.labels.partners)}">
+      <ul class="partners__track">
+        ${site.partners.map((p) => logo(p, false)).join('\n        ')}
+        ${site.partners.map((p) => logo(p, true)).join('\n        ')}
+      </ul>
     </div>
   </section>`,
     });
+  };
 
   const s = pages.services;
   const services = { lang: 'vi', path: '/dich-vu/', meta: { title: s.title, description: s.description, ogImage: site.images.seal.src }, crumbs: [home, { name: 'Dịch vụ', path: '/dich-vu/' }] };

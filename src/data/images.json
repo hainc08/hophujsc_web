@@ -570,5 +570,151 @@
    "width": 768,
    "height": 652
   }
+ },
+ "2026/10/anh1.jpg": {
+  "src": "2026/10/anh1.jpg",
+  "name": "sl-anh1",
+  "origWidth": 1000,
+  "origHeight": 1250,
+  "large": {
+   "file": "sl-anh1-1000.webp",
+   "width": 1000,
+   "height": 1250
+  },
+  "small": {
+   "file": "sl-anh1-600.webp",
+   "width": 600,
+   "height": 750
+  }
+ },
+ "2026/10/anh2.jpg": {
+  "src": "2026/10/anh2.jpg",
+  "name": "sl-anh2",
+  "origWidth": 1000,
+  "origHeight": 1250,
+  "large": {
+   "file": "sl-anh2-1000.webp",
+   "width": 1000,
+   "height": 1250
+  },
+  "small": {
+   "file": "sl-anh2-600.webp",
+   "width": 600,
+   "height": 750
+  }
+ },
+ "2026/10/anh3.jpg": {
+  "src": "2026/10/anh3.jpg",
+  "name": "sl-anh3",
+  "origWidth": 1000,
+  "origHeight": 1250,
+  "large": {
+   "file": "sl-anh3-1000.webp",
+   "width": 1000,
+   "height": 1250
+  },
+  "small": {
+   "file": "sl-anh3-600.webp",
+   "width": 600,
+   "height": 750
+  }
+ },
+ "2021/08/sunhouse.png": {
+  "src": "2021/08/sunhouse.png",
+  "name": "dt-sunhouse",
+  "large": {
+   "file": "dt-sunhouse.webp",
+   "width": 480,
+   "height": 254
+  },
+  "small": {
+   "file": "dt-sunhouse.webp",
+   "width": 480,
+   "height": 254
+  }
+ },
+ "2021/08/VINMART-1.png": {
+  "src": "2021/08/VINMART-1.png",
+  "name": "dt-vinmart",
+  "large": {
+   "file": "dt-vinmart.webp",
+   "width": 480,
+   "height": 480
+  },
+  "small": {
+   "file": "dt-vinmart.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "2021/08/YODY.png": {
+  "src": "2021/08/YODY.png",
+  "name": "dt-yody",
+  "large": {
+   "file": "dt-yody.webp",
+   "width": 201,
+   "height": 252
+  },
+  "small": {
+   "file": "dt-yody.webp",
+   "width": 201,
+   "height": 252
+  }
+ },
+ "2021/08/logo-homemart.png": {
+  "src": "2021/08/logo-homemart.png",
+  "name": "dt-homemart",
+  "large": {
+   "file": "dt-homemart.webp",
+   "width": 400,
+   "height": 400
+  },
+  "small": {
+   "file": "dt-homemart.webp",
+   "width": 400,
+   "height": 400
+  }
+ },
+ "2021/08/HOMICOOK.jpg": {
+  "src": "2021/08/HOMICOOK.jpg",
+  "name": "dt-homicook",
+  "large": {
+   "file": "dt-homicook.webp",
+   "width": 224,
+   "height": 224
+  },
+  "small": {
+   "file": "dt-homicook.webp",
+   "width": 224,
+   "height": 224
+  }
+ },
+ "2021/08/PROSPORT.jpg": {
+  "src": "2021/08/PROSPORT.jpg",
+  "name": "dt-prosports",
+  "large": {
+   "file": "dt-prosports.webp",
+   "width": 480,
+   "height": 432
+  },
+  "small": {
+   "file": "dt-prosports.webp",
+   "width": 480,
+   "height": 432
+  }
+ },
+ "2021/08/z2674366085360_39a046776d5f9569589e3d9466e16391.jpg": {
+  "src": "2021/08/z2674366085360_39a046776d5f9569589e3d9466e16391.jpg",
+  "name": "dt-tuyen-tuyet",
+  "large": {
+   "file": "dt-tuyen-tuyet.webp",
+   "width": 480,
+   "height": 332
+  },
+  "small": {
+   "file": "dt-tuyen-tuyet.webp",
+   "width": 480,
+   "height": 332
+  }
  }
 }

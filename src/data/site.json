@@ -249,5 +249,53 @@
     "may-moc": null,
     "kiem-tra": null,
     "kho": null
-  }
+  },
+  "founders": [
+    {
+      "name": "Trần Mạnh Dân",
+      "role": "CEO",
+      "image": "2026/10/anh3.jpg"
+    },
+    {
+      "name": "Lê Đăng Tá",
+      "role": "CFO",
+      "image": "2026/10/anh1.jpg"
+    },
+    {
+      "name": "Nguyễn Ích Liêm",
+      "role": "CPO",
+      "image": "2026/10/anh2.jpg"
+    }
+  ],
+  "partners": [
+    {
+      "name": "Sunhouse",
+      "logo": "2021/08/sunhouse.png"
+    },
+    {
+      "name": "VinMart",
+      "logo": "2021/08/VINMART-1.png"
+    },
+    {
+      "name": "Yody",
+      "logo": "2021/08/YODY.png"
+    },
+    {
+      "name": "HomeMart",
+      "logo": "2021/08/logo-homemart.png"
+    },
+    {
+      "name": "Homicook",
+      "logo": "2021/08/HOMICOOK.jpg"
+    },
+    {
+      "name": "Pro Sports",
+      "logo": "2021/08/PROSPORT.jpg"
+    },
+    {
+      "name": "Tuyên Tuyết Mart",
+      "logo": "2021/08/z2674366085360_39a046776d5f9569589e3d9466e16391.jpg"
+    }
+  ],
+  "_founders_partners_note": "Nhà sáng lập và đối tác: chủ dự án xác nhận ngày 2026-10-22 (tên, chức danh theo trang Giới thiệu cũ; đối tác thật và được phép dùng logo)."
 }

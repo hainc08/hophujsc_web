@@ -22,3 +22,6 @@ api/config.php
 /docs/screenshots/landing/vp_*.png
 /test_desktop.png
 /test_mobile390.png
+
+# Bản phác thảo của công cụ brainstorming
+.superpowers/

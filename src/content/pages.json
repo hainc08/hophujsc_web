@@ -1,125 +1,166 @@
 {
-  "_note": "Nội dung các trang tĩnh tiếng Việt. Câu chữ lấy từ hopphujsc.com (crawl 2026-10-08): /ve-chung-toi/, /dich-vu/, các trang sản phẩm. Đã bỏ: số liệu thành tựu dạng demo, danh sách nhà sáng lập (tên không nhất quán giữa các trang), cụm '24/7', 'ưu đãi nhất', 'nhanh nhất'.",
-  "categories": {
-    "tui-hat-xoai": {
-      "title": "Túi hạt xoài HD, PE in logo theo yêu cầu | Hợp Phú",
-      "intro": "Túi hạt xoài (túi hột xoài) có quai cắt hình hạt xoài, sản xuất từ HD hoặc LDPE nguyên sinh nhập khẩu. Nhận in tên công ty và logo; màu sắc, kích thước làm theo yêu cầu."
-    },
-    "tui-niem-phong": {
-      "title": "Túi niêm phong, túi đóng hàng HD, PE | Hợp Phú",
-      "intro": "Túi niêm phong (túi ship, túi đóng hàng COD) chống thấm, miệng túi có băng keo chống bóc. Có loại HD 1 lớp, 2 lớp và PE 2 lớp; nhận in tên công ty và logo."
-    },
-    "tui-ep-quai": {
-      "title": "Túi ép quai PE in logo theo yêu cầu | Hợp Phú",
-      "intro": "Túi ép quai PE sản xuất từ hạt nhựa nguyên sinh LDPE, quai ép chắc, bề mặt láng mịn; dùng đựng hàng hoá, quà tặng, tài liệu, sản phẩm thời trang và mỹ phẩm."
-    },
-    "tui-sieu-thi": {
-      "title": "Túi siêu thị tự huỷ HDPE, LDPE | Hợp Phú",
-      "intro": "Túi siêu thị tự huỷ làm từ HDPE, LDPE nguyên sinh nhập khẩu, các loại từ 0,5 kg đến 20 kg. Kiểu dáng, kích thước, màu sắc và nội dung in theo yêu cầu."
-    },
-    "cuon-mang": {
-      "title": "Cuộn màng HD, PE, PP theo yêu cầu | Hợp Phú",
-      "intro": "Cuộn màng HD, PE, PP từ hạt nhựa nguyên sinh nhập khẩu. Kích thước và màu sắc theo yêu cầu; đóng gói 50 kg/cuộn hoặc theo yêu cầu của khách hàng."
-    },
-    "tui-dung-thuc-pham": {
-      "title": "Túi đựng thực phẩm | Hợp Phú",
-      "intro": "Túi đựng thực phẩm sản xuất theo quy cách của từng doanh nghiệp. Liên hệ để được tư vấn chất liệu, kích thước và mẫu in phù hợp với sản phẩm của bạn."
-    },
-    "tui-long-bao": {
-      "title": "Túi lồng bao, túi lót bao HDPE, PE | Hợp Phú",
-      "intro": "Túi nilon lót trong bao dệt, làm từ HDPE, PE nguyên sinh nhập khẩu, chịu nén tốt, đường hàn chắc. Dùng cho bao gạo xuất khẩu, lương thực, thức ăn chăn nuôi; loại 5 kg đến 40 kg hoặc theo yêu cầu."
-    },
-    "tui-may-mac": {
-      "title": "Túi đóng gói hàng may mặc xuất khẩu PE, PP, OPP | Hợp Phú",
-      "intro": "Túi đóng gói hàng may mặc xuất khẩu từ PE, HD, PP, OPP; có hoặc không in nội dung cảnh báo, có hoặc không có băng keo dán miệng, kích thước theo quy cách ngành và yêu cầu của khách hàng."
-    }
+ "_note": "Nội dung các trang tĩnh tiếng Việt. Câu chữ lấy từ hopphujsc.com (crawl 2026-10-08): /ve-chung-toi/, /dich-vu/, các trang sản phẩm. Đã bỏ: số liệu thành tựu dạng demo, danh sách nhà sáng lập (tên không nhất quán giữa các trang), cụm '24/7', 'ưu đãi nhất', 'nhanh nhất'.",
+ "categories": {
+  "tui-hat-xoai": {
+   "title": "Túi hạt xoài HD, PE in logo theo yêu cầu | Hợp Phú",
+   "intro": "Túi hạt xoài (túi hột xoài) có quai cắt hình hạt xoài, sản xuất từ HD hoặc LDPE nguyên sinh nhập khẩu. Nhận in tên công ty và logo; màu sắc, kích thước làm theo yêu cầu."
   },
-  "catalog": {
-    "title": "Sản phẩm bao bì nhựa, túi nilon các loại | Hợp Phú",
-    "description": "Túi hạt xoài, túi ép quai, túi niêm phong, túi siêu thị, túi lồng bao, túi may mặc xuất khẩu và cuộn màng HD/PE/PP. Xem quy cách và gửi yêu cầu báo giá.",
-    "h1": "Sản phẩm bao bì nhựa",
-    "lead": "Tám dòng bao bì đang sản xuất. Kích thước, màu sắc, độ dày và nội dung in đều có thể làm theo yêu cầu.",
-    "otherTitle": "Sản phẩm khác"
+  "tui-niem-phong": {
+   "title": "Túi niêm phong, túi đóng hàng HD, PE | Hợp Phú",
+   "intro": "Túi niêm phong (túi ship, túi đóng hàng COD) chống thấm, miệng túi có băng keo chống bóc. Có loại HD 1 lớp, 2 lớp và PE 2 lớp; nhận in tên công ty và logo."
   },
-  "about": {
-    "title": "Về Hợp Phú: công ty sản xuất bao bì nhựa tại Hưng Yên",
-    "description": "Công ty Cổ phần Sản xuất và Thương mại Hợp Phú sản xuất bao bì HDPE, LDPE, PP, OPP cho ngành thực phẩm, dược phẩm, hoá mỹ phẩm và nhiều ngành khác.",
-    "h1": "Công ty Cổ phần Sản xuất và Thương mại Hợp Phú",
-    "intro": [
-      "Công ty Cổ phần Sản xuất và Thương mại Hợp Phú chuyên sản xuất các sản phẩm bao bì, túi ni-lon, màng bọc, túi xốp, bao lót, túi đựng rác chất liệu HD, PE, PP, OPP chất lượng cao, phục vụ cho các ngành sản xuất chế biến thực phẩm, dược phẩm, hoá mỹ phẩm và nhiều ngành khác, cùng nhu cầu trong đời sống hàng ngày.",
-      "Với phương châm “Trách nhiệm, Uy tín, Đổi mới, xây dựng thương hiệu dựa trên sự hài lòng của khách hàng”, ngay từ khi thành lập, Công ty đã không ngừng cải tiến công nghệ, đưa ra thị trường những dòng sản phẩm mới với chất lượng tốt, cùng đội ngũ bán hàng chuyên nghiệp, thân thiện, sẵn sàng cung cấp giải pháp đáp ứng yêu cầu của khách hàng.",
-      "Cùng với việc kiểm soát chất lượng nghiêm ngặt, công ty áp dụng công nghệ sản xuất với máy móc thiết bị nhập khẩu, liên tục cải tiến dây chuyền sản xuất, giảm thiểu phế phẩm, hàng lỗi và tăng năng suất.",
-      "Công ty có nhà xưởng sản xuất tại xã Như Quỳnh, tỉnh Hưng Yên (trước ngày 01/7/2025 là thị trấn Như Quỳnh, huyện Văn Lâm), nằm trên trục Quốc lộ 5, giao thông thuận tiện. Sản phẩm của Công ty được phân phối tới các tỉnh thành khu vực miền Bắc và miền Trung."
-    ],
-    "vision": "Trở thành một công ty sản xuất bao bì nhựa chất lượng cao hàng đầu Việt Nam.",
-    "mission": "Là người bạn đồng hành với sự phát triển của ngành công nghiệp dân sinh, an toàn cho hệ sinh thái, thân thiện với môi trường.",
-    "values": [
-      "Sự thành công của doanh nghiệp dựa trên sự vận hành theo hệ thống quy trình chính xác, chuyên nghiệp.",
-      "Sự tin cậy của khách hàng dựa trên chất lượng sản phẩm, thái độ phục vụ tận tâm, luôn thấu hiểu và tìm giải pháp cùng khách hàng.",
-      "Sự gắn bó của nhân viên dựa trên tinh thần làm việc nhóm, năng lực được phát huy, chuyên môn được phát triển, mục tiêu cá nhân được thực hiện."
-    ],
-    "labels": { "intro": "Giới thiệu", "vision": "Tầm nhìn", "mission": "Sứ mệnh", "values": "Giá trị cốt lõi" }
+  "tui-ep-quai": {
+   "title": "Túi ép quai PE in logo theo yêu cầu | Hợp Phú",
+   "intro": "Túi ép quai PE sản xuất từ hạt nhựa nguyên sinh LDPE, quai ép chắc, bề mặt láng mịn; dùng đựng hàng hoá, quà tặng, tài liệu, sản phẩm thời trang và mỹ phẩm."
   },
-  "services": {
-    "title": "Sản xuất và in bao bì nhựa theo yêu cầu | Hợp Phú",
-    "description": "Nhận sản xuất, in ấn và gia công bao bì nhựa theo quy cách riêng: chọn chất liệu, kích thước, màu, mẫu in. Tư vấn thiết kế và hỗ trợ vận chuyển.",
-    "h1": "Sản xuất bao bì nhựa theo yêu cầu",
-    "areasTitle": "Lĩnh vực hoạt động",
-    "areas": [
-      { "title": "Sản xuất bao bì theo yêu cầu", "body": "Sản xuất bao bì nhựa đa dạng mẫu mã, kiểu dáng, chất liệu theo đúng yêu cầu kỹ thuật và tiêu chuẩn của từng khách hàng." },
-      { "title": "Thiết kế và tư vấn giải pháp đóng gói", "body": "Hỗ trợ tư vấn, thiết kế bao bì phù hợp cho sản phẩm, giúp tăng giá trị thương hiệu, bảo vệ hàng hoá và tiết kiệm chi phí vận chuyển." },
-      { "title": "Cung ứng và hỗ trợ vận chuyển", "body": "Đảm bảo tiến độ sản xuất và giao hàng, hỗ trợ kiểm tra chất lượng, đóng gói và vận chuyển đến tận nơi theo yêu cầu." },
-      { "title": "Gia công bao bì thương mại và bán lẻ", "body": "Dịch vụ cho cửa hàng, siêu thị, doanh nghiệp thương mại với số lượng linh hoạt, hỗ trợ in ấn, cắt dán, đóng gói hoàn chỉnh." }
-    ],
-    "featuresTitle": "Dịch vụ đi kèm",
-    "features": [
-      { "title": "Bao bì in ấn theo yêu cầu", "body": "Bao bì nhựa in logo, thông tin sản phẩm theo thiết kế riêng của doanh nghiệp." },
-      { "title": "Hỗ trợ kỹ thuật", "body": "Tư vấn chọn chất liệu, mẫu mã phù hợp sản phẩm và quy trình đóng gói." },
-      { "title": "Quản lý đơn hàng", "body": "Theo dõi tiến độ sản xuất, kiểm tra chất lượng và vận chuyển đúng hẹn." },
-      { "title": "Mẫu và kích thước đa dạng", "body": "Có sẵn nhiều mẫu bao bì nhựa, túi PE, PP, HDPE với các kích cỡ tiêu chuẩn." },
-      { "title": "Tư vấn miễn phí", "body": "Liên hệ để được hỗ trợ lựa chọn mẫu bao bì và báo giá phù hợp ngân sách." }
-    ]
+  "tui-sieu-thi": {
+   "title": "Túi siêu thị tự huỷ HDPE, LDPE | Hợp Phú",
+   "intro": "Túi siêu thị tự huỷ làm từ HDPE, LDPE nguyên sinh nhập khẩu, các loại từ 0,5 kg đến 20 kg. Kiểu dáng, kích thước, màu sắc và nội dung in theo yêu cầu."
   },
-  "contact": {
-    "title": "Liên hệ và yêu cầu báo giá bao bì nhựa | Hợp Phú",
-    "description": "Gửi yêu cầu báo giá bao bì nhựa, gọi 0983 771 565 hoặc nhắn Zalo. Nhà xưởng tại Như Quỳnh, Hưng Yên.",
-    "h1": "Liên hệ Hợp Phú",
-    "lead": "Gọi điện, nhắn Zalo hoặc gửi yêu cầu báo giá. Bộ phận kinh doanh sẽ liên hệ lại để tư vấn.",
-    "labels": { "phone": "Hotline", "zalo": "Zalo", "email": "Email", "address": "Địa chỉ", "facebook": "Facebook" }
+  "cuon-mang": {
+   "title": "Cuộn màng HD, PE, PP theo yêu cầu | Hợp Phú",
+   "intro": "Cuộn màng HD, PE, PP từ hạt nhựa nguyên sinh nhập khẩu. Kích thước và màu sắc theo yêu cầu; đóng gói 50 kg/cuộn hoặc theo yêu cầu của khách hàng."
   },
-  "news": {
-    "title": "Tin tức và kiến thức bao bì | Hợp Phú",
-    "description": "Bài viết về túi niêm phong, túi hạt xoài, túi ép quai, túi siêu thị, túi lồng bao và tin tức của Hợp Phú.",
-    "h1": "Tin tức và kiến thức",
-    "guidesTitle": "Kiến thức sản phẩm",
-    "newsTitle": "Tin tức"
+  "tui-dung-thuc-pham": {
+   "title": "Túi đựng thực phẩm | Hợp Phú",
+   "intro": "Túi đựng thực phẩm sản xuất theo quy cách của từng doanh nghiệp. Liên hệ để được tư vấn chất liệu, kích thước và mẫu in phù hợp với sản phẩm của bạn."
   },
-  "jobs": {
-    "title": "Tuyển dụng | Hợp Phú",
-    "description": "Các vị trí đang tuyển dụng tại Công ty Cổ phần Sản xuất và Thương mại Hợp Phú.",
-    "h1": "Tuyển dụng"
+  "tui-long-bao": {
+   "title": "Túi lồng bao, túi lót bao HDPE, PE | Hợp Phú",
+   "intro": "Túi nilon lót trong bao dệt, làm từ HDPE, PE nguyên sinh nhập khẩu, chịu nén tốt, đường hàn chắc. Dùng cho bao gạo xuất khẩu, lương thực, thức ăn chăn nuôi; loại 5 kg đến 40 kg hoặc theo yêu cầu."
   },
-  "post": {
-    "breadcrumbHome": "Trang chủ",
-    "breadcrumbProducts": "Sản phẩm",
-    "breadcrumbNews": "Tin tức",
-    "breadcrumbJobs": "Tuyển dụng",
-    "published": "Đăng ngày",
-    "updated": "Cập nhật",
-    "ctaTitle": "Cần báo giá cho sản phẩm này?",
-    "ctaBody": "Gửi kích thước, độ dày, màu và số lượng. Hợp Phú tư vấn chất liệu và báo giá.",
-    "ctaButton": "Nhận báo giá",
-    "related": "Sản phẩm liên quan",
-    "relatedPosts": "Bài viết khác",
-    "inCategory": "Thuộc danh mục",
-    "jobApply": "Ứng tuyển: gọi hoặc nhắn Zalo",
-    "readMore": "Xem chi tiết"
-  },
-  "notFound": {
-    "title": "Không tìm thấy trang | Hợp Phú",
-    "h1": "Không tìm thấy trang",
-    "body": "Trang này không còn hoặc đã đổi địa chỉ. Xem danh mục sản phẩm hoặc quay về trang chủ.",
-    "home": "Về trang chủ",
-    "products": "Xem sản phẩm"
+  "tui-may-mac": {
+   "title": "Túi đóng gói hàng may mặc xuất khẩu PE, PP, OPP | Hợp Phú",
+   "intro": "Túi đóng gói hàng may mặc xuất khẩu từ PE, HD, PP, OPP; có hoặc không in nội dung cảnh báo, có hoặc không có băng keo dán miệng, kích thước theo quy cách ngành và yêu cầu của khách hàng."
   }
+ },
+ "catalog": {
+  "title": "Sản phẩm bao bì nhựa, túi nilon các loại | Hợp Phú",
+  "description": "Túi hạt xoài, túi ép quai, túi niêm phong, túi siêu thị, túi lồng bao, túi may mặc xuất khẩu và cuộn màng HD/PE/PP. Xem quy cách và gửi yêu cầu báo giá.",
+  "h1": "Sản phẩm bao bì nhựa",
+  "lead": "Tám dòng bao bì đang sản xuất. Kích thước, màu sắc, độ dày và nội dung in đều có thể làm theo yêu cầu.",
+  "otherTitle": "Sản phẩm khác"
+ },
+ "about": {
+  "title": "Về Hợp Phú: công ty sản xuất bao bì nhựa tại Hưng Yên",
+  "description": "Công ty Cổ phần Sản xuất và Thương mại Hợp Phú sản xuất bao bì HDPE, LDPE, PP, OPP cho ngành thực phẩm, dược phẩm, hoá mỹ phẩm và nhiều ngành khác.",
+  "h1": "Công ty Cổ phần Sản xuất và Thương mại Hợp Phú",
+  "intro": [
+   "Công ty Cổ phần Sản xuất và Thương mại Hợp Phú chuyên sản xuất các sản phẩm bao bì, túi ni-lon, màng bọc, túi xốp, bao lót, túi đựng rác chất liệu HD, PE, PP, OPP chất lượng cao, phục vụ cho các ngành sản xuất chế biến thực phẩm, dược phẩm, hoá mỹ phẩm và nhiều ngành khác, cùng nhu cầu trong đời sống hàng ngày.",
+   "Với phương châm “Trách nhiệm, Uy tín, Đổi mới, xây dựng thương hiệu dựa trên sự hài lòng của khách hàng”, ngay từ khi thành lập, Công ty đã không ngừng cải tiến công nghệ, đưa ra thị trường những dòng sản phẩm mới với chất lượng tốt, cùng đội ngũ bán hàng chuyên nghiệp, thân thiện, sẵn sàng cung cấp giải pháp đáp ứng yêu cầu của khách hàng.",
+   "Cùng với việc kiểm soát chất lượng nghiêm ngặt, công ty áp dụng công nghệ sản xuất với máy móc thiết bị nhập khẩu, liên tục cải tiến dây chuyền sản xuất, giảm thiểu phế phẩm, hàng lỗi và tăng năng suất.",
+   "Công ty có nhà xưởng sản xuất tại xã Như Quỳnh, tỉnh Hưng Yên (trước ngày 01/7/2025 là thị trấn Như Quỳnh, huyện Văn Lâm), nằm trên trục Quốc lộ 5, giao thông thuận tiện. Sản phẩm của Công ty được phân phối tới các tỉnh thành khu vực miền Bắc và miền Trung."
+  ],
+  "vision": "Trở thành một công ty sản xuất bao bì nhựa chất lượng cao hàng đầu Việt Nam.",
+  "mission": "Là người bạn đồng hành với sự phát triển của ngành công nghiệp dân sinh, an toàn cho hệ sinh thái, thân thiện với môi trường.",
+  "values": [
+   "Sự thành công của doanh nghiệp dựa trên sự vận hành theo hệ thống quy trình chính xác, chuyên nghiệp.",
+   "Sự tin cậy của khách hàng dựa trên chất lượng sản phẩm, thái độ phục vụ tận tâm, luôn thấu hiểu và tìm giải pháp cùng khách hàng.",
+   "Sự gắn bó của nhân viên dựa trên tinh thần làm việc nhóm, năng lực được phát huy, chuyên môn được phát triển, mục tiêu cá nhân được thực hiện."
+  ],
+  "labels": {
+   "intro": "Giới thiệu",
+   "vision": "Tầm nhìn",
+   "mission": "Sứ mệnh",
+   "values": "Giá trị cốt lõi",
+   "founders": "Nhà sáng lập",
+   "partners": "Nhà đầu tư và đối tác chiến lược"
+  }
+ },
+ "services": {
+  "title": "Sản xuất và in bao bì nhựa theo yêu cầu | Hợp Phú",
+  "description": "Nhận sản xuất, in ấn và gia công bao bì nhựa theo quy cách riêng: chọn chất liệu, kích thước, màu, mẫu in. Tư vấn thiết kế và hỗ trợ vận chuyển.",
+  "h1": "Sản xuất bao bì nhựa theo yêu cầu",
+  "areasTitle": "Lĩnh vực hoạt động",
+  "areas": [
+   {
+    "title": "Sản xuất bao bì theo yêu cầu",
+    "body": "Sản xuất bao bì nhựa đa dạng mẫu mã, kiểu dáng, chất liệu theo đúng yêu cầu kỹ thuật và tiêu chuẩn của từng khách hàng."
+   },
+   {
+    "title": "Thiết kế và tư vấn giải pháp đóng gói",
+    "body": "Hỗ trợ tư vấn, thiết kế bao bì phù hợp cho sản phẩm, giúp tăng giá trị thương hiệu, bảo vệ hàng hoá và tiết kiệm chi phí vận chuyển."
+   },
+   {
+    "title": "Cung ứng và hỗ trợ vận chuyển",
+    "body": "Đảm bảo tiến độ sản xuất và giao hàng, hỗ trợ kiểm tra chất lượng, đóng gói và vận chuyển đến tận nơi theo yêu cầu."
+   },
+   {
+    "title": "Gia công bao bì thương mại và bán lẻ",
+    "body": "Dịch vụ cho cửa hàng, siêu thị, doanh nghiệp thương mại với số lượng linh hoạt, hỗ trợ in ấn, cắt dán, đóng gói hoàn chỉnh."
+   }
+  ],
+  "featuresTitle": "Dịch vụ đi kèm",
+  "features": [
+   {
+    "title": "Bao bì in ấn theo yêu cầu",
+    "body": "Bao bì nhựa in logo, thông tin sản phẩm theo thiết kế riêng của doanh nghiệp."
+   },
+   {
+    "title": "Hỗ trợ kỹ thuật",
+    "body": "Tư vấn chọn chất liệu, mẫu mã phù hợp sản phẩm và quy trình đóng gói."
+   },
+   {
+    "title": "Quản lý đơn hàng",
+    "body": "Theo dõi tiến độ sản xuất, kiểm tra chất lượng và vận chuyển đúng hẹn."
+   },
+   {
+    "title": "Mẫu và kích thước đa dạng",
+    "body": "Có sẵn nhiều mẫu bao bì nhựa, túi PE, PP, HDPE với các kích cỡ tiêu chuẩn."
+   },
+   {
+    "title": "Tư vấn miễn phí",
+    "body": "Liên hệ để được hỗ trợ lựa chọn mẫu bao bì và báo giá phù hợp ngân sách."
+   }
+  ]
+ },
+ "contact": {
+  "title": "Liên hệ và yêu cầu báo giá bao bì nhựa | Hợp Phú",
+  "description": "Gửi yêu cầu báo giá bao bì nhựa, gọi 0983 771 565 hoặc nhắn Zalo. Nhà xưởng tại Như Quỳnh, Hưng Yên.",
+  "h1": "Liên hệ Hợp Phú",
+  "lead": "Gọi điện, nhắn Zalo hoặc gửi yêu cầu báo giá. Bộ phận kinh doanh sẽ liên hệ lại để tư vấn.",
+  "labels": {
+   "phone": "Hotline",
+   "zalo": "Zalo",
+   "email": "Email",
+   "address": "Địa chỉ",
+   "facebook": "Facebook"
+  }
+ },
+ "news": {
+  "title": "Tin tức và kiến thức bao bì | Hợp Phú",
+  "description": "Bài viết về túi niêm phong, túi hạt xoài, túi ép quai, túi siêu thị, túi lồng bao và tin tức của Hợp Phú.",
+  "h1": "Tin tức và kiến thức",
+  "guidesTitle": "Kiến thức sản phẩm",
+  "newsTitle": "Tin tức"
+ },
+ "jobs": {
+  "title": "Tuyển dụng | Hợp Phú",
+  "description": "Các vị trí đang tuyển dụng tại Công ty Cổ phần Sản xuất và Thương mại Hợp Phú.",
+  "h1": "Tuyển dụng"
+ },
+ "post": {
+  "breadcrumbHome": "Trang chủ",
+  "breadcrumbProducts": "Sản phẩm",
+  "breadcrumbNews": "Tin tức",
+  "breadcrumbJobs": "Tuyển dụng",
+  "published": "Đăng ngày",
+  "updated": "Cập nhật",
+  "ctaTitle": "Cần báo giá cho sản phẩm này?",
+  "ctaBody": "Gửi kích thước, độ dày, màu và số lượng. Hợp Phú tư vấn chất liệu và báo giá.",
+  "ctaButton": "Nhận báo giá",
+  "related": "Sản phẩm liên quan",
+  "relatedPosts": "Bài viết khác",
+  "inCategory": "Thuộc danh mục",
+  "jobApply": "Ứng tuyển: gọi hoặc nhắn Zalo",
+  "readMore": "Xem chi tiết",
+  "ctaTitleGeneric": "Cần báo giá bao bì nhựa?"
+ },
+ "notFound": {
+  "title": "Không tìm thấy trang | Hợp Phú",
+  "h1": "Không tìm thấy trang",
+  "body": "Trang này không còn hoặc đã đổi địa chỉ. Xem danh mục sản phẩm hoặc quay về trang chủ.",
+  "home": "Về trang chủ",
+  "products": "Xem sản phẩm"
+ }
 }
