@@ -44,3 +44,18 @@ Dữ liệu Facebook (https://www.facebook.com/ctyhopphu.jsc/) **chưa được 
 3. Nhà xưởng: máy thổi màng, máy in, máy cắt dán, khu kiểm tra, kho đóng gói.
 4. Cận chất liệu: mặt màng HD (khô, mờ) so với PE (bóng), đường hàn, quai ép.
 5. Ứng dụng: túi đang dùng thật ở quầy siêu thị, đóng hàng online, bao gạo có túi lót.
+
+## Ảnh nhà máy (cập nhật 2026-10-22)
+
+Mục "Bên trong nhà máy Hợp Phú" trên trang chủ đang hiển thị 4 ô chờ. Không dùng ảnh minh hoạ, ảnh stock hay ảnh tạo bằng AI thay thế. Khi có ảnh thật đã được công ty duyệt: thêm vào `assets/img/` (WebP, 2 cỡ 768 và 1600), đăng ký trong `src/data/images.json` và `site.json > images`, rồi điền khoá ảnh vào `site.json > factoryPhotos`.
+
+| Vị trí (`factoryPhotos`) | Cảnh cần chụp | Khung | Kích thước tối thiểu | Ghi chú |
+|---|---|---|---|---|
+| `toan-canh` | Toàn cảnh xưởng sản xuất, thấy được dây chuyền và không gian | Ngang 21:9 (cắt từ 3:2) | 2400px cạnh dài | Ảnh mở đầu mục, quan trọng nhất. Ánh sáng tự nhiên, nền gọn gàng |
+| `may-moc` | Máy móc sản xuất đang chạy (máy thổi màng, máy in, máy cắt dán) | 4:3 | 1600px | Nếu là máy thổi màng thì có thể thêm từ "thổi màng" vào nội dung; hiện nội dung chỉ ghi "máy móc nhập khẩu" |
+| `kiem-tra` | Công nhân kiểm tra đường hàn, kích thước hoặc ngoại quan | 4:3 | 1600px | Cần đồng ý của người xuất hiện trong ảnh |
+| `kho` | Thành phẩm đóng kiện hoặc kho hàng | 4:3 | 1600px | |
+
+## Ảnh sản phẩm đã làm sạch (2026-10-22)
+
+Năm ảnh sản phẩm (`sp-*.webp`) được xoá logo góc và cắt dải khẩu hiệu từ ảnh gốc. Chi tiết trong `docs/redesign-editorial.md` mục 3. Các trang bài viết và sản phẩm chi tiết vẫn dùng ảnh gốc có logo; cần quyết định có làm sạch đồng loạt hay không.

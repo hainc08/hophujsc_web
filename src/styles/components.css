@@ -594,3 +594,14 @@
     display: none;
   }
 }
+
+/* Giữ sẵn chỗ cho dòng báo lỗi của ô bắt buộc: lỗi hiện hoặc ẩn không làm form nhảy,
+   nên cú bấm vào ô kế tiếp không bị trượt. */
+.field:has([required]) .field__error[hidden] {
+  display: block;
+  visibility: hidden;
+}
+
+.field:has([required]) .field__error {
+  min-height: 1.25rem;
+}

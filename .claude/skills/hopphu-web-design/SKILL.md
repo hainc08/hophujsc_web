@@ -42,7 +42,17 @@ build.mjs              xuất dist/index.html (vi) và dist/en/index.html (en)
 - Trang mới: tạo `src/pages/<ten>.mjs` cùng giao diện `meta/schema/render`, đăng ký trong `build.mjs` cho cả hai ngôn ngữ.
 - Bản dịch EN mới: dịch sát nghĩa, không thêm tuyên bố, và thêm vào `docs/translation-review.md` để chủ dự án duyệt. Ưu tiên câu chữ EN đã có trên `/en/` của site.
 
-## Hệ thiết kế (v2, landing page)
+## Hệ thiết kế (v3, "Industrial Editorial", 2026-10-22)
+
+Trang chủ đã chuyển sang hướng tạp chí công nghiệp. Chi tiết và lý do: `docs/redesign-editorial.md`.
+- Ảnh dẫn dắt, không dùng lưới thẻ. Lưới 12 cột bất đối xứng; mỗi section một kiểu bố cục riêng (hero chữ lớn + 2 ảnh lệch, bộ sưu tập so le, phương châm chữ lớn, nhà máy nền tối, quy trình số lớn, ứng dụng dạng bảng chỉ mục).
+- Tiêu đề lớn: đậm 500, giãn chữ -0.035em. Bo góc `--radius: 2px`; ảnh trang chủ góc vuông, không bóng.
+- Đỏ chỉ cho nút chính và liên kết. Số bước, đường kẻ dùng màu mực.
+- Danh mục chưa có ảnh không đặt ô trống giữa ảnh thật; chuyển thành danh sách chữ.
+- Ảnh nhà máy: chỉ ảnh thật đã duyệt, điền vào `site.json > factoryPhotos`. Chưa có thì component tự hiện ô chờ ghi rõ.
+- Ảnh sản phẩm có logo hoặc khẩu hiệu in đè: được làm sạch (xoá logo góc, cắt dải chữ) bằng ffmpeg; ghi `derivedFrom`/`edit` trong `images.json`. Không chỉnh sửa bản thân sản phẩm.
+
+## Hệ thiết kế (v2, landing page, các phần vẫn áp dụng)
 
 - **Định hướng**: công nghiệp, nhiều khoảng trắng, ảnh sản phẩm lớn; nhịp bố cục ngang tầm Hengfor nhưng là của Hợp Phú. Không sao chép ảnh, chữ, bố cục đặc trưng của Hengfor.
 - **Màu**: trắng là nền chính; `--surface #F4F5F6` cho khối xen kẽ; `--ink #272B30` cho chữ và khối tối; đỏ `--red #C51F2B` (hover `#A71924`) chỉ cho nút chính, trạng thái đang chọn, điểm nhấn nhỏ, liên kết. Màu đỏ đang là **giả định tạm**, xem `CLAUDE.md`; mọi chỗ phải dùng token, không dùng mã hex trực tiếp, để đổi màu chỉ cần sửa `tokens.css`.
@@ -75,6 +85,8 @@ build.mjs              xuất dist/index.html (vi) và dist/en/index.html (en)
 - **Cache JS**: `serve.mjs` cache tài nguyên 1 năm, nên `build.mjs` gắn `?v=<hash>` vào URL `site.js`. Giữ cơ chế này khi thêm file tĩnh.
 - **Kiểm thử bằng Playwright**: điều hướng chỉ khác `#hash` sẽ không tải lại trang. Thêm query (`?t=1`) hoặc đi qua `about:blank` trước khi kiểm thử lại sau khi build.
 - **Dấu `\` khi sửa file**: chèn code qua heredoc của shell trong môi trường này có thể làm mất hoặc đổi dấu `\` (ví dụ `\b` thành ký tự backspace). Code có regex hay escape thì sửa bằng công cụ Edit/Write, rồi kiểm tra lại byte thật.
+- **Form nhảy làm trượt cú bấm**: dòng báo lỗi xuất hiện hoặc biến mất lúc rời ô làm form dịch chuyển đúng lúc nhấn chuột. Giữ sẵn chỗ cho dòng lỗi ở ô bắt buộc (`.field:has([required]) .field__error`) và kiểm tra lại khi `input`.
+- **Anchor dưới header dính**: chỉ dùng một cơ chế bù (`[id] { scroll-margin-top }` trong base.css); thêm `scroll-padding-top` sẽ cộng đôi.
 - **Mega menu**: đóng có trễ 200ms để chuột đi chéo xuống bảng không làm bảng đóng; bảng ẩn bằng `visibility` để không nằm trong thứ tự Tab.
 
 ## Quy trình làm việc
