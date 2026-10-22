@@ -7,7 +7,9 @@
   "scripts": {
     "build": "node build.mjs",
     "build:index": "node build.mjs --index",
-    "build:pages": "node build.mjs --base=hophujsc_web",
+    "build:pages": "node build.mjs --target=pages",
+    "build:review": "node build.mjs --target=review",
+    "build:production": "node build.mjs --target=production",
     "serve": "node serve.mjs"
   },
   "engines": {

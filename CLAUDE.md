@@ -10,10 +10,21 @@ Repo này chứa bản thiết kế lại website https://hopphujsc.com/ của C
 - **Repo**: https://github.com/hainc08/hophujsc_web (công khai). Mỗi lần push lên `main`, workflow `.github/workflows/pages.yml` dựng lại và deploy bản xem trước (noindex) lên https://hainc08.github.io/hophujsc_web/. Đây không phải production.
 - Vì repo công khai: không commit ảnh chụp trang của bên thứ ba (`docs/reference/hengfor/` đã nằm trong `.gitignore`), dữ liệu Facebook thô, hay thông tin cá nhân.
 
+## Kế hoạch thay WordPress (chốt 2026-10-22)
+
+- Chủ dự án sẽ **bỏ WordPress**, giữ tên miền hopphujsc.com và email. Site hiện chạy ở **Hawk Host** (nameserver `ns13/ns14.hawkhost.com`, email cùng máy chủ), **không** nằm trong tài khoản Hostinger đang kết nối.
+- **Hostinger chỉ dùng để khách review** (`--target=review`). Bản chính thức deploy lên hosting của khách (`--target=production`) sau khi khách duyệt, với sự đồng ý rõ ràng.
+- Đã chọn: **dựng trang tĩnh giữ nguyên URL cũ** cho mọi nội dung thật (39 URL), còn lại 301/410 qua `.htaccess` sinh từ `src/data/redirects.json`. Bản EN chỉ có landing page; URL EN cũ chuyển về `/en/`.
+- Ảnh đã tải từ site cũ về `assets/img/` (WebP), tra trong `src/data/images.json`. Không còn phụ thuộc vào `wp-content/uploads`.
+- Form gửi qua `api/quote.php` (PHP `mail()` + lưu CSV ngoài thư mục web). Cấu hình `api/config.php` chỉ đặt trên máy chủ, không commit. Email nhận chưa được chủ dự án chốt.
+
 ## Lệnh
 
 ```bash
-node build.mjs            # dựng dist/index.html (vi) và dist/en/index.html (en), noindex
+node build.mjs                       # local: 40 trang vào dist/, noindex
+node build.mjs --target=review       # Hostinger review: + .htaccess, api/quote.php, robots chặn
+node build.mjs --target=production   # hosting thật: cho index, sitemap, HTTPS + bỏ www, HSTS
+python .claude/skills/hopphu-web-design/scripts/check_links.py dist [base]   # 0 liên kết gãy
 node build.mjs --index    # cho phép index, chỉ dùng khi đo Lighthouse
 node build.mjs --base=hophujsc_web   # dựng cho đường dẫn con như GitHub Pages (viết không có "/" đầu: Git Bash trên Windows tự đổi "/x" thành "C:/Program Files/Git/x")
 node serve.mjs            # http://localhost:4173 (hoặc preview tool, cấu hình "preview")

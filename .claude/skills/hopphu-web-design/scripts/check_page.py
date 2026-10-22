@@ -44,8 +44,9 @@ def check(path):
 
     add(lang in ("vi", "en"), '<html lang> là "vi" hoặc "en"', lang)
     canon = (re.search(r'<link rel="canonical" href="([^"]+)"', src) or [None, ""])[1]
-    add(canon.startswith("https://hopphujsc.com/"), "Canonical trỏ về production", canon)
-    hl = re.findall(r'hreflang="([^"]+)"', src)
+    if not path.endswith("404.html"):  # trang 404 cố ý không có canonical
+        add(canon.startswith("https://hopphujsc.com/"), "Canonical trỏ về production", canon)
+    hl = re.findall(r'<link rel="alternate" hreflang="([^"]+)"', src)
     if lang == "en" or "en" in hl:
         add({"vi", "en", "x-default"} <= set(hl), "Có hreflang vi, en, x-default", ", ".join(sorted(set(hl))))
     add("maximum-scale=1" not in src and "user-scalable=no" not in src, "Không chặn phóng to")
@@ -102,7 +103,12 @@ def check(path):
             add(False, "JSON-LD hợp lệ", str(e))
 
     hits = [w for w in BANNED + (BANNED_VI_ONLY if lang == "vi" else []) if w in text]
-    add(not hits, "Không có cụm so sánh nhất chưa kiểm chứng hay chữ demo", ", ".join(hits))
+    # Landing page là câu chữ do mình viết: lỗi. Trang khác giữ nguyên bài gốc của công ty: chỉ cảnh báo để duyệt.
+    is_landing = re.search(r"(^|[\\/])dist[\\/](en[\\/])?index\.html$", path) is not None
+    if is_landing:
+        add(not hits, "Không có cụm so sánh nhất chưa kiểm chứng hay chữ demo", ", ".join(hits))
+    elif hits:
+        warn("Nội dung gốc có cụm so sánh nhất, cần công ty duyệt", ", ".join(hits))
     if re.search(r"\b0\s*(%|\+)", text):
         warn("Có số dạng '0%' hoặc '0+' - kiểm tra có phải bộ đếm demo không")
 

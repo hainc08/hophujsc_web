@@ -1,4 +1,4 @@
-import { esc, button, image, sectionHeader, categoryTile, quoteForm } from '../components.mjs';
+import { esc, button, image, sectionHeader, categoryTile, categoryHref, quoteForm, resolveImage } from '../components.mjs';
 
 // Bề rộng hiển thị thật của ảnh hero, để trình duyệt chọn đúng bản 768w trên mobile.
 export const HERO_SIZES = '(min-width: 64rem) 50vw, 100vw';
@@ -8,7 +8,8 @@ export const meta = (ctx) => ({
   title: ctx.t(ctx.copy.meta.title),
   description: ctx.t(ctx.copy.meta.description),
   ogLocale: ctx.t(ctx.copy.meta.ogLocale),
-  ogImage: ctx.img('hero').src,
+  ogImage: 'og-hopphu.jpg',
+  alternates: true,
 });
 
 /** JSON-LD chỉ chứa dữ liệu có thật. Không Product, LocalBusiness, đánh giá hay giá. */
@@ -26,7 +27,8 @@ export function schema(ctx) {
         name: c.legalName.vi,
         alternateName: [c.legalName.en, c.brand.vi],
         url: `${site.origin}/`,
-        logo: { '@type': 'ImageObject', url: site.uploads + c.logo.src },
+        logo: { '@type': 'ImageObject', url: ctx.abs('/assets/img/' + resolveImage(ctx, site.images.logo.src).large.file) },
+        ...(c.email ? { email: c.email.value } : {}),
         telephone: c.phone.tel,
         sameAs: [c.facebook],
         contactPoint: { '@type': 'ContactPoint', telephone: c.phone.tel, contactType: 'sales', availableLanguage: ['vi', 'en'] },
@@ -116,7 +118,7 @@ export function render(ctx) {
         ${sectionHeader(ctx, { id: 'ung-dung', title: applications.title })}
         <ul class="industries">
           ${applications.items.map((a) => {
-            const href = a.link ? ctx.url(a.link) : site.origin + t(byId[a.category].url);
+            const href = a.link ? ctx.url(a.link) || `${ctx.local(ctx.lang)}?product=khac#bao-gia` : categoryHref(ctx, byId[a.category]);
             return `<li class="industries__item" data-reveal>
             <h3>${esc(t(a.title))}</h3>
             <p>${esc(t(a.body))}</p>

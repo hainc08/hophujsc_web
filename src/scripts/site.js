@@ -116,9 +116,17 @@
     setStatus('pending', msg.status.pending);
     try {
       const res = await fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
-      if (!res.ok) throw new Error(String(res.status));
-      form.reset();
-      setStatus('success', msg.status.success);
+      const body = await res.json().catch(() => ({}));
+      if (res.ok && body.ok) {
+        form.reset();
+        setStatus('success', msg.status.success);
+      } else if (body.code === 'not_configured') {
+        setStatus('error', msg.status.preview);
+      } else if (body.code === 'rate_limited') {
+        setStatus('error', msg.status.rateLimited);
+      } else {
+        throw new Error(String(res.status));
+      }
     } catch {
       setStatus('error', msg.status.error);
     } finally {

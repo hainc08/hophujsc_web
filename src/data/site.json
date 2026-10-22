@@ -1,17 +1,34 @@
 {
-  "_note": "Dữ liệu doanh nghiệp, ảnh và danh mục, dùng chung cho hai ngôn ngữ. Chữ hiển thị theo ngôn ngữ viết dạng { \"vi\": ..., \"en\": ... }. Nguồn: nội dung công khai trên hopphujsc.com (crawl 2026-10-08). Mục có \"verify\": true cần công ty xác nhận. Xem docs/asset-manifest.md cho ảnh.",
+  "_note": "Dữ liệu doanh nghiệp, ảnh và danh mục, dùng chung cho hai ngôn ngữ. Chữ theo ngôn ngữ viết dạng { \"vi\": ..., \"en\": ... }. images.<key>.src là đường dẫn ảnh gốc trên WordPress cũ; ảnh đã được tải về assets/img/ (WebP), tra trong src/data/images.json. Mục có \"verify\": true cần công ty xác nhận.",
   "origin": "https://hopphujsc.com",
-  "uploads": "https://hopphujsc.com/wp-content/uploads/",
-  "paths": { "vi": "/", "en": "/en/" },
+  "paths": {
+    "vi": "/",
+    "en": "/en/"
+  },
   "company": {
-    "legalName": { "vi": "Công ty Cổ phần Sản xuất và Thương mại Hợp Phú", "en": "Hop Phu Production and Trading Joint Stock Company" },
-    "brand": { "vi": "Hợp Phú JSC", "en": "Hop Phu JSC" },
-    "shortName": { "vi": "Hợp Phú", "en": "Hop Phu" },
-    "logo": { "src": "2025/07/LOGO-2-291x300.png", "width": 291, "height": 300 },
-    "phone": { "display": "0983 771 565", "tel": "+84983771565" },
+    "legalName": {
+      "vi": "Công ty Cổ phần Sản xuất và Thương mại Hợp Phú",
+      "en": "Hop Phu Production and Trading Joint Stock Company"
+    },
+    "brand": {
+      "vi": "Hợp Phú JSC",
+      "en": "Hop Phu JSC"
+    },
+    "shortName": {
+      "vi": "Hợp Phú",
+      "en": "Hop Phu"
+    },
+    "phone": {
+      "display": "0983 771 565",
+      "tel": "+84983771565"
+    },
     "zalo": "https://zalo.me/0983771565",
     "facebook": "https://www.facebook.com/ctyhopphu.jsc/",
-    "email": null,
+    "email": {
+      "value": "hopphuhungyen@gmail.com",
+      "verify": true,
+      "source": "Bài viết /san-pham/tui-niem-phong-hop-phu-giai-phap-bao-bi-hieu-qua-cho-nha-ban-hang-online/ trên hopphujsc.com"
+    },
     "address": {
       "verify": true,
       "vi": "Số 16 Khu Đường Tàu, xã Như Quỳnh, tỉnh Hưng Yên",
@@ -19,32 +36,201 @@
     }
   },
   "images": {
-    "hero": { "src": "2025/07/z6831021366870_0e97b08cc696075f8e30f4e4dec93d8f.jpg", "small": "2025/07/z6831021366870_0e97b08cc696075f8e30f4e4dec93d8f-768x768.jpg", "smallWidth": 768, "width": 1080, "height": 1080, "alt": { "vi": "Các cuộn túi nilon nhiều màu xếp trên bàn gỗ trong xưởng Hợp Phú", "en": "Rolls of coloured plastic bags on a wooden table at Hop Phu" } },
-    "dieCut": { "src": "2025/07/z6831832403506_14d6ba88590003036756fb828b175526-1200x1200.jpg", "small": "2025/07/z6831832403506_14d6ba88590003036756fb828b175526-768x768.jpg", "smallWidth": 768, "width": 1200, "height": 1200, "alt": { "vi": "Túi hạt xoài HD màu trắng đặt trên bục trưng bày", "en": "White HDPE die-cut bag on a display stand" } },
-    "handle": { "src": "2025/07/TUI-EP-QUAI-NAU-1200x1200.jpg", "small": "2025/07/TUI-EP-QUAI-NAU-768x768.jpg", "smallWidth": 768, "width": 1200, "height": 1200, "alt": { "vi": "Túi ép quai PE màu kem với quai nâu", "en": "Cream PE bag with brown sealed handles" } },
-    "seal": { "src": "2025/07/Tui-NP-2-1200x1200.jpg", "small": "2025/07/Tui-NP-2-768x768.jpg", "smallWidth": 768, "width": 1200, "height": 1200, "alt": { "vi": "Các cuộn túi niêm phong nhiều màu", "en": "Rolls of courier seal bags in several colours" } },
-    "supermarket": { "src": "2025/07/Tui-sieu-thi-2-1200x1200.jpg", "small": "2025/07/Tui-sieu-thi-2-768x768.jpg", "smallWidth": 768, "width": 1200, "height": 1200, "alt": { "vi": "Túi siêu thị tự huỷ màu trắng in biểu tượng tái chế", "en": "White self-destructing supermarket bag printed with a recycling symbol" } },
-    "film": { "src": "2021/08/CUON-1.jpg", "small": "2021/08/CUON-1-768x512.jpg", "smallWidth": 768, "width": 1280, "height": 853, "alt": { "vi": "Các cuộn màng nhựa HD, PE, PP nhiều màu", "en": "Coloured HD, PE and PP film rolls" } },
-    "handleGroup": { "src": "2025/08/TEQ-chung.jpg", "small": "2025/08/TEQ-chung-768x768.jpg", "smallWidth": 768, "width": 1280, "height": 1280, "alt": { "vi": "Túi ép quai PE nhiều màu xếp chồng trên mặt gỗ", "en": "Stacked PE handle bags in several colours on a wooden surface" } }
+    "hero": {
+      "src": "2025/07/z6831021366870_0e97b08cc696075f8e30f4e4dec93d8f.jpg",
+      "alt": {
+        "vi": "Các cuộn túi nilon nhiều màu xếp trên bàn gỗ trong xưởng Hợp Phú",
+        "en": "Rolls of coloured plastic bags on a wooden table at Hop Phu"
+      }
+    },
+    "dieCut": {
+      "src": "2025/07/z6831832403506_14d6ba88590003036756fb828b175526.jpg",
+      "alt": {
+        "vi": "Túi hạt xoài HD màu trắng đặt trên bục trưng bày",
+        "en": "White HDPE die-cut bag on a display stand"
+      }
+    },
+    "handle": {
+      "src": "2025/07/TUI-EP-QUAI-NAU.jpg",
+      "alt": {
+        "vi": "Túi ép quai PE màu kem với quai nâu",
+        "en": "Cream PE bag with brown sealed handles"
+      }
+    },
+    "seal": {
+      "src": "2025/07/Tui-NP-2.jpg",
+      "alt": {
+        "vi": "Các cuộn túi niêm phong nhiều màu",
+        "en": "Rolls of courier seal bags in several colours"
+      }
+    },
+    "supermarket": {
+      "src": "2025/07/Tui-sieu-thi-2.jpg",
+      "alt": {
+        "vi": "Túi siêu thị tự huỷ màu trắng in biểu tượng tái chế",
+        "en": "White self-destructing supermarket bag printed with a recycling symbol"
+      }
+    },
+    "film": {
+      "src": "2021/08/CUON-1.jpg",
+      "alt": {
+        "vi": "Các cuộn màng nhựa HD, PE, PP nhiều màu",
+        "en": "Coloured HD, PE and PP film rolls"
+      }
+    },
+    "handleGroup": {
+      "src": "2025/08/TEQ-chung.jpg",
+      "alt": {
+        "vi": "Túi ép quai PE nhiều màu xếp chồng trên mặt gỗ",
+        "en": "Stacked PE handle bags in several colours on a wooden surface"
+      }
+    },
+    "logo": {
+      "src": "2025/07/LOGO-2.png",
+      "alt": {
+        "vi": "",
+        "en": ""
+      }
+    }
   },
   "categories": [
-    { "id": "tui-hat-xoai", "image": "dieCut", "name": { "vi": "Túi hạt xoài", "en": "Die-cut bags" }, "material": "HDPE, LDPE", "url": { "vi": "/category/tui-hat-xoai/", "en": "/en/category/die-cut-bag/" } },
-    { "id": "tui-niem-phong", "image": "seal", "name": { "vi": "Túi niêm phong", "en": "Courier seal bags" }, "material": "HD, PE", "url": { "vi": "/category/tui-niem-phong/", "en": "/en/category/sealed-bag/" } },
-    { "id": "tui-ep-quai", "image": "handle", "name": { "vi": "Túi ép quai", "en": "Handle-sealed bags" }, "material": "LDPE", "url": { "vi": "/category/tui-ep-quai/", "en": "/en/category/handle-sealed-bags/" } },
-    { "id": "tui-sieu-thi", "image": "supermarket", "name": { "vi": "Túi siêu thị", "en": "Supermarket bags" }, "material": "HDPE, LDPE", "url": { "vi": "/category/tui-sieu-thi/", "en": "/en/category/supermarket-bag/" } },
-    { "id": "cuon-mang", "image": "film", "name": { "vi": "Cuộn màng HD/PE/PP", "en": "HD/PE/PP film rolls" }, "material": "HD, PE, PP", "url": { "vi": "/category/cuon-mang-hd-pe-pp/", "en": "/en/category/hd-pe-pp-film-roll/" } },
-    { "id": "tui-dung-thuc-pham", "image": null, "name": { "vi": "Túi đựng thực phẩm", "en": "Food bags" }, "material": { "vi": "Theo yêu cầu", "en": "Made to order" }, "url": { "vi": "/category/tui-dung-thuc-pham/", "en": "/en/category/food-bag/" } },
-    { "id": "tui-long-bao", "image": null, "name": { "vi": "Túi lồng bao (túi lót)", "en": "Liner bags" }, "material": "HDPE, PE", "url": { "vi": "/category/tui-long-bao/", "en": "/en/category/inner-bag/" } },
-    { "id": "tui-may-mac", "image": null, "name": { "vi": "Túi may mặc xuất khẩu", "en": "Export garment bags" }, "material": "PE, HD, PP, OPP", "url": { "vi": "/category/tui-may-mac-xuat-khau/", "en": "/en/category/export-garment-bag/" } }
+    {
+      "id": "tui-hat-xoai",
+      "image": "dieCut",
+      "name": {
+        "vi": "Túi hạt xoài",
+        "en": "Die-cut bags"
+      },
+      "material": "HDPE, LDPE",
+      "url": {
+        "vi": "/category/tui-hat-xoai/",
+        "en": "/en/category/die-cut-bag/"
+      }
+    },
+    {
+      "id": "tui-niem-phong",
+      "image": "seal",
+      "name": {
+        "vi": "Túi niêm phong",
+        "en": "Courier seal bags"
+      },
+      "material": "HD, PE",
+      "url": {
+        "vi": "/category/tui-niem-phong/",
+        "en": "/en/category/sealed-bag/"
+      }
+    },
+    {
+      "id": "tui-ep-quai",
+      "image": "handle",
+      "name": {
+        "vi": "Túi ép quai",
+        "en": "Handle-sealed bags"
+      },
+      "material": "LDPE",
+      "url": {
+        "vi": "/category/tui-ep-quai/",
+        "en": "/en/category/handle-sealed-bags/"
+      }
+    },
+    {
+      "id": "tui-sieu-thi",
+      "image": "supermarket",
+      "name": {
+        "vi": "Túi siêu thị",
+        "en": "Supermarket bags"
+      },
+      "material": "HDPE, LDPE",
+      "url": {
+        "vi": "/category/tui-sieu-thi/",
+        "en": "/en/category/supermarket-bag/"
+      }
+    },
+    {
+      "id": "cuon-mang",
+      "image": "film",
+      "name": {
+        "vi": "Cuộn màng HD/PE/PP",
+        "en": "HD/PE/PP film rolls"
+      },
+      "material": "HD, PE, PP",
+      "url": {
+        "vi": "/category/cuon-mang-hd-pe-pp/",
+        "en": "/en/category/hd-pe-pp-film-roll/"
+      }
+    },
+    {
+      "id": "tui-dung-thuc-pham",
+      "image": null,
+      "name": {
+        "vi": "Túi đựng thực phẩm",
+        "en": "Food bags"
+      },
+      "material": {
+        "vi": "Theo yêu cầu",
+        "en": "Made to order"
+      },
+      "url": {
+        "vi": "/category/tui-dung-thuc-pham/",
+        "en": "/en/category/food-bag/"
+      }
+    },
+    {
+      "id": "tui-long-bao",
+      "image": null,
+      "name": {
+        "vi": "Túi lồng bao (túi lót)",
+        "en": "Liner bags"
+      },
+      "material": "HDPE, PE",
+      "url": {
+        "vi": "/category/tui-long-bao/",
+        "en": "/en/category/inner-bag/"
+      }
+    },
+    {
+      "id": "tui-may-mac",
+      "image": null,
+      "name": {
+        "vi": "Túi may mặc xuất khẩu",
+        "en": "Export garment bags"
+      },
+      "material": "PE, HD, PP, OPP",
+      "url": {
+        "vi": "/category/tui-may-mac-xuat-khau/",
+        "en": "/en/category/export-garment-bag/"
+      }
+    }
   ],
   "links": {
-    "about": { "vi": "/ve-chung-toi/", "en": "/en/about-us/" },
-    "services": { "vi": "/dich-vu/", "en": "/en/services/" },
-    "products": { "vi": "/san-pham/", "en": "/en/product/" },
-    "news": { "vi": "/category/tin-tuc/", "en": "/en/category/news/" },
-    "careers": { "vi": "/category/tuyen-dung/", "en": "/en/category/recruitment/" },
-    "contact": { "vi": "/lien-he/", "en": "/en/contact/" },
-    "medicalBags": { "vi": "/san-pham/tui-dung-rac-tu-huy/", "en": "/en/product/garbage-bags/" }
+    "about": {
+      "vi": "/ve-chung-toi/",
+      "en": "/en/#nang-luc"
+    },
+    "services": {
+      "vi": "/dich-vu/",
+      "en": "/en/#quy-trinh"
+    },
+    "products": {
+      "vi": "/san-pham/",
+      "en": "/en/#san-pham"
+    },
+    "news": {
+      "vi": "/category/tin-tuc/",
+      "en": null
+    },
+    "careers": {
+      "vi": "/category/tuyen-dung/",
+      "en": null
+    },
+    "contact": {
+      "vi": "/lien-he/",
+      "en": "/en/#bao-gia"
+    },
+    "medicalBags": {
+      "vi": "/san-pham/tui-dung-rac-tu-huy/",
+      "en": null
+    }
   },
   "quoteForm": {
     "_note": "endpoint để trống: bản xem trước chưa gửi dữ liệu thật. Xem docs/seo-implementation.md mục Form.",

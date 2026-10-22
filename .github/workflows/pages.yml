@@ -25,9 +25,11 @@ jobs:
         with:
           node-version: 20
       - name: Build
-        run: node build.mjs --base=${{ github.event.repository.name }}
+        run: node build.mjs --target=pages --base=${{ github.event.repository.name }}
       - name: Check pages
-        run: python3 .claude/skills/hopphu-web-design/scripts/check_page.py dist/index.html dist/en/index.html
+        run: |
+          find dist -name '*.html' | xargs python3 .claude/skills/hopphu-web-design/scripts/check_page.py > check.log || (grep -B2 FAIL check.log; exit 1)
+          python3 .claude/skills/hopphu-web-design/scripts/check_links.py dist /${{ github.event.repository.name }}/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

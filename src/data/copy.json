@@ -1,129 +1,502 @@
 {
   "_note": "Câu chữ của landing page theo ngôn ngữ. Bản EN: các đoạn đánh dấu trong docs/translation-review.md là bản dịch mới, cần chủ dự án duyệt.",
   "meta": {
-    "title": { "vi": "Bao bì nhựa, túi nilon HDPE, LDPE, PP theo yêu cầu | Hợp Phú", "en": "Custom HDPE, LDPE and PP plastic bags | Hop Phu JSC" },
+    "title": {
+      "vi": "Bao bì nhựa, túi nilon HDPE, LDPE, PP theo yêu cầu | Hợp Phú",
+      "en": "Custom HDPE, LDPE and PP plastic bags | Hop Phu JSC"
+    },
     "description": {
       "vi": "Hợp Phú sản xuất túi nilon, màng bọc, bao lót HDPE, LDPE, PP, OPP theo kích thước, màu và mẫu in riêng. Nhà xưởng tại Như Quỳnh, Hưng Yên. Gửi yêu cầu báo giá.",
       "en": "Hop Phu manufactures HDPE, LDPE, PP and OPP plastic bags, wrapping film and liner bags to your size, colour and print. Factory in Hung Yen, Vietnam. Request a quote."
     },
-    "ogLocale": { "vi": "vi_VN", "en": "en_US" }
+    "ogLocale": {
+      "vi": "vi_VN",
+      "en": "en_US"
+    }
   },
   "ui": {
-    "skip": { "vi": "Bỏ qua, đến nội dung chính", "en": "Skip to main content" },
-    "home": { "vi": "về trang chủ", "en": "home" },
-    "menu": { "vi": "Menu", "en": "Menu" },
-    "close": { "vi": "Đóng menu", "en": "Close menu" },
-    "openProducts": { "vi": "Mở danh mục sản phẩm", "en": "Open product categories" },
-    "switchLang": { "vi": "English", "en": "Tiếng Việt" },
-    "switchLangLabel": { "vi": "Xem bản tiếng Anh", "en": "Xem bản tiếng Việt" },
-    "quote": { "vi": "Nhận báo giá", "en": "Request a quote" },
-    "call": { "vi": "Gọi", "en": "Call" },
-    "quoteShort": { "vi": "Báo giá", "en": "Quote" },
-    "quickContact": { "vi": "Liên hệ nhanh", "en": "Quick contact" },
-    "placeholder": { "vi": "Ảnh tạm", "en": "Temporary image" },
-    "allProducts": { "vi": "Xem tất cả sản phẩm", "en": "View all products" }
+    "skip": {
+      "vi": "Bỏ qua, đến nội dung chính",
+      "en": "Skip to main content"
+    },
+    "home": {
+      "vi": "về trang chủ",
+      "en": "home"
+    },
+    "menu": {
+      "vi": "Menu",
+      "en": "Menu"
+    },
+    "close": {
+      "vi": "Đóng menu",
+      "en": "Close menu"
+    },
+    "openProducts": {
+      "vi": "Mở danh mục sản phẩm",
+      "en": "Open product categories"
+    },
+    "switchLang": {
+      "vi": "English",
+      "en": "Tiếng Việt"
+    },
+    "switchLangLabel": {
+      "vi": "Xem bản tiếng Anh",
+      "en": "Xem bản tiếng Việt"
+    },
+    "quote": {
+      "vi": "Nhận báo giá",
+      "en": "Request a quote"
+    },
+    "call": {
+      "vi": "Gọi",
+      "en": "Call"
+    },
+    "quoteShort": {
+      "vi": "Báo giá",
+      "en": "Quote"
+    },
+    "quickContact": {
+      "vi": "Liên hệ nhanh",
+      "en": "Quick contact"
+    },
+    "placeholder": {
+      "vi": "Ảnh tạm",
+      "en": "Temporary image"
+    },
+    "allProducts": {
+      "vi": "Xem tất cả sản phẩm",
+      "en": "View all products"
+    }
   },
   "nav": [
-    { "id": "products", "label": { "vi": "Sản phẩm", "en": "Products" }, "href": "#san-pham", "mega": true },
-    { "id": "custom", "label": { "vi": "Sản xuất theo yêu cầu", "en": "Made to order" }, "href": "#quy-trinh" },
-    { "id": "capability", "label": { "vi": "Năng lực", "en": "Capability" }, "href": "#nang-luc" },
-    { "id": "about", "label": { "vi": "Về chúng tôi", "en": "About us" }, "link": "about" },
-    { "id": "contact", "label": { "vi": "Liên hệ", "en": "Contact" }, "href": "#lien-he" }
+    {
+      "id": "products",
+      "label": {
+        "vi": "Sản phẩm",
+        "en": "Products"
+      },
+      "href": "#san-pham",
+      "mega": true
+    },
+    {
+      "id": "custom",
+      "label": {
+        "vi": "Sản xuất theo yêu cầu",
+        "en": "Made to order"
+      },
+      "href": "#quy-trinh"
+    },
+    {
+      "id": "capability",
+      "label": {
+        "vi": "Năng lực",
+        "en": "Capability"
+      },
+      "href": "#nang-luc"
+    },
+    {
+      "id": "about",
+      "label": {
+        "vi": "Về chúng tôi",
+        "en": "About us"
+      },
+      "link": "about"
+    },
+    {
+      "id": "contact",
+      "label": {
+        "vi": "Liên hệ",
+        "en": "Contact"
+      },
+      "href": "#lien-he"
+    }
   ],
   "hero": {
-    "title": { "vi": "Giải pháp bao bì nhựa cho doanh nghiệp", "en": "Plastic packaging solutions for businesses" },
+    "title": {
+      "vi": "Giải pháp bao bì nhựa cho doanh nghiệp",
+      "en": "Plastic packaging solutions for businesses"
+    },
     "lead": {
       "vi": "Hợp Phú sản xuất túi nilon, màng bọc và bao lót từ HDPE, LDPE, PP, OPP. Kích thước, màu sắc và nội dung in làm theo quy cách của bạn.",
       "en": "Hop Phu manufactures plastic bags, wrapping film and liner bags from HDPE, LDPE, PP and OPP, made to your size, colour and print specifications."
     },
-    "primary": { "vi": "Khám phá sản phẩm", "en": "Explore products" },
-    "note": { "vi": "Nhà xưởng tại Như Quỳnh, Hưng Yên, trên trục Quốc lộ 5", "en": "Factory in Nhu Quynh, Hung Yen, on National Highway 5" }
+    "primary": {
+      "vi": "Khám phá sản phẩm",
+      "en": "Explore products"
+    },
+    "note": {
+      "vi": "Nhà xưởng tại Như Quỳnh, Hưng Yên, trên trục Quốc lộ 5",
+      "en": "Factory in Nhu Quynh, Hung Yen, on National Highway 5"
+    }
   },
   "products": {
-    "title": { "vi": "Sản phẩm", "en": "Products" },
-    "lead": { "vi": "Tám dòng bao bì đang sản xuất. Mọi quy cách đều có thể đặt theo yêu cầu.", "en": "Eight packaging lines in production. Every specification can be made to order." },
-    "ctaTitle": { "vi": "Cần quy cách riêng?", "en": "Need a custom specification?" },
-    "ctaBody": { "vi": "Gửi kích thước, độ dày, màu và số lượng. Hợp Phú tư vấn chất liệu và báo giá.", "en": "Send us the size, thickness, colour and quantity. Hop Phu will advise on materials and send a quote." },
-    "ctaLink": { "vi": "Gửi yêu cầu báo giá", "en": "Send a quote request" }
+    "title": {
+      "vi": "Sản phẩm",
+      "en": "Products"
+    },
+    "lead": {
+      "vi": "Tám dòng bao bì đang sản xuất. Mọi quy cách đều có thể đặt theo yêu cầu.",
+      "en": "Eight packaging lines in production. Every specification can be made to order."
+    },
+    "ctaTitle": {
+      "vi": "Cần quy cách riêng?",
+      "en": "Need a custom specification?"
+    },
+    "ctaBody": {
+      "vi": "Gửi kích thước, độ dày, màu và số lượng. Hợp Phú tư vấn chất liệu và báo giá.",
+      "en": "Send us the size, thickness, colour and quantity. Hop Phu will advise on materials and send a quote."
+    },
+    "ctaLink": {
+      "vi": "Gửi yêu cầu báo giá",
+      "en": "Send a quote request"
+    }
   },
   "process": {
-    "title": { "vi": "Từ yêu cầu đến sản xuất", "en": "From request to production" },
-    "lead": { "vi": "Bốn bước của một đơn hàng bao bì theo yêu cầu.", "en": "Four steps of a made-to-order packaging job." },
+    "title": {
+      "vi": "Từ yêu cầu đến sản xuất",
+      "en": "From request to production"
+    },
+    "lead": {
+      "vi": "Bốn bước của một đơn hàng bao bì theo yêu cầu.",
+      "en": "Four steps of a made-to-order packaging job."
+    },
     "steps": [
-      { "title": { "vi": "Tiếp nhận yêu cầu", "en": "Receive your request" }, "body": { "vi": "Bạn gửi loại túi, kích thước, số lượng và mẫu in qua form, điện thoại hoặc Zalo.", "en": "You send the bag type, size, quantity and artwork through the form, by phone or on Zalo." } },
-      { "title": { "vi": "Tư vấn vật liệu và quy cách", "en": "Advise on material and specification" }, "body": { "vi": "Hợp Phú tư vấn chọn HDPE, LDPE, PP hay OPP, độ dày và kiểu túi phù hợp với hàng hoá.", "en": "Hop Phu helps you choose HDPE, LDPE, PP or OPP, the thickness and the bag style that suit your goods." } },
-      { "title": { "vi": "Xác nhận thông số", "en": "Confirm the specification" }, "body": { "vi": "Hai bên thống nhất kích thước, màu, nội dung in và số lượng trước khi sản xuất.", "en": "We agree on size, colour, print and quantity before production starts." } },
-      { "title": { "vi": "Sản xuất và bàn giao", "en": "Produce and deliver" }, "body": { "vi": "Sản xuất, kiểm tra chất lượng, đóng gói và giao hàng theo tiến độ đã hẹn.", "en": "We produce, check quality, pack and deliver on the agreed schedule." } }
+      {
+        "title": {
+          "vi": "Tiếp nhận yêu cầu",
+          "en": "Receive your request"
+        },
+        "body": {
+          "vi": "Bạn gửi loại túi, kích thước, số lượng và mẫu in qua form, điện thoại hoặc Zalo.",
+          "en": "You send the bag type, size, quantity and artwork through the form, by phone or on Zalo."
+        }
+      },
+      {
+        "title": {
+          "vi": "Tư vấn vật liệu và quy cách",
+          "en": "Advise on material and specification"
+        },
+        "body": {
+          "vi": "Hợp Phú tư vấn chọn HDPE, LDPE, PP hay OPP, độ dày và kiểu túi phù hợp với hàng hoá.",
+          "en": "Hop Phu helps you choose HDPE, LDPE, PP or OPP, the thickness and the bag style that suit your goods."
+        }
+      },
+      {
+        "title": {
+          "vi": "Xác nhận thông số",
+          "en": "Confirm the specification"
+        },
+        "body": {
+          "vi": "Hai bên thống nhất kích thước, màu, nội dung in và số lượng trước khi sản xuất.",
+          "en": "We agree on size, colour, print and quantity before production starts."
+        }
+      },
+      {
+        "title": {
+          "vi": "Sản xuất và bàn giao",
+          "en": "Produce and deliver"
+        },
+        "body": {
+          "vi": "Sản xuất, kiểm tra chất lượng, đóng gói và giao hàng theo tiến độ đã hẹn.",
+          "en": "We produce, check quality, pack and deliver on the agreed schedule."
+        }
+      }
     ],
-    "caption": { "vi": "Cuộn màng HD/PE/PP, đóng gói 50 kg/cuộn hoặc theo yêu cầu", "en": "HD/PE/PP film rolls, packed 50 kg per roll or as requested" }
+    "caption": {
+      "vi": "Cuộn màng HD/PE/PP, đóng gói 50 kg/cuộn hoặc theo yêu cầu",
+      "en": "HD/PE/PP film rolls, packed 50 kg per roll or as requested"
+    }
   },
   "capability": {
-    "title": { "vi": "Năng lực sản xuất", "en": "Manufacturing capability" },
-    "lead": { "vi": "Hợp Phú sản xuất bao bì nhựa cho ngành thực phẩm, dược phẩm, hoá mỹ phẩm, may mặc và bán lẻ.", "en": "Hop Phu makes plastic packaging for the food, pharmaceutical, cosmetics, garment and retail sectors." },
+    "title": {
+      "vi": "Năng lực sản xuất",
+      "en": "Manufacturing capability"
+    },
+    "lead": {
+      "vi": "Hợp Phú sản xuất bao bì nhựa cho ngành thực phẩm, dược phẩm, hoá mỹ phẩm, may mặc và bán lẻ.",
+      "en": "Hop Phu makes plastic packaging for the food, pharmaceutical, cosmetics, garment and retail sectors."
+    },
     "items": [
-      { "title": { "vi": "Chất liệu", "en": "Materials" }, "body": { "vi": "HDPE, LDPE, PP, OPP từ hạt nhựa nguyên sinh nhập khẩu.", "en": "HDPE, LDPE, PP and OPP from imported virgin resin." } },
-      { "title": { "vi": "Thiết bị", "en": "Equipment" }, "body": { "vi": "Máy móc, thiết bị nhập khẩu; dây chuyền được cải tiến liên tục để giảm phế phẩm.", "en": "Imported machinery, with production lines continually improved to reduce waste." } },
-      { "title": { "vi": "Kiểm soát chất lượng", "en": "Quality control" }, "body": { "vi": "Chất lượng được kiểm soát nghiêm ngặt trước khi đóng gói và giao hàng.", "en": "Quality is strictly checked before packing and delivery." } },
-      { "title": { "vi": "Nhà xưởng", "en": "Factory" }, "body": { "vi": "Như Quỳnh, Hưng Yên, trên Quốc lộ 5. Giao hàng khắp miền Bắc và miền Trung.", "en": "Nhu Quynh, Hung Yen, on National Highway 5, supplying Northern and Central Vietnam." } }
+      {
+        "title": {
+          "vi": "Chất liệu",
+          "en": "Materials"
+        },
+        "body": {
+          "vi": "HDPE, LDPE, PP, OPP từ hạt nhựa nguyên sinh nhập khẩu.",
+          "en": "HDPE, LDPE, PP and OPP from imported virgin resin."
+        }
+      },
+      {
+        "title": {
+          "vi": "Thiết bị",
+          "en": "Equipment"
+        },
+        "body": {
+          "vi": "Máy móc, thiết bị nhập khẩu; dây chuyền được cải tiến liên tục để giảm phế phẩm.",
+          "en": "Imported machinery, with production lines continually improved to reduce waste."
+        }
+      },
+      {
+        "title": {
+          "vi": "Kiểm soát chất lượng",
+          "en": "Quality control"
+        },
+        "body": {
+          "vi": "Chất lượng được kiểm soát nghiêm ngặt trước khi đóng gói và giao hàng.",
+          "en": "Quality is strictly checked before packing and delivery."
+        }
+      },
+      {
+        "title": {
+          "vi": "Nhà xưởng",
+          "en": "Factory"
+        },
+        "body": {
+          "vi": "Như Quỳnh, Hưng Yên, trên Quốc lộ 5. Giao hàng khắp miền Bắc và miền Trung.",
+          "en": "Nhu Quynh, Hung Yen, on National Highway 5, supplying Northern and Central Vietnam."
+        }
+      }
     ],
-    "link": { "vi": "Tìm hiểu về Hợp Phú", "en": "About Hop Phu" }
+    "link": {
+      "vi": "Tìm hiểu về Hợp Phú",
+      "en": "About Hop Phu"
+    }
   },
   "applications": {
-    "title": { "vi": "Ứng dụng theo ngành", "en": "Applications by industry" },
+    "title": {
+      "vi": "Ứng dụng theo ngành",
+      "en": "Applications by industry"
+    },
     "items": [
-      { "title": { "vi": "Siêu thị và bán lẻ", "en": "Supermarkets and retail" }, "body": { "vi": "Túi siêu thị, túi hạt xoài, túi ép quai in thương hiệu cho siêu thị, nhà sách, cửa hàng thời trang và mỹ phẩm.", "en": "Branded supermarket, die-cut and handle bags for supermarkets, bookshops, fashion and cosmetics stores." }, "category": "tui-sieu-thi" },
-      { "title": { "vi": "Thương mại điện tử", "en": "E-commerce" }, "body": { "vi": "Túi niêm phong chống thấm, miệng có băng keo chống bóc, dán được vận đơn.", "en": "Waterproof courier seal bags with tamper-evident adhesive and room for the shipping label." }, "category": "tui-niem-phong" },
-      { "title": { "vi": "Thực phẩm và nông sản", "en": "Food and agriculture" }, "body": { "vi": "Túi đựng thực phẩm và túi lót trong bao dệt đựng gạo, lương thực, thức ăn chăn nuôi.", "en": "Food bags, and liners for woven sacks of rice, grain and animal feed." }, "category": "tui-long-bao" },
-      { "title": { "vi": "Sản xuất công nghiệp", "en": "Industrial manufacturing" }, "body": { "vi": "Cuộn màng HD, PE, PP đóng gói 50 kg/cuộn hoặc theo yêu cầu.", "en": "HD, PE and PP film rolls, 50 kg per roll or as requested." }, "category": "cuon-mang" },
-      { "title": { "vi": "May mặc xuất khẩu", "en": "Garment export" }, "body": { "vi": "Túi PE, HD, PP, OPP theo quy cách ngành, có hoặc không có băng keo dán miệng.", "en": "PE, HD, PP and OPP bags to industry specifications, with or without an adhesive strip." }, "category": "tui-may-mac" },
-      { "title": { "vi": "Y tế", "en": "Healthcare" }, "body": { "vi": "Túi đựng rác thải lây nhiễm màu vàng có logo y tế cho bệnh viện và phòng khám.", "en": "Yellow infectious-waste bags with the medical symbol for hospitals and clinics." }, "link": "medicalBags" }
+      {
+        "title": {
+          "vi": "Siêu thị và bán lẻ",
+          "en": "Supermarkets and retail"
+        },
+        "body": {
+          "vi": "Túi siêu thị, túi hạt xoài, túi ép quai in thương hiệu cho siêu thị, nhà sách, cửa hàng thời trang và mỹ phẩm.",
+          "en": "Branded supermarket, die-cut and handle bags for supermarkets, bookshops, fashion and cosmetics stores."
+        },
+        "category": "tui-sieu-thi"
+      },
+      {
+        "title": {
+          "vi": "Thương mại điện tử",
+          "en": "E-commerce"
+        },
+        "body": {
+          "vi": "Túi niêm phong chống thấm, miệng có băng keo chống bóc, dán được vận đơn.",
+          "en": "Waterproof courier seal bags with tamper-evident adhesive and room for the shipping label."
+        },
+        "category": "tui-niem-phong"
+      },
+      {
+        "title": {
+          "vi": "Thực phẩm và nông sản",
+          "en": "Food and agriculture"
+        },
+        "body": {
+          "vi": "Túi đựng thực phẩm và túi lót trong bao dệt đựng gạo, lương thực, thức ăn chăn nuôi.",
+          "en": "Food bags, and liners for woven sacks of rice, grain and animal feed."
+        },
+        "category": "tui-long-bao"
+      },
+      {
+        "title": {
+          "vi": "Sản xuất công nghiệp",
+          "en": "Industrial manufacturing"
+        },
+        "body": {
+          "vi": "Cuộn màng HD, PE, PP đóng gói 50 kg/cuộn hoặc theo yêu cầu.",
+          "en": "HD, PE and PP film rolls, 50 kg per roll or as requested."
+        },
+        "category": "cuon-mang"
+      },
+      {
+        "title": {
+          "vi": "May mặc xuất khẩu",
+          "en": "Garment export"
+        },
+        "body": {
+          "vi": "Túi PE, HD, PP, OPP theo quy cách ngành, có hoặc không có băng keo dán miệng.",
+          "en": "PE, HD, PP and OPP bags to industry specifications, with or without an adhesive strip."
+        },
+        "category": "tui-may-mac"
+      },
+      {
+        "title": {
+          "vi": "Y tế",
+          "en": "Healthcare"
+        },
+        "body": {
+          "vi": "Túi đựng rác thải lây nhiễm màu vàng có logo y tế cho bệnh viện và phòng khám.",
+          "en": "Yellow infectious-waste bags with the medical symbol for hospitals and clinics."
+        },
+        "link": "medicalBags"
+      }
     ],
-    "seeProduct": { "vi": "Xem sản phẩm", "en": "View products" }
+    "seeProduct": {
+      "vi": "Xem sản phẩm",
+      "en": "View products"
+    }
   },
   "quote": {
-    "title": { "vi": "Nhận báo giá", "en": "Request a quote" },
-    "lead": { "vi": "Cho chúng tôi biết loại bao bì, quy cách và số lượng bạn cần. Bộ phận kinh doanh sẽ liên hệ lại để tư vấn và báo giá.", "en": "Tell us the packaging type, specification and quantity you need. Our sales team will contact you with advice and a quote." },
-    "direct": { "vi": "Cần trao đổi ngay?", "en": "Prefer to talk now?" },
-    "zalo": { "vi": "Nhắn Zalo", "en": "Message on Zalo" },
-    "fields": {
-      "name": { "vi": "Họ tên", "en": "Full name" },
-      "phone": { "vi": "Số điện thoại", "en": "Phone number" },
-      "company": { "vi": "Tên công ty", "en": "Company name" },
-      "product": { "vi": "Loại bao bì", "en": "Packaging type" },
-      "productNone": { "vi": "Chưa xác định", "en": "Not sure yet" },
-      "productOther": { "vi": "Khác", "en": "Other" },
-      "quantity": { "vi": "Số lượng dự kiến", "en": "Estimated quantity" },
-      "quantityHint": { "vi": "Ví dụ: 10.000 túi hoặc 500 kg", "en": "For example: 10,000 bags or 500 kg" },
-      "message": { "vi": "Yêu cầu chi tiết", "en": "Details" },
-      "messageHint": { "vi": "Kích thước, độ dày, màu, có in hay không.", "en": "Size, thickness, colour, and whether it needs printing." },
-      "consent": { "vi": "Tôi đồng ý để Hợp Phú dùng thông tin này để liên hệ tư vấn và báo giá.", "en": "I agree that Hop Phu may use this information to contact me with advice and a quote." },
-      "required": { "vi": "bắt buộc", "en": "required" }
+    "title": {
+      "vi": "Nhận báo giá",
+      "en": "Request a quote"
     },
-    "submit": { "vi": "Gửi yêu cầu báo giá", "en": "Send quote request" },
+    "lead": {
+      "vi": "Cho chúng tôi biết loại bao bì, quy cách và số lượng bạn cần. Bộ phận kinh doanh sẽ liên hệ lại để tư vấn và báo giá.",
+      "en": "Tell us the packaging type, specification and quantity you need. Our sales team will contact you with advice and a quote."
+    },
+    "direct": {
+      "vi": "Cần trao đổi ngay?",
+      "en": "Prefer to talk now?"
+    },
+    "zalo": {
+      "vi": "Nhắn Zalo",
+      "en": "Message on Zalo"
+    },
+    "fields": {
+      "name": {
+        "vi": "Họ tên",
+        "en": "Full name"
+      },
+      "phone": {
+        "vi": "Số điện thoại",
+        "en": "Phone number"
+      },
+      "company": {
+        "vi": "Tên công ty",
+        "en": "Company name"
+      },
+      "product": {
+        "vi": "Loại bao bì",
+        "en": "Packaging type"
+      },
+      "productNone": {
+        "vi": "Chưa xác định",
+        "en": "Not sure yet"
+      },
+      "productOther": {
+        "vi": "Khác",
+        "en": "Other"
+      },
+      "quantity": {
+        "vi": "Số lượng dự kiến",
+        "en": "Estimated quantity"
+      },
+      "quantityHint": {
+        "vi": "Ví dụ: 10.000 túi hoặc 500 kg",
+        "en": "For example: 10,000 bags or 500 kg"
+      },
+      "message": {
+        "vi": "Yêu cầu chi tiết",
+        "en": "Details"
+      },
+      "messageHint": {
+        "vi": "Kích thước, độ dày, màu, có in hay không.",
+        "en": "Size, thickness, colour, and whether it needs printing."
+      },
+      "consent": {
+        "vi": "Tôi đồng ý để Hợp Phú dùng thông tin này để liên hệ tư vấn và báo giá.",
+        "en": "I agree that Hop Phu may use this information to contact me with advice and a quote."
+      },
+      "required": {
+        "vi": "bắt buộc",
+        "en": "required"
+      }
+    },
+    "submit": {
+      "vi": "Gửi yêu cầu báo giá",
+      "en": "Send quote request"
+    },
     "errors": {
-      "name": { "vi": "Nhập họ tên của bạn.", "en": "Enter your name." },
-      "phone": { "vi": "Nhập số điện thoại gồm 9 đến 11 chữ số.", "en": "Enter a phone number of 9 to 11 digits." },
-      "message": { "vi": "Mô tả loại túi, kích thước hoặc số lượng bạn cần.", "en": "Describe the bag type, size or quantity you need." },
-      "consent": { "vi": "Đánh dấu ô đồng ý để chúng tôi được liên hệ lại.", "en": "Tick the consent box so we can contact you." },
-      "summary": { "vi": "Còn {n} mục cần sửa trước khi gửi.", "en": "{n} fields need fixing before you can send." }
+      "name": {
+        "vi": "Nhập họ tên của bạn.",
+        "en": "Enter your name."
+      },
+      "phone": {
+        "vi": "Nhập số điện thoại gồm 9 đến 11 chữ số.",
+        "en": "Enter a phone number of 9 to 11 digits."
+      },
+      "message": {
+        "vi": "Mô tả loại túi, kích thước hoặc số lượng bạn cần.",
+        "en": "Describe the bag type, size or quantity you need."
+      },
+      "consent": {
+        "vi": "Đánh dấu ô đồng ý để chúng tôi được liên hệ lại.",
+        "en": "Tick the consent box so we can contact you."
+      },
+      "summary": {
+        "vi": "Còn {n} mục cần sửa trước khi gửi.",
+        "en": "{n} fields need fixing before you can send."
+      }
     },
     "status": {
-      "pending": { "vi": "Đang gửi yêu cầu…", "en": "Sending your request…" },
-      "success": { "vi": "Đã gửi yêu cầu báo giá. Bộ phận kinh doanh sẽ liên hệ lại với bạn.", "en": "Quote request sent. Our sales team will contact you." },
-      "error": { "vi": "Chưa gửi được yêu cầu do lỗi kết nối. Thử lại, hoặc gọi số hotline bên cạnh.", "en": "Your request could not be sent because of a connection error. Try again, or call the hotline." },
-      "preview": { "vi": "Bản xem trước chưa kết nối máy chủ nên yêu cầu chưa được gửi. Hãy gọi hoặc nhắn Zalo theo số bên cạnh.", "en": "This preview is not connected to a server, so your request was not sent. Please call or message us on Zalo." }
+      "pending": {
+        "vi": "Đang gửi yêu cầu…",
+        "en": "Sending your request…"
+      },
+      "success": {
+        "vi": "Đã gửi yêu cầu báo giá. Bộ phận kinh doanh sẽ liên hệ lại với bạn.",
+        "en": "Quote request sent. Our sales team will contact you."
+      },
+      "error": {
+        "vi": "Chưa gửi được yêu cầu do lỗi kết nối. Thử lại, hoặc gọi số hotline bên cạnh.",
+        "en": "Your request could not be sent because of a connection error. Try again, or call the hotline."
+      },
+      "preview": {
+        "vi": "Form chưa được kết nối hộp thư nên yêu cầu chưa được gửi. Hãy gọi hoặc nhắn Zalo theo số bên cạnh.",
+        "en": "This form is not connected to a mailbox yet, so your request was not sent. Please call or message us on Zalo."
+      },
+      "rateLimited": {
+        "vi": "Bạn đã gửi nhiều yêu cầu trong thời gian ngắn. Vui lòng thử lại sau hoặc gọi hotline.",
+        "en": "You have sent several requests in a short time. Please try again later or call the hotline."
+      }
     }
   },
   "footer": {
-    "products": { "vi": "Sản phẩm", "en": "Products" },
-    "company": { "vi": "Công ty", "en": "Company" },
-    "contact": { "vi": "Liên hệ", "en": "Contact" },
-    "about": { "vi": "Về chúng tôi", "en": "About us" },
-    "services": { "vi": "Dịch vụ", "en": "Services" },
-    "news": { "vi": "Tin tức", "en": "News" },
-    "careers": { "vi": "Tuyển dụng", "en": "Careers" },
-    "contactPage": { "vi": "Trang liên hệ", "en": "Contact page" },
-    "hotline": { "vi": "Hotline", "en": "Hotline" },
-    "sitemap": { "vi": "Sơ đồ trang", "en": "Sitemap" }
+    "products": {
+      "vi": "Sản phẩm",
+      "en": "Products"
+    },
+    "company": {
+      "vi": "Công ty",
+      "en": "Company"
+    },
+    "contact": {
+      "vi": "Liên hệ",
+      "en": "Contact"
+    },
+    "about": {
+      "vi": "Về chúng tôi",
+      "en": "About us"
+    },
+    "services": {
+      "vi": "Dịch vụ",
+      "en": "Services"
+    },
+    "news": {
+      "vi": "Tin tức",
+      "en": "News"
+    },
+    "careers": {
+      "vi": "Tuyển dụng",
+      "en": "Careers"
+    },
+    "contactPage": {
+      "vi": "Trang liên hệ",
+      "en": "Contact page"
+    },
+    "hotline": {
+      "vi": "Hotline",
+      "en": "Hotline"
+    },
+    "sitemap": {
+      "vi": "Sơ đồ trang",
+      "en": "Sitemap"
+    }
   }
 }
