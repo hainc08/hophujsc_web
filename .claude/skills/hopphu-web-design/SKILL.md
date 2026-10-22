@@ -86,7 +86,7 @@ Trang chủ đã chuyển sang hướng tạp chí công nghiệp. Chi tiết v�
 - **Kiểm thử bằng Playwright**: điều hướng chỉ khác `#hash` sẽ không tải lại trang. Thêm query (`?t=1`) hoặc đi qua `about:blank` trước khi kiểm thử lại sau khi build.
 - **Dấu `\` khi sửa file**: chèn code qua heredoc của shell trong môi trường này có thể làm mất hoặc đổi dấu `\` (ví dụ `\b` thành ký tự backspace). Code có regex hay escape thì sửa bằng công cụ Edit/Write, rồi kiểm tra lại byte thật.
 - **Form nhảy làm trượt cú bấm**: dòng báo lỗi xuất hiện hoặc biến mất lúc rời ô làm form dịch chuyển đúng lúc nhấn chuột. Giữ sẵn chỗ cho dòng lỗi ở ô bắt buộc (`.field:has([required]) .field__error`) và kiểm tra lại khi `input`.
-- **Anchor dưới header dính**: chỉ dùng một cơ chế bù (`[id] { scroll-margin-top }` trong base.css); thêm `scroll-padding-top` sẽ cộng đôi.
+- **Anchor dưới header dính**: dùng một cơ chế bù duy nhất (`scroll-padding-top` trên `html` trong base.css); thêm `scroll-margin-top` cho `[id]` sẽ cộng đôi khoảng bù.
 - **Mega menu**: đóng có trễ 200ms để chuột đi chéo xuống bảng không làm bảng đóng; bảng ẩn bằng `visibility` để không nằm trong thứ tự Tab.
 
 ## Quy trình làm việc

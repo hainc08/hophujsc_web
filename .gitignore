@@ -17,3 +17,8 @@ Thumbs.db
 
 # Cấu hình form trên máy chủ (email nhận, đường dẫn lưu): không commit
 api/config.php
+
+# Ảnh chụp không thuộc bản redesign của Claude (giữ trên máy, không commit)
+/docs/screenshots/landing/vp_*.png
+/test_desktop.png
+/test_mobile390.png

@@ -227,7 +227,7 @@ export function siteFooter(ctx) {
         ${companyLinks}
       </ul>
     </nav>
-    <div>
+    <div id="lien-he">
       <h2>${esc(t(f.contact))}</h2>
       <ul>
         <li>${esc(t(f.hotline))}: <a href="tel:${c.phone.tel}">${esc(c.phone.display)}</a></li>

@@ -62,6 +62,6 @@ Xem danh sách chụp chi tiết trong `docs/asset-manifest.md`, mục "Ảnh nh
 | `prefers-reduced-motion` | Tắt chuyển động (transition 0,01ms) |
 | Tràn ngang 1440 / 390 | Không |
 
-Hai lỗi phát hiện và đã sửa trong đợt này:
-1. **Anchor dừng lệch 92px thừa.** Trong `base.css`, quy tắc `[id] { scroll-margin-top }` (thay đổi chưa commit trước đó) cộng dồn với `scroll-padding-top` có sẵn. Đã bỏ `scroll-padding-top`.
-2. **Bấm ô đồng ý bị trượt sau khi form báo lỗi.** Khi người dùng rời một ô vừa sửa đúng, dòng báo lỗi biến mất và form co lên khoảng 20px ngay lúc nhấn chuột, nên cú bấm rơi chỗ khác. Đã giữ sẵn chỗ cho dòng lỗi ở ô bắt buộc, và xoá lỗi ngay khi đang gõ.
+Lỗi phát hiện và đã sửa trong đợt này: **bấm ô đồng ý bị trượt sau khi form báo lỗi.** Khi người dùng rời một ô vừa sửa đúng, dòng báo lỗi biến mất và form co lên khoảng 20px ngay lúc nhấn chuột, nên cú bấm rơi chỗ khác. Đã giữ sẵn chỗ cho dòng lỗi ở ô bắt buộc, và xoá lỗi ngay khi đang gõ.
+
+Các thay đổi chưa commit của người khác (theo dõi sự kiện, `scroll-margin-top`, nội dung quy trình và túi rác y tế, kiểm tra anchor trong `check_links.py`) đã được gỡ khỏi branch này theo yêu cầu của chủ dự án; vẫn còn trong lịch sử git ở commit `9178722`.

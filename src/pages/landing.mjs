@@ -186,7 +186,6 @@ export function render(ctx) {
   </section>
 
   <section class="section section--surface quote" id="bao-gia" aria-labelledby="bao-gia-title" tabindex="-1">
-    <span id="lien-he" class="visually-hidden" aria-hidden="true"></span>
     <div class="container quote__grid">
       <div class="quote__intro">
         <h2 id="bao-gia-title">${esc(t(quote.title))}</h2>

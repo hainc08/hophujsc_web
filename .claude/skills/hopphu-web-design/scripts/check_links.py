@@ -1,5 +1,4 @@
-"""Kiểm tra mọi liên kết và ảnh nội bộ trong dist/ trỏ tới file có thật,
-và mọi anchor (#id) trỏ tới phần tử có id tương ứng trên trang đích.
+"""Kiểm tra mọi liên kết và ảnh nội bộ trong dist/ trỏ tới file có thật.
 
 Cách dùng:  python check_links.py dist [base]
   base: đường dẫn con khi dựng cho GitHub Pages, ví dụ /hophujsc_web/ (mặc định /)
@@ -19,29 +18,12 @@ _last = base_arg.replace("\\", "/").strip("/").split("/")[-1]
 base = f"/{_last}/" if _last else "/"
 
 
-def resolve(path):
+def exists(path):
     rel = unquote(path)[len(base):] if unquote(path).startswith(base) else None
     if rel is None:
-        return None
+        return False
     full = os.path.join(dist, rel)
-    if os.path.isfile(full):
-        return full
-    if os.path.isfile(os.path.join(full, "index.html")):
-        return os.path.join(full, "index.html")
-    return None
-
-
-def exists(path):
-    return resolve(path) is not None
-
-
-_ids = {}
-
-
-def ids_of(file):
-    if file not in _ids:
-        _ids[file] = set(re.findall(r'\bid="([^"]+)"', open(file, encoding="utf-8").read()))
-    return _ids[file]
+    return os.path.isfile(full) or os.path.isfile(os.path.join(full, "index.html"))
 
 
 broken = {}
@@ -55,15 +37,10 @@ for root_dir, _, files in os.walk(dist):
         src = open(p, encoding="utf-8").read()
         for attr, val in re.findall(r'\b(href|src)="([^"]+)"', src):
             val = html.unescape(val)
-            if val.startswith(("http:", "https:", "mailto:", "tel:", "data:")):
+            if val.startswith(("http:", "https:", "mailto:", "tel:", "#", "data:")):
                 continue
-            parts = urlsplit(val)
-            target = p if not parts.path else resolve(parts.path)
-            if parts.path and target is None:
-                broken.setdefault(val, set()).add(os.path.relpath(p, dist))
-                continue
-            # Anchor phải trỏ tới id có thật ("#" trống đã được check_page.py chặn riêng).
-            if parts.fragment and target and parts.fragment not in ids_of(target):
+            path = urlsplit(val).path
+            if path and not exists(path):
                 broken.setdefault(val, set()).add(os.path.relpath(p, dist))
         for val in re.findall(r'srcset="([^"]+)"', src):
             for part in val.split(","):

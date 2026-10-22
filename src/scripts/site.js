@@ -60,30 +60,11 @@
   const msg = JSON.parse(form.dataset.messages);
   const status = form.querySelector('[data-form-status]');
 
-  // Chọn sẵn loại bao bì khi đến từ trang sản phẩm: ?san-pham=<id>, ?product=<id> hoặc #bao-gia?san-pham=<id>
-  const searchParams = new URLSearchParams(location.search);
-  const hashQuery = location.hash.includes('?') ? location.hash.split('?')[1] : '';
-  const hashParams = new URLSearchParams(hashQuery);
-  const pre = searchParams.get('san-pham') || searchParams.get('product') || hashParams.get('san-pham') || hashParams.get('product');
+  // Chọn sẵn loại bao bì khi đến từ trang sản phẩm: ?san-pham=<id> hoặc ?product=<id>
+  const params = new URLSearchParams(location.search);
+  const pre = params.get('san-pham') || params.get('product');
   const select = form.elements.product;
   if (pre && select && [...select.options].some((o) => o.value === pre)) select.value = pre;
-
-  // Theo dõi tương tác (GA4 gtag hoặc dataLayer nếu có cấu hình trên site)
-  const track = (event, params = {}) => {
-    try {
-      if (typeof window.gtag === 'function') window.gtag('event', event, params);
-      else if (Array.isArray(window.dataLayer)) window.dataLayer.push({ event, ...params });
-    } catch {
-      // safe fallback
-    }
-  };
-
-  document.querySelectorAll('a[href^="tel:"]').forEach((a) => {
-    a.addEventListener('click', () => track('contact_call', { phone: a.getAttribute('href') }));
-  });
-  document.querySelectorAll('a[href*="zalo.me"]').forEach((a) => {
-    a.addEventListener('click', () => track('contact_zalo', { url: a.getAttribute('href') }));
-  });
 
   const setError = (field, text) => {
     const error = form.querySelector(`#${field.id}-error`);
@@ -142,11 +123,6 @@
       const res = await fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
       const body = await res.json().catch(() => ({}));
       if (res.ok && body.ok) {
-        track('generate_lead', {
-          event_category: 'engagement',
-          product: form.elements.product?.value || 'none',
-          lang: form.elements.lang?.value || 'vi'
-        });
         form.reset();
         setStatus('success', msg.status.success);
       } else if (body.code === 'not_configured') {

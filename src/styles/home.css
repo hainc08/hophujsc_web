@@ -627,18 +627,6 @@
   border-radius: 0;
 }
 
-/* Mobile hẹp: hai nút xếp dọc, rộng hết dòng (dễ bấm bằng một tay) */
-@media (max-width: 35.99rem) {
-  .hero__actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .hero__actions .btn {
-    width: 100%;
-  }
-}
-
 /* Ô nhỏ trên mobile quá hẹp cho nhãn góc: nhãn chỉ hiện ở ô lớn, ô nhỏ vẫn có viền đứt và mô tả */
 @media (max-width: 47.99rem) {
   .factory__photo:not(.factory__photo--wide) .factory__pending-tag {

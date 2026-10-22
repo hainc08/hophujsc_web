@@ -37,7 +37,7 @@
   --text-lg: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
   --text-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
   --text-2xl: clamp(1.875rem, 1.3rem + 2.2vw, 3.25rem);
-  --text-3xl: clamp(2rem, 1.3rem + 3.2vw, 4.25rem);
+  --text-3xl: clamp(2.375rem, 1.4rem + 4vw, 4.75rem);
   /* Dấu tiếng Việt xếp chồng cần line-height tối thiểu khoảng 1.12 ở cỡ lớn */
   --leading-tight: 1.12;
   --leading-snug: 1.3;
