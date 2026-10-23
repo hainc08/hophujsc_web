@@ -25,3 +25,6 @@ api/config.php
 
 # Bản phác thảo của công cụ brainstorming
 .superpowers/
+
+# Ảnh chụp trang tham chiếu V2 (nội dung có bản quyền của bên thứ ba)
+/docs/reference/v2/

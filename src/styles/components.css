@@ -434,8 +434,8 @@
 }
 
 .field--check input {
-  width: 1.375rem;
-  height: 1.375rem;
+  width: 1.5rem;
+  height: 1.5rem;
   margin: 0.15rem 0 0;
   accent-color: var(--red);
 }
@@ -604,4 +604,28 @@
 
 .field:has([required]) .field__error {
   min-height: 1.25rem;
+}
+
+/* Footer gọn (brief V2): ít khoảng đệm, danh sách sản phẩm 2 cột trên desktop */
+.site-footer {
+  padding-block: var(--space-7) var(--space-4);
+}
+
+.site-footer li a {
+  padding-block: var(--space-1);
+}
+
+.site-footer__legal {
+  margin-top: var(--space-6);
+}
+
+@media (min-width: 64rem) {
+  .site-footer__grid {
+    grid-template-columns: 1.3fr 1.6fr 1fr 1.1fr;
+  }
+
+  .site-footer nav[aria-labelledby="ft-products"] ul {
+    columns: 2;
+    column-gap: var(--gap);
+  }
 }

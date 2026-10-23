@@ -76,7 +76,8 @@
       "alt": {
         "vi": "Các cuộn màng nhựa HD, PE, PP nhiều màu",
         "en": "Coloured HD, PE and PP film rolls"
-      }
+      },
+      "cutout": true
     },
     "handleGroup": {
       "src": "clean/ep-quai-mau.jpg",

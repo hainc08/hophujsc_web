@@ -42,7 +42,7 @@ const js = await read('src/scripts/site.js');
 // Mã băm trong URL để trình duyệt tải lại JS mỗi khi nội dung đổi (máy chủ cache tài nguyên lâu).
 const jsVersion = createHash('sha256').update(js).digest('hex').slice(0, 10);
 
-const FONTS = 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&display=swap';
+const FONTS = 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap';
 const data = { site, copy, pages, posts, images };
 const ctxFor = (lang) => createContext({ site, copy, pages, images, lang, base: BASE, endpoint: ENDPOINT });
 
