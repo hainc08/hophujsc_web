@@ -45,7 +45,7 @@
 .breadcrumbs li:not(:last-child)::after {
   content: "/";
   margin-left: var(--space-2);
-  color: #9aa0a7;
+  color: var(--muted);
 }
 
 .breadcrumbs a {
@@ -355,7 +355,7 @@
 
 .cta-band p {
   margin-top: var(--space-2);
-  color: #c3c8ce;
+  color: var(--on-dark);
 }
 
 .cta-band__actions {
@@ -440,7 +440,7 @@
   font-size: var(--text-sm);
   font-weight: 400;
   letter-spacing: 0;
-  color: #c3c8ce;
+  color: var(--on-dark);
 }
 
 .about-values__lead p {
@@ -464,7 +464,7 @@
 .about-values__list li {
   padding-top: var(--space-4);
   border-top: 1px solid #4a5057;
-  color: #d5dade;
+  color: var(--on-dark);
 }
 
 @media (min-width: 64rem) {

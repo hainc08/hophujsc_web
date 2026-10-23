@@ -12,16 +12,23 @@
   --red: #c51f2b;
   --red-hover: #a71924;
   --white: #fff;
-  --surface: #f4f5f6;
-  --ink: #272b30;
-  --ink-deep: #1d2024;
-  --muted: #5c636b;
-  --line: #dadde1;
-  --input-border: #868d95;
+  /* Nền trang xám ấm rất nhạt thay cho trắng tinh: bớt chói khi xem lâu (góp ý khách 2026-10-23).
+     Ô nhập, thẻ, form giữ trắng để nổi trên nền. */
+  --paper: #f6f5f2;
+  --surface: #ebe9e4;
+  --ink: #26282b;
+  --ink-deep: #1c1d1f;
+  /* Chữ phụ đậm hơn để đọc được ngoài nắng: 8,5:1 trên --paper */
+  --muted: #43484e;
+  --line: #d9d6cf;
+  --input-border: #7e838a;
+  /* Chữ phụ trên nền tối */
+  --on-dark: #e1e4e7;
+  --on-dark-muted: #c9ced3;
 
   --color-text: var(--ink);
   --color-text-muted: var(--muted);
-  --color-bg: var(--white);
+  --color-bg: var(--paper);
   --color-action: var(--red);
   --color-action-hover: var(--red-hover);
   --color-focus: #0b57d0;
@@ -31,7 +38,7 @@
 
   /* Chữ: một họ, ba độ đậm */
   --font: "Be Vietnam Pro", "Be Vietnam Fallback", system-ui, sans-serif;
-  --text-xs: 0.8125rem;
+  --text-xs: 0.875rem; /* 14px: chữ nhỏ nhất */
   --text-sm: 0.9375rem;
   --text-base: 1.0625rem;
   --text-lg: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);

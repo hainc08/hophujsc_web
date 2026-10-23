@@ -28,8 +28,28 @@
   transition: scale 500ms var(--ease);
 }
 
-.tile a:hover .tile__media img {
-  scale: 1.04;
+.tile__media {
+  transition: translate 300ms var(--ease);
+}
+
+.tile a:is(:hover, :focus-visible, :active) .tile__media {
+  translate: 0 -6px;
+}
+
+.tile a:is(:hover, :focus-visible, :active) .tile__media img {
+  scale: 1.06;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile__media,
+  .tile__media img {
+    transition: none;
+    translate: none;
+  }
+
+  .tile a:is(:hover, :focus-visible, :active) .tile__media img {
+    scale: 1;
+  }
 }
 
 .tile__name {
@@ -38,9 +58,8 @@
   line-height: 1.35;
 }
 
-.tile a:hover .tile__name {
+.tile a:is(:hover, :focus-visible, :active) .tile__name {
   color: var(--red);
-  text-decoration: underline;
 }
 
 .tile__meta {
@@ -102,7 +121,7 @@
 }
 
 .tile__cta-body p:not(.tile__cta-title) {
-  color: #c3c8ce;
+  color: var(--on-dark);
 }
 
 @media (min-width: 64rem) {
@@ -238,7 +257,7 @@
 
 .capability dd {
   margin-top: var(--space-2);
-  color: #c3c8ce;
+  color: var(--on-dark);
 }
 
 .capability__more {

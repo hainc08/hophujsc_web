@@ -98,8 +98,12 @@ export function siteHeader(ctx) {
       </ul>
     </nav>
     <div class="site-header__actions">
-      <a class="lang-switch" href="${ctx.local(other)}" hreflang="${other}">${other.toUpperCase()}<span class="visually-hidden">: ${esc(t(ui.switchLangLabel))}</span></a>
       <a class="btn btn--primary btn--sm site-header__cta" href="${landing}#bao-gia">${esc(t(ui.quote))}</a>
+      <div class="lang-switch">
+        ${['vi', 'en'].map((l) => (l === lang
+          ? `<span class="lang-switch__item is-current" lang="${l}">${l.toUpperCase()}</span>`
+          : `<a class="lang-switch__item" href="${ctx.local(l)}" hreflang="${l}" lang="${l}">${l.toUpperCase()}<span class="visually-hidden">: ${esc(t(ui.switchLangLabel))}</span></a>`)).join('<span class="lang-switch__sep" aria-hidden="true">|</span>')}
+      </div>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-chinh" data-menu-toggle>
         ${icons.menu}<span class="visually-hidden">${esc(t(ui.menu))}</span>
       </button>

@@ -67,7 +67,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgb(255 255 255 / 0.97);
+  background: rgb(246 245 242 / 0.97);
   border-bottom: 1px solid var(--line);
 }
 
@@ -100,22 +100,50 @@
   gap: var(--space-2);
 }
 
+/* Chọn ngôn ngữ: đặt ngoài cùng bên phải, tách khỏi nút báo giá bằng vạch ngăn để tránh bấm nhầm */
 .lang-switch {
+  display: inline-flex;
+  align-items: center;
+  margin-left: var(--space-3);
+  padding-left: var(--space-3);
+  border-left: 1px solid var(--line);
+  font-size: var(--text-sm);
+}
+
+.lang-switch__item {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-width: 2.75rem;
   min-height: 2.75rem;
-  font-size: var(--text-sm);
   font-weight: 500;
   color: var(--muted);
   text-decoration: none;
   border-radius: var(--radius);
 }
 
-.lang-switch:hover {
+.lang-switch__item.is-current {
+  min-width: 2rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+a.lang-switch__item:hover {
   color: var(--ink);
   background: var(--surface);
+}
+
+.lang-switch__sep {
+  color: var(--line);
+}
+
+/* Màn hình nhỏ: nút báo giá ẩn, vạch ngăn không cần thiết */
+@media (max-width: 35.99rem) {
+  .lang-switch {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+  }
 }
 
 .site-header__cta {
@@ -143,7 +171,7 @@
   max-height: calc(100dvh - var(--header-h));
   overflow-y: auto;
   padding: var(--space-3) var(--gutter) var(--space-6);
-  background: var(--white);
+  background: var(--paper);
   border-bottom: 1px solid var(--line);
 }
 
@@ -294,7 +322,7 @@
     left: 0;
     right: 0;
     padding: var(--space-6);
-    background: var(--white);
+    background: var(--paper);
     border: 1px solid var(--line);
     border-top: 0;
     border-radius: 0 0 var(--radius) var(--radius);
@@ -359,7 +387,7 @@
 }
 
 .section-head--light p {
-  color: #c3c8ce;
+  color: var(--on-dark);
 }
 
 /* ---------- Form ---------- */
@@ -495,7 +523,7 @@
 .site-footer {
   padding-block: var(--space-8) var(--space-5);
   background: var(--ink-deep);
-  color: #c3c8ce;
+  color: var(--on-dark);
   font-size: var(--text-sm);
 }
 
@@ -566,7 +594,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1.4fr;
   height: var(--contact-bar-h);
-  background: var(--white);
+  background: var(--paper);
   border-top: 1px solid var(--line);
 }
 

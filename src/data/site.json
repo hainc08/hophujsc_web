@@ -109,7 +109,7 @@
         "vi": "Túi hạt xoài",
         "en": "Die-cut bags"
       },
-      "material": "HDPE, LDPE",
+      "material": "LDPE, HDPE",
       "url": {
         "vi": "/category/tui-hat-xoai/",
         "en": "/en/category/die-cut-bag/"
@@ -122,7 +122,7 @@
         "vi": "Túi niêm phong",
         "en": "Courier seal bags"
       },
-      "material": "HD, PE",
+      "material": "LDPE, HDPE",
       "url": {
         "vi": "/category/tui-niem-phong/",
         "en": "/en/category/sealed-bag/"
@@ -145,10 +145,10 @@
       "id": "tui-sieu-thi",
       "image": "supermarket",
       "name": {
-        "vi": "Túi siêu thị",
+        "vi": "Túi siêu thị tự huỷ",
         "en": "Supermarket bags"
       },
-      "material": "HDPE, LDPE",
+      "material": "HDPE",
       "url": {
         "vi": "/category/tui-sieu-thi/",
         "en": "/en/category/supermarket-bag/"
@@ -171,7 +171,7 @@
       "id": "tui-dung-thuc-pham",
       "image": null,
       "name": {
-        "vi": "Túi đựng thực phẩm",
+        "vi": "Túi thực phẩm",
         "en": "Food bags"
       },
       "material": {

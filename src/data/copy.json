@@ -35,6 +35,10 @@
       "vi": "Mở danh mục sản phẩm",
       "en": "Open product categories"
     },
+    "viewDetails": {
+      "vi": "Xem chi tiết",
+      "en": "View details"
+    },
     "switchLang": {
       "vi": "English",
       "en": "Tiếng Việt"

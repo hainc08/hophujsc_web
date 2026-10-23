@@ -64,6 +64,7 @@ function collectionItem(ctx, cat, { sizes, className }) {
         <a href="${categoryHref(ctx, cat)}">
           <span class="collection__media${cutout}">${image(ctx, cat.image, { sizes })}</span>
           <span class="collection__caption"><span class="collection__name">${esc(ctx.t(cat.name))}</span><span class="collection__material">${esc(ctx.t(cat.material))}</span></span>
+          <span class="collection__cue" aria-hidden="true">${esc(ctx.t(ctx.copy.ui.viewDetails))} →</span>
         </a>
       </li>`;
 }
