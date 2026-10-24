@@ -37,38 +37,38 @@
   },
   "images": {
     "hero": {
-      "src": "2025/07/z6831021366870_0e97b08cc696075f8e30f4e4dec93d8f.jpg",
+      "src": "source/hero-niem-phong",
       "alt": {
-        "vi": "Các cuộn túi nilon nhiều màu xếp trên bàn gỗ trong xưởng Hợp Phú",
-        "en": "Rolls of coloured plastic bags on a wooden table at Hop Phu"
+        "vi": "Các cuộn túi niêm phong nhiều màu do Hợp Phú sản xuất",
+        "en": "Rolls of courier seal bags in several colours made by Hop Phu"
       }
     },
     "dieCut": {
-      "src": "2025/07/z6831832403506_14d6ba88590003036756fb828b175526.jpg",
+      "src": "source/hat-xoai-pe",
       "alt": {
-        "vi": "Túi hạt xoài HD màu trắng đặt trên bục trưng bày",
-        "en": "White HDPE die-cut bag on a display stand"
+        "vi": "Túi hạt xoài PE màu xanh ngọc",
+        "en": "Mint-green PE die-cut bag"
       }
     },
     "handle": {
-      "src": "clean/ep-quai.jpg",
+      "src": "source/ep-quai",
       "alt": {
-        "vi": "Túi ép quai PE màu kem với quai nâu",
-        "en": "Cream PE bag with brown sealed handles"
+        "vi": "Túi ép quai màu kem với quai nâu",
+        "en": "Cream bag with brown sealed handles"
       }
     },
     "seal": {
-      "src": "clean/niem-phong.jpg",
+      "src": "source/niem-phong",
       "alt": {
-        "vi": "Các cuộn túi niêm phong nhiều màu",
-        "en": "Rolls of courier seal bags in several colours"
+        "vi": "Các cuộn túi niêm phong màu hồng và vàng",
+        "en": "Pink and yellow rolls of courier seal bags"
       }
     },
     "supermarket": {
-      "src": "clean/sieu-thi.jpg",
+      "src": "source/sieu-thi",
       "alt": {
-        "vi": "Túi siêu thị tự huỷ màu trắng in biểu tượng tái chế, đặt trên bàn bếp cạnh rau củ",
-        "en": "White self-destructing supermarket bag printed with a recycling symbol, on a kitchen counter"
+        "vi": "Túi siêu thị màu trắng",
+        "en": "White supermarket bag"
       }
     },
     "film": {
@@ -98,6 +98,27 @@
       "alt": {
         "vi": "Túi ép quai PE màu trắng quai đen đặt trên bãi cỏ",
         "en": "White PE bag with black sealed handles standing on grass"
+      }
+    },
+    "factoryLine": {
+      "src": "source/xuong-may",
+      "alt": {
+        "vi": "Túi ép quai màu hồng chạy trên băng chuyền tại xưởng Hợp Phú",
+        "en": "Pink handle bags moving along the conveyor at the Hop Phu workshop"
+      }
+    },
+    "factoryCheck": {
+      "src": "source/xuong-kiem-tra",
+      "alt": {
+        "vi": "Tay cầm túi ép quai màu hổ phách vừa ra khỏi máy",
+        "en": "A hand holding an amber handle bag just off the machine"
+      }
+    },
+    "factoryFinished": {
+      "src": "source/xuong-thanh-pham",
+      "alt": {
+        "vi": "Túi ép quai màu hồng thành phẩm xếp chồng trên băng chuyền",
+        "en": "Finished pink handle bags stacked on the conveyor"
       }
     }
   },
@@ -247,9 +268,9 @@
   "factoryPhotos": {
     "_note": "Khoá ảnh (trong images) cho từng vị trí ở mục 'Bên trong nhà máy'. null = hiển thị ô chờ ảnh. Chỉ điền ảnh thật đã được công ty duyệt.",
     "toan-canh": null,
-    "may-moc": null,
-    "kiem-tra": null,
-    "kho": null
+    "may-moc": "factoryLine",
+    "kiem-tra": "factoryCheck",
+    "kho": "factoryFinished"
   },
   "founders": [
     {

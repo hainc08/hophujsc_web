@@ -33,3 +33,20 @@ Nguồn: chủ dự án chép vào `assets/Ảnh sản phẩm HP` (440 tệp, kh
 - **Ảnh nhà xưởng** chỉ có ảnh điện thoại khổ dọc 960x1280 của khâu cắt dán. Đủ cho 1–2 ô chi tiết, chưa đủ cho ảnh toàn cảnh.
 - **Còn thiếu ảnh**: túi lồng bao, túi lót, túi thực phẩm, túi bầu ươm (chỉ có banner), cuộn màng.
 - Bài viết có những cụm "hàng đầu", "an toàn tuyệt đối", "mẫu thử miễn phí": cần xác nhận trước khi đưa lên web (quy tắc không dùng so sánh nhất chưa kiểm chứng).
+
+## Đã đưa lên web (2026-10-24)
+
+Cắt khung và thu nhỏ bằng script (không chỉnh sửa sản phẩm), WebP 2 cỡ trong `assets/img/hp-*.webp`, khai báo trong `src/data/images.json` (khoá `source/...`, có `derivedFrom` và vị trí cắt).
+
+| Vị trí | Ảnh gốc |
+|---|---|
+| Hero trang chủ | `tui-niem-phong/studio/tui-niem-phong-studio-01.jpg` |
+| Túi hạt xoài | `tui-hat-xoai/studio-pe/tui-hat-xoai-pe-studio-51.jpg` |
+| Túi niêm phong | `tui-niem-phong/studio/tui-niem-phong-studio-12.jpg` |
+| Túi ép quai | `tui-ep-quai/studio/tui-ep-quai-studio-27.jpg` |
+| Túi siêu thị tự huỷ | `tui-sieu-thi/studio/tui-sieu-thi-studio-02.jpg` |
+| Nhà máy: dây chuyền | `nha-xuong/nha-xuong-03.jpg` |
+| Nhà máy: kiểm tra | `nha-xuong/nha-xuong-08.jpg` |
+| Nhà máy: thành phẩm | `nha-xuong/nha-xuong-13.jpg` |
+
+Ô ảnh toàn cảnh nhà xưởng tự ẩn cho tới khi có ảnh ngang chụp toàn cảnh (điền `site.json > factoryPhotos > toan-canh`). Ảnh "da-sua" (nền dựng AI) chưa dùng, chờ chủ dự án quyết định.

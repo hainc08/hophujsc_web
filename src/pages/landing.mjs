@@ -77,7 +77,9 @@ export function render(ctx) {
   const withPhoto = cats.filter((cat) => cat.image);
   const withoutPhoto = cats.filter((cat) => !cat.image);
   const slots = factory.slots;
-  const anyPending = slots.some((s) => !site.factoryPhotos?.[s.id]);
+  // Ảnh toàn cảnh chưa có thì ẩn hẳn ô lớn, chỉ giữ dải ảnh chi tiết; ô nhỏ chưa có ảnh vẫn hiện ô chờ.
+  const hasWide = Boolean(site.factoryPhotos?.[slots[0].id]);
+  const anyPending = slots.slice(1).some((s) => !site.factoryPhotos?.[s.id]);
 
   return `<main id="noi-dung">
   <section class="hero" aria-labelledby="hero-title">
@@ -129,12 +131,12 @@ export function render(ctx) {
         <a class="text-link text-link--light" href="${ctx.url('about')}">${esc(t(about.link))}</a>
       </div>
     </div>
-    <div class="factory__hero">
+    ${hasWide ? `<div class="factory__hero">
       ${factorySlot(ctx, slots[0], { sizes: '100vw', className: 'factory__photo--wide' })}
-    </div>
+    </div>` : ''}
     <div class="container">
       ${anyPending ? `<p class="factory__pending-note">${esc(t(factory.pending))}</p>` : ''}
-      <div class="factory__gallery">
+      <div class="factory__gallery${hasWide ? '' : ' factory__gallery--lead'}">
         ${slots.slice(1).map((s) => factorySlot(ctx, s, { sizes: '(min-width: 48rem) 33vw, 100vw', className: '' })).join('\n        ')}
       </div>
       <dl class="factory__facts">

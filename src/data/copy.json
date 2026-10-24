@@ -575,22 +575,22 @@
       {
         "id": "may-moc",
         "caption": {
-          "vi": "Máy móc sản xuất",
-          "en": "Production machinery"
+          "vi": "Dây chuyền làm túi ép quai",
+          "en": "Handle bag production line"
         }
       },
       {
         "id": "kiem-tra",
         "caption": {
-          "vi": "Kiểm tra chất lượng",
-          "en": "Quality checks"
+          "vi": "Kiểm tra túi sau khi ra máy",
+          "en": "Checking bags as they come off the machine"
         }
       },
       {
         "id": "kho",
         "caption": {
-          "vi": "Thành phẩm và kho hàng",
-          "en": "Finished goods and warehouse"
+          "vi": "Túi thành phẩm",
+          "en": "Finished bags"
         }
       }
     ]

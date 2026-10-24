@@ -716,5 +716,149 @@
    "width": 480,
    "height": 332
   }
+ },
+ "source/hero-niem-phong": {
+  "src": "source/hero-niem-phong",
+  "name": "hp-hero-niem-phong",
+  "derivedFrom": "assets/source/tui-niem-phong/studio/tui-niem-phong-studio-01.jpg",
+  "edit": "Cắt khung 3648x2918 tại (0,1481) từ ảnh 3648x5472, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "origWidth": 3648,
+  "origHeight": 2918,
+  "large": {
+   "file": "hp-hero-niem-phong-1600.webp",
+   "width": 1600,
+   "height": 1280
+  },
+  "small": {
+   "file": "hp-hero-niem-phong-768.webp",
+   "width": 768,
+   "height": 614
+  }
+ },
+ "source/hat-xoai-pe": {
+  "src": "source/hat-xoai-pe",
+  "name": "hp-hat-xoai-pe",
+  "derivedFrom": "assets/source/tui-hat-xoai/studio-pe/tui-hat-xoai-pe-studio-51.jpg",
+  "edit": "Cắt khung 3648x4560 tại (0,547) từ ảnh 3648x5472, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "origWidth": 3648,
+  "origHeight": 4560,
+  "large": {
+   "file": "hp-hat-xoai-pe-1280.webp",
+   "width": 1280,
+   "height": 1600
+  },
+  "small": {
+   "file": "hp-hat-xoai-pe-768.webp",
+   "width": 768,
+   "height": 960
+  }
+ },
+ "source/niem-phong": {
+  "src": "source/niem-phong",
+  "name": "hp-niem-phong",
+  "derivedFrom": "assets/source/tui-niem-phong/studio/tui-niem-phong-studio-12.jpg",
+  "edit": "Cắt khung 3648x4560 tại (0,547) từ ảnh 3648x5472, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "origWidth": 3648,
+  "origHeight": 4560,
+  "large": {
+   "file": "hp-niem-phong-1280.webp",
+   "width": 1280,
+   "height": 1600
+  },
+  "small": {
+   "file": "hp-niem-phong-768.webp",
+   "width": 768,
+   "height": 960
+  }
+ },
+ "source/ep-quai": {
+  "src": "source/ep-quai",
+  "name": "hp-ep-quai",
+  "derivedFrom": "assets/source/tui-ep-quai/studio/tui-ep-quai-studio-27.jpg",
+  "edit": "Cắt khung 3648x4560 tại (0,547) từ ảnh 3648x5472, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "origWidth": 3648,
+  "origHeight": 4560,
+  "large": {
+   "file": "hp-ep-quai-1280.webp",
+   "width": 1280,
+   "height": 1600
+  },
+  "small": {
+   "file": "hp-ep-quai-768.webp",
+   "width": 768,
+   "height": 960
+  }
+ },
+ "source/sieu-thi": {
+  "src": "source/sieu-thi",
+  "name": "hp-sieu-thi",
+  "derivedFrom": "assets/source/tui-sieu-thi/studio/tui-sieu-thi-studio-02.jpg",
+  "edit": "Cắt khung 3648x4560 tại (0,547) từ ảnh 3648x5472, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "origWidth": 3648,
+  "origHeight": 4560,
+  "large": {
+   "file": "hp-sieu-thi-1280.webp",
+   "width": 1280,
+   "height": 1600
+  },
+  "small": {
+   "file": "hp-sieu-thi-768.webp",
+   "width": 768,
+   "height": 960
+  }
+ },
+ "source/xuong-may": {
+  "src": "source/xuong-may",
+  "name": "hp-xuong-day-chuyen",
+  "derivedFrom": "assets/source/nha-xuong/nha-xuong-03.jpg",
+  "edit": "Cắt khung 960x720 tại (0,280) từ ảnh 960x1280, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "origWidth": 960,
+  "origHeight": 720,
+  "large": {
+   "file": "hp-xuong-day-chuyen-960.webp",
+   "width": 960,
+   "height": 720
+  },
+  "small": {
+   "file": "hp-xuong-day-chuyen-640.webp",
+   "width": 640,
+   "height": 480
+  }
+ },
+ "source/xuong-kiem-tra": {
+  "src": "source/xuong-kiem-tra",
+  "name": "hp-xuong-kiem-tra",
+  "derivedFrom": "assets/source/nha-xuong/nha-xuong-08.jpg",
+  "edit": "Cắt khung 960x720 tại (0,252) từ ảnh 960x1280, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "origWidth": 960,
+  "origHeight": 720,
+  "large": {
+   "file": "hp-xuong-kiem-tra-960.webp",
+   "width": 960,
+   "height": 720
+  },
+  "small": {
+   "file": "hp-xuong-kiem-tra-640.webp",
+   "width": 640,
+   "height": 480
+  }
+ },
+ "source/xuong-thanh-pham": {
+  "src": "source/xuong-thanh-pham",
+  "name": "hp-xuong-thanh-pham",
+  "derivedFrom": "assets/source/nha-xuong/nha-xuong-13.jpg",
+  "edit": "Cắt khung 960x720 tại (0,280) từ ảnh 960x1280, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "origWidth": 960,
+  "origHeight": 720,
+  "large": {
+   "file": "hp-xuong-thanh-pham-960.webp",
+   "width": 960,
+   "height": 720
+  },
+  "small": {
+   "file": "hp-xuong-thanh-pham-640.webp",
+   "width": 640,
+   "height": 480
+  }
  }
 }
