@@ -56,6 +56,24 @@ function factorySlot(ctx, slot, { sizes, className }) {
         </figure>`;
 }
 
+/**
+ * Một bước quy trình: ảnh 5:4, số thứ tự, tiêu đề, mô tả.
+ * Ảnh lấy từ site.processPhotos[step.photo]; chưa có thì hiện ô chờ ghi rõ tên file cần thay.
+ */
+function processStep(ctx, step, i) {
+  const { t, site, copy } = ctx;
+  const photo = site.processPhotos?.[step.photo];
+  const media = photo
+    ? image(ctx, photo, { sizes: '(min-width: 64rem) 22vw, (min-width: 48rem) 45vw, 100vw' })
+    : `<span class="workflow__pending"><span>${esc(t(copy.process.pending))}</span><code>process-${step.photo}.webp</code></span>`;
+  return `<li class="workflow__item">
+          <figure class="workflow__media">${media}</figure>
+          <span class="workflow__num" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+          <h3>${esc(t(step.title))}</h3>
+          <p>${esc(t(step.body))}</p>
+        </li>`;
+}
+
 /** Một sản phẩm trong bộ sưu tập: ảnh lớn, tên, chất liệu. Không viền, không bóng. */
 function collectionItem(ctx, cat, { sizes, className }) {
   // Ảnh chụp trên nền trắng (cutout) hiển thị trọn sản phẩm thay vì cắt khung.
@@ -145,15 +163,16 @@ export function render(ctx) {
     </div>
   </section>
 
-  <section class="section" id="quy-trinh" aria-labelledby="quy-trinh-title">
+  <section class="section workflow" id="quy-trinh" aria-labelledby="quy-trinh-title">
     <div class="container">
       <header class="split-head">
         <h2 id="quy-trinh-title">${esc(t(process.title))}</h2>
         <p>${esc(t(process.lead))}</p>
       </header>
-      <ol class="flow">
-        ${process.steps.map((s) => `<li class="flow__step"><h3>${esc(t(s.title))}</h3><p>${esc(t(s.body))}</p></li>`).join('\n        ')}
+      <ol class="workflow__list">
+        ${process.steps.map((s, i) => processStep(ctx, s, i)).join('\n        ')}
       </ol>
+      <p class="workflow__cta"><a class="btn btn--primary" href="#bao-gia">${esc(t(process.cta))}</a></p>
     </div>
   </section>
 

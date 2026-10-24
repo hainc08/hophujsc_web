@@ -36,7 +36,7 @@ Quy ước: **Có sẵn** = lấy từ trang `/en/` đang chạy trên hopphujsc
 | Dòng nhà xưởng | Factory in Nhu Quynh, Hung Yen, on National Highway 5 | Mới, dựa trên `/en/about-us/` |
 | Sản phẩm | Eight packaging lines in production. Every specification can be made to order. | Mới |
 | Thẻ CTA | Need a custom specification? / Send us the size, thickness, colour and quantity. Hop Phu will advise on materials and send a quote. | Mới |
-| 4 bước quy trình | Receive your request · Advise on material and specification · Confirm the specification · Produce and deliver (kèm mô tả) | Mới. Nội dung tiếng Việt của quy trình cũng cần công ty xác nhận |
+| 4 bước quy trình (HP-07A, 2026-10-24) | Receive your request · Advise on the solution · Confirm the specification · Produce and deliver. Mô tả: You tell us the bag type, size, quantity and print artwork. / We help you choose HDPE, LDPE, PP or OPP and the right specification. / We agree on size, colour, quantity and technical requirements. / We produce, check quality, pack and deliver as agreed. Nút: Send a quote request | Mới, dịch từ nội dung tiếng Việt trong brief HP-07A |
 | Năng lực | Materials / Equipment / Quality control / Factory (kèm mô tả) | Mới, dựa trên `/en/about-us/` ("imported machinery", "strict quality control", "Highway 5", "Northern and Central regions") |
 | 6 ngành ứng dụng | Supermarkets and retail · E-commerce · Food and agriculture · Industrial manufacturing · Garment export · Healthcare (kèm mô tả) | Mới, dựa trên mô tả sản phẩm tiếng Việt |
 | Form | Full name, Phone number, Company name, Packaging type, Estimated quantity, Details, dòng đồng ý, thông báo lỗi và trạng thái | Mới |

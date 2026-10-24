@@ -192,49 +192,61 @@
     },
     "steps": [
       {
+        "photo": "consultation",
         "title": {
           "vi": "Tiếp nhận yêu cầu",
           "en": "Receive your request"
         },
         "body": {
-          "vi": "Bạn gửi loại túi, kích thước, số lượng và mẫu in qua form, điện thoại hoặc Zalo.",
-          "en": "You send the bag type, size, quantity and artwork through the form, by phone or on Zalo."
+          "vi": "Khách hàng cung cấp loại túi, kích thước, số lượng và mẫu in.",
+          "en": "You tell us the bag type, size, quantity and print artwork."
         }
       },
       {
+        "photo": "material",
         "title": {
-          "vi": "Tư vấn vật liệu và quy cách",
-          "en": "Advise on material and specification"
+          "vi": "Tư vấn giải pháp",
+          "en": "Advise on the solution"
         },
         "body": {
-          "vi": "Hợp Phú tư vấn chọn HDPE, LDPE, PP hay OPP, độ dày và kiểu túi phù hợp với hàng hoá.",
-          "en": "Hop Phu helps you choose HDPE, LDPE, PP or OPP, the thickness and the bag style that suit your goods."
+          "vi": "Hỗ trợ lựa chọn vật liệu HDPE, LDPE, PP hoặc OPP và quy cách phù hợp.",
+          "en": "We help you choose HDPE, LDPE, PP or OPP and the right specification."
         }
       },
       {
+        "photo": "confirmation",
         "title": {
           "vi": "Xác nhận thông số",
           "en": "Confirm the specification"
         },
         "body": {
-          "vi": "Hai bên thống nhất kích thước, màu, nội dung in và số lượng trước khi sản xuất.",
-          "en": "We agree on size, colour, print and quantity before production starts."
+          "vi": "Thống nhất kích thước, màu sắc, số lượng và yêu cầu kỹ thuật.",
+          "en": "We agree on size, colour, quantity and technical requirements."
         }
       },
       {
+        "photo": "production",
         "title": {
           "vi": "Sản xuất và bàn giao",
           "en": "Produce and deliver"
         },
         "body": {
-          "vi": "Sản xuất, kiểm tra chất lượng, đóng gói và giao hàng theo tiến độ đã hẹn.",
-          "en": "We produce, check quality, pack and deliver on the agreed schedule."
+          "vi": "Sản xuất, kiểm tra chất lượng, đóng gói và giao hàng theo thỏa thuận.",
+          "en": "We produce, check quality, pack and deliver as agreed."
         }
       }
     ],
     "caption": {
       "vi": "Túi ép quai PE nhiều màu, thành phẩm của Hợp Phú",
       "en": "Coloured PE handle bags made by Hop Phu"
+    },
+    "cta": {
+      "vi": "Gửi yêu cầu báo giá",
+      "en": "Send a quote request"
+    },
+    "pending": {
+      "vi": "Ảnh đang chờ thay",
+      "en": "Photo to be replaced"
     }
   },
   "capability": {

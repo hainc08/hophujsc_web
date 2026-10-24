@@ -455,51 +455,109 @@
   }
 }
 
-/* ---------- Quy trình: 4 bước ngang, số lớn ---------- */
-.flow {
+/* ---------- Quy trình (HP-07A): 4 bước, mỗi bước một ảnh 5:4, số lớn, chữ đậm ----------
+   Desktop 4 cột, tablet 2 cột, mobile 1 cột. Không bóng, không gradient, không icon. */
+.workflow {
+  --workflow-accent: #ac202a;
+  background: #f6f5f2;
+}
+
+.workflow__list {
   display: grid;
-  gap: var(--space-6) var(--gap);
-  counter-reset: flow;
+  gap: var(--space-8) var(--gap);
 }
 
-.flow__step {
-  counter-increment: flow;
-  padding-top: var(--space-5);
-  border-top: 1px solid var(--ink);
+.workflow__item {
+  display: flex;
+  flex-direction: column;
 }
 
-.flow__step::before {
-  content: counter(flow, decimal-leading-zero);
+/* Khung ảnh giữ sẵn tỷ lệ 5:4 nên không xô bố cục khi ảnh tải */
+.workflow__media {
+  overflow: hidden;
+  aspect-ratio: 5 / 4;
+  background: var(--surface);
+}
+
+.workflow__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.workflow__pending {
+  display: grid;
+  place-content: center;
+  gap: var(--space-2);
+  height: 100%;
+  padding: var(--space-4);
+  border: 1px dashed var(--input-border);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-align: center;
+  color: var(--muted);
+}
+
+.workflow__pending code {
+  font-size: var(--text-xs);
+}
+
+.workflow__num {
   display: block;
-  margin-bottom: var(--space-5);
-  font-size: clamp(2.5rem, 1.6rem + 2.6vw, 4rem);
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--ink);
+  font-size: clamp(2.25rem, 1.6rem + 2vw, 3.25rem);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.04em;
   font-variant-numeric: tabular-nums;
+  color: var(--workflow-accent);
 }
 
-.flow__step h3 {
-  font-size: var(--text-lg);
+.workflow__item h3 {
+  margin-top: var(--space-4);
+  font-size: var(--text-xl);
   font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: var(--leading-snug);
 }
 
-.flow__step p {
-  max-width: 22rem;
+.workflow__item p {
+  max-width: 26rem;
   margin-top: var(--space-2);
-  font-size: var(--text-sm);
   color: var(--muted);
 }
 
+.workflow__cta {
+  margin-top: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+}
+
+.workflow__cta .btn {
+  background: var(--workflow-accent);
+  border-color: var(--workflow-accent);
+}
+
+.workflow__cta .btn:hover {
+  background: #8c1820;
+  border-color: #8c1820;
+}
+
 @media (min-width: 48rem) {
-  .flow {
+  .workflow__list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 64rem) {
-  .flow {
+  .workflow__list {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--gap);
+  }
+
+  .workflow__item p {
+    font-size: var(--text-sm);
   }
 }
 

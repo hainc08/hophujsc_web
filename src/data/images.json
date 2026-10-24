@@ -1292,5 +1292,77 @@
    "width": 480,
    "height": 480
   }
+ },
+ "process/consultation": {
+  "src": "process/consultation",
+  "name": "process-consultation",
+  "derivedFrom": "assets/source/nha-xuong/nha-xuong-11.jpg",
+  "edit": "Cắt khung 605x484 tại (371,92). Thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "origWidth": 605,
+  "origHeight": 484,
+  "large": {
+   "file": "process-consultation.webp",
+   "width": 605,
+   "height": 484
+  },
+  "small": {
+   "file": "process-consultation-480.webp",
+   "width": 480,
+   "height": 384
+  }
+ },
+ "process/material": {
+  "src": "process/material",
+  "name": "process-material",
+  "derivedFrom": "assets/source/tui-hat-xoai/studio-pe/tui-hat-xoai-pe-studio-47.jpg",
+  "edit": "Cắt khung 3648x2918 tại y=1277. Thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "origWidth": 3648,
+  "origHeight": 2918,
+  "large": {
+   "file": "process-material.webp",
+   "width": 800,
+   "height": 640
+  },
+  "small": {
+   "file": "process-material-480.webp",
+   "width": 480,
+   "height": 384
+  }
+ },
+ "process/confirmation": {
+  "src": "process/confirmation",
+  "name": "process-confirmation",
+  "derivedFrom": "assets/source/tui-hat-xoai/studio-pe/tui-hat-xoai-pe-studio-48.jpg",
+  "edit": "Cắt dải dọc 547-5198, nới nền hai bên bằng màu nền vải để đủ tỷ lệ 5:4. Thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "origWidth": 5814,
+  "origHeight": 4651,
+  "large": {
+   "file": "process-confirmation.webp",
+   "width": 800,
+   "height": 640
+  },
+  "small": {
+   "file": "process-confirmation-480.webp",
+   "width": 480,
+   "height": 384
+  }
+ },
+ "process/production": {
+  "src": "process/production",
+  "name": "process-production",
+  "derivedFrom": "assets/source/nha-xuong/nha-xuong-04.jpg",
+  "edit": "Cắt khung 960x768 tại y=256. Thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "origWidth": 960,
+  "origHeight": 768,
+  "large": {
+   "file": "process-production.webp",
+   "width": 800,
+   "height": 640
+  },
+  "small": {
+   "file": "process-production-480.webp",
+   "width": 480,
+   "height": 384
+  }
  }
 }

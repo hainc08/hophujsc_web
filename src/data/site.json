@@ -498,5 +498,36 @@
         }
       }
     ]
+  },
+  "processPhotos": {
+    "_note": "Ảnh cho 4 bước ở section \"Từ yêu cầu đến sản xuất\" (tỷ lệ 5:4, file assets/img/process-<id>.webp và process-<id>-480.webp). null = hiện ô chờ ảnh. Chỉ dùng ảnh thật của Hợp Phú.",
+    "consultation": {
+      "src": "process/consultation",
+      "alt": {
+        "vi": "Bảng mẫu sản phẩm hiện có treo tại xưởng Hợp Phú: túi niêm phong, túi ép quai nhiều màu",
+        "en": "Board of current product samples at the Hop Phu workshop: seal bags and handle bags in many colours"
+      }
+    },
+    "material": {
+      "src": "process/material",
+      "alt": {
+        "vi": "Túi hạt xoài nhiều màu xếp hình quạt",
+        "en": "Die-cut bags in several colours fanned out"
+      }
+    },
+    "confirmation": {
+      "src": "process/confirmation",
+      "alt": {
+        "vi": "Túi hạt xoài nhiều cỡ và màu xếp chồng",
+        "en": "Die-cut bags in several sizes and colours stacked"
+      }
+    },
+    "production": {
+      "src": "process/production",
+      "alt": {
+        "vi": "Túi ép quai màu hồng ra khỏi máy trên băng chuyền tại xưởng Hợp Phú",
+        "en": "Pink handle bags coming off the machine on the conveyor at the Hop Phu workshop"
+      }
+    }
   }
 }
