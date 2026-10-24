@@ -70,6 +70,18 @@
     "allProducts": {
       "vi": "Xem tất cả sản phẩm",
       "en": "View all products"
+    },
+    "scrollToTop": {
+      "vi": "Lên đầu trang",
+      "en": "Back to top"
+    },
+    "chatZalo": {
+      "vi": "Zalo: 0983 771 565",
+      "en": "Zalo: 0983 771 565"
+    },
+    "facebookPage": {
+      "vi": "Facebook Fanpage",
+      "en": "Facebook Fanpage"
     }
   },
   "nav": [
@@ -412,13 +424,17 @@
         "vi": "Tên công ty",
         "en": "Company name"
       },
+      "email": {
+        "vi": "Email",
+        "en": "Email"
+      },
       "product": {
         "vi": "Loại bao bì",
         "en": "Packaging type"
       },
       "productNone": {
-        "vi": "Chưa xác định",
-        "en": "Not sure yet"
+        "vi": "Chọn loại bao bì",
+        "en": "Select packaging type"
       },
       "productOther": {
         "vi": "Khác",
@@ -434,11 +450,41 @@
       },
       "message": {
         "vi": "Yêu cầu chi tiết",
-        "en": "Details"
+        "en": "Detailed requirements"
       },
       "messageHint": {
-        "vi": "Kích thước, độ dày, màu, có in hay không.",
-        "en": "Size, thickness, colour, and whether it needs printing."
+        "vi": "Kích thước, độ dày, màu sắc, có in ấn hay không.",
+        "en": "Size, thickness, colour, printing requirements."
+      },
+      "placeholders": {
+        "name": {
+          "vi": "Ví dụ: Nguyễn Văn A",
+          "en": "e.g. John Doe"
+        },
+        "phone": {
+          "vi": "Ví dụ: 0983 771 565",
+          "en": "e.g. 0983 771 565"
+        },
+        "email": {
+          "vi": "Ví dụ: contact@congty.com",
+          "en": "e.g. name@company.com"
+        },
+        "company": {
+          "vi": "Ví dụ: Công ty Cổ phần ABC",
+          "en": "e.g. ABC Corporation"
+        },
+        "quantity": {
+          "vi": "Ví dụ: 10.000 túi hoặc 500 kg",
+          "en": "e.g. 10,000 bags or 500 kg"
+        },
+        "message": {
+          "vi": "Mô tả quy cách: kích thước (dài x rộng x dày), màu sắc, mẫu in ấn, số lượng...",
+          "en": "Describe specifications: dimensions (L x W x thickness), colour, printing..."
+        }
+      },
+      "fileNotice": {
+        "vi": "Quý khách có file mẫu hoặc bản vẽ? Vui lòng ghi chú trong yêu cầu hoặc gửi trực tiếp qua Zalo / Email bên cạnh.",
+        "en": "Have a sample drawing or specification? Please note it here or send directly via Zalo / Email."
       },
       "consent": {
         "vi": "Tôi đồng ý để Hợp Phú dùng thông tin này để liên hệ tư vấn và báo giá.",
@@ -455,24 +501,28 @@
     },
     "errors": {
       "name": {
-        "vi": "Nhập họ tên của bạn.",
-        "en": "Enter your name."
+        "vi": "Vui lòng nhập họ và tên của bạn.",
+        "en": "Please enter your full name."
       },
       "phone": {
-        "vi": "Nhập số điện thoại gồm 9 đến 11 chữ số.",
-        "en": "Enter a phone number of 9 to 11 digits."
+        "vi": "Vui lòng nhập số điện thoại gồm 9 đến 11 chữ số.",
+        "en": "Please enter a valid phone number (9-11 digits)."
+      },
+      "email": {
+        "vi": "Vui lòng nhập địa chỉ email hợp lệ (ví dụ: name@company.com).",
+        "en": "Please enter a valid email address (e.g. name@company.com)."
       },
       "message": {
-        "vi": "Mô tả loại túi, kích thước hoặc số lượng bạn cần.",
-        "en": "Describe the bag type, size or quantity you need."
+        "vi": "Vui lòng nhập yêu cầu chi tiết (loại túi, kích thước hoặc số lượng bạn cần).",
+        "en": "Please describe your required product details."
       },
       "consent": {
-        "vi": "Đánh dấu ô đồng ý để chúng tôi được liên hệ lại.",
-        "en": "Tick the consent box so we can contact you."
+        "vi": "Vui lòng đánh dấu ô đồng ý để chúng tôi liên hệ tư vấn.",
+        "en": "Please tick the consent box so we can contact you."
       },
       "summary": {
-        "vi": "Còn {n} mục cần sửa trước khi gửi.",
-        "en": "{n} fields need fixing before you can send."
+        "vi": "Còn {n} mục cần kiểm tra lại trước khi gửi.",
+        "en": "{n} fields need fixing before sending."
       }
     },
     "status": {
@@ -499,45 +549,61 @@
     }
   },
   "footer": {
-    "products": {
+    "desc": {
+      "vi": "Sản xuất túi nilon, màng nhựa và bao bì theo yêu cầu cho doanh nghiệp.",
+      "en": "Manufacturing custom plastic bags, films and packaging for businesses."
+    },
+    "navTitle": {
+      "vi": "Khám phá",
+      "en": "Explore"
+    },
+    "productsTitle": {
       "vi": "Sản phẩm",
       "en": "Products"
     },
-    "company": {
-      "vi": "Công ty",
-      "en": "Company"
-    },
-    "contact": {
+    "contactTitle": {
       "vi": "Liên hệ",
       "en": "Contact"
     },
+    "allProducts": {
+      "vi": "Xem tất cả sản phẩm",
+      "en": "View all products"
+    },
     "about": {
-      "vi": "Về chúng tôi",
+      "vi": "Giới thiệu",
       "en": "About us"
     },
-    "services": {
-      "vi": "Dịch vụ",
-      "en": "Services"
+    "process": {
+      "vi": "Quy trình sản xuất",
+      "en": "Manufacturing process"
     },
-    "news": {
-      "vi": "Tin tức",
-      "en": "News"
+    "rfq": {
+      "vi": "Liên hệ & báo giá",
+      "en": "Contact & quote"
     },
-    "careers": {
-      "vi": "Tuyển dụng",
-      "en": "Careers"
-    },
-    "contactPage": {
-      "vi": "Trang liên hệ",
-      "en": "Contact page"
+    "factory": {
+      "vi": "Nhà máy",
+      "en": "Factory"
     },
     "hotline": {
-      "vi": "Hotline",
-      "en": "Hotline"
+      "vi": "Hotline / Zalo",
+      "en": "Hotline / Zalo"
     },
-    "sitemap": {
-      "vi": "Sơ đồ trang",
-      "en": "Sitemap"
+    "email": {
+      "vi": "Email",
+      "en": "Email"
+    },
+    "openMaps": {
+      "vi": "Chỉ đường trên Google Maps",
+      "en": "Directions on Google Maps"
+    },
+    "backToTop": {
+      "vi": "Lên đầu trang",
+      "en": "Back to top"
+    },
+    "allRights": {
+      "vi": "Bảo lưu mọi quyền.",
+      "en": "All rights reserved."
     }
   },
   "about": {
@@ -981,20 +1047,28 @@
     },
     "contact": {
       "kicker": {
-        "vi": "04 — Liên hệ",
-        "en": "04 — Contact"
+        "vi": "04 — LIÊN HỆ & BÁO GIÁ",
+        "en": "04 — CONTACT & REQUEST A QUOTE"
       },
       "title": {
-        "vi": "Ghé nhà máy, hoặc gửi yêu cầu cho chúng tôi.",
-        "en": "Visit the factory, or send us your request."
+        "vi": "Bạn cần sản xuất bao bì theo yêu cầu?",
+        "en": "Need custom plastic packaging production?"
+      },
+      "desc": {
+        "vi": "Gửi thông tin sản phẩm, Hợp Phú sẽ tiếp nhận và tư vấn phương án phù hợp.",
+        "en": "Send your product details; Hop Phu will review and propose the most suitable solution."
       },
       "factory": {
-        "vi": "Nhà máy",
+        "vi": "Nhà máy sản xuất",
         "en": "Factory"
       },
       "hotline": {
-        "vi": "Hotline · Zalo",
-        "en": "Hotline · Zalo"
+        "vi": "Hotline / Zalo",
+        "en": "Hotline / Zalo"
+      },
+      "email": {
+        "vi": "Email kinh doanh",
+        "en": "Sales email"
       },
       "directions": {
         "vi": "Chỉ đường",
@@ -1009,8 +1083,12 @@
         "en": "Map of the Hop Phu factory"
       },
       "formTitle": {
-        "vi": "Gửi yêu cầu báo giá",
+        "vi": "Yêu cầu báo giá",
         "en": "Request a quote"
+      },
+      "formDesc": {
+        "vi": "Điền thông tin cơ bản để Hợp Phú liên hệ tư vấn.",
+        "en": "Fill in the basic information so Hop Phu can contact you."
       }
     },
     "flow": {

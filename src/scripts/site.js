@@ -275,6 +275,13 @@
     e.preventDefault();
     const fields = [...form.querySelectorAll('[required]')];
     const invalid = fields.filter((f) => !validate(f));
+    
+    // Kiểm tra thêm email nếu người dùng có nhập
+    const emailField = form.querySelector('input[type="email"]');
+    if (emailField && emailField.value.trim() && !validate(emailField)) {
+      invalid.push(emailField);
+    }
+
     if (invalid.length) {
       setStatus('error', msg.errors.summary.replace('{n}', invalid.length));
       invalid[0].focus();
@@ -290,6 +297,7 @@
 
     const submit = form.querySelector('[type="submit"]');
     submit.disabled = true;
+    submit.classList.add('is-loading');
     setStatus('pending', msg.status.pending);
     try {
       const res = await fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
@@ -297,6 +305,14 @@
       if (res.ok && body.ok) {
         form.reset();
         setStatus('success', msg.status.success);
+
+        // GA4 conversion tracking: generate_lead (không gửi PII)
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'generate_lead', {
+            event_category: 'engagement',
+            event_label: 'quote_request'
+          });
+        }
       } else if (body.code === 'not_configured') {
         setStatus('error', msg.status.preview);
       } else if (body.code === 'rate_limited') {
@@ -308,6 +324,31 @@
       setStatus('error', msg.status.error);
     } finally {
       submit.disabled = false;
+      submit.classList.remove('is-loading');
     }
   });
+
+  // ----- Nút cuộn lên đầu trang (Scroll to top) -----
+  const scrollTopBtn = document.querySelector('[data-scroll-top]');
+  if (scrollTopBtn) {
+    let ticking = false;
+    const checkScroll = () => {
+      const show = window.scrollY > 300;
+      scrollTopBtn.classList.toggle('is-visible', show);
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(checkScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    checkScroll();
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 })();

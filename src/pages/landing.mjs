@@ -54,6 +54,11 @@ const icon = {
   plus: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>',
   check: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>',
   close: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>',
+  phone: '<svg class="icon icon--line" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>',
+  location: '<svg class="icon icon--line" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+  mail: '<svg class="icon icon--line" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>',
+  zalo: '<svg class="icon icon--line" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>',
+  external: '<svg class="icon icon--sm" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>',
 };
 
 function material(ctx, line) {
@@ -277,23 +282,77 @@ export function render(ctx) {
     </div>
   </section>
 
-  <section class="container block contact" id="lien-he" aria-labelledby="lien-he-title" data-section>
-    ${kicker(t(V.contact.kicker))}
-    <h2 id="lien-he-title" class="block__title">${esc(t(V.contact.title))}</h2>
-    <div class="contact__grid">
-      <div>
-        <div class="map frame" style="--ratio: 4 / 3">
-          <iframe src="${esc(mapEmbed)}" title="${esc(t(V.contact.mapTitle))}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <section class="rfq-section" id="lien-he" aria-labelledby="lien-he-title" data-section>
+    <div class="container">
+      <header class="rfq-header">
+        ${kicker(t(V.contact.kicker))}
+        <h2 id="lien-he-title" class="rfq-header__title">${esc(t(V.contact.title))}</h2>
+        <p class="rfq-header__desc">${esc(t(V.contact.desc))}</p>
+      </header>
+
+      <div class="rfq-layout">
+        <!-- Cột trái: 40% Contact Information & Google Maps -->
+        <aside class="rfq-info">
+          <div class="rfq-info__card">
+            <!-- Hotline & Zalo -->
+            <div class="rfq-card-item rfq-card-item--highlight">
+              <div class="rfq-card-item__icon" aria-hidden="true">${icon.phone}</div>
+              <div class="rfq-card-item__body">
+                <span class="rfq-card-item__label">${esc(t(V.contact.hotline))}</span>
+                <a class="rfq-hotline" href="tel:${c.phone.tel}">
+                  ${esc(c.phone.display)}
+                </a>
+                <div class="rfq-quick-links">
+                  <a class="rfq-btn-sm rfq-btn-sm--call" href="tel:${c.phone.tel}">
+                    ${icon.phone}<span>${ctx.lang === 'vi' ? 'Gọi trực tiếp' : 'Call now'}</span>
+                  </a>
+                  <a class="rfq-btn-sm rfq-btn-sm--zalo" href="${c.zalo}" target="_blank" rel="noopener noreferrer">
+                    ${icon.zalo}<span>${ctx.lang === 'vi' ? 'Chat Zalo' : 'Zalo Chat'}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Nhà máy & Địa chỉ -->
+            <div class="rfq-card-item">
+              <div class="rfq-card-item__icon" aria-hidden="true">${icon.location}</div>
+              <div class="rfq-card-item__body">
+                <span class="rfq-card-item__label">${esc(t(V.contact.factory))}</span>
+                <p class="rfq-address">${esc(t(c.address))}</p>
+                <a class="rfq-link-nav" href="${esc(mapsUrl)}" target="_blank" rel="noopener noreferrer">
+                  <span>${esc(t(V.contact.openMaps))}</span>${icon.external}
+                </a>
+              </div>
+            </div>
+
+            <!-- Email liên hệ -->
+            ${c.email ? `<div class="rfq-card-item">
+              <div class="rfq-card-item__icon" aria-hidden="true">${icon.mail}</div>
+              <div class="rfq-card-item__body">
+                <span class="rfq-card-item__label">${esc(t(V.contact.email))}</span>
+                <a class="rfq-email" href="mailto:${esc(c.email.value)}">${esc(c.email.value)}</a>
+              </div>
+            </div>` : ''}
+
+            <!-- Bản đồ nhỏ tối ưu -->
+            <div class="rfq-map-box">
+              <div class="rfq-map frame">
+                <iframe src="${esc(mapEmbed)}" title="${esc(t(V.contact.mapTitle))}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Cột phải: 60% RFQ Form trên nền trắng -->
+        <div class="rfq-form-wrap" id="bao-gia" tabindex="-1">
+          <div class="rfq-form-card">
+            <header class="rfq-form-card__head">
+              <h3 class="rfq-form-card__title">${esc(t(V.contact.formTitle))}</h3>
+              <p class="rfq-form-card__desc">${esc(t(V.contact.formDesc))}</p>
+            </header>
+            ${quoteForm(ctx)}
+          </div>
         </div>
-        <dl class="contact__facts">
-          <div><dt>${esc(t(V.contact.factory))}</dt><dd>${esc(t(c.address))}</dd></div>
-          <div><dt>${esc(t(V.contact.hotline))}</dt><dd><a href="tel:${c.phone.tel}">${esc(c.phone.display)}</a> · <a href="${c.zalo}" rel="noopener">Zalo</a></dd></div>
-          <div><dt>${esc(t(V.contact.directions))}</dt><dd><a href="${esc(mapsUrl)}" rel="noopener" target="_blank">${esc(t(V.contact.openMaps))} →</a></dd></div>
-        </dl>
-      </div>
-      <div class="contact__form" id="bao-gia" tabindex="-1">
-        <h3>${esc(t(V.contact.formTitle))}</h3>
-        ${quoteForm(ctx)}
       </div>
     </div>
   </section>

@@ -27,6 +27,9 @@ const icons = {
   phone: '<svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>',
   menu: '<svg class="icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.75" d="M3 7h18M3 12h18M3 17h18"/></svg>',
   chevron: '<svg class="icon icon--chevron" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M2 4l4 4 4-4"/></svg>',
+  arrowUp: '<svg class="floating-btn__icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>',
+  facebook: '<svg class="floating-btn__icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>',
+  zalo: '<svg class="floating-btn__icon" viewBox="0 0 48 48" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M11 16h9c.6 0 1 .4 1 1 0 .3-.1.6-.4.8L13.8 27h6.2c.6 0 1 .4 1 1s-.4 1-1 1h-9c-.6 0-1-.4-1-1 0-.3.1-.6.4-.8l6.8-9.2H11c-.6 0-1-.4-1-1s.4-1 1-1zm14.5 4.5c2 0 3.5 1.5 3.5 3.5v5c0 .6-.4 1-1 1s-1-.4-1-1v-.8c-.7.6-1.6 1-2.5 1-2 0-3.5-1.5-3.5-3.5s1.5-3.5 3.5-3.5c.9 0 1.8.4 2.5 1v-1.7c0-.9-.8-1.5-1.5-1.5-.6 0-1-.4-1-1s.4-1 1-1c.3 0 1.8 0 2 0zm-2 4.2c-1 0-1.8.7-1.8 1.8s.8 1.8 1.8 1.8 1.8-.7 1.8-1.8-.8-1.8-1.8-1.8zM29 14.5c.6 0 1 .4 1 1v13.5c0 .6-.4 1-1 1s-1-.4-1-1V15.5c0-.6.4-1 1-1zm6 6c2.5 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5-4.5-2-4.5-4.5 2-4.5 4.5-4.5zm0 2.2c-1.3 0-2.3 1-2.3 2.3s1 2.3 2.3 2.3 2.3-1 2.3-2.3-1-2.3-2.3-2.3z"/></svg>',
 };
 
 export function button(label, href, variant = 'primary') {
@@ -157,76 +160,184 @@ const PHONE_PATTERN = String.raw`[0-9+ .\(\)\-]{9,16}`;
 export function quoteForm(ctx, { idPrefix = 'q' } = {}) {
   const { t, copy, site } = ctx;
   const f = copy.quote.fields;
-  const req = ` <span class="field__req">(${esc(t(f.required))})</span>`;
+  const pl = f.placeholders || {};
+  const req = ` <span class="field__req" aria-hidden="true">*</span><span class="visually-hidden"> (${esc(t(f.required))})</span>`;
   const id = (name) => `${idPrefix}-${name}`;
-  const field = (name, label, control, { required = false, hint } = {}) => `<div class="field" data-field="${name}">
+  const field = (name, label, control, { required = false, hint, className = '' } = {}) => `<div class="field${className ? ` ${className}` : ''}" data-field="${name}">
           <label for="${id(name)}">${esc(t(label))}${required ? req : ''}</label>
           ${control}
           ${hint ? `<p class="field__hint" id="${id(name)}-hint">${esc(t(hint))}</p>` : ''}
           <p class="field__error" id="${id(name)}-error" hidden></p>
         </div>`;
   const describedBy = (name, hint) => `aria-describedby="${hint ? `${id(name)}-hint ` : ''}${id(name)}-error"`;
-  // 9 dòng sản phẩm theo danh sách khách (giá trị = mã danh mục nếu có, để ?san-pham=<id> từ trang danh mục vẫn chọn sẵn),
-  // sau đó là các danh mục cũ chưa nằm trong 9 dòng (cuộn màng, may mặc) để trang của chúng vẫn chọn sẵn được.
+  
+  // Danh sách dòng sản phẩm thực tế từ website
   const lines = (site.v3?.lines || []).filter((l) => l.id !== 'tui-khac');
   const lineValues = new Set(lines.map((l) => l.cat || l.id));
   const options = [
     ...lines.map((l) => [l.cat || l.id, l.name]),
     ...site.categories.filter((c) => !lineValues.has(c.id)).map((c) => [c.id, c.name]),
   ].map(([value, name]) => `<option value="${value}">${esc(t(name))}</option>`).join('');
-  // Thông báo lỗi và trạng thái được nhúng sẵn để JS không phải chứa chữ của từng ngôn ngữ.
+
+  // Thông báo lỗi và trạng thái được nhúng sẵn để JS dùng chung cho song ngữ
   const messages = {
     errors: Object.fromEntries(Object.entries(copy.quote.errors).map(([k, v]) => [k, t(v)])),
     status: Object.fromEntries(Object.entries(copy.quote.status).map(([k, v]) => [k, t(v)])),
   };
+
   return `<form class="quote-form" method="post" action="${esc(ctx.endpoint)}" novalidate data-quote-form data-messages="${esc(JSON.stringify(messages))}">
         <input type="hidden" name="lang" value="${ctx.lang}">
         <div class="quote-form__grid">
-          ${field('name', f.name, `<input id="${id('name')}" name="name" type="text" autocomplete="name" required maxlength="120" ${describedBy('name')}>`, { required: true })}
-          ${field('phone', f.phone, `<input id="${id('phone')}" name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="${PHONE_PATTERN}" ${describedBy('phone')}>`, { required: true })}
-          ${field('company', f.company, `<input id="${id('company')}" name="company" type="text" autocomplete="organization" maxlength="160">`)}
+          ${field('name', f.name, `<input id="${id('name')}" name="name" type="text" autocomplete="name" required maxlength="120" placeholder="${esc(t(pl.name))}" ${describedBy('name')}>`, { required: true })}
+          ${field('phone', f.phone, `<input id="${id('phone')}" name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="${PHONE_PATTERN}" placeholder="${esc(t(pl.phone))}" ${describedBy('phone')}>`, { required: true })}
+          ${field('company', f.company, `<input id="${id('company')}" name="company" type="text" autocomplete="organization" maxlength="160" placeholder="${esc(t(pl.company))}">`)}
+          ${field('email', f.email, `<input id="${id('email')}" name="email" type="email" autocomplete="email" maxlength="160" placeholder="${esc(t(pl.email))}" ${describedBy('email')}>`)}
           ${field('product', f.product, `<select id="${id('product')}" name="product"><option value="">${esc(t(f.productNone))}</option>${options}<option value="khac">${esc(t(f.productOther))}</option></select>`)}
-          ${field('quantity', f.quantity, `<input id="${id('quantity')}" name="quantity" type="text" maxlength="120" ${describedBy('quantity', true)}>`, { hint: f.quantityHint })}
+          ${field('quantity', f.quantity, `<input id="${id('quantity')}" name="quantity" type="text" maxlength="120" placeholder="${esc(t(pl.quantity))}" ${describedBy('quantity', true)}>`, { hint: f.quantityHint })}
         </div>
-        ${field('message', f.message, `<textarea id="${id('message')}" name="message" rows="4" required maxlength="3000" ${describedBy('message', true)}></textarea>`, { required: true, hint: f.messageHint })}
-        <div class="field field--check" data-field="consent">
+        ${field('message', f.message, `<textarea id="${id('message')}" name="message" rows="4" required maxlength="3000" placeholder="${esc(t(pl.message))}" ${describedBy('message', true)}></textarea>`, { required: true, hint: f.messageHint, className: 'field--full' })}
+        ${f.fileNotice ? `<div class="field field--full field--notice"><p class="field__notice"><svg class="icon icon--info" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>${esc(t(f.fileNotice))}</span></p></div>` : ''}
+        <div class="field field--check field--full" data-field="consent">
           <input id="${id('consent')}" name="consent" type="checkbox" value="yes" required aria-describedby="${id('consent')}-error">
-          <label for="${id('consent')}">${esc(t(f.consent))}</label>
+          <label for="${id('consent')}">${esc(t(f.consent))}${req}</label>
           <p class="field__error" id="${id('consent')}-error" hidden></p>
         </div>
         <div class="quote-form__hp" aria-hidden="true"><label for="${id('website')}">Website</label><input id="${id('website')}" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-        <button class="btn btn--primary btn--block" type="submit">${esc(t(copy.quote.submit))}</button>
+        <button class="btn btn--primary btn--rfq btn--block" type="submit">
+          <span class="btn__spinner" aria-hidden="true"></span>
+          <span class="btn__text">${esc(t(copy.quote.submit))}</span>
+        </button>
         <p class="quote-form__status" role="status" aria-live="polite" data-form-status></p>
       </form>`;
 }
 
 export function siteFooter(ctx) {
-  const { site, copy, t } = ctx;
+  const { site, copy, t, lang } = ctx;
   const f = copy.footer;
   const c = site.company;
+  const logo = resolveImage(ctx, site.images.logo.src).small;
+  const landing = ctx.local(lang);
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.v3?.mapQuery || 'Số 16 Khu Đường Tàu, Như Quỳnh, Hưng Yên')}`;
+
+  // 4 danh mục sản phẩm chính từ dữ liệu thực tế
+  const prioritySlugs = ['hat-xoai', 'niem-phong', 'sieu-thi', 'ep-quai'];
+  const productLines = (site.v3?.lines || []).filter((l) => prioritySlugs.includes(l.id));
+
   return `<footer class="site-footer">
-  <div class="container site-footer__grid">
-    <div>
-      <p class="site-footer__name">${esc(t(c.legalName))}</p>
-      <address>${esc(t(c.address))}</address>
-    </div>
-    <div>
-      <h2>${esc(t(f.contact))}</h2>
-      <ul>
-        <li>${esc(t(f.hotline))}: <a href="tel:${c.phone.tel}">${esc(c.phone.display)}</a></li>
-        <li>Zalo: <a href="${c.zalo}" rel="noopener">${esc(c.phone.display)}</a></li>
-        ${c.email ? `<li>Email: <a href="mailto:${esc(c.email.value)}">${esc(c.email.value)}</a></li>` : ''}
-        <li><a href="${c.facebook}" rel="noopener">Facebook</a></li>
-      </ul>
+  <div class="container site-footer__main">
+    <div class="site-footer__grid">
+      <!-- Cột 1: Thương hiệu -->
+      <div class="site-footer__col site-footer__col--brand">
+        <a class="site-footer__logo-link" href="${landing}" aria-label="${esc(t(c.brand))}">
+          <img class="site-footer__logo" src="${ctx.asset(logo.file)}" width="${logo.width}" height="${logo.height}" alt="${esc(t(c.brand))}">
+          <span class="site-footer__brand-text">${esc(t(c.brand))}</span>
+        </a>
+        <p class="site-footer__legal-name">${esc(t(c.legalName))}</p>
+        <p class="site-footer__desc">${esc(t(f.desc))}</p>
+      </div>
+
+      <!-- Cột 2: Khám phá -->
+      <div class="site-footer__col">
+        <h3 class="site-footer__title">${esc(t(f.navTitle))}</h3>
+        <nav class="site-footer__nav" aria-label="${esc(t(f.navTitle))}">
+          <ul class="site-footer__list">
+            <li><a href="${landing}#ve-chung-toi">${esc(t(f.about))}</a></li>
+            <li><a href="${landing}#san-pham">${esc(t(f.productsTitle))}</a></li>
+            <li><a href="${landing}#quy-trinh">${esc(t(f.process))}</a></li>
+            <li><a href="${landing}#lien-he">${esc(t(f.rfq))}</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Cột 3: Sản phẩm -->
+      <div class="site-footer__col">
+        <h3 class="site-footer__title">${esc(t(f.productsTitle))}</h3>
+        <nav class="site-footer__nav" aria-label="${esc(t(f.productsTitle))}">
+          <ul class="site-footer__list">
+            ${productLines.map((l) => `<li><a href="${landing}#${l.id}">${esc(t(l.name))}</a></li>`).join('\n            ')}
+            <li class="site-footer__all-link"><a href="${landing}#san-pham"><strong>${esc(t(f.allProducts))} →</strong></a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Cột 4: Liên hệ -->
+      <div class="site-footer__col site-footer__col--contact">
+        <h3 class="site-footer__title">${esc(t(f.contactTitle))}</h3>
+        <ul class="site-footer__list site-footer__list--contact">
+          <li>
+            <span class="site-footer__contact-lbl">${esc(t(f.hotline))}</span>
+            <div class="site-footer__hotline-row">
+              <a class="site-footer__hotline-num" href="tel:${c.phone.tel}">${esc(c.phone.display)}</a>
+              <span class="site-footer__sep" aria-hidden="true">·</span>
+              <a class="site-footer__zalo-link" href="${c.zalo}" target="_blank" rel="noopener noreferrer">Zalo</a>
+            </div>
+          </li>
+          ${c.email ? `<li>
+            <span class="site-footer__contact-lbl">${esc(t(f.email))}</span>
+            <a href="mailto:${esc(c.email.value)}">${esc(c.email.value)}</a>
+          </li>` : ''}
+          <li>
+            <span class="site-footer__contact-lbl">${esc(t(f.factory))}</span>
+            <address class="site-footer__address">${esc(t(c.address))}</address>
+            <a class="site-footer__maps-link" href="${esc(mapsUrl)}" target="_blank" rel="noopener noreferrer">
+              <span>${esc(t(f.openMaps))}</span> ↗
+            </a>
+          </li>
+          ${c.facebook ? `<li>
+            <a class="site-footer__social-link" href="${c.facebook}" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Facebook Page</span>
+            </a>
+          </li>` : ''}
+        </ul>
+      </div>
     </div>
   </div>
-  <div class="container site-footer__legal">
-    <p>© ${new Date().getFullYear()} ${esc(t(c.legalName))}</p>
+
+  <!-- Bottom Bar: Bản quyền & Lên đầu trang -->
+  <div class="site-footer__bottom">
+    <div class="container site-footer__bottom-inner">
+      <p class="site-footer__copy">© ${new Date().getFullYear()} ${esc(t(c.brand))}. ${esc(t(f.allRights))}</p>
+      <div class="site-footer__bottom-actions">
+        <button class="site-footer__back-top" type="button" data-scroll-top aria-label="${esc(t(f.backToTop))}">
+          <span>${esc(t(f.backToTop))}</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
   </div>
 </footer>
 <div class="contact-bar" role="group" aria-label="${esc(t(copy.ui.quickContact))}">
   <a href="tel:${c.phone.tel}">${icons.phone}<span>${esc(t(copy.ui.call))}</span></a>
   <a href="${c.zalo}" rel="noopener">Zalo</a>
   <a class="contact-bar__primary" href="${ctx.local(ctx.lang)}#bao-gia">${esc(t(copy.ui.quoteShort))}</a>
+</div>
+${floatingActions(ctx)}`;
+}
+
+export function floatingActions(ctx) {
+  const { site, copy, t, lang } = ctx;
+  const c = site.company;
+  const ui = copy.ui;
+  const zaloUrl = c.zalo || 'https://zalo.me/0983771565';
+  const fbUrl = c.facebook || 'https://www.facebook.com/ctyhopphu.jsc/';
+  const zaloLabel = t(ui.chatZalo) || 'Zalo: 0983 771 565';
+  const fbLabel = t(ui.facebookPage) || 'Facebook Fanpage';
+  const topLabel = t(ui.scrollToTop) || (lang === 'vi' ? 'Lên đầu trang' : 'Back to top');
+
+  return `<div class="floating-actions" role="region" aria-label="${lang === 'vi' ? 'Liên hệ nhanh và tiện ích' : 'Quick contact and tools'}">
+  <button class="floating-btn floating-btn--top" type="button" aria-label="${esc(topLabel)}" data-scroll-top title="${esc(topLabel)}">
+    ${icons.arrowUp}
+    <span class="floating-btn__tooltip">${esc(topLabel)}</span>
+  </button>
+  <a class="floating-btn floating-btn--facebook" href="${esc(fbUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(fbLabel)}" title="${esc(fbLabel)}">
+    ${icons.facebook}
+    <span class="floating-btn__tooltip">${esc(fbLabel)}</span>
+  </a>
+  <a class="floating-btn floating-btn--zalo" href="${esc(zaloUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(zaloLabel)}" title="${esc(zaloLabel)}">
+    <span class="floating-btn__pulse" aria-hidden="true"></span>
+    ${icons.zalo}
+    <span class="floating-btn__tooltip">${esc(zaloLabel)}</span>
+  </a>
 </div>`;
 }

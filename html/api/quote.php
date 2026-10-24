@@ -79,9 +79,12 @@ function field(string $name, int $max): string
     return mb_substr($v, 0, $max);
 }
 
+// TODO: File upload mẫu/bản vẽ (HP-10): cần triển khai hạ tầng lưu trữ bảo mật (S3/thư mục ngoài web),
+// kiểm tra MIME type thực tế, giới hạn 10MB và quét mã độc trước khi kích hoạt tải file.
 $data = [
     'name' => field('name', 120),
     'phone' => field('phone', 20),
+    'email' => field('email', 160),
     'company' => field('company', 160),
     'product' => field('product', 60),
     'quantity' => field('quantity', 120),
@@ -93,6 +96,7 @@ $data = [
 $errors = [];
 if ($data['name'] === '') $errors[] = 'name';
 if (!preg_match('/^[0-9+ .()\-]{9,16}$/', $data['phone'])) $errors[] = 'phone';
+if ($data['email'] !== '' && !filter_var($data['email'], FILTER_VALIDATE_EMAIL)) $errors[] = 'email';
 if ($data['message'] === '') $errors[] = 'message';
 if ($data['consent'] !== 'yes') $errors[] = 'consent';
 if ($errors) {
@@ -103,7 +107,7 @@ if ($errors) {
 $oneLine = fn(string $s) => str_replace(["\r", "\n"], ' ', $s);
 
 $labels = [
-    'name' => 'Họ tên', 'phone' => 'Số điện thoại', 'company' => 'Công ty', 'product' => 'Loại bao bì',
+    'name' => 'Họ tên', 'phone' => 'Số điện thoại', 'email' => 'Email', 'company' => 'Công ty', 'product' => 'Loại bao bì',
     'quantity' => 'Số lượng dự kiến', 'message' => 'Yêu cầu chi tiết', 'lang' => 'Ngôn ngữ trang',
 ];
 $lines = [];
@@ -120,8 +124,8 @@ if ($storage !== '' && is_dir($storage)) {
     $fh = @fopen($csv, 'a');
     if ($fh) {
         flock($fh, LOCK_EX);
-        if ($isNew) fputcsv($fh, ['time', 'name', 'phone', 'company', 'product', 'quantity', 'message', 'lang', 'ip']);
-        fputcsv($fh, [date('c'), $data['name'], $data['phone'], $data['company'], $data['product'], $data['quantity'], $data['message'], $data['lang'], $ip]);
+        if ($isNew) fputcsv($fh, ['time', 'name', 'phone', 'email', 'company', 'product', 'quantity', 'message', 'lang', 'ip']);
+        fputcsv($fh, [date('c'), $data['name'], $data['phone'], $data['email'], $data['company'], $data['product'], $data['quantity'], $data['message'], $data['lang'], $ip]);
         flock($fh, LOCK_UN);
         fclose($fh);
     }
