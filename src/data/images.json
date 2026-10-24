@@ -1668,5 +1668,69 @@
    "width": 960,
    "height": 536
   }
+ },
+ "catalog/tui-hat-xoai": {
+  "src": "catalog/tui-hat-xoai",
+  "name": "sp-tui-hat-xoai",
+  "derivedFrom": "assets/source/tui-hat-xoai/tach-nen-pe/tui-hat-xoai-pe-tach-nen-01.png",
+  "edit": "Ảnh tách nền của công ty, đặt lên nền xám #ECEAE6 khung 4:5. Không chỉnh màu hay hình dáng sản phẩm.",
+  "large": {
+   "file": "sp-tui-hat-xoai-1000.webp",
+   "width": 1000,
+   "height": 1250
+  },
+  "small": {
+   "file": "sp-tui-hat-xoai-600.webp",
+   "width": 600,
+   "height": 750
+  }
+ },
+ "catalog/tui-niem-phong": {
+  "src": "catalog/tui-niem-phong",
+  "name": "sp-tui-niem-phong",
+  "derivedFrom": "assets/source/tui-niem-phong/tach-nen/tui-niem-phong-tach-nen-01.png",
+  "edit": "Ảnh tách nền của công ty, đặt lên nền xám #ECEAE6 khung 4:5. Không chỉnh màu hay hình dáng sản phẩm.",
+  "large": {
+   "file": "sp-tui-niem-phong-1000.webp",
+   "width": 1000,
+   "height": 1250
+  },
+  "small": {
+   "file": "sp-tui-niem-phong-600.webp",
+   "width": 600,
+   "height": 750
+  }
+ },
+ "catalog/tui-sieu-thi": {
+  "src": "catalog/tui-sieu-thi",
+  "name": "sp-tui-sieu-thi",
+  "derivedFrom": "assets/source/tui-sieu-thi/tach-nen/tui-sieu-thi-tach-nen-01.jpg",
+  "edit": "Tách nền đen bằng ngưỡng độ sáng, đặt lên nền xám #ECEAE6 khung 4:5. Không chỉnh màu hay hình dáng sản phẩm.",
+  "large": {
+   "file": "sp-tui-sieu-thi-1000.webp",
+   "width": 1000,
+   "height": 1250
+  },
+  "small": {
+   "file": "sp-tui-sieu-thi-600.webp",
+   "width": 600,
+   "height": 750
+  }
+ },
+ "catalog/tui-ep-quai": {
+  "src": "catalog/tui-ep-quai",
+  "name": "sp-tui-ep-quai",
+  "derivedFrom": "assets/source/tui-ep-quai/da-sua/tui-ep-quai-da-sua-09.jpg",
+  "edit": "Tách nền đen bằng ngưỡng độ sáng, đặt lên nền xám #ECEAE6 khung 4:5. Không chỉnh màu hay hình dáng sản phẩm.",
+  "large": {
+   "file": "sp-tui-ep-quai-1000.webp",
+   "width": 1000,
+   "height": 1250
+  },
+  "small": {
+   "file": "sp-tui-ep-quai-600.webp",
+   "width": 600,
+   "height": 750
+  }
  }
 }

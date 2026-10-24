@@ -62,6 +62,52 @@
     });
   });
 
+  // ----- Danh mục sản phẩm (brief HP-09) -----
+  // 6 thẻ đầu hiện sẵn, "Xem tất cả" mở các thẻ còn lại. Mỗi dòng có địa chỉ riêng #<mã dòng>:
+  // mở modal thì địa chỉ đổi theo, mở link #<mã dòng> thì tự cuộn tới và mở đúng modal.
+  const catalog = document.querySelector('[data-catalog]');
+  if (catalog) {
+    const allBtn = document.querySelector('[data-catalog-all]');
+    document.documentElement.classList.add('has-catalog-js');
+    const expand = () => {
+      catalog.classList.add('is-expanded');
+      if (allBtn) {
+        allBtn.setAttribute('aria-expanded', 'true');
+        allBtn.closest('p').hidden = true;
+      }
+    };
+    if (allBtn) {
+      allBtn.closest('p').classList.add('has-js');
+      allBtn.addEventListener('click', () => {
+        expand();
+        const first = catalog.querySelector('.pcard--more .pcard__link');
+        if (first) first.focus();
+      });
+    }
+
+    const base = () => location.pathname + location.search;
+    catalog.querySelectorAll('.pcard').forEach((card) => {
+      const dialog = document.getElementById(`line-${card.id}`);
+      if (!dialog) return;
+      card.querySelector('[data-dialog-open]').addEventListener('click', () => history.replaceState(null, '', `${base()}#${card.id}`));
+      dialog.addEventListener('close', () => {
+        if (location.hash === `#${card.id}`) history.replaceState(null, '', `${base()}#san-pham`);
+      });
+    });
+
+    const openFromHash = () => {
+      const id = decodeURIComponent(location.hash.slice(1));
+      const card = id && catalog.querySelector(`.pcard[id="${CSS.escape(id)}"]`);
+      const dialog = card && document.getElementById(`line-${id}`);
+      if (!dialog || dialog.open || typeof dialog.showModal !== 'function') return;
+      if (card.classList.contains('pcard--more')) expand();
+      card.scrollIntoView({ block: 'center' });
+      dialog.showModal();
+    };
+    openFromHash();
+    addEventListener('hashchange', openFromHash);
+  }
+
   // ----- Hero slider (brief HP-04D) -----
   // Nhịp tự chuyển do chính animation của thanh tiến trình quyết định (animationend -> slide sau),
   // nên khi tạm dừng thì thanh và nhịp dừng cùng lúc. Tạm dừng khi: rê chuột, focus bên trong,

@@ -546,7 +546,7 @@
       {
         "id": "tui-hat-xoai",
         "cat": "tui-hat-xoai",
-        "image": "v3/v3-sp-tui-hat-xoai",
+        "image": "catalog/tui-hat-xoai",
         "name": {
           "vi": "Túi hạt xoài",
           "en": "Die-cut bags"
@@ -583,7 +583,7 @@
       {
         "id": "tui-niem-phong",
         "cat": "tui-niem-phong",
-        "image": "v3/v3-sp-tui-niem-phong",
+        "image": "catalog/tui-niem-phong",
         "name": {
           "vi": "Túi niêm phong",
           "en": "Courier seal bags"
@@ -621,7 +621,7 @@
       {
         "id": "tui-sieu-thi",
         "cat": "tui-sieu-thi",
-        "image": "v3/v3-sp-tui-sieu-thi",
+        "image": "catalog/tui-sieu-thi",
         "name": {
           "vi": "Túi siêu thị tự huỷ",
           "en": "Self-degrading supermarket bags"
@@ -659,7 +659,7 @@
       {
         "id": "tui-ep-quai",
         "cat": "tui-ep-quai",
-        "image": "v3/v3-sp-tui-ep-quai",
+        "image": "catalog/tui-ep-quai",
         "name": {
           "vi": "Túi ép quai",
           "en": "Handle-sealed bags"

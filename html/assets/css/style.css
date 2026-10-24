@@ -834,216 +834,871 @@ a.lang-switch__item:hover {
   color: var(--muted);
 }
 
-/* ---------- 1. Hero ---------- */
-.hero1 {
-  display: grid;
-  gap: var(--space-7) clamp(2rem, 5vw, 5rem);
+/* ---------- 1. Hero slider toàn màn hình (brief HP-04D) ----------
+   Header sáng trong mờ nằm đè lên hero. Ảnh phủ toàn khung, overlay tối bên trái để chữ trắng đọc rõ.
+   Chuyển slide: mờ dần (opacity) + ảnh thu nhẹ (scale), chỉ dùng thuộc tính chạy trên GPU. */
+.site-header {
+  background: rgb(247 246 243 / 0.86);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  backdrop-filter: blur(14px) saturate(1.2);
+}
+
+.site-header__hotline {
+  display: none;
   align-items: center;
-  padding-block: clamp(2.5rem, 1rem + 5vw, 6rem) clamp(3.5rem, 2rem + 5vw, 6rem);
-}
-
-.hero1__title {
-  margin-top: var(--space-4);
-  font-size: clamp(2.5rem, 1.2rem + 4.2vw, 4.75rem);
+  gap: var(--space-2);
+  margin-right: var(--space-2);
+  color: var(--ink);
   font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.035em;
+  line-height: 1.15;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-.hero1__title span {
+.site-header__hotline .icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: #ad1f2d;
+  color: var(--white);
+}
+
+.site-header__hotline small {
   display: block;
-}
-
-.hero1__lead {
-  max-width: 34rem;
-  margin-top: var(--space-5);
-  font-size: var(--text-lg);
-  line-height: 1.6;
-  color: var(--muted);
-}
-
-@media (min-width: 64rem) {
-  .hero1 {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* ---------- 2. Về chúng tôi ---------- */
-.values {
-  display: grid;
-  gap: var(--space-8) var(--gap);
-  margin-top: clamp(2.5rem, 1.5rem + 3vw, 4rem);
-}
-
-.value .kicker {
-  margin-top: var(--space-5);
-}
-
-.value h3 {
-  margin-top: var(--space-2);
-  font-size: var(--text-xl);
-  font-weight: 700;
-  line-height: 1.3;
-}
-
-.value p {
-  margin-top: var(--space-3);
-  color: var(--muted);
-}
-
-.leaders {
-  display: grid;
-  gap: var(--space-7) clamp(2rem, 6vw, 6rem);
-  align-items: end;
-  margin-top: clamp(4rem, 2.5rem + 5vw, 6.5rem);
-  padding-top: var(--space-7);
-  border-top: 1px solid var(--ink);
-}
-
-.leaders blockquote {
-  max-width: 22ch;
-  margin: var(--space-4) 0 0;
-  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);
+  font-size: 0.75rem;
   font-weight: 500;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+  color: #585858;
 }
 
-.leaders__cite {
-  margin-top: var(--space-4);
-  font-size: var(--text-sm);
-  color: var(--muted);
+.site-header__hotline:hover span {
+  color: #ad1f2d;
 }
 
-.leaders__people {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--gap);
-}
-
-.leaders__name {
-  display: block;
-  margin-top: var(--space-3);
-  font-weight: 700;
-  line-height: 1.3;
-}
-
-.leaders__role {
-  display: block;
-  font-size: var(--text-sm);
-  color: var(--muted);
-}
-
-@media (min-width: 48rem) {
-  .values {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+@media (min-width: 80rem) {
+  .site-header__hotline {
+    display: inline-flex;
   }
 }
 
-@media (min-width: 64rem) {
-  .leaders {
-    grid-template-columns: 5fr 7fr;
-  }
-}
-
-/* ---------- 3. Sản phẩm: 9 dòng, bấm mở modal ---------- */
-.lines {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-7) var(--gap);
-  margin-top: clamp(2.5rem, 1.5rem + 3vw, 4rem);
-}
-
-.line {
+.hero2 {
+  --hero-red: #ad1f2d;
+  --slide-ms: 6000ms;
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
+  margin-top: calc(-1 * var(--header-h) - 1px);
+  background: #151617;
+  color: var(--white);
+}
+
+.hero2__slides {
+  position: relative;
+  height: clamp(36rem, 92svh, 44rem);
+  overflow: hidden;
+}
+
+.hero2__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 900ms var(--ease-out), visibility 0s linear 900ms;
+}
+
+.hero2__slide.is-active {
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 900ms var(--ease-out), visibility 0s;
+}
+
+.hero2__bg {
+  position: absolute;
+  inset: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  scale: 1.06;
+  transition: scale 7s linear;
+}
+
+.hero2__slide.is-active .hero2__bg {
+  scale: 1;
+}
+
+/* Overlay: tối bên trái (vùng chữ) và dưới đáy (dải điểm mạnh) */
+.hero2__slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgb(14 15 16 / 0.86) 0%, rgb(14 15 16 / 0.66) 34%, rgb(14 15 16 / 0.18) 62%, rgb(14 15 16 / 0) 78%),
+    linear-gradient(0deg, rgb(14 15 16 / 0.9) 0%, rgb(14 15 16 / 0.55) 22%, rgb(14 15 16 / 0) 42%);
+}
+
+.hero2__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  /* Neo phía trên: tiêu đề đổi số dòng khi font tải xong cũng không kéo cả khối chữ dịch chuyển */
+  padding-top: calc(var(--header-h) + clamp(2.5rem, 1rem + 6vh, 6.5rem));
+  padding-bottom: var(--space-7);
+}
+
+.hero2__content > * {
+  max-width: 40rem;
+}
+
+/* Chữ của slide vừa hiện: xuất hiện so le */
+.hero2__slide .hero2__content > * {
+  opacity: 0;
+  translate: 0 1rem;
+  transition: opacity 600ms var(--ease-out), translate 800ms var(--ease-out);
+}
+
+.hero2__slide.is-active .hero2__content > * {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.hero2__slide.is-active .hero2__content > :nth-child(1) { transition-delay: 150ms; }
+.hero2__slide.is-active .hero2__content > :nth-child(2) { transition-delay: 250ms; }
+.hero2__slide.is-active .hero2__content > :nth-child(3) { transition-delay: 350ms; }
+.hero2__slide.is-active .hero2__content > :nth-child(4) { transition-delay: 450ms; }
+
+/* Slide đầu khi tải trang: hiện ngay, không chờ hiệu ứng (ảnh và chữ là phần tử LCP) */
+.hero2:not(.is-ready) .hero2__slide.is-active .hero2__content > *,
+.hero2:not(.is-ready) .hero2__slide.is-active .hero2__bg {
+  transition: none;
+}
+
+.hero2__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 0.88);
+}
+
+.hero2__eyebrow::before {
+  content: "";
+  width: 2.5rem;
+  height: 2px;
+  flex: none;
+  background: var(--hero-red);
+}
+
+.hero2__title {
+  max-width: 44rem;
+  margin-top: var(--space-5);
+  font-size: clamp(2.125rem, 1.1rem + 3.4vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--white);
+}
+
+.hero2__title span {
+  display: block;
+}
+
+.hero2__body {
+  max-width: 36rem;
+  margin-top: var(--space-5);
+  font-size: clamp(0.9375rem, 0.85rem + 0.35vw, 1.125rem);
+  line-height: 1.65;
+  color: rgb(255 255 255 / 0.88);
+}
+
+.hero2__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-7);
+}
+
+.hero2__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 3.25rem;
+  padding: 0 var(--space-5);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.hero2__btn svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  transition: translate 300ms var(--ease-out);
+}
+
+.hero2__btn:hover svg {
+  translate: 3px 0;
+}
+
+.hero2__btn--primary {
+  background: var(--hero-red);
+  color: var(--white);
+}
+
+.hero2__btn--primary:hover {
+  background: #8f1823;
+  color: var(--white);
+}
+
+.hero2__btn--ghost {
+  border-color: rgb(255 255 255 / 0.75);
+  background: rgb(255 255 255 / 0.04);
+  color: var(--white);
+}
+
+.hero2__btn--ghost:hover {
+  border-color: var(--white);
+  background: var(--white);
+  color: #252525;
+}
+
+.hero2 :focus-visible {
+  outline-color: var(--color-focus-on-dark);
+}
+
+/* ---------- Đáy hero: 3 điểm mạnh + điều hướng ---------- */
+.hero2__foot {
+  position: relative;
+  z-index: 2;
+  background: #151617;
+}
+
+.hero2__features {
+  display: grid;
+  gap: var(--space-4);
+  padding-block: var(--space-5);
+}
+
+.hero2__features li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.hero2__features svg {
+  width: 2.125rem;
+  height: 2.125rem;
+  flex: none;
+  fill: none;
+  stroke: var(--white);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+}
+
+.hero2__features span {
+  font-size: var(--text-sm);
+  line-height: 1.45;
+  color: rgb(255 255 255 / 0.8);
+}
+
+.hero2__features strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.hero2__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4) var(--space-6);
+  padding-block: var(--space-4) var(--space-5);
+  border-top: 1px solid rgb(255 255 255 / 0.18);
+}
+
+/* Không có JS: hàng điều hướng vẫn giữ chỗ (tránh nhảy bố cục) nhưng ẩn đi */
+.hero2:not(.has-js) .hero2__nav {
+  visibility: hidden;
+}
+
+.hero2__count {
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  color: rgb(255 255 255 / 0.65);
+  white-space: nowrap;
+}
+
+.hero2__count span {
+  font-weight: 700;
+  color: var(--white);
+}
+
+.hero2__nav {
+  position: relative;
+}
+
+/* Điện thoại: thanh tiến trình là vạch mảnh chạy ngang mép trên hàng điều hướng */
+.hero2__progress {
+  position: absolute;
+  top: -1px;
+  left: var(--gutter);
+  right: var(--gutter);
+  flex: 0 1 28rem;
+  height: 2px;
+  background: rgb(255 255 255 / 0.25);
+  overflow: hidden;
+}
+
+.hero2__progress span {
+  display: block;
+  height: 100%;
+  background: var(--white);
+  transform-origin: left;
+  scale: 0 1;
+}
+
+.hero2__progress span.is-running {
+  animation: hero2-progress var(--slide-ms) linear forwards;
+}
+
+.hero2.is-paused .hero2__progress span {
+  animation-play-state: paused;
+}
+
+@keyframes hero2-progress {
+  to {
+    scale: 1 1;
+  }
+}
+
+.hero2__dots {
+  display: flex;
+  gap: var(--space-1);
+  margin-inline: auto;
+}
+
+.hero2__dot {
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
   padding: 0;
   border: 0;
   background: none;
-  font: inherit;
-  color: var(--ink);
-  text-align: left;
   cursor: pointer;
 }
 
-.line .frame {
-  transition: translate 400ms var(--ease-out);
+.hero2__dot::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.5);
+  transition: background var(--dur) var(--ease), scale 300ms var(--ease-out);
 }
 
-.line .frame img {
-  transition: scale 600ms var(--ease-out);
+.hero2__dot:hover::before {
+  background: var(--white);
 }
 
-.line__head {
+.hero2__dot.is-active::before {
+  background: var(--hero-red);
+  scale: 1.25;
+}
+
+.hero2__arrows {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: var(--space-3);
-  margin-top: var(--space-4);
 }
 
-.line__no {
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--red);
+.hero2__arrow,
+.hero2__pause {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: 1px solid rgb(255 255 255 / 0.6);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.hero2__pause {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-color: rgb(255 255 255 / 0.3);
+}
+
+.hero2__arrow:hover,
+.hero2__pause:hover {
+  border-color: var(--white);
+  background: var(--white);
+  color: #252525;
+}
+
+.hero2__arrow svg,
+.hero2__pause svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+}
+
+.hero2__pause .i-play {
+  display: none;
+}
+
+.hero2.is-user-paused .hero2__pause .i-play {
+  display: inline;
+  fill: currentColor;
+  stroke: none;
+}
+
+.hero2.is-user-paused .hero2__pause .i-pause {
+  display: none;
+}
+
+/* Máy tính bảng trở lên: điểm mạnh 3 cột */
+@media (min-width: 48rem) {
+  .hero2__features {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--gap);
+  }
+
+  .hero2__slides {
+    height: clamp(36rem, 82svh, 46rem);
+  }
+
+  .hero2__progress {
+    position: static;
+  }
+}
+
+/* Desktop: hero gần toàn màn hình (760–900px); dải điểm mạnh và điều hướng nằm đè lên đáy ảnh */
+@media (min-width: 64rem) {
+  .hero2 {
+    height: clamp(47.5rem, 100svh, 56.25rem);
+  }
+
+  .hero2__slides {
+    position: absolute;
+    inset: 0;
+    height: auto;
+  }
+
+  .hero2__foot {
+    margin-top: auto;
+    background: none;
+  }
+
+  .hero2__features {
+    padding-block: var(--space-6);
+    border-top: 1px solid rgb(255 255 255 / 0.18);
+  }
+
+  .hero2__nav {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .hero2__content {
+    padding-bottom: 13rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero2__slide,
+  .hero2__slide.is-active,
+  .hero2__bg,
+  .hero2__slide .hero2__content > *,
+  .hero2__btn svg {
+    transition: none;
+  }
+
+  .hero2__bg,
+  .hero2__slide.is-active .hero2__bg {
+    scale: 1;
+  }
+
+  .hero2__progress {
+    visibility: hidden;
+  }
+}
+
+/* Điện thoại: chữ phủ gần hết bề ngang nên overlay tối đều hơn */
+@media (max-width: 47.99rem) {
+  .hero2__nav {
+    column-gap: var(--space-3);
+  }
+
+  .hero2__arrows {
+    gap: var(--space-2);
+  }
+
+  .hero2__arrow {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .hero2__slide::after {
+    background:
+      linear-gradient(180deg, rgb(14 15 16 / 0.55) 0%, rgb(14 15 16 / 0.78) 45%, rgb(14 15 16 / 0.9) 100%);
+  }
+}
+
+/* ---------- 2. Về chúng tôi (brief HP-08): 3 khối chữ, không ảnh ---------- */
+.about2 {
+  --ab-red: #ad1f2d;
+  padding-block: clamp(4rem, 2.5rem + 5vw, 7rem);
+  background: #f7f6f3;
+}
+
+.about2 .kicker {
+  color: var(--ab-red);
+}
+
+.about2__head {
+  max-width: 46rem;
+}
+
+.about2__head .block__title {
+  max-width: none;
+}
+
+.about2__head > p:last-child {
+  max-width: 38rem;
+  margin-top: var(--space-4);
+  font-size: var(--text-lg);
+  line-height: 1.55;
+  color: #585858;
+}
+
+.about2__grid {
+  display: grid;
+  gap: var(--space-7) clamp(1.5rem, 3vw, 3rem);
+  margin-top: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+}
+
+.about2__item {
+  padding-top: var(--space-5);
+  border-top: 1px solid #d4d2ce;
+}
+
+.about2__no {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ab-red);
   font-variant-numeric: tabular-nums;
 }
 
-.line__name {
-  font-size: var(--text-lg);
-  font-weight: 700;
-  line-height: 1.3;
-  transition: color var(--dur) var(--ease);
-}
-
-.line__foot {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--space-1) var(--space-3);
-  margin-top: var(--space-1);
-}
-
-.line__material {
-  font-size: var(--text-xs);
-  color: var(--muted);
-}
-
-.line__more {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-1);
+.about2__label {
+  margin-top: var(--space-5);
   font-size: var(--text-xs);
   font-weight: 600;
-  color: var(--red);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #585858;
 }
 
-.line__more .icon {
-  width: 1rem;
-  height: 1rem;
-  transition: rotate 400ms var(--ease-out);
+.about2__item h3 {
+  margin-top: var(--space-2);
+  font-size: clamp(1.375rem, 1.15rem + 0.7vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #252525;
 }
 
-.line:is(:hover, :focus-visible) .frame {
-  translate: 0 -6px;
+.about2__item h3 + p {
+  max-width: 34ch;
+  margin-top: var(--space-3);
+  color: #585858;
 }
 
-.line:is(:hover, :focus-visible) .frame img {
-  scale: 1.06;
-}
+/* Máy tính bảng: khối 1 chiếm cả hàng, hai khối còn lại chia đôi, tránh 3 cột chật chữ */
+@media (min-width: 40rem) and (max-width: 63.99rem) {
+  .about2__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-.line:is(:hover, :focus-visible) .line__name {
-  color: var(--red);
-}
+  .about2__item:first-child {
+    grid-column: 1 / -1;
+  }
 
-.line:is(:hover, :focus-visible) .line__more .icon {
-  rotate: 90deg;
+  .about2__item:first-child h3 + p {
+    max-width: 52ch;
+  }
 }
 
 @media (min-width: 64rem) {
-  .lines {
+  .about2__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    row-gap: var(--space-8);
+  }
+}
+
+/* ---------- Đội ngũ lãnh đạo (brief HP-08) ---------- */
+.team {
+  padding-block: clamp(4rem, 2.5rem + 5vw, 7rem);
+  background: #eeece9;
+}
+
+.team .container {
+  max-width: 80rem;
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-7) var(--gap);
+  margin-top: clamp(2rem, 1.25rem + 2.5vw, 3.5rem);
+}
+
+/* Khung 3:4 cố định: mọi chân dung cùng chiều cao và cách cắt, khuôn mặt giữ ở phần trên */
+.team__photo {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: #dcd9d4;
+}
+
+.team__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.team__name {
+  margin-top: var(--space-4);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #252525;
+}
+
+.team__role {
+  margin-top: var(--space-1);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #ad1f2d;
+}
+
+@media (min-width: 36rem) {
+  .team__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ---------- 3. Danh mục sản phẩm (brief HP-09) ----------
+   Lưới 3 / 2 / 2 cột, ảnh 4:5 nền xám trung tính, không viền thẻ, không bóng.
+   6 thẻ đầu hiện sẵn; thẻ thứ 7 trở đi hiện khi bấm "Xem tất cả" (không JS: hiện đủ). */
+.catalog {
+  --cat-red: #ad1f2d;
+  padding-block: clamp(4rem, 2.5rem + 5vw, 7rem);
+  background: #f7f6f3;
+}
+
+.catalog .kicker {
+  color: var(--cat-red);
+}
+
+.catalog__head {
+  max-width: 46rem;
+}
+
+.catalog__head .block__title {
+  max-width: none;
+}
+
+.catalog__head > p:last-child {
+  max-width: 38rem;
+  margin-top: var(--space-4);
+  font-size: var(--text-lg);
+  line-height: 1.55;
+  color: #585858;
+}
+
+.catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-7) var(--space-4);
+  margin-top: clamp(2.5rem, 1.5rem + 3vw, 3.5rem);
+}
+
+.has-catalog-js .catalog__grid:not(.is-expanded) .pcard--more {
+  display: none;
+}
+
+.pcard article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pcard .frame {
+  background: #eceae6;
+}
+
+.pcard .frame img {
+  transition: scale 600ms var(--ease-out);
+}
+
+.pcard__no {
+  margin-top: var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--cat-red);
+  font-variant-numeric: tabular-nums;
+}
+
+.pcard__name {
+  margin-top: var(--space-1);
+  font-size: clamp(1.0625rem, 0.95rem + 0.45vw, 1.375rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: #252525;
+}
+
+.pcard__material {
+  margin-top: var(--space-1);
+  font-size: var(--text-xs);
+  color: #585858;
+}
+
+/* Nút "Xem chi tiết": vùng bấm phủ cả thẻ qua ::after */
+.pcard__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  align-self: flex-start;
+  margin-top: auto;
+  padding: var(--space-3) 0 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--cat-red);
+  cursor: pointer;
+}
+
+.pcard__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.pcard__link svg,
+.catalog__all-btn svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  transition: translate 300ms var(--ease-out);
+}
+
+.pcard__link:focus-visible {
+  outline: none;
+}
+
+.pcard__link:focus-visible::after {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+.pcard article:hover .frame img,
+.pcard article:has(:focus-visible) .frame img {
+  scale: 1.03;
+}
+
+.pcard article:hover .pcard__link svg,
+.pcard article:has(:focus-visible) .pcard__link svg {
+  translate: 4px 0;
+}
+
+.pcard article:hover .pcard__name {
+  color: var(--cat-red);
+}
+
+.catalog__all {
+  margin-top: clamp(2.5rem, 1.5rem + 3vw, 3.5rem);
+}
+
+.catalog__all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 3rem;
+  padding: 0 var(--space-5);
+  border: 1px solid #252525;
+  border-radius: var(--radius);
+  background: none;
+  font: inherit;
+  font-weight: 700;
+  color: #252525;
+  cursor: pointer;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+
+.catalog__all-btn:hover {
+  background: #252525;
+  color: var(--white);
+}
+
+.catalog__all-btn:hover svg {
+  translate: 4px 0;
+}
+
+.catalog__all:not(.has-js) {
+  display: none;
+}
+
+@media (min-width: 36rem) {
+  .catalog__grid {
+    gap: var(--space-8) var(--gap);
+  }
+}
+
+@media (min-width: 64rem) {
+  .catalog__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-8) 1.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pcard .frame img,
+  .pcard__link svg,
+  .catalog__all-btn svg {
+    transition: none;
+  }
+
+  .pcard article:hover .frame img,
+  .pcard article:has(:focus-visible) .frame img {
+    scale: 1;
   }
 }
 
@@ -1443,17 +2098,9 @@ html:has(dialog.sheet[open]) {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .line .frame,
-  .line .frame img,
-  .line__more .icon,
   .sheet,
   .sheet::backdrop {
     transition: none;
   }
 
-  .line:is(:hover, :focus-visible) .frame,
-  .line:is(:hover, :focus-visible) .frame img {
-    translate: none;
-    scale: 1;
-  }
 }

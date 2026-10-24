@@ -763,104 +763,196 @@
   }
 }
 
-/* ---------- 3. Sản phẩm: 9 dòng, bấm mở modal ---------- */
-.lines {
+/* ---------- 3. Danh mục sản phẩm (brief HP-09) ----------
+   Lưới 3 / 2 / 2 cột, ảnh 4:5 nền xám trung tính, không viền thẻ, không bóng.
+   6 thẻ đầu hiện sẵn; thẻ thứ 7 trở đi hiện khi bấm "Xem tất cả" (không JS: hiện đủ). */
+.catalog {
+  --cat-red: #ad1f2d;
+  padding-block: clamp(4rem, 2.5rem + 5vw, 7rem);
+  background: #f7f6f3;
+}
+
+.catalog .kicker {
+  color: var(--cat-red);
+}
+
+.catalog__head {
+  max-width: 46rem;
+}
+
+.catalog__head .block__title {
+  max-width: none;
+}
+
+.catalog__head > p:last-child {
+  max-width: 38rem;
+  margin-top: var(--space-4);
+  font-size: var(--text-lg);
+  line-height: 1.55;
+  color: #585858;
+}
+
+.catalog__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-7) var(--gap);
-  margin-top: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+  gap: var(--space-7) var(--space-4);
+  margin-top: clamp(2.5rem, 1.5rem + 3vw, 3.5rem);
 }
 
-.line {
+.has-catalog-js .catalog__grid:not(.is-expanded) .pcard--more {
+  display: none;
+}
+
+.pcard article {
+  position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background: none;
-  font: inherit;
-  color: var(--ink);
-  text-align: left;
-  cursor: pointer;
+  height: 100%;
 }
 
-.line .frame {
-  transition: translate 400ms var(--ease-out);
+.pcard .frame {
+  background: #eceae6;
 }
 
-.line .frame img {
+.pcard .frame img {
   transition: scale 600ms var(--ease-out);
 }
 
-.line__head {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-3);
+.pcard__no {
   margin-top: var(--space-4);
-}
-
-.line__no {
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--red);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--cat-red);
   font-variant-numeric: tabular-nums;
 }
 
-.line__name {
-  font-size: var(--text-lg);
+.pcard__name {
+  margin-top: var(--space-1);
+  font-size: clamp(1.0625rem, 0.95rem + 0.45vw, 1.375rem);
   font-weight: 700;
   line-height: 1.3;
-  transition: color var(--dur) var(--ease);
+  letter-spacing: -0.01em;
+  color: #252525;
 }
 
-.line__foot {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--space-1) var(--space-3);
+.pcard__material {
   margin-top: var(--space-1);
-}
-
-.line__material {
   font-size: var(--text-xs);
-  color: var(--muted);
+  color: #585858;
 }
 
-.line__more {
+/* Nút "Xem chi tiết": vùng bấm phủ cả thẻ qua ::after */
+.pcard__link {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-1);
-  font-size: var(--text-xs);
-  font-weight: 600;
-  color: var(--red);
+  gap: var(--space-2);
+  align-self: flex-start;
+  margin-top: auto;
+  padding: var(--space-3) 0 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--cat-red);
+  cursor: pointer;
 }
 
-.line__more .icon {
-  width: 1rem;
-  height: 1rem;
-  transition: rotate 400ms var(--ease-out);
+.pcard__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
 }
 
-.line:is(:hover, :focus-visible) .frame {
-  translate: 0 -6px;
+.pcard__link svg,
+.catalog__all-btn svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  transition: translate 300ms var(--ease-out);
 }
 
-.line:is(:hover, :focus-visible) .frame img {
-  scale: 1.06;
+.pcard__link:focus-visible {
+  outline: none;
 }
 
-.line:is(:hover, :focus-visible) .line__name {
-  color: var(--red);
+.pcard__link:focus-visible::after {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
 }
 
-.line:is(:hover, :focus-visible) .line__more .icon {
-  rotate: 90deg;
+.pcard article:hover .frame img,
+.pcard article:has(:focus-visible) .frame img {
+  scale: 1.03;
+}
+
+.pcard article:hover .pcard__link svg,
+.pcard article:has(:focus-visible) .pcard__link svg {
+  translate: 4px 0;
+}
+
+.pcard article:hover .pcard__name {
+  color: var(--cat-red);
+}
+
+.catalog__all {
+  margin-top: clamp(2.5rem, 1.5rem + 3vw, 3.5rem);
+}
+
+.catalog__all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 3rem;
+  padding: 0 var(--space-5);
+  border: 1px solid #252525;
+  border-radius: var(--radius);
+  background: none;
+  font: inherit;
+  font-weight: 700;
+  color: #252525;
+  cursor: pointer;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+
+.catalog__all-btn:hover {
+  background: #252525;
+  color: var(--white);
+}
+
+.catalog__all-btn:hover svg {
+  translate: 4px 0;
+}
+
+.catalog__all:not(.has-js) {
+  display: none;
+}
+
+@media (min-width: 36rem) {
+  .catalog__grid {
+    gap: var(--space-8) var(--gap);
+  }
 }
 
 @media (min-width: 64rem) {
-  .lines {
+  .catalog__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    row-gap: var(--space-8);
+    gap: var(--space-8) 1.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pcard .frame img,
+  .pcard__link svg,
+  .catalog__all-btn svg {
+    transition: none;
+  }
+
+  .pcard article:hover .frame img,
+  .pcard article:has(:focus-visible) .frame img {
+    scale: 1;
   }
 }
 
@@ -1260,17 +1352,9 @@ html:has(dialog.sheet[open]) {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .line .frame,
-  .line .frame img,
-  .line__more .icon,
   .sheet,
   .sheet::backdrop {
     transition: none;
   }
 
-  .line:is(:hover, :focus-visible) .frame,
-  .line:is(:hover, :focus-visible) .frame img {
-    translate: none;
-    scale: 1;
-  }
 }

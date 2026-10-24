@@ -61,22 +61,29 @@ function material(ctx, line) {
   return ctx.lang === 'en' && line.materialEn ? line.materialEn : line.material;
 }
 
-function lineMedia(ctx, line, sizes) {
+function lineMedia(ctx, line, sizes, alt = ctx.t(line.name)) {
   const P = ctx.copy.v3.products;
   return line.image
-    ? frame(ctx, line.image, ctx.t(line.name), { sizes, ratio: '1' })
-    : `<span class="frame frame--empty" style="--ratio: 1"><span>${esc(ctx.t(P.pending))}</span></span>`;
+    ? frame(ctx, line.image, alt, { sizes, ratio: '4 / 5' })
+    : `<span class="frame frame--empty" style="--ratio: 4 / 5"><span>${esc(ctx.t(P.pending))}</span></span>`;
 }
 
-/** Ô một dòng sản phẩm: nút mở modal chi tiết. */
+/**
+ * Thẻ một dòng sản phẩm (brief HP-09): ảnh 4:5, số đỏ, tên (H3), chất liệu, "Xem chi tiết".
+ * Nút "Xem chi tiết" phủ cả thẻ (bấm chỗ nào cũng mở modal). 6 thẻ đầu hiện sẵn; các thẻ sau hiện khi bấm "Xem tất cả".
+ */
 function lineCard(ctx, line, i) {
   const { t, copy } = ctx;
-  return `<li>
-        <button class="line" type="button" data-dialog-open="line-${line.id}" aria-haspopup="dialog">
-          ${lineMedia(ctx, line, '(min-width: 64rem) 28vw, 45vw')}
-          <span class="line__head"><span class="line__no">${pad(i)}</span><span class="line__name">${esc(t(line.name))}</span></span>
-          <span class="line__foot"><span class="line__material">${esc(material(ctx, line))}</span><span class="line__more">${esc(t(copy.ui.viewDetails))}${icon.plus}</span></span>
-        </button>
+  const P = copy.v3.products;
+  const arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
+  return `<li class="pcard${i >= 6 ? ' pcard--more' : ''}" id="${line.id}">
+        <article>
+          ${lineMedia(ctx, line, '(min-width: 64rem) 400px, (min-width: 36rem) 45vw, 50vw')}
+          <p class="pcard__no" aria-hidden="true">${pad(i)}</p>
+          <h3 class="pcard__name">${esc(t(line.name))}</h3>
+          <p class="pcard__material">${esc(material(ctx, line))}</p>
+          <button class="pcard__link" type="button" data-dialog-open="line-${line.id}" aria-haspopup="dialog">${esc(t(P.detail))}<span class="visually-hidden">: ${esc(t(line.name))}</span>${arrow}</button>
+        </article>
       </li>`;
 }
 
@@ -89,7 +96,7 @@ function lineDialog(ctx, line, i, total) {
   return `<dialog class="sheet" id="line-${line.id}" aria-labelledby="line-${line.id}-title">
     <div class="sheet__body">
       <button class="sheet__close" type="button" data-dialog-close aria-label="${esc(t(P.close))}">${icon.close}</button>
-      ${lineMedia(ctx, line, '(min-width: 48rem) 420px, 100vw')}
+      ${lineMedia(ctx, line, '(min-width: 48rem) 420px, 100vw', '')}
       <div class="sheet__text">
         ${kicker(`${t(P.line)} ${pad(i)} / ${String(total).padStart(2, '0')}`)}
         <h3 id="line-${line.id}-title" tabindex="-1" autofocus>${esc(t(line.name))}</h3>
@@ -213,15 +220,18 @@ export function render(ctx) {
     </div>
   </section>
 
-  <section class="container block" id="san-pham" aria-labelledby="san-pham-title" data-section>
-    ${kicker(t(V.products.kicker))}
-    <header class="block__head">
-      <h2 id="san-pham-title" class="block__title">${esc(t(V.products.title))}</h2>
-      <p>${esc(t(V.products.lead))}</p>
-    </header>
-    <ul class="lines">
-      ${lines.map((l, i) => lineCard(ctx, l, i)).join('\n      ')}
-    </ul>
+  <section class="catalog" id="san-pham" aria-labelledby="san-pham-title" data-section>
+    <div class="container">
+      <header class="catalog__head">
+        ${kicker(t(V.products.kicker))}
+        <h2 id="san-pham-title" class="block__title">${esc(t(V.products.title))}</h2>
+        <p>${esc(t(V.products.lead))}</p>
+      </header>
+      <ul class="catalog__grid" id="catalog-grid" data-catalog>
+        ${lines.map((l, i) => lineCard(ctx, l, i)).join('\n        ')}
+      </ul>
+      ${lines.length > 6 ? `<p class="catalog__all"><button class="catalog__all-btn" type="button" data-catalog-all aria-controls="catalog-grid" aria-expanded="false">${esc(t(V.products.all))} (${lines.length})<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></p>` : ''}
+    </div>
     ${lines.map((l, i) => lineDialog(ctx, l, i, lines.length)).join('\n    ')}
   </section>
 

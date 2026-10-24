@@ -725,16 +725,16 @@
     },
     "products": {
       "kicker": {
-        "vi": "02 — Sản phẩm",
-        "en": "02 — Products"
+        "vi": "02 — Danh mục sản phẩm",
+        "en": "02 — Product catalogue"
       },
       "title": {
-        "vi": "Chín dòng túi cho chuỗi cung ứng của bạn.",
-        "en": "Nine bag lines for your supply chain."
+        "vi": "Giải pháp bao bì nhựa cho doanh nghiệp",
+        "en": "Plastic packaging solutions for business"
       },
       "lead": {
-        "vi": "Chọn một dòng để xem chất liệu, kích thước thông dụng và ứng dụng.",
-        "en": "Pick a line to see its material, common sizes and uses."
+        "vi": "Khám phá các dòng sản phẩm theo vật liệu, quy cách và mục đích sử dụng.",
+        "en": "Explore our product lines by material, specification and use."
       },
       "pending": {
         "vi": "Ảnh đang cập nhật",
@@ -775,6 +775,14 @@
       "madeToOrder": {
         "vi": "Theo yêu cầu",
         "en": "Made to order"
+      },
+      "all": {
+        "vi": "Xem tất cả sản phẩm",
+        "en": "View all products"
+      },
+      "detail": {
+        "vi": "Xem chi tiết",
+        "en": "View details"
       }
     },
     "capability": {
