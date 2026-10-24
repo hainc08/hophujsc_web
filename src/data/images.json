@@ -1620,5 +1620,53 @@
    "width": 442,
    "height": 550
   }
+ },
+ "hero/slide-1": {
+  "src": "hero/slide-1",
+  "name": "hero-slide-1-thuong-hieu",
+  "derivedFrom": "assets/slider/slide-3.jpg",
+  "edit": "Ảnh hero chủ dự án cung cấp (brief HP-04D). Chỉ thu nhỏ, nén WebP.",
+  "large": {
+   "file": "hero-slide-1-thuong-hieu-1800.webp",
+   "width": 1800,
+   "height": 960
+  },
+  "small": {
+   "file": "hero-slide-1-thuong-hieu-960.webp",
+   "width": 960,
+   "height": 512
+  }
+ },
+ "hero/slide-2": {
+  "src": "hero/slide-2",
+  "name": "hero-slide-2-san-pham",
+  "derivedFrom": "assets/slider/slide-1.jpg",
+  "edit": "Ảnh hero chủ dự án cung cấp (brief HP-04D). Chỉ thu nhỏ, nén WebP.",
+  "large": {
+   "file": "hero-slide-2-san-pham-1744.webp",
+   "width": 1744,
+   "height": 902
+  },
+  "small": {
+   "file": "hero-slide-2-san-pham-960.webp",
+   "width": 960,
+   "height": 497
+  }
+ },
+ "hero/slide-3": {
+  "src": "hero/slide-3",
+  "name": "hero-slide-3-quy-trinh",
+  "derivedFrom": "assets/slider/slide-2.jpg",
+  "edit": "Ảnh hero chủ dự án cung cấp (brief HP-04D). Chỉ thu nhỏ, nén WebP.",
+  "large": {
+   "file": "hero-slide-3-quy-trinh-1024.webp",
+   "width": 1024,
+   "height": 572
+  },
+  "small": {
+   "file": "hero-slide-3-quy-trinh-960.webp",
+   "width": 960,
+   "height": 536
+  }
  }
 }

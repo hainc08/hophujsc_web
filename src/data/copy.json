@@ -1064,6 +1064,189 @@
           }
         }
       ]
+    },
+    "slider": {
+      "label": {
+        "vi": "Giới thiệu Hợp Phú",
+        "en": "About Hop Phu"
+      },
+      "slide": {
+        "vi": "Slide",
+        "en": "Slide"
+      },
+      "prev": {
+        "vi": "Slide trước",
+        "en": "Previous slide"
+      },
+      "next": {
+        "vi": "Slide sau",
+        "en": "Next slide"
+      },
+      "goto": {
+        "vi": "Chuyển tới slide",
+        "en": "Go to slide"
+      },
+      "pause": {
+        "vi": "Tạm dừng tự chuyển slide",
+        "en": "Pause slideshow"
+      },
+      "play": {
+        "vi": "Tiếp tục tự chuyển slide",
+        "en": "Resume slideshow"
+      },
+      "hotline": {
+        "vi": "Hotline tư vấn",
+        "en": "Sales hotline"
+      },
+      "slides": [
+        {
+          "eyebrow": {
+            "vi": "Công ty CP Sản xuất và Thương mại Hợp Phú",
+            "en": "Hop Phu Production and Trading JSC"
+          },
+          "title": [
+            {
+              "vi": "Bao bì nhựa theo yêu cầu.",
+              "en": "Plastic packaging, made to order."
+            },
+            {
+              "vi": "Tối ưu cho doanh nghiệp.",
+              "en": "Built for your business."
+            }
+          ],
+          "body": {
+            "vi": "Hợp Phú chuyên sản xuất túi nhựa, màng nhựa và bao lót theo kích thước, chất liệu, màu sắc và in ấn theo yêu cầu, đáp ứng linh hoạt cho doanh nghiệp trong nhiều ngành nghề.",
+            "en": "Hop Phu makes plastic bags, film and liners to your size, material, colour and print, with the flexibility businesses across many industries need."
+          },
+          "cta": [
+            [
+              {
+                "vi": "Nhận báo giá",
+                "en": "Get a quote"
+              },
+              "#bao-gia"
+            ],
+            [
+              {
+                "vi": "Xem sản phẩm",
+                "en": "View products"
+              },
+              "#san-pham"
+            ]
+          ],
+          "alt": {
+            "vi": "Túi nhựa, túi xốp và cuộn màng nhựa nhiều loại (ảnh minh hoạ)",
+            "en": "Assorted plastic bags and film rolls (illustration)"
+          }
+        },
+        {
+          "eyebrow": {
+            "vi": "Dòng sản phẩm chủ lực",
+            "en": "Our main product lines"
+          },
+          "title": [
+            {
+              "vi": "Túi nhựa, màng nhựa và bao lót cho nhiều nhu cầu đóng gói.",
+              "en": "Plastic bags, film and liners for every packing need."
+            }
+          ],
+          "body": {
+            "vi": "Giải pháp bao bì phù hợp cho bán lẻ, thương mại điện tử, thực phẩm, nông nghiệp và sản xuất công nghiệp.",
+            "en": "Packaging for retail, e-commerce, food, agriculture and industrial production."
+          },
+          "cta": [
+            [
+              {
+                "vi": "Khám phá sản phẩm",
+                "en": "Explore products"
+              },
+              "#san-pham"
+            ],
+            [
+              {
+                "vi": "Liên hệ tư vấn",
+                "en": "Talk to us"
+              },
+              "#lien-he"
+            ]
+          ],
+          "alt": {
+            "vi": "Bao lót, túi zipper và cuộn màng nhựa (ảnh minh hoạ)",
+            "en": "Liner sacks, zipper bags and film rolls (illustration)"
+          }
+        },
+        {
+          "eyebrow": {
+            "vi": "Quy trình hợp tác",
+            "en": "How we work together"
+          },
+          "title": [
+            {
+              "vi": "Từ yêu cầu đến sản xuất trong 4 bước rõ ràng.",
+              "en": "From request to production in four clear steps."
+            }
+          ],
+          "body": {
+            "vi": "Tiếp nhận yêu cầu, tư vấn vật liệu, xác nhận thông số và tổ chức sản xuất – giao hàng theo thỏa thuận.",
+            "en": "We take your request, advise on material, confirm the specification, then produce and deliver as agreed."
+          },
+          "cta": [
+            [
+              {
+                "vi": "Xem quy trình",
+                "en": "See the process"
+              },
+              "#quy-trinh"
+            ],
+            [
+              {
+                "vi": "Gửi yêu cầu sản xuất",
+                "en": "Send a production request"
+              },
+              "#bao-gia"
+            ]
+          ],
+          "alt": {
+            "vi": "Dây chuyền thổi màng nhựa (ảnh minh hoạ)",
+            "en": "Plastic film blowing line (illustration)"
+          }
+        }
+      ],
+      "features": [
+        {
+          "icon": "gear",
+          "title": {
+            "vi": "Sản xuất theo quy cách",
+            "en": "Made to specification"
+          },
+          "body": {
+            "vi": "Đúng kích thước, đúng nhu cầu",
+            "en": "The right size for your needs"
+          }
+        },
+        {
+          "icon": "layers",
+          "title": {
+            "vi": "Tư vấn vật liệu",
+            "en": "Material advice"
+          },
+          "body": {
+            "vi": "HDPE, LDPE, PP, OPP và hơn thế nữa",
+            "en": "HDPE, LDPE, PP, OPP and more"
+          }
+        },
+        {
+          "icon": "factory",
+          "title": {
+            "vi": "Nhà máy tại Hưng Yên",
+            "en": "Factory in Hung Yen"
+          },
+          "body": {
+            "vi": "Chủ động sản xuất, giao hàng đúng hẹn",
+            "en": "In-house production, on-time delivery"
+          }
+        }
+      ]
     }
   }
 }

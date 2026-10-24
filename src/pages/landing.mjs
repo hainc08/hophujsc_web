@@ -4,7 +4,7 @@
 import { esc, image, quoteForm, resolveImage } from '../components.mjs';
 
 // Bề rộng hiển thị thật của ảnh hero, để trình duyệt chọn đúng bản 720w trên mobile.
-export const HERO_SIZES = '(min-width: 64rem) 44vw, 100vw';
+export const HERO_SIZES = '100vw';
 
 export const meta = (ctx) => ({
   path: ctx.site.paths[ctx.lang],
@@ -108,6 +108,64 @@ function lineDialog(ctx, line, i, total) {
   </dialog>`;
 }
 
+/** Icon nét mảnh cho dải điểm mạnh dưới hero */
+const featureIcon = {
+  gear: '<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="4.5"/><path d="M16 3.5v4M16 24.5v4M3.5 16h4M24.5 16h4M7.2 7.2l2.8 2.8M22 22l2.8 2.8M7.2 24.8 10 22M22 10l2.8-2.8"/><circle cx="16" cy="16" r="9"/></svg>',
+  layers: '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 4 10l12 6 12-6-12-6Z"/><path d="m4 16 12 6 12-6M4 22l12 6 12-6"/></svg>',
+  factory: '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 28V14l7 4v-4l7 4v-4l7 4V6h3v22H4Z"/><path d="M9 23h3M15 23h3M21 23h3"/></svg>',
+};
+
+/**
+ * Hero slider toàn màn hình (brief HP-04D). Slide 1 mang H1 duy nhất của trang; slide 2, 3 dùng H2.
+ * Không JS: chỉ slide 1 hiện. Có JS (site.js): tự chuyển 6 giây, dừng khi rê chuột/focus, nút trước/sau, chấm, vuốt.
+ */
+function heroSlider(ctx) {
+  const { site, copy, t } = ctx;
+  const S = copy.v3.slider;
+  const slides = S.slides.map((s, i) => ({ ...s, ...site.v3.slides[i] }));
+  const total = String(slides.length).padStart(2, '0');
+  const arrow = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${d === 'next' ? 'M5 12h14m-6-6 6 6-6 6' : 'M19 12H5m6-6-6 6 6 6'}"/></svg>`;
+  return `<section class="hero2" id="top" aria-roledescription="carousel" aria-label="${esc(t(S.label))}" data-section data-slider>
+    <div class="hero2__slides">
+      ${slides.map((s, i) => {
+        const m = resolveImage(ctx, s.image);
+        const tag = i === 0 ? 'h1' : 'h2';
+        return `<div class="hero2__slide${i === 0 ? ' is-active' : ''}" role="group" aria-roledescription="slide" aria-label="${i + 1} / ${slides.length}"${i === 0 ? '' : ' inert'} data-slide>
+        ${i === 0
+          ? `<img class="hero2__bg" src="${ctx.asset(m.large.file)}" srcset="${ctx.asset(m.small.file)} ${m.small.width}w, ${ctx.asset(m.large.file)} ${m.large.width}w" sizes="100vw" width="${m.large.width}" height="${m.large.height}" alt="${esc(t(s.alt))}" style="object-position: ${s.position}" fetchpriority="high">`
+          : `<img class="hero2__bg" data-src="${ctx.asset(m.large.file)}" data-srcset="${ctx.asset(m.small.file)} ${m.small.width}w, ${ctx.asset(m.large.file)} ${m.large.width}w" sizes="100vw" width="${m.large.width}" height="${m.large.height}" alt="${esc(t(s.alt))}" style="object-position: ${s.position}" decoding="async">`}
+        <div class="container hero2__content">
+          <p class="hero2__eyebrow">${esc(t(s.eyebrow))}</p>
+          <${tag} class="hero2__title"${i === 0 ? ' id="hero-title"' : ''}>${s.title.map((l) => `<span>${esc(t(l))}</span>`).join(' ')}</${tag}>
+          <p class="hero2__body">${esc(t(s.body))}</p>
+          <div class="hero2__actions">
+            <a class="btn hero2__btn hero2__btn--primary" href="${s.cta[0][1]}">${esc(t(s.cta[0][0]))}${arrow('next')}</a>
+            <a class="btn hero2__btn hero2__btn--ghost" href="${s.cta[1][1]}">${esc(t(s.cta[1][0]))}${arrow('next')}</a>
+          </div>
+        </div>
+      </div>`;
+      }).join('\n      ')}
+    </div>
+    <div class="hero2__foot">
+      <ul class="container hero2__features">
+        ${S.features.map((f) => `<li>${featureIcon[f.icon]}<span><strong>${esc(t(f.title))}</strong>${esc(t(f.body))}</span></li>`).join('\n        ')}
+      </ul>
+      <div class="container hero2__nav" data-slider-nav>
+        <div class="hero2__count"><span data-slider-current>01</span> / ${total}</div>
+        <div class="hero2__progress" aria-hidden="true"><span data-slider-progress></span></div>
+        <div class="hero2__dots">
+          ${slides.map((_, i) => `<button type="button" class="hero2__dot${i === 0 ? ' is-active' : ''}" data-slider-dot="${i}" aria-label="${esc(t(S.goto))} ${i + 1}"${i === 0 ? ' aria-current="true"' : ''}></button>`).join('')}
+        </div>
+        <div class="hero2__arrows">
+          <button type="button" class="hero2__pause" data-slider-pause aria-label="${esc(t(S.pause))}" data-label-pause="${esc(t(S.pause))}" data-label-play="${esc(t(S.play))}"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M9 6v12M15 6v12"/><path class="i-play" d="M8 5.5v13l11-6.5-11-6.5Z"/></svg></button>
+          <button type="button" class="hero2__arrow" data-slider-prev aria-label="${esc(t(S.prev))}">${arrow('prev')}</button>
+          <button type="button" class="hero2__arrow" data-slider-next aria-label="${esc(t(S.next))}">${arrow('next')}</button>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
 export function render(ctx) {
   const { site, copy, t } = ctx;
   const V = copy.v3;
@@ -119,18 +177,7 @@ export function render(ctx) {
   const ill = resolveImage(ctx, flow.illustration);
 
   return `<main id="noi-dung" class="onepage">
-  <section class="container hero1" id="top" aria-labelledby="hero-title" data-section>
-    <div class="hero1__copy">
-      ${kicker(t(V.hero.kicker))}
-      <h1 id="hero-title" class="hero1__title">${V.hero.lines.map((l) => `<span>${esc(t(l))}</span>`).join(' ')}</h1>
-      <p class="hero1__lead">${esc(t(V.hero.lead))}</p>
-      <div class="hero__actions">
-        <a class="btn btn--primary" href="#lien-he">${esc(t(V.hero.primary))}</a>
-        <a class="btn btn--secondary" href="#san-pham">${esc(t(V.hero.secondary))}</a>
-      </div>
-    </div>
-    ${frame(ctx, site.v3.hero.image, t(site.v3.hero.alt), { sizes: HERO_SIZES, ratio: '4 / 5', priority: true, className: 'hero1__media' })}
-  </section>
+  ${heroSlider(ctx)}
 
   <section class="container block" id="ve-chung-toi" aria-labelledby="ve-chung-toi-title" data-section>
     ${kicker(t(V.about.kicker))}

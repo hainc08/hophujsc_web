@@ -33,3 +33,4 @@ api/config.php
 # Ảnh đã chọn và tối ưu cho web nằm ở assets/img/.
 /assets/source/
 /assets/Ảnh sản phẩm HP/
+/assets/slider/

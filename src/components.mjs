@@ -85,6 +85,7 @@ export function siteHeader(ctx) {
       </ul>
     </nav>
     <div class="site-header__actions">
+      <a class="site-header__hotline" href="tel:${site.company.phone.tel}">${icons.phone}<span><small>${esc(t(copy.v3.slider.hotline))}</small>${esc(site.company.phone.display)}</span></a>
       <div class="lang-switch">
         ${['vi', 'en'].map((l) => (l === lang
           ? `<span class="lang-switch__item is-current" lang="${l}">${l.toUpperCase()}</span>`

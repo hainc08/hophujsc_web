@@ -37,10 +37,10 @@
   },
   "images": {
     "hero": {
-      "src": "v3/v3-hero",
+      "src": "hero/slide-1",
       "alt": {
-        "vi": "Túi ép quai màu kem, quai nâu, ảnh chụp studio của Hợp Phú",
-        "en": "Cream handle-sealed bag with brown handles, Hop Phu studio photo"
+        "vi": "Túi nhựa, túi xốp và cuộn màng nhựa nhiều loại (ảnh minh hoạ)",
+        "en": "Assorted plastic bags and film rolls (illustration)"
       }
     },
     "dieCut": {
@@ -827,6 +827,20 @@
         "flow/step-3",
         "flow/step-4"
       ]
-    }
+    },
+    "slides": [
+      {
+        "image": "hero/slide-1",
+        "position": "70% 50%"
+      },
+      {
+        "image": "hero/slide-2",
+        "position": "72% 50%"
+      },
+      {
+        "image": "hero/slide-3",
+        "position": "60% 50%"
+      }
+    ]
   }
 }

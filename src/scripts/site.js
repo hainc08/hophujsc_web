@@ -62,6 +62,103 @@
     });
   });
 
+  // ----- Hero slider (brief HP-04D) -----
+  // Nhịp tự chuyển do chính animation của thanh tiến trình quyết định (animationend -> slide sau),
+  // nên khi tạm dừng thì thanh và nhịp dừng cùng lúc. Tạm dừng khi: rê chuột, focus bên trong,
+  // tab bị ẩn, hoặc người dùng bấm nút dừng. Người dùng bật giảm chuyển động: không tự chuyển.
+  const slider = document.querySelector('[data-slider]');
+  const slides = slider ? [...slider.querySelectorAll('[data-slide]')] : [];
+  if (slides.length > 1) {
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const nav = slider.querySelector('[data-slider-nav]');
+    const dots = [...slider.querySelectorAll('[data-slider-dot]')];
+    const counter = slider.querySelector('[data-slider-current]');
+    const bar = slider.querySelector('[data-slider-progress]');
+    const pauseBtn = slider.querySelector('[data-slider-pause]');
+    const state = { user: reduce, hover: false, focus: false, hidden: document.hidden };
+    let current = 0;
+    slider.classList.add('has-js');
+
+    // Ảnh slide 2, 3 chỉ tải sau khi trang đã hiện xong, để không tranh băng thông với ảnh slide đầu
+    const loadRest = () => slider.querySelectorAll('img[data-src]').forEach((img) => {
+      img.srcset = img.dataset.srcset;
+      img.src = img.dataset.src;
+      img.removeAttribute('data-src');
+    });
+    if (document.readyState === 'complete') setTimeout(loadRest, 300);
+    else addEventListener('load', () => setTimeout(loadRest, 300), { once: true });
+
+    const paused = () => state.user || state.hover || state.focus || state.hidden;
+    const sync = () => {
+      slider.classList.toggle('is-paused', paused());
+      slider.classList.toggle('is-user-paused', state.user);
+      pauseBtn.setAttribute('aria-label', state.user ? pauseBtn.dataset.labelPlay : pauseBtn.dataset.labelPause);
+    };
+    const restartBar = () => {
+      bar.classList.remove('is-running');
+      void bar.offsetWidth; // ép trình duyệt chạy lại animation từ đầu
+      if (!reduce) bar.classList.add('is-running');
+    };
+    const go = (i) => {
+      const next = (i + slides.length) % slides.length;
+      if (next === current) return;
+      loadRest();
+      slides[current].classList.remove('is-active');
+      slides[current].inert = true;
+      slides[next].classList.add('is-active');
+      slides[next].inert = false;
+      dots.forEach((d, k) => {
+        d.classList.toggle('is-active', k === next);
+        if (k === next) d.setAttribute('aria-current', 'true');
+        else d.removeAttribute('aria-current');
+      });
+      counter.textContent = String(next + 1).padStart(2, '0');
+      current = next;
+      restartBar();
+    };
+
+    bar.addEventListener('animationend', () => go(current + 1));
+    slider.querySelector('[data-slider-prev]').addEventListener('click', () => go(current - 1));
+    slider.querySelector('[data-slider-next]').addEventListener('click', () => go(current + 1));
+    dots.forEach((d, k) => d.addEventListener('click', () => go(k)));
+    pauseBtn.hidden = reduce;
+    pauseBtn.addEventListener('click', () => {
+      state.user = !state.user;
+      sync();
+    });
+
+    if (matchMedia('(hover: hover)').matches) {
+      slider.addEventListener('pointerenter', () => { state.hover = true; sync(); });
+      slider.addEventListener('pointerleave', () => { state.hover = false; sync(); });
+    }
+    slider.addEventListener('focusin', () => { state.focus = true; sync(); });
+    slider.addEventListener('focusout', (e) => {
+      if (!slider.contains(e.relatedTarget)) { state.focus = false; sync(); }
+    });
+    document.addEventListener('visibilitychange', () => { state.hidden = document.hidden; sync(); });
+
+    // Phím mũi tên khi đang focus trong slider
+    slider.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') go(current + 1);
+      else if (e.key === 'ArrowLeft') go(current - 1);
+    });
+
+    // Vuốt ngang trên màn hình cảm ứng
+    let startX = null;
+    slider.addEventListener('pointerdown', (e) => { if (e.pointerType === 'touch') startX = e.clientX; }, { passive: true });
+    slider.addEventListener('pointerup', (e) => {
+      if (startX === null) return;
+      const dx = e.clientX - startX;
+      startX = null;
+      if (Math.abs(dx) > 50) go(current + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+
+    sync();
+    restartBar();
+    // Từ khung hình sau mới bật chuyển động cho chữ và ảnh (slide đầu hiện ngay khi tải trang)
+    requestAnimationFrame(() => requestAnimationFrame(() => slider.classList.add('is-ready')));
+  }
+
   // ----- Hiệu ứng xuất hiện khi cuộn (CSS bỏ qua nếu người dùng giảm chuyển động) -----
   // Phần tử trong cùng một nhóm xuất hiện so le 90ms.
   document.querySelectorAll('[data-reveal-group]').forEach((g) => {
