@@ -1,4 +1,4 @@
-// Hành vi giao diện: menu mobile, mega menu, hiệu ứng xuất hiện, form báo giá.
+// Hành vi giao diện: menu mobile, mục menu đang xem, modal sản phẩm, hiệu ứng xuất hiện, form báo giá.
 // Chữ hiển thị của form lấy từ data-messages để dùng chung cho bản Việt và Anh.
 (() => {
   'use strict';
@@ -17,107 +17,48 @@
     });
   }
 
-  // ----- Mega menu: nút mũi tên cho bàn phím và màn hình cảm ứng -----
-  const megaBtn = document.querySelector('.nav__toggle');
-  if (megaBtn) {
-    megaBtn.addEventListener('click', () => megaBtn.setAttribute('aria-expanded', String(megaBtn.getAttribute('aria-expanded') !== 'true')));
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.nav__item--mega')) megaBtn.setAttribute('aria-expanded', 'false');
-    });
-  }
-
   document.addEventListener('keydown', (e) => {
-    if (e.key !== 'Escape') return;
-    if (megaBtn && megaBtn.getAttribute('aria-expanded') === 'true') {
-      megaBtn.setAttribute('aria-expanded', 'false');
-      megaBtn.focus();
-    } else if (menu && menu.hasAttribute('data-open')) {
+    if (e.key === 'Escape' && menu && menu.hasAttribute('data-open')) {
       setMenu(false);
       menuBtn.focus();
     }
   });
 
-  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
-
-  // ----- v3: chữ in tách màu nghiêng nhẹ theo con trỏ -----
-  // Chỉ chạy khi có chuột, không giảm chuyển động, và chỉ trong lúc con trỏ còn di chuyển.
-  // Biến --nx/--ny đặt trên từng .plates đang hiển thị (không đặt trên :root) để trình duyệt chỉ tính lại phần chữ đó.
-  const plates = [...document.querySelectorAll('.plates')];
-  if (plates.length && finePointer && !reduceMotion) {
-    const visible = new Set();
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((en) => (en.isIntersecting ? visible.add(en.target) : visible.delete(en.target)));
-    });
-    plates.forEach((p) => io.observe(p));
-    let tx = 0, ty = 0, nx = 0, ny = 0, raf = 0;
-    const tick = () => {
-      raf = 0;
-      nx += (tx - nx) * 0.12;
-      ny += (ty - ny) * 0.12;
-      const x = nx.toFixed(3), y = ny.toFixed(3);
-      visible.forEach((p) => {
-        p.style.setProperty('--nx', x);
-        p.style.setProperty('--ny', y);
-      });
-      if (Math.abs(tx - nx) > 0.002 || Math.abs(ty - ny) > 0.002) raf = requestAnimationFrame(tick);
-    };
-    addEventListener('pointermove', (e) => {
-      tx = (2 * e.clientX) / innerWidth - 1;
-      ty = (2 * e.clientY) / innerHeight - 1;
-      if (!raf && visible.size) raf = requestAnimationFrame(tick);
-    }, { passive: true });
+  // ----- Menu: đánh dấu mục đang xem khi cuộn -----
+  const navLinks = [...document.querySelectorAll('[data-nav]')];
+  const sections = navLinks.map((a) => document.getElementById(a.dataset.nav)).filter(Boolean);
+  if (sections.length && 'IntersectionObserver' in window) {
+    const setCurrent = (id) => navLinks.forEach((a) => (a.dataset.nav === id ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current')));
+    // Một mục được coi là "đang xem" khi nó cắt qua dải ngang ở khoảng 35% chiều cao màn hình
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) setCurrent(en.target.id); });
+    }, { rootMargin: '-35% 0px -64% 0px' });
+    sections.forEach((s) => spy.observe(s));
   }
 
-  // ----- v3: ảnh in tách màu. Ảnh gốc chỉ tải khi rê chuột lần đầu, hiện dần khi đã tải xong -----
-  document.querySelectorAll('[data-print]').forEach((fig) => {
-    const photo = fig.querySelector('.print__photo');
-    if (!photo || !finePointer) return;
-    fig.addEventListener('pointerenter', () => {
-      if (photo.getAttribute('src')) return;
-      photo.addEventListener('load', () => photo.classList.add('is-ready'), { once: true });
-      photo.srcset = photo.dataset.srcset;
-      photo.src = photo.dataset.src;
-    });
-  });
-
-  // ----- v3: hộp chi tiết dòng sản phẩm (dialog gốc). Không có dialog thì liên kết vẫn mở trang như thường -----
-  const openers = document.querySelectorAll('[data-line-open]');
-  openers.forEach((a) => {
-    const dialog = document.getElementById(a.dataset.lineOpen);
+  // ----- Modal chi tiết dòng sản phẩm (dialog gốc của trình duyệt) -----
+  document.querySelectorAll('[data-dialog-open]').forEach((btn) => {
+    const dialog = document.getElementById(btn.dataset.dialogOpen);
     if (!dialog || typeof dialog.showModal !== 'function') return;
-    a.addEventListener('click', (e) => {
-      e.preventDefault();
-      dialog.showModal();
+    btn.addEventListener('click', () => dialog.showModal());
+    // Đóng xong thì trả focus về đúng ô sản phẩm vừa mở
+    dialog.addEventListener('close', () => {
+      if (!dialog.dataset.toQuote) btn.focus({ preventScroll: true });
+      delete dialog.dataset.toQuote;
     });
   });
   document.querySelectorAll('dialog.sheet').forEach((dialog) => {
     dialog.addEventListener('click', (e) => {
-      // Bấm ra ngoài khung nội dung (vùng nền mờ) hoặc nút đóng thì đóng hộp
+      // Bấm ra vùng nền mờ hoặc nút đóng thì đóng modal
       if (e.target === dialog || e.target.closest('[data-dialog-close]')) dialog.close();
     });
     dialog.querySelectorAll('[data-quote-line]').forEach((a) => {
       a.addEventListener('click', () => {
         const select = document.querySelector('[data-quote-form] select[name="product"]');
         if (select && [...select.options].some((o) => o.value === a.dataset.quoteLine)) select.value = a.dataset.quoteLine;
+        dialog.dataset.toQuote = '1';
         dialog.close();
       });
-    });
-  });
-
-  // ----- v3: bản đồ Google chỉ tải khi người dùng bấm (nhẹ trang, không gửi dữ liệu cho Google trước) -----
-  document.querySelectorAll('[data-map]').forEach((box) => {
-    const btn = box.querySelector('.map__load');
-    if (!btn) return;
-    btn.addEventListener('click', () => {
-      const frame = document.createElement('iframe');
-      frame.src = box.dataset.map;
-      frame.title = box.dataset.mapTitle;
-      frame.referrerPolicy = 'no-referrer-when-downgrade';
-      box.append(frame);
-      box.classList.add('is-loaded');
-      btn.remove();
-      frame.focus();
     });
   });
 

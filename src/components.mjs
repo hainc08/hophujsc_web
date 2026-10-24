@@ -67,24 +67,11 @@ export function categoryHref(ctx, c) {
 
 export function siteHeader(ctx) {
   const { site, copy, t, lang } = ctx;
-  const other = lang === 'vi' ? 'en' : 'vi';
   const ui = copy.ui;
   const logo = resolveImage(ctx, site.images.logo.src).small;
   const landing = ctx.local(lang);
-  const navHref = (n) => (n.link ? ctx.url(n.link) : landing + n.href);
-  const navItem = (n) => {
-    if (!n.mega || lang !== 'vi') return `<li><a class="nav__link" href="${esc(navHref(n))}">${esc(t(n.label))}</a></li>`;
-    return `<li class="nav__item--mega">
-          <a class="nav__link" href="${ctx.url('products')}">${esc(t(n.label))}</a>
-          <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mega" aria-label="${esc(t(ui.openProducts))}">${icons.chevron}</button>
-          <div class="mega" id="mega">
-            <ul class="mega__list">
-              ${site.categories.map((c) => `<li><a href="${categoryHref(ctx, c)}"><span>${esc(t(c.name))}</span><small>${esc(t(c.material))}</small></a></li>`).join('\n              ')}
-            </ul>
-            <a class="mega__all" href="${ctx.url('products')}">${esc(t(ui.allProducts))}</a>
-          </div>
-        </li>`;
-  };
+  // Trang một trang: mọi mục menu là liên kết neo. Trên trang 404 thì neo về trang chủ.
+  const navItem = (n) => `<li><a class="nav__link" href="${landing}${n.href === '#top' ? '' : n.href}" data-nav="${n.href.slice(1)}">${esc(t(n.label))}</a></li>`;
   return `<a class="skip-link" href="#noi-dung">${esc(t(ui.skip))}</a>
 <header class="site-header">
   <div class="container site-header__inner">
@@ -98,7 +85,6 @@ export function siteHeader(ctx) {
       </ul>
     </nav>
     <div class="site-header__actions">
-      <a class="btn btn--primary btn--sm site-header__cta" href="${landing}#bao-gia">${esc(t(ui.quote))}</a>
       <div class="lang-switch">
         ${['vi', 'en'].map((l) => (l === lang
           ? `<span class="lang-switch__item is-current" lang="${l}">${l.toUpperCase()}</span>`
@@ -217,28 +203,13 @@ export function siteFooter(ctx) {
   const { site, copy, t } = ctx;
   const f = copy.footer;
   const c = site.company;
-  const companyLinks = [['about', f.about], ['services', f.services], ['news', f.news], ['careers', f.careers], ['contact', f.contactPage]]
-    .map(([k, label]) => [ctx.url(k), label])
-    .filter(([href]) => href)
-    .map(([href, label]) => `<li><a href="${href}">${esc(t(label))}</a></li>`)
-    .join('\n        ');
   return `<footer class="site-footer">
   <div class="container site-footer__grid">
     <div>
       <p class="site-footer__name">${esc(t(c.legalName))}</p>
       <address>${esc(t(c.address))}</address>
     </div>
-    <nav aria-labelledby="ft-products">
-      <h2 id="ft-products">${esc(t(f.products))}</h2>
-      <ul>${site.categories.map((cat) => `<li><a href="${categoryHref(ctx, cat)}">${esc(t(cat.name))}</a></li>`).join('')}</ul>
-    </nav>
-    <nav aria-labelledby="ft-company">
-      <h2 id="ft-company">${esc(t(f.company))}</h2>
-      <ul>
-        ${companyLinks}
-      </ul>
-    </nav>
-    <div id="footer-lien-he">
+    <div>
       <h2>${esc(t(f.contact))}</h2>
       <ul>
         <li>${esc(t(f.hotline))}: <a href="tel:${c.phone.tel}">${esc(c.phone.display)}</a></li>
@@ -250,7 +221,6 @@ export function siteFooter(ctx) {
   </div>
   <div class="container site-footer__legal">
     <p>© ${new Date().getFullYear()} ${esc(t(c.legalName))}</p>
-    ${ctx.lang === 'vi' ? `<a href="${ctx.href('/sitemap.xml')}">${esc(t(f.sitemap))}</a>` : ''}
   </div>
 </footer>
 <div class="contact-bar" role="group" aria-label="${esc(t(copy.ui.quickContact))}">

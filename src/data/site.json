@@ -37,7 +37,7 @@
   },
   "images": {
     "hero": {
-      "src": "v3/v3-hero-in",
+      "src": "v3/v3-hero",
       "alt": {
         "vi": "Túi ép quai màu kem, quai nâu, ảnh chụp studio của Hợp Phú",
         "en": "Cream handle-sealed bag with brown handles, Hop Phu studio photo"
@@ -818,6 +818,15 @@
         "apps": []
       }
     ],
-    "mapQuery": "Số 16 Khu Đường Tàu, Như Quỳnh, Hưng Yên"
+    "mapQuery": "Số 16 Khu Đường Tàu, Như Quỳnh, Hưng Yên",
+    "flow": {
+      "illustration": "flow/illustration",
+      "steps": [
+        "flow/step-1",
+        "flow/step-2",
+        "flow/step-3",
+        "flow/step-4"
+      ]
+    }
   }
 }

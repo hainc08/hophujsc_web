@@ -449,7 +449,7 @@ export function notFoundPage(data) {
       <p class="page-head__lead">${esc(n.body)}</p>
       <div class="hero__actions">
         <a class="btn btn--primary" href="${ctx.local('vi')}">${esc(n.home)}</a>
-        <a class="btn btn--secondary" href="${ctx.href('/san-pham/')}">${esc(n.products)}</a>
+        <a class="btn btn--secondary" href="${ctx.local('vi')}#san-pham">${esc(n.products)}</a>
       </div>
     </div>
   </div>

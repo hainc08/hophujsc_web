@@ -1381,22 +1381,6 @@
    "height": 900
   }
  },
- "v3/v3-hero-in": {
-  "src": "v3/v3-hero-in",
-  "name": "v3-hero-in",
-  "derivedFrom": "assets/source/tui-ep-quai/studio/tui-ep-quai-studio-27.jpg",
-  "edit": "Bản tách màu CMYK tính sẵn theo concept v3. Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
-  "large": {
-   "file": "v3-hero-in-1200.webp",
-   "width": 1200,
-   "height": 1500
-  },
-  "small": {
-   "file": "v3-hero-in-720.webp",
-   "width": 720,
-   "height": 900
-  }
- },
  "v3/v3-val-tam-nhin": {
   "src": "v3/v3-val-tam-nhin",
   "name": "v3-val-tam-nhin",
@@ -1461,22 +1445,6 @@
    "height": 427
   }
  },
- "v3/v3-pillar-nha-may-in": {
-  "src": "v3/v3-pillar-nha-may-in",
-  "name": "v3-pillar-nha-may-in",
-  "derivedFrom": "assets/source/nha-xuong/nha-xuong-06.jpg",
-  "edit": "Bản tách màu CMYK tính sẵn theo concept v3. Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
-  "large": {
-   "file": "v3-pillar-nha-may-in-960.webp",
-   "width": 960,
-   "height": 640
-  },
-  "small": {
-   "file": "v3-pillar-nha-may-in-640.webp",
-   "width": 640,
-   "height": 427
-  }
- },
  "v3/v3-pillar-quy-trinh": {
   "src": "v3/v3-pillar-quy-trinh",
   "name": "v3-pillar-quy-trinh",
@@ -1493,22 +1461,6 @@
    "height": 427
   }
  },
- "v3/v3-pillar-quy-trinh-in": {
-  "src": "v3/v3-pillar-quy-trinh-in",
-  "name": "v3-pillar-quy-trinh-in",
-  "derivedFrom": "assets/source/nha-xuong/nha-xuong-05.jpg",
-  "edit": "Bản tách màu CMYK tính sẵn theo concept v3. Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
-  "large": {
-   "file": "v3-pillar-quy-trinh-in-960.webp",
-   "width": 960,
-   "height": 640
-  },
-  "small": {
-   "file": "v3-pillar-quy-trinh-in-640.webp",
-   "width": 640,
-   "height": 427
-  }
- },
  "v3/v3-pillar-chat-luong": {
   "src": "v3/v3-pillar-chat-luong",
   "name": "v3-pillar-chat-luong",
@@ -1521,22 +1473,6 @@
   },
   "small": {
    "file": "v3-pillar-chat-luong-640.webp",
-   "width": 640,
-   "height": 427
-  }
- },
- "v3/v3-pillar-chat-luong-in": {
-  "src": "v3/v3-pillar-chat-luong-in",
-  "name": "v3-pillar-chat-luong-in",
-  "derivedFrom": "assets/source/nha-xuong/nha-xuong-08.jpg",
-  "edit": "Bản tách màu CMYK tính sẵn theo concept v3. Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
-  "large": {
-   "file": "v3-pillar-chat-luong-in-960.webp",
-   "width": 960,
-   "height": 640
-  },
-  "small": {
-   "file": "v3-pillar-chat-luong-in-640.webp",
    "width": 640,
    "height": 427
   }
@@ -1603,6 +1539,86 @@
    "file": "v3-sp-tui-ep-quai-600.webp",
    "width": 600,
    "height": 600
+  }
+ },
+ "flow/illustration": {
+  "src": "flow/illustration",
+  "name": "packaging-process-illustration",
+  "derivedFrom": "assets/source/sản xuất yêu cầu.png",
+  "edit": "Ảnh minh hoạ chủ dự án cung cấp (brief HP-07B). Cắt nền trống/cắt theo bước, hoà nền về #F7F6F3. Hình minh hoạ không bị chỉnh.",
+  "large": {
+   "file": "packaging-process-illustration.webp",
+   "width": 1672,
+   "height": 580
+  },
+  "small": {
+   "file": "packaging-process-illustration-960.webp",
+   "width": 960,
+   "height": 333
+  }
+ },
+ "flow/step-1": {
+  "src": "flow/step-1",
+  "name": "packaging-process-step-1",
+  "derivedFrom": "assets/source/sản xuất yêu cầu.png",
+  "edit": "Ảnh minh hoạ chủ dự án cung cấp (brief HP-07B). Cắt nền trống/cắt theo bước, hoà nền về #F7F6F3, xoá mũi tên nối. Hình minh hoạ không bị chỉnh.",
+  "large": {
+   "file": "packaging-process-step-1.webp",
+   "width": 442,
+   "height": 550
+  },
+  "small": {
+   "file": "packaging-process-step-1.webp",
+   "width": 442,
+   "height": 550
+  }
+ },
+ "flow/step-2": {
+  "src": "flow/step-2",
+  "name": "packaging-process-step-2",
+  "derivedFrom": "assets/source/sản xuất yêu cầu.png",
+  "edit": "Ảnh minh hoạ chủ dự án cung cấp (brief HP-07B). Cắt nền trống/cắt theo bước, hoà nền về #F7F6F3, xoá mũi tên nối. Hình minh hoạ không bị chỉnh.",
+  "large": {
+   "file": "packaging-process-step-2.webp",
+   "width": 390,
+   "height": 550
+  },
+  "small": {
+   "file": "packaging-process-step-2.webp",
+   "width": 390,
+   "height": 550
+  }
+ },
+ "flow/step-3": {
+  "src": "flow/step-3",
+  "name": "packaging-process-step-3",
+  "derivedFrom": "assets/source/sản xuất yêu cầu.png",
+  "edit": "Ảnh minh hoạ chủ dự án cung cấp (brief HP-07B). Cắt nền trống/cắt theo bước, hoà nền về #F7F6F3, xoá mũi tên nối. Hình minh hoạ không bị chỉnh.",
+  "large": {
+   "file": "packaging-process-step-3.webp",
+   "width": 362,
+   "height": 550
+  },
+  "small": {
+   "file": "packaging-process-step-3.webp",
+   "width": 362,
+   "height": 550
+  }
+ },
+ "flow/step-4": {
+  "src": "flow/step-4",
+  "name": "packaging-process-step-4",
+  "derivedFrom": "assets/source/sản xuất yêu cầu.png",
+  "edit": "Ảnh minh hoạ chủ dự án cung cấp (brief HP-07B). Cắt nền trống/cắt theo bước, hoà nền về #F7F6F3, xoá mũi tên nối. Hình minh hoạ không bị chỉnh.",
+  "large": {
+   "file": "packaging-process-step-4.webp",
+   "width": 442,
+   "height": 550
+  },
+  "small": {
+   "file": "packaging-process-step-4.webp",
+   "width": 442,
+   "height": 550
   }
  }
 }

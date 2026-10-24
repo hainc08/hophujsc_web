@@ -63,6 +63,7 @@ Chi tiết thiết kế và quy trình làm việc nằm trong skill `hopphu-web
 | 2026-10-22 | Landing page HTML trước, song ngữ Việt/Anh, responsive |
 | 2026-10-22 | Tham khảo Hengfor về chất lượng bố cục, không sao chép |
 | 2026-10-22 | Font Be Vietnam Pro (một họ, 3 độ đậm) |
+| 2026-10-24 | **V4: web chỉ còn một landing page** (branch `landing-v4`, theo yêu cầu khách): menu Trang chủ · Về chúng tôi · Sản phẩm · Năng lực · Liên hệ; bỏ nút báo giá trên header; 9 dòng sản phẩm mở modal; quy trình theo brief HP-07B (ảnh minh hoạ isometric); font Be Vietnam Pro và màu đỏ của bản review-01, nền `#F7F6F3`. Mọi URL cũ chuyển 301 về trang chủ. Thiết kế: `docs/superpowers/specs/2026-10-24-landing-only-design.md` |
 | 2026-10-24 | **V3 "Broadsheet"** trên branch `redesign-v3` (concept của chủ dự án): font Source Serif 4, nền giấy `#F3F2F2`, mực CMYK (cyan `#0088B0`, magenta `#D6006C`, vàng `#EDBB00`), nút `#00779B`. Thay hệ đỏ và Be Vietnam Pro trên branch này. Chi tiết: `docs/redesign-v3.md` |
 | 2026-10-22 | Màu chính `#C51F2B`: **giả định tạm** theo brief, chưa xác nhận có phải màu nhận diện chính thức. Logo thực tế là đỏ mận `#7A1508`. Đổi một dòng trong `tokens.css` nếu cần |
 

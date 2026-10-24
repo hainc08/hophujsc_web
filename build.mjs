@@ -7,11 +7,11 @@
 //
 // Tuỳ chọn: --base=<đường dẫn con> (ghi đè base), --index (cho phép index, dùng khi đo Lighthouse).
 // Trên Git Bash/Windows viết --base=hophujsc_web (không có "/" đầu) để shell không tự đổi đường dẫn.
-import { readFile, writeFile, mkdir, rm, cp } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, rm, cp, copyFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { createContext, siteHeader, siteFooter, esc, resolveImage } from './src/components.mjs';
 import * as landing from './src/pages/landing.mjs';
-import { catalogPage, categoryPages, postPages, listPages, companyPages, notFoundPage } from './src/pages/content.mjs';
+import { notFoundPage } from './src/pages/content.mjs';
 
 const arg = (name) => process.argv.find((a) => a.startsWith(`--${name}=`))?.split('=').slice(1).join('=');
 const TARGETS = {
@@ -33,31 +33,22 @@ const read = (p) => readFile(new URL(p, root), 'utf8');
 const json = async (p) => JSON.parse(await read(p));
 const out = (p) => new URL(`dist/${p}`, root);
 
-const [site, copy, pages, posts, images, redirects] = await Promise.all(
-  ['src/data/site.json', 'src/data/copy.json', 'src/content/pages.json', 'src/content/posts.json', 'src/data/images.json', 'src/data/redirects.json'].map(json),
+const [site, copy, pages, posts, images] = await Promise.all(
+  ['src/data/site.json', 'src/data/copy.json', 'src/content/pages.json', 'src/content/posts.json', 'src/data/images.json'].map(json),
 );
 // CSS nhỏ (khoảng 8 KB sau nén) nên nhúng thẳng vào HTML, bỏ một request chặn hiển thị.
-const css = (await Promise.all(['tokens', 'base', 'components', 'landing', 'content', 'v3'].map((n) => read(`src/styles/${n}.css`)))).join('\n');
+const css = (await Promise.all(['tokens', 'base', 'components', 'onepage'].map((n) => read(`src/styles/${n}.css`)))).join('\n');
 const js = await read('src/scripts/site.js');
 // Mã băm trong URL để trình duyệt tải lại JS mỗi khi nội dung đổi (máy chủ cache tài nguyên lâu).
 const jsVersion = createHash('sha256').update(js).digest('hex').slice(0, 10);
 
-const FONTS = 'https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400&display=swap';
+const FONTS = 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap';
 const data = { site, copy, pages, posts, images };
 const ctxFor = (lang) => createContext({ site, copy, pages, images, lang, base: BASE, endpoint: ENDPOINT });
 
-// ---------- Danh sách trang ----------
+// ---------- Danh sách trang: web chỉ còn landing page (VI, EN) và trang 404 ----------
 const landingPage = (lang) => ({ lang, path: site.paths[lang], landing: true });
-const allPages = [
-  landingPage('vi'),
-  landingPage('en'),
-  catalogPage(data),
-  ...categoryPages(data),
-  ...postPages(data),
-  ...listPages(data),
-  ...companyPages(data),
-  notFoundPage(data),
-];
+const allPages = [landingPage('vi'), landingPage('en'), notFoundPage(data)];
 
 function documentFor(page) {
   const ctx = ctxFor(page.lang);
@@ -116,14 +107,10 @@ ${siteFooter(ctx)}
 }
 
 // ---------- .htaccess (Apache/LiteSpeed: Hostinger và Hawk Host) ----------
-const reEsc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\ ');
+// Web chỉ còn một trang: mọi đường dẫn không phải file có thật chuyển 301 về trang chủ (bản EN về /en/).
 function htaccess() {
   const prod = targetName === 'production';
-  const exact = redirects.exact.map(([from, to]) => {
-    const pat = '^' + reEsc(from.replace(/^\//, '').replace(/\/$/, '')) + '/?$';
-    return to === 410 ? `RewriteRule ${pat} - [G,L]` : `RewriteRule ${pat} ${to} [R=301,L,NE]`;
-  });
-  return `# Sinh tự động bởi build.mjs (--target=${targetName}). Không sửa tay: sửa src/data/redirects.json rồi build lại.
+  return `# Sinh tự động bởi build.mjs (--target=${targetName}). Không sửa tay.
 Options -Indexes
 DirectoryIndex index.html
 ErrorDocument 404 ${BASE}404.html
@@ -143,22 +130,15 @@ RewriteRule ^ https://hopphujsc.com%{REQUEST_URI} [L,R=301]` : `# HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]`}
 
-# URL cũ của WordPress: nội dung thật giữ nguyên URL; phần còn lại chuyển hướng 301 hoặc báo 410.
-${exact.join('\n')}
-
-# Quy tắc chung (bỏ qua file và thư mục có thật)
+# URL cũ (WordPress): về đầu trang landing tương ứng ngôn ngữ. Không áp dụng cho file có thật, assets/ và api/.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+)/page/[0-9]+/?$ /$1/ [R=301,L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*/)?feed/?$ /$1 [R=301,L]
-RewriteRule ^(${redirects.gonePatterns.map((p) => p.replace(/^\^/, '')).join('|')}) - [G,L]
-RewriteCond %{QUERY_STRING} (^|&)s= [NC]
-RewriteRule ^$ /? [R=301,L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/(assets|api)/
 RewriteRule ^en/.+ /en/ [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/(assets|api|en)/
+RewriteRule ^.+ / [R=301,L]
 </IfModule>
 
 <IfModule mod_headers.c>
@@ -184,8 +164,7 @@ ${prod ? '  Header always set Strict-Transport-Security "max-age=31536000"\n' : 
 
 function sitemap() {
   const today = new Date().toISOString().slice(0, 10);
-  const byUrl = Object.fromEntries(posts.map((p) => [p.url, p.modified]));
-  const urls = allPages.filter((p) => !p.file).map((p) => `  <url><loc>${site.origin + p.path}</loc><lastmod>${byUrl[p.path] || today}</lastmod></url>`);
+  const urls = allPages.filter((p) => !p.file).map((p) => `  <url><loc>${site.origin + p.path}</loc><lastmod>${today}</lastmod></url>`);
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`;
 }
 
@@ -194,13 +173,18 @@ const robots = INDEX ? `User-agent: *\nAllow: /\n\nSitemap: ${site.origin}/sitem
 // ---------- Ghi file ----------
 await rm(new URL('dist/', root), { recursive: true, force: true });
 await mkdir(out('assets/'), { recursive: true });
+// Chỉ chép những ảnh trang thực sự dùng (thư mục ảnh còn ảnh của các bản trước)
+const used = new Set(['cropped-logo-32x32.jpg', 'cropped-logo-192x192.jpg', 'og-hopphu.jpg']);
 for (const page of allPages) {
   const file = page.file || (page.path.replace(/^\//, '') + 'index.html');
+  const html = documentFor(page);
+  for (const m of html.matchAll(/assets\/img\/([\w.-]+)/g)) used.add(m[1]);
   await mkdir(new URL('.', out(file)), { recursive: true });
-  await writeFile(out(file), documentFor(page));
+  await writeFile(out(file), html);
 }
 await writeFile(out('assets/site.js'), js);
-await cp(new URL('assets/img/', root), out('assets/img/'), { recursive: true });
+await mkdir(out('assets/img/'), { recursive: true });
+for (const f of used) await copyFile(new URL(`assets/img/${f}`, root), out(`assets/img/${f}`));
 await writeFile(out('robots.txt'), robots);
 await writeFile(out('sitemap.xml'), sitemap());
 if (target.server) {

@@ -67,7 +67,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgb(243 242 242 / 0.97);
+  background: rgb(247 246 243 / 0.97);
   border-bottom: 1px solid var(--line);
 }
 

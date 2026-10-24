@@ -74,21 +74,28 @@
   },
   "nav": [
     {
+      "id": "home",
+      "label": {
+        "vi": "Trang chủ",
+        "en": "Home"
+      },
+      "href": "#top"
+    },
+    {
+      "id": "about",
+      "label": {
+        "vi": "Về chúng tôi",
+        "en": "About us"
+      },
+      "href": "#ve-chung-toi"
+    },
+    {
       "id": "products",
       "label": {
         "vi": "Sản phẩm",
         "en": "Products"
       },
-      "href": "#san-pham",
-      "mega": true
-    },
-    {
-      "id": "custom",
-      "label": {
-        "vi": "Sản xuất theo yêu cầu",
-        "en": "Made to order"
-      },
-      "href": "#quy-trinh"
+      "href": "#san-pham"
     },
     {
       "id": "capability",
@@ -97,14 +104,6 @@
         "en": "Capability"
       },
       "href": "#nang-luc"
-    },
-    {
-      "id": "about",
-      "label": {
-        "vi": "Về chúng tôi",
-        "en": "About us"
-      },
-      "link": "about"
     },
     {
       "id": "contact",
@@ -634,10 +633,6 @@
       "secondary": {
         "vi": "Xem các dòng sản phẩm",
         "en": "See our product lines"
-      },
-      "hint": {
-        "vi": "Rê chuột lên ảnh để các bản in khớp lại",
-        "en": "Hover the photo to bring the plates into register"
       }
     },
     "about": {
@@ -720,8 +715,8 @@
         "en": "“Responsibility, reliability, innovation — building our brand on customer satisfaction.”"
       },
       "leadersTitle": {
-        "vi": "Ban lãnh đạo",
-        "en": "Leadership"
+        "vi": "Nhà sáng lập",
+        "en": "Founders"
       },
       "more": {
         "vi": "Tìm hiểu về Hợp Phú",
@@ -978,8 +973,8 @@
     },
     "contact": {
       "kicker": {
-        "vi": "05 — Liên hệ",
-        "en": "05 — Contact"
+        "vi": "04 — Liên hệ",
+        "en": "04 — Contact"
       },
       "title": {
         "vi": "Ghé nhà máy, hoặc gửi yêu cầu cho chúng tôi.",
@@ -1001,22 +996,74 @@
         "vi": "Mở Google Maps",
         "en": "Open in Google Maps"
       },
-      "mapButton": {
-        "vi": "Xem bản đồ",
-        "en": "Show map"
-      },
       "mapTitle": {
         "vi": "Bản đồ nhà máy Hợp Phú",
         "en": "Map of the Hop Phu factory"
-      },
-      "mapNote": {
-        "vi": "Bản đồ tải từ Google khi bạn bấm.",
-        "en": "The map loads from Google when you click."
       },
       "formTitle": {
         "vi": "Gửi yêu cầu báo giá",
         "en": "Request a quote"
       }
+    },
+    "flow": {
+      "eyebrow": {
+        "vi": "Quy trình hợp tác",
+        "en": "How we work together"
+      },
+      "title": {
+        "vi": "Từ yêu cầu đến sản xuất",
+        "en": "From request to production"
+      },
+      "lead": {
+        "vi": "Quy trình 4 bước rõ ràng, từ tư vấn vật liệu đến sản xuất bao bì theo yêu cầu.",
+        "en": "A clear four-step process, from material advice to made-to-order packaging production."
+      },
+      "alt": {
+        "vi": "Quy trình sản xuất bao bì nhựa Hợp Phú từ tiếp nhận yêu cầu đến giao hàng",
+        "en": "Hop Phu plastic packaging process, from receiving your request to delivery"
+      },
+      "steps": [
+        {
+          "title": {
+            "vi": "Tiếp nhận yêu cầu",
+            "en": "Receive your request"
+          },
+          "body": {
+            "vi": "Khách hàng cung cấp loại túi, kích thước, số lượng và mẫu in.",
+            "en": "You tell us the bag type, size, quantity and print artwork."
+          }
+        },
+        {
+          "title": {
+            "vi": "Tư vấn vật liệu",
+            "en": "Material advice"
+          },
+          "body": {
+            "vi": "Hỗ trợ lựa chọn HDPE, LDPE, PP hoặc OPP và quy cách phù hợp.",
+            "en": "We help you choose HDPE, LDPE, PP or OPP and the right specification."
+          }
+        },
+        {
+          "title": {
+            "vi": "Xác nhận thông số",
+            "en": "Confirm the specification"
+          },
+          "body": {
+            "vi": "Thống nhất kích thước, màu sắc, số lượng và yêu cầu kỹ thuật.",
+            "en": "We agree on size, colour, quantity and technical requirements."
+          }
+        },
+        {
+          "title": {
+            "vi": "Sản xuất và bàn giao",
+            "en": "Produce and deliver"
+          },
+          "body": {
+            "vi": "Sản xuất, kiểm tra chất lượng, đóng gói và giao hàng theo thỏa thuận.",
+            "en": "We produce, check quality, pack and deliver as agreed."
+          }
+        }
+      ]
     }
   }
 }

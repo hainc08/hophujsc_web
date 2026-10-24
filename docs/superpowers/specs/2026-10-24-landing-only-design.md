@@ -1,6 +1,6 @@
 # Thiết kế: landing page một trang (bản V4)
 
-Ngày: 2026-10-24. Trạng thái: chờ chủ dự án duyệt.
+Ngày: 2026-10-24. Trạng thái: **đã dựng** trên branch `landing-v4` (chủ dự án gửi ảnh HP-07B để bắt đầu).
 
 ## Ý định
 
@@ -96,3 +96,12 @@ Footer gọn: tên công ty, địa chỉ, hotline, Zalo, email, Facebook, bản
 12. Animation và hiệu năng: hiện dần, hover, modal, cuộn mượt, giảm chuyển động.
 13. Kiểm thử: check_page, check_links, Lighthouse VI/EN mobile và desktop, chụp 390, 768, 1440; thử modal, menu, form, chuyển ngôn ngữ.
 14. Cập nhật `CLAUDE.md`, bản dịch cần duyệt, tài liệu thiết kế; commit; deploy lên Hostinger review khi được duyệt.
+
+## Kết quả (2026-10-24, localhost)
+
+- Build còn 3 trang (landing VI, EN, 404), CSS 29,7 KB, JS 6,9 KB; chỉ chép 38 ảnh đang dùng.
+- Lighthouse: VI desktop 100, mobile 100 ×3 (LCP 1,5 s, CLS 0); EN desktop 100, mobile 99–100.
+- Không tràn ngang ở 390, 768, 1440. Menu đánh dấu mục đang xem; modal mở/đóng mượt, Esc đóng; nút báo giá trong modal chọn sẵn dòng trong form.
+- Ảnh quy trình: desktop một ảnh ngang (1672×580, 65 KB); dưới 64rem mỗi bước một ảnh cắt từ ảnh gốc (đã xoá mũi tên nối), ảnh desktop không tải.
+- Ảnh chụp: `docs/screenshots/v4/`.
+- Còn trong repo nhưng không dùng nữa: `src/pages/content.mjs` (trừ trang 404), `src/styles/landing.css`, `content.css`, `src/content/posts.json`, `src/data/redirects.json`. Giữ để tra cứu; có thể xoá khi chốt V4.
