@@ -860,5 +860,437 @@
    "width": 640,
    "height": 480
   }
+ },
+ "source/gal/tui-hat-xoai-10": {
+  "src": "source/gal/tui-hat-xoai-10",
+  "name": "hp-gal-tui-hat-xoai-10",
+  "derivedFrom": "assets/source/tui-hat-xoai/da-sua/tui-hat-xoai-da-sua-10.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1280x1280 tại (0,0), thu nhỏ.",
+  "origWidth": 1280,
+  "origHeight": 1280,
+  "large": {
+   "file": "hp-gal-tui-hat-xoai-10-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-hat-xoai-10-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-hat-xoai-12": {
+  "src": "source/gal/tui-hat-xoai-12",
+  "name": "hp-gal-tui-hat-xoai-12",
+  "derivedFrom": "assets/source/tui-hat-xoai/da-sua/tui-hat-xoai-da-sua-12.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1280x1280 tại (0,0), thu nhỏ.",
+  "origWidth": 1280,
+  "origHeight": 1280,
+  "large": {
+   "file": "hp-gal-tui-hat-xoai-12-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-hat-xoai-12-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-hat-xoai-13": {
+  "src": "source/gal/tui-hat-xoai-13",
+  "name": "hp-gal-tui-hat-xoai-13",
+  "derivedFrom": "assets/source/tui-hat-xoai/da-sua/tui-hat-xoai-da-sua-13.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1280x1280 tại (0,0), thu nhỏ.",
+  "origWidth": 1280,
+  "origHeight": 1280,
+  "large": {
+   "file": "hp-gal-tui-hat-xoai-13-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-hat-xoai-13-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-hat-xoai-16": {
+  "src": "source/gal/tui-hat-xoai-16",
+  "name": "hp-gal-tui-hat-xoai-16",
+  "derivedFrom": "assets/source/tui-hat-xoai/da-sua/tui-hat-xoai-da-sua-16.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1280x1280 tại (0,0), thu nhỏ.",
+  "origWidth": 1280,
+  "origHeight": 1280,
+  "large": {
+   "file": "hp-gal-tui-hat-xoai-16-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-hat-xoai-16-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-hat-xoai-22": {
+  "src": "source/gal/tui-hat-xoai-22",
+  "name": "hp-gal-tui-hat-xoai-22",
+  "derivedFrom": "assets/source/tui-hat-xoai/da-sua/tui-hat-xoai-da-sua-22.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1280x1280 tại (0,0), thu nhỏ.",
+  "origWidth": 1280,
+  "origHeight": 1280,
+  "large": {
+   "file": "hp-gal-tui-hat-xoai-22-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-hat-xoai-22-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-hat-xoai-29": {
+  "src": "source/gal/tui-hat-xoai-29",
+  "name": "hp-gal-tui-hat-xoai-29",
+  "derivedFrom": "assets/source/tui-hat-xoai/da-sua/tui-hat-xoai-da-sua-29.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1280x1280 tại (0,0), thu nhỏ.",
+  "origWidth": 1280,
+  "origHeight": 1280,
+  "large": {
+   "file": "hp-gal-tui-hat-xoai-29-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-hat-xoai-29-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-ep-quai-21": {
+  "src": "source/gal/tui-ep-quai-21",
+  "name": "hp-gal-tui-ep-quai-21",
+  "derivedFrom": "assets/source/tui-ep-quai/da-sua/tui-ep-quai-da-sua-21.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1280x1280 tại (0,0), thu nhỏ.",
+  "origWidth": 1280,
+  "origHeight": 1280,
+  "large": {
+   "file": "hp-gal-tui-ep-quai-21-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-ep-quai-21-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-ep-quai-22": {
+  "src": "source/gal/tui-ep-quai-22",
+  "name": "hp-gal-tui-ep-quai-22",
+  "derivedFrom": "assets/source/tui-ep-quai/da-sua/tui-ep-quai-da-sua-22.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1280x1280 tại (0,0), thu nhỏ.",
+  "origWidth": 1280,
+  "origHeight": 1280,
+  "large": {
+   "file": "hp-gal-tui-ep-quai-22-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-ep-quai-22-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-ep-quai-23": {
+  "src": "source/gal/tui-ep-quai-23",
+  "name": "hp-gal-tui-ep-quai-23",
+  "derivedFrom": "assets/source/tui-ep-quai/da-sua/tui-ep-quai-da-sua-23.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1280x1280 tại (0,0), thu nhỏ.",
+  "origWidth": 1280,
+  "origHeight": 1280,
+  "large": {
+   "file": "hp-gal-tui-ep-quai-23-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-ep-quai-23-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-ep-quai-24": {
+  "src": "source/gal/tui-ep-quai-24",
+  "name": "hp-gal-tui-ep-quai-24",
+  "derivedFrom": "assets/source/tui-ep-quai/da-sua/tui-ep-quai-da-sua-24.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1280x1280 tại (0,0), thu nhỏ.",
+  "origWidth": 1280,
+  "origHeight": 1280,
+  "large": {
+   "file": "hp-gal-tui-ep-quai-24-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-ep-quai-24-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-ep-quai-12": {
+  "src": "source/gal/tui-ep-quai-12",
+  "name": "hp-gal-tui-ep-quai-12",
+  "derivedFrom": "assets/source/tui-ep-quai/da-sua/tui-ep-quai-da-sua-12.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1707x1707 tại (0,426), thu nhỏ.",
+  "origWidth": 1707,
+  "origHeight": 1707,
+  "large": {
+   "file": "hp-gal-tui-ep-quai-12-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-ep-quai-12-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-ep-quai-19": {
+  "src": "source/gal/tui-ep-quai-19",
+  "name": "hp-gal-tui-ep-quai-19",
+  "derivedFrom": "assets/source/tui-ep-quai/da-sua/tui-ep-quai-da-sua-19.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1707x1707 tại (0,426), thu nhỏ.",
+  "origWidth": 1707,
+  "origHeight": 1707,
+  "large": {
+   "file": "hp-gal-tui-ep-quai-19-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-ep-quai-19-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-niem-phong-12": {
+  "src": "source/gal/tui-niem-phong-12",
+  "name": "hp-gal-tui-niem-phong-12",
+  "derivedFrom": "assets/source/tui-niem-phong/da-sua/tui-niem-phong-da-sua-12.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1280x1280 tại (0,320), thu nhỏ.",
+  "origWidth": 1280,
+  "origHeight": 1280,
+  "large": {
+   "file": "hp-gal-tui-niem-phong-12-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-niem-phong-12-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-niem-phong-14": {
+  "src": "source/gal/tui-niem-phong-14",
+  "name": "hp-gal-tui-niem-phong-14",
+  "derivedFrom": "assets/source/tui-niem-phong/da-sua/tui-niem-phong-da-sua-14.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1280x1280 tại (0,320), thu nhỏ.",
+  "origWidth": 1280,
+  "origHeight": 1280,
+  "large": {
+   "file": "hp-gal-tui-niem-phong-14-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-niem-phong-14-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-niem-phong-16": {
+  "src": "source/gal/tui-niem-phong-16",
+  "name": "hp-gal-tui-niem-phong-16",
+  "derivedFrom": "assets/source/tui-niem-phong/da-sua/tui-niem-phong-da-sua-16.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1080x1080 tại (0,0), thu nhỏ.",
+  "origWidth": 1080,
+  "origHeight": 1080,
+  "large": {
+   "file": "hp-gal-tui-niem-phong-16-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-niem-phong-16-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-niem-phong-17": {
+  "src": "source/gal/tui-niem-phong-17",
+  "name": "hp-gal-tui-niem-phong-17",
+  "derivedFrom": "assets/source/tui-niem-phong/da-sua/tui-niem-phong-da-sua-17.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1080x1080 tại (0,0), thu nhỏ.",
+  "origWidth": 1080,
+  "origHeight": 1080,
+  "large": {
+   "file": "hp-gal-tui-niem-phong-17-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-niem-phong-17-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-sieu-thi-10": {
+  "src": "source/gal/tui-sieu-thi-10",
+  "name": "hp-gal-tui-sieu-thi-10",
+  "derivedFrom": "assets/source/tui-sieu-thi/da-sua/tui-sieu-thi-da-sua-10.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1920x1920 tại (0,0), thu nhỏ.",
+  "origWidth": 1920,
+  "origHeight": 1920,
+  "large": {
+   "file": "hp-gal-tui-sieu-thi-10-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-sieu-thi-10-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-sieu-thi-11": {
+  "src": "source/gal/tui-sieu-thi-11",
+  "name": "hp-gal-tui-sieu-thi-11",
+  "derivedFrom": "assets/source/tui-sieu-thi/da-sua/tui-sieu-thi-da-sua-11.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1920x1920 tại (0,0), thu nhỏ.",
+  "origWidth": 1920,
+  "origHeight": 1920,
+  "large": {
+   "file": "hp-gal-tui-sieu-thi-11-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-sieu-thi-11-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-sieu-thi-12": {
+  "src": "source/gal/tui-sieu-thi-12",
+  "name": "hp-gal-tui-sieu-thi-12",
+  "derivedFrom": "assets/source/tui-sieu-thi/da-sua/tui-sieu-thi-da-sua-12.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1920x1920 tại (0,0), thu nhỏ.",
+  "origWidth": 1920,
+  "origHeight": 1920,
+  "large": {
+   "file": "hp-gal-tui-sieu-thi-12-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-sieu-thi-12-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-sieu-thi-13": {
+  "src": "source/gal/tui-sieu-thi-13",
+  "name": "hp-gal-tui-sieu-thi-13",
+  "derivedFrom": "assets/source/tui-sieu-thi/da-sua/tui-sieu-thi-da-sua-13.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1920x1920 tại (0,0), thu nhỏ.",
+  "origWidth": 1920,
+  "origHeight": 1920,
+  "large": {
+   "file": "hp-gal-tui-sieu-thi-13-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-sieu-thi-13-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-sieu-thi-14": {
+  "src": "source/gal/tui-sieu-thi-14",
+  "name": "hp-gal-tui-sieu-thi-14",
+  "derivedFrom": "assets/source/tui-sieu-thi/da-sua/tui-sieu-thi-da-sua-14.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1440x1440 tại (240,0), thu nhỏ.",
+  "origWidth": 1440,
+  "origHeight": 1440,
+  "large": {
+   "file": "hp-gal-tui-sieu-thi-14-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-sieu-thi-14-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-sieu-thi-16": {
+  "src": "source/gal/tui-sieu-thi-16",
+  "name": "hp-gal-tui-sieu-thi-16",
+  "derivedFrom": "assets/source/tui-sieu-thi/da-sua/tui-sieu-thi-da-sua-16.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1536x1536 tại (256,0), thu nhỏ.",
+  "origWidth": 1536,
+  "origHeight": 1536,
+  "large": {
+   "file": "hp-gal-tui-sieu-thi-16-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-sieu-thi-16-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-niem-phong-19": {
+  "src": "source/gal/tui-niem-phong-19",
+  "name": "hp-gal-tui-niem-phong-19",
+  "derivedFrom": "assets/source/tui-niem-phong/da-sua/tui-niem-phong-da-sua-19.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1080x1080 tại (0,420), thu nhỏ.",
+  "origWidth": 1080,
+  "origHeight": 1080,
+  "large": {
+   "file": "hp-gal-tui-niem-phong-19-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-niem-phong-19-480.webp",
+   "width": 480,
+   "height": 480
+  }
+ },
+ "source/gal/tui-niem-phong-26": {
+  "src": "source/gal/tui-niem-phong-26",
+  "name": "hp-gal-tui-niem-phong-26",
+  "derivedFrom": "assets/source/tui-niem-phong/da-sua/tui-niem-phong-da-sua-26.jpg",
+  "edit": "Ảnh công ty gửi (sản phẩm thật, bối cảnh dựng). Cắt vuông 1707x1707 tại (0,426), thu nhỏ.",
+  "origWidth": 1707,
+  "origHeight": 1707,
+  "large": {
+   "file": "hp-gal-tui-niem-phong-26-800.webp",
+   "width": 800,
+   "height": 800
+  },
+  "small": {
+   "file": "hp-gal-tui-niem-phong-26-480.webp",
+   "width": 480,
+   "height": 480
+  }
  }
 }

@@ -319,5 +319,184 @@
       "logo": "2021/08/z2674366085360_39a046776d5f9569589e3d9466e16391.jpg"
     }
   ],
-  "_founders_partners_note": "Nhà sáng lập và đối tác: chủ dự án xác nhận ngày 2026-10-22 (tên, chức danh theo trang Giới thiệu cũ; đối tác thật và được phép dùng logo)."
+  "_founders_partners_note": "Nhà sáng lập và đối tác: chủ dự án xác nhận ngày 2026-10-22 (tên, chức danh theo trang Giới thiệu cũ; đối tác thật và được phép dùng logo).",
+  "galleries": {
+    "_note": "Thư viện ảnh trên trang danh mục. Ảnh do công ty gửi: sản phẩm thật, một số ảnh có bối cảnh dựng minh hoạ (đã được chủ dự án đồng ý dùng 2026-10-24).",
+    "tui-hat-xoai": [
+      {
+        "src": "source/gal/tui-hat-xoai-10",
+        "alt": {
+          "vi": "Túi hạt xoài màu trắng",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-hat-xoai-12",
+        "alt": {
+          "vi": "Túi hạt xoài màu xanh lá",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-hat-xoai-13",
+        "alt": {
+          "vi": "Túi hạt xoài màu xanh ngọc",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-hat-xoai-16",
+        "alt": {
+          "vi": "Túi hạt xoài màu hồng",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-hat-xoai-22",
+        "alt": {
+          "vi": "Túi hạt xoài màu đỏ",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-hat-xoai-29",
+        "alt": {
+          "vi": "Túi hạt xoài màu vàng",
+          "en": ""
+        }
+      }
+    ],
+    "tui-ep-quai": [
+      {
+        "src": "source/gal/tui-ep-quai-21",
+        "alt": {
+          "vi": "Túi ép quai màu trắng, quai đen",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-ep-quai-22",
+        "alt": {
+          "vi": "Túi ép quai màu kem, quai nâu",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-ep-quai-23",
+        "alt": {
+          "vi": "Túi ép quai màu hồng",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-ep-quai-24",
+        "alt": {
+          "vi": "Túi ép quai màu trắng trong, quai đen",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-ep-quai-12",
+        "alt": {
+          "vi": "Túi ép quai màu hồng",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-ep-quai-19",
+        "alt": {
+          "vi": "Túi ép quai nhiều màu xếp chồng",
+          "en": ""
+        }
+      }
+    ],
+    "tui-niem-phong": [
+      {
+        "src": "source/gal/tui-niem-phong-12",
+        "alt": {
+          "vi": "Túi niêm phong cuộn nhiều màu",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-niem-phong-14",
+        "alt": {
+          "vi": "Túi niêm phong cuộn nhiều màu",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-niem-phong-16",
+        "alt": {
+          "vi": "Túi niêm phong cuộn nhiều màu",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-niem-phong-17",
+        "alt": {
+          "vi": "Túi niêm phong cuộn nhiều màu",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-niem-phong-19",
+        "alt": {
+          "vi": "Túi niêm phong màu vàng, mở dải keo dán miệng",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-niem-phong-26",
+        "alt": {
+          "vi": "Túi niêm phong cuộn nhiều màu",
+          "en": ""
+        }
+      }
+    ],
+    "tui-sieu-thi": [
+      {
+        "src": "source/gal/tui-sieu-thi-10",
+        "alt": {
+          "vi": "Túi siêu thị tự huỷ màu trắng",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-sieu-thi-11",
+        "alt": {
+          "vi": "Túi siêu thị tự huỷ màu trắng",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-sieu-thi-12",
+        "alt": {
+          "vi": "Túi siêu thị tự huỷ màu trắng",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-sieu-thi-13",
+        "alt": {
+          "vi": "Túi siêu thị tự huỷ màu trắng",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-sieu-thi-14",
+        "alt": {
+          "vi": "Túi siêu thị tự huỷ màu trắng xếp chồng",
+          "en": ""
+        }
+      },
+      {
+        "src": "source/gal/tui-sieu-thi-16",
+        "alt": {
+          "vi": "Túi siêu thị tự huỷ màu trắng xếp chồng",
+          "en": ""
+        }
+      }
+    ]
+  }
 }

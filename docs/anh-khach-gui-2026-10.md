@@ -50,3 +50,9 @@ Cắt khung và thu nhỏ bằng script (không chỉnh sửa sản phẩm), Web
 | Nhà máy: thành phẩm | `nha-xuong/nha-xuong-13.jpg` |
 
 Ô ảnh toàn cảnh nhà xưởng tự ẩn cho tới khi có ảnh ngang chụp toàn cảnh (điền `site.json > factoryPhotos > toan-canh`). Ảnh "da-sua" (nền dựng AI) chưa dùng, chờ chủ dự án quyết định.
+
+### Thư viện ảnh trang danh mục (2026-10-24)
+
+Chủ dự án đồng ý dùng ảnh "da-sua" làm ảnh minh hoạ. Mỗi trang danh mục túi hạt xoài, ép quai, niêm phong, siêu thị tự huỷ có khối "Hình ảnh sản phẩm" 6 ảnh vuông (`site.json > galleries`, `assets/img/hp-gal-*.webp`), kèm dòng ghi chú: sản phẩm do Hợp Phú sản xuất, một số ảnh dùng bối cảnh dựng để minh hoạ.
+
+Không dùng: ảnh có logo hoặc khẩu hiệu in đè, banner chữ, ảnh "Meta AI" có người mẫu, ảnh in thương hiệu khách hàng khác.

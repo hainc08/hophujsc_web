@@ -145,6 +145,15 @@ export function categoryPages(data) {
       ${cat.image ? `<figure class="category__media">${image(ctx, cat.image, { sizes: '(min-width: 64rem) 40vw, 100vw', priority: true })}</figure>` : `<div class="category__media tile__placeholder"><span class="tile__ph-label">${esc(ctx.t(ctx.copy.ui.placeholder))}</span><span class="tile__ph-code" aria-hidden="true">${esc(ctx.t(cat.material))}</span></div>`}
     </div>
   </section>
+  ${site.galleries?.[cat.id]?.length ? `<section class="section section--tight" aria-labelledby="anh-${cat.id}">
+    <div class="container">
+      <h2 id="anh-${cat.id}" class="section-title">${esc(pages.gallery.title)}</h2>
+      <ul class="gallery">
+        ${site.galleries[cat.id].map((g) => `<li>${image(ctx, g, { sizes: '(min-width: 64rem) 30vw, 50vw' })}</li>`).join('\n        ')}
+      </ul>
+      <p class="gallery__note">${esc(pages.gallery.note)}</p>
+    </div>
+  </section>` : ''}
   <section class="section section--surface" aria-labelledby="ds-${cat.id}">
     <div class="container">
       <h2 id="ds-${cat.id}" class="section-title">${items.length ? 'Sản phẩm và bài viết' : esc(pages.post.related)}</h2>

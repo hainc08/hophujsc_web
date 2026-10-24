@@ -171,10 +171,12 @@
   font-weight: 500;
 }
 
+/* Ảnh sản phẩm dọc (4:5): khung vuông, lệch lên trên để không cắt mất quai túi */
 .category__media img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1;
   object-fit: cover;
+  object-position: 50% 30%;
   border-radius: var(--radius);
 }
 
@@ -398,7 +400,7 @@
 }
 
 .category__media.tile__placeholder {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1;
   height: auto;
 }
 
@@ -580,5 +582,37 @@
 
   .partners__item[aria-hidden="true"] {
     display: none;
+  }
+}
+
+/* ---------- Thư viện ảnh trên trang danh mục ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap);
+}
+
+.gallery li {
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: var(--surface);
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.gallery__note {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--muted);
+}
+
+@media (min-width: 64rem) {
+  .gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
