@@ -179,29 +179,36 @@ export function render(ctx) {
   return `<main id="noi-dung" class="onepage">
   ${heroSlider(ctx)}
 
-  <section class="container block" id="ve-chung-toi" aria-labelledby="ve-chung-toi-title" data-section>
-    ${kicker(t(V.about.kicker))}
-    <h2 id="ve-chung-toi-title" class="block__title">${esc(t(V.about.title))}</h2>
-    <div class="values" data-reveal-group>
-      ${V.about.values.map((v) => `<article class="value" data-reveal>
-        ${frame(ctx, v.image, t(v.alt), { sizes: '(min-width: 64rem) 30vw, (min-width: 48rem) 45vw, 100vw', ratio: '4 / 3' })}
-        ${kicker(t(v.kicker))}
-        <h3>${esc(t(v.title))}</h3>
-        <p>${esc(t(v.body))}</p>
-      </article>`).join('\n      ')}
-    </div>
-    <div class="leaders">
-      <div class="leaders__motto" data-reveal>
-        ${kicker(t(V.about.leadersTitle))}
-        <blockquote>${esc(t(V.about.motto))}</blockquote>
-        <p class="leaders__cite">${esc(t(V.about.mottoKicker))}</p>
+  <section class="about2" id="ve-chung-toi" aria-labelledby="ve-chung-toi-title" data-section>
+    <div class="container">
+      <header class="about2__head">
+        ${kicker(t(V.about2.kicker))}
+        <h2 id="ve-chung-toi-title" class="block__title">${esc(t(V.about2.title))}</h2>
+        <p>${esc(t(V.about2.lead))}</p>
+      </header>
+      <div class="about2__grid" data-reveal-group>
+        ${V.about2.items.map((v, i) => `<article class="about2__item" data-reveal>
+          <p class="about2__no" aria-hidden="true">${pad(i)}</p>
+          <p class="about2__label">${esc(t(v.label))}</p>
+          <h3>${esc(t(v.title))}</h3>
+          <p>${esc(t(v.body))}</p>
+        </article>`).join('\n        ')}
       </div>
-      <ul class="leaders__people" data-reveal-group>
-        ${site.founders.map((f) => `<li data-reveal>
-          ${frame(ctx, f.image, f.name, { sizes: '(min-width: 64rem) 18vw, 30vw', ratio: '4 / 5' })}
-          <span class="leaders__name">${esc(f.name)}</span>
-          <span class="leaders__role">${esc(f.role)}</span>
-        </li>`).join('\n        ')}
+    </div>
+  </section>
+
+  <section class="team" id="lanh-dao" aria-labelledby="lanh-dao-title">
+    <div class="container">
+      <h2 id="lanh-dao-title" class="block__title">${esc(t(V.leadership.title))}</h2>
+      <ul class="team__grid" data-reveal-group>
+        ${site.founders.map((f) => {
+          const m = resolveImage(ctx, f.image);
+          return `<li data-reveal>
+          <span class="team__photo"><img src="${ctx.asset(m.large.file)}" srcset="${ctx.asset(m.small.file)} ${m.small.width}w, ${ctx.asset(m.large.file)} ${m.large.width}w" sizes="(min-width: 80rem) 400px, (min-width: 36rem) 31vw, 46vw" width="${m.large.width}" height="${m.large.height}" alt="${esc(`${f.name}, ${f.role}`)}" style="object-position: ${f.position}" loading="lazy" decoding="async"></span>
+          <h3 class="team__name">${esc(f.name)}</h3>
+          <p class="team__role">${esc(f.role)}</p>
+        </li>`;
+        }).join('\n        ')}
       </ul>
     </div>
   </section>

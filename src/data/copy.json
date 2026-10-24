@@ -1247,6 +1247,70 @@
           }
         }
       ]
+    },
+    "about2": {
+      "kicker": {
+        "vi": "01 — Về chúng tôi",
+        "en": "01 — About us"
+      },
+      "title": {
+        "vi": "Giá trị tạo nên Hợp Phú",
+        "en": "What Hop Phu stands for"
+      },
+      "lead": {
+        "vi": "Tầm nhìn, sứ mệnh và giá trị cốt lõi định hướng cách Hợp Phú sản xuất và phục vụ khách hàng.",
+        "en": "Our vision, mission and core values shape how Hop Phu manufactures and serves its customers."
+      },
+      "items": [
+        {
+          "label": {
+            "vi": "Tầm nhìn",
+            "en": "Vision"
+          },
+          "title": {
+            "vi": "Bao bì nhựa chất lượng cao cho thị trường Việt Nam",
+            "en": "High-quality plastic packaging for Vietnam"
+          },
+          "body": {
+            "vi": "Hướng tới trở thành công ty sản xuất bao bì nhựa chất lượng cao tại Việt Nam, không ngừng cải tiến công nghệ và đưa ra thị trường những dòng sản phẩm mới.",
+            "en": "We aim to be a manufacturer of high-quality plastic packaging in Vietnam, continually improving our technology and bringing new product lines to market."
+          }
+        },
+        {
+          "label": {
+            "vi": "Sứ mệnh",
+            "en": "Mission"
+          },
+          "title": {
+            "vi": "Đồng hành cùng ngành công nghiệp dân sinh",
+            "en": "A partner to the consumer goods industry"
+          },
+          "body": {
+            "vi": "Là người bạn đồng hành với sự phát triển của ngành công nghiệp dân sinh, an toàn cho hệ sinh thái và thân thiện với môi trường.",
+            "en": "To grow alongside the consumer goods industry, safely for ecosystems and with care for the environment."
+          }
+        },
+        {
+          "label": {
+            "vi": "Giá trị cốt lõi",
+            "en": "Core values"
+          },
+          "title": {
+            "vi": "Trách nhiệm · Uy tín · Đổi mới",
+            "en": "Responsibility · Reliability · Innovation"
+          },
+          "body": {
+            "vi": "Vận hành theo quy trình chính xác, chuyên nghiệp; giữ sự tin cậy của khách hàng bằng chất lượng sản phẩm, thái độ phục vụ tận tâm và luôn cùng khách hàng tìm giải pháp.",
+            "en": "We work to precise, professional processes and keep our customers’ trust through product quality, attentive service and working out solutions together."
+          }
+        }
+      ]
+    },
+    "leadership": {
+      "title": {
+        "vi": "Đội ngũ lãnh đạo",
+        "en": "Leadership team"
+      }
     }
   }
 }

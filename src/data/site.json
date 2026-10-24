@@ -276,17 +276,20 @@
     {
       "name": "Trần Mạnh Dân",
       "role": "CEO",
-      "image": "2026/10/anh3.jpg"
+      "image": "2026/10/anh3.jpg",
+      "position": "50% 20%"
     },
     {
       "name": "Lê Đăng Tá",
       "role": "CFO",
-      "image": "2026/10/anh1.jpg"
+      "image": "2026/10/anh1.jpg",
+      "position": "50% 20%"
     },
     {
       "name": "Nguyễn Ích Liêm",
       "role": "CPO",
-      "image": "2026/10/anh2.jpg"
+      "image": "2026/10/anh2.jpg",
+      "position": "50% 20%"
     }
   ],
   "partners": [
