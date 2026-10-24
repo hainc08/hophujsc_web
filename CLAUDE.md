@@ -25,6 +25,7 @@ node build.mjs                       # local: 40 trang vào dist/, noindex
 node build.mjs --target=review       # Hostinger review: + .htaccess, api/quote.php, robots chặn
 node build.mjs --target=production   # hosting thật: cho index, sitemap, HTTPS + bỏ www, HSTS
 python .claude/skills/hopphu-web-design/scripts/check_links.py dist [base]   # 0 liên kết gãy
+node tools/export-html.mjs           # bản HTML/CSS/JS thuần vào html/ (CSS, JS tách file, đường dẫn tương đối, mở thẳng index.html được)
 node build.mjs --index    # cho phép index, chỉ dùng khi đo Lighthouse
 node build.mjs --base=hophujsc_web   # dựng cho đường dẫn con như GitHub Pages (viết không có "/" đầu: Git Bash trên Windows tự đổi "/x" thành "C:/Program Files/Git/x")
 node serve.mjs            # http://localhost:4173 (hoặc preview tool, cấu hình "preview")

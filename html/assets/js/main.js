@@ -1,0 +1,170 @@
+// Hành vi giao diện: menu mobile, mục menu đang xem, modal sản phẩm, hiệu ứng xuất hiện, form báo giá.
+// Chữ hiển thị của form lấy từ data-messages để dùng chung cho bản Việt và Anh.
+(() => {
+  'use strict';
+
+  // ----- Menu mobile -----
+  const menuBtn = document.querySelector('[data-menu-toggle]');
+  const menu = document.querySelector('[data-menu]');
+  const setMenu = (open) => {
+    menu.toggleAttribute('data-open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+  };
+  if (menuBtn && menu) {
+    menuBtn.addEventListener('click', () => setMenu(!menu.hasAttribute('data-open')));
+    menu.addEventListener('click', (e) => {
+      if (e.target.closest('a')) setMenu(false);
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu && menu.hasAttribute('data-open')) {
+      setMenu(false);
+      menuBtn.focus();
+    }
+  });
+
+  // ----- Menu: đánh dấu mục đang xem khi cuộn -----
+  const navLinks = [...document.querySelectorAll('[data-nav]')];
+  const sections = navLinks.map((a) => document.getElementById(a.dataset.nav)).filter(Boolean);
+  if (sections.length && 'IntersectionObserver' in window) {
+    const setCurrent = (id) => navLinks.forEach((a) => (a.dataset.nav === id ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current')));
+    // Một mục được coi là "đang xem" khi nó cắt qua dải ngang ở khoảng 35% chiều cao màn hình
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) setCurrent(en.target.id); });
+    }, { rootMargin: '-35% 0px -64% 0px' });
+    sections.forEach((s) => spy.observe(s));
+  }
+
+  // ----- Modal chi tiết dòng sản phẩm (dialog gốc của trình duyệt) -----
+  document.querySelectorAll('[data-dialog-open]').forEach((btn) => {
+    const dialog = document.getElementById(btn.dataset.dialogOpen);
+    if (!dialog || typeof dialog.showModal !== 'function') return;
+    btn.addEventListener('click', () => dialog.showModal());
+    // Đóng xong thì trả focus về đúng ô sản phẩm vừa mở
+    dialog.addEventListener('close', () => {
+      if (!dialog.dataset.toQuote) btn.focus({ preventScroll: true });
+      delete dialog.dataset.toQuote;
+    });
+  });
+  document.querySelectorAll('dialog.sheet').forEach((dialog) => {
+    dialog.addEventListener('click', (e) => {
+      // Bấm ra vùng nền mờ hoặc nút đóng thì đóng modal
+      if (e.target === dialog || e.target.closest('[data-dialog-close]')) dialog.close();
+    });
+    dialog.querySelectorAll('[data-quote-line]').forEach((a) => {
+      a.addEventListener('click', () => {
+        const select = document.querySelector('[data-quote-form] select[name="product"]');
+        if (select && [...select.options].some((o) => o.value === a.dataset.quoteLine)) select.value = a.dataset.quoteLine;
+        dialog.dataset.toQuote = '1';
+        dialog.close();
+      });
+    });
+  });
+
+  // ----- Hiệu ứng xuất hiện khi cuộn (CSS bỏ qua nếu người dùng giảm chuyển động) -----
+  // Phần tử trong cùng một nhóm xuất hiện so le 90ms.
+  document.querySelectorAll('[data-reveal-group]').forEach((g) => {
+    g.querySelectorAll(':scope > [data-reveal]').forEach((el, i) => el.style.setProperty('--reveal-delay', `${Math.min(i, 6) * 90}ms`));
+  });
+  const revealables = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    document.documentElement.classList.add('reveal-ready');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          en.target.classList.add('is-visible');
+          io.unobserve(en.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    revealables.forEach((el) => io.observe(el));
+  } else {
+    revealables.forEach((el) => el.classList.add('is-visible'));
+  }
+
+  // ----- Form báo giá -----
+  const form = document.querySelector('[data-quote-form]');
+  if (!form) return;
+  const msg = JSON.parse(form.dataset.messages);
+  const status = form.querySelector('[data-form-status]');
+
+  // Chọn sẵn loại bao bì khi đến từ trang sản phẩm: ?san-pham=<id> hoặc ?product=<id>
+  const params = new URLSearchParams(location.search);
+  const pre = params.get('san-pham') || params.get('product');
+  const select = form.elements.product;
+  if (pre && select && [...select.options].some((o) => o.value === pre)) select.value = pre;
+
+  const setError = (field, text) => {
+    const error = form.querySelector(`#${field.id}-error`);
+    if (text) field.setAttribute('aria-invalid', 'true');
+    else field.removeAttribute('aria-invalid');
+    if (error) {
+      error.textContent = text;
+      error.hidden = !text;
+    }
+  };
+
+  const validate = (field) => {
+    const text = field.checkValidity() ? '' : msg.errors[field.name] || '';
+    setError(field, text);
+    return !text;
+  };
+
+  form.addEventListener('focusout', (e) => {
+    if (e.target.matches('input, textarea') && e.target.type !== 'checkbox' && (e.target.required || e.target.value)) validate(e.target);
+  });
+  form.addEventListener('change', (e) => {
+    if (e.target.type === 'checkbox') validate(e.target);
+  });
+  // Ô đang báo lỗi: kiểm tra lại ngay khi gõ, để lỗi biến mất lúc đang nhập
+  // chứ không phải lúc rời ô (tránh form co lại đúng lúc người dùng bấm sang ô khác).
+  form.addEventListener('input', (e) => {
+    if (e.target.getAttribute('aria-invalid') === 'true') validate(e.target);
+  });
+
+  const setStatus = (state, text) => {
+    status.dataset.state = state;
+    status.textContent = text;
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fields = [...form.querySelectorAll('[required]')];
+    const invalid = fields.filter((f) => !validate(f));
+    if (invalid.length) {
+      setStatus('error', msg.errors.summary.replace('{n}', invalid.length));
+      invalid[0].focus();
+      return;
+    }
+    if (form.elements.website.value) return; // trường bẫy bot
+
+    const endpoint = form.getAttribute('action');
+    if (!endpoint) {
+      setStatus('error', msg.status.preview);
+      return;
+    }
+
+    const submit = form.querySelector('[type="submit"]');
+    submit.disabled = true;
+    setStatus('pending', msg.status.pending);
+    try {
+      const res = await fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+      const body = await res.json().catch(() => ({}));
+      if (res.ok && body.ok) {
+        form.reset();
+        setStatus('success', msg.status.success);
+      } else if (body.code === 'not_configured') {
+        setStatus('error', msg.status.preview);
+      } else if (body.code === 'rate_limited') {
+        setStatus('error', msg.status.rateLimited);
+      } else {
+        throw new Error(String(res.status));
+      }
+    } catch {
+      setStatus('error', msg.status.error);
+    } finally {
+      submit.disabled = false;
+    }
+  });
+})();
