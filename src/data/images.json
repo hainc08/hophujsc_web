@@ -1364,5 +1364,245 @@
    "width": 480,
    "height": 384
   }
+ },
+ "v3/v3-hero": {
+  "src": "v3/v3-hero",
+  "name": "v3-hero",
+  "derivedFrom": "assets/source/tui-ep-quai/studio/tui-ep-quai-studio-27.jpg",
+  "edit": "Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "large": {
+   "file": "v3-hero-1200.webp",
+   "width": 1200,
+   "height": 1500
+  },
+  "small": {
+   "file": "v3-hero-720.webp",
+   "width": 720,
+   "height": 900
+  }
+ },
+ "v3/v3-hero-in": {
+  "src": "v3/v3-hero-in",
+  "name": "v3-hero-in",
+  "derivedFrom": "assets/source/tui-ep-quai/studio/tui-ep-quai-studio-27.jpg",
+  "edit": "Bản tách màu CMYK tính sẵn theo concept v3. Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "large": {
+   "file": "v3-hero-in-1200.webp",
+   "width": 1200,
+   "height": 1500
+  },
+  "small": {
+   "file": "v3-hero-in-720.webp",
+   "width": 720,
+   "height": 900
+  }
+ },
+ "v3/v3-val-tam-nhin": {
+  "src": "v3/v3-val-tam-nhin",
+  "name": "v3-val-tam-nhin",
+  "derivedFrom": "assets/source/tui-niem-phong/studio/tui-niem-phong-studio-01.jpg",
+  "edit": "Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "large": {
+   "file": "v3-val-tam-nhin-900.webp",
+   "width": 900,
+   "height": 675
+  },
+  "small": {
+   "file": "v3-val-tam-nhin-600.webp",
+   "width": 600,
+   "height": 450
+  }
+ },
+ "v3/v3-val-su-menh": {
+  "src": "v3/v3-val-su-menh",
+  "name": "v3-val-su-menh",
+  "derivedFrom": "assets/source/nha-xuong/nha-xuong-10.jpg",
+  "edit": "Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "large": {
+   "file": "v3-val-su-menh-768.webp",
+   "width": 768,
+   "height": 576
+  },
+  "small": {
+   "file": "v3-val-su-menh-600.webp",
+   "width": 600,
+   "height": 450
+  }
+ },
+ "v3/v3-val-gia-tri": {
+  "src": "v3/v3-val-gia-tri",
+  "name": "v3-val-gia-tri",
+  "derivedFrom": "assets/source/nha-xuong/nha-xuong-12.jpg",
+  "edit": "Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "large": {
+   "file": "v3-val-gia-tri-900.webp",
+   "width": 900,
+   "height": 675
+  },
+  "small": {
+   "file": "v3-val-gia-tri-600.webp",
+   "width": 600,
+   "height": 450
+  }
+ },
+ "v3/v3-pillar-nha-may": {
+  "src": "v3/v3-pillar-nha-may",
+  "name": "v3-pillar-nha-may",
+  "derivedFrom": "assets/source/nha-xuong/nha-xuong-06.jpg",
+  "edit": "Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "large": {
+   "file": "v3-pillar-nha-may-960.webp",
+   "width": 960,
+   "height": 640
+  },
+  "small": {
+   "file": "v3-pillar-nha-may-640.webp",
+   "width": 640,
+   "height": 427
+  }
+ },
+ "v3/v3-pillar-nha-may-in": {
+  "src": "v3/v3-pillar-nha-may-in",
+  "name": "v3-pillar-nha-may-in",
+  "derivedFrom": "assets/source/nha-xuong/nha-xuong-06.jpg",
+  "edit": "Bản tách màu CMYK tính sẵn theo concept v3. Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "large": {
+   "file": "v3-pillar-nha-may-in-960.webp",
+   "width": 960,
+   "height": 640
+  },
+  "small": {
+   "file": "v3-pillar-nha-may-in-640.webp",
+   "width": 640,
+   "height": 427
+  }
+ },
+ "v3/v3-pillar-quy-trinh": {
+  "src": "v3/v3-pillar-quy-trinh",
+  "name": "v3-pillar-quy-trinh",
+  "derivedFrom": "assets/source/nha-xuong/nha-xuong-05.jpg",
+  "edit": "Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "large": {
+   "file": "v3-pillar-quy-trinh-960.webp",
+   "width": 960,
+   "height": 640
+  },
+  "small": {
+   "file": "v3-pillar-quy-trinh-640.webp",
+   "width": 640,
+   "height": 427
+  }
+ },
+ "v3/v3-pillar-quy-trinh-in": {
+  "src": "v3/v3-pillar-quy-trinh-in",
+  "name": "v3-pillar-quy-trinh-in",
+  "derivedFrom": "assets/source/nha-xuong/nha-xuong-05.jpg",
+  "edit": "Bản tách màu CMYK tính sẵn theo concept v3. Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "large": {
+   "file": "v3-pillar-quy-trinh-in-960.webp",
+   "width": 960,
+   "height": 640
+  },
+  "small": {
+   "file": "v3-pillar-quy-trinh-in-640.webp",
+   "width": 640,
+   "height": 427
+  }
+ },
+ "v3/v3-pillar-chat-luong": {
+  "src": "v3/v3-pillar-chat-luong",
+  "name": "v3-pillar-chat-luong",
+  "derivedFrom": "assets/source/nha-xuong/nha-xuong-08.jpg",
+  "edit": "Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "large": {
+   "file": "v3-pillar-chat-luong-960.webp",
+   "width": 960,
+   "height": 640
+  },
+  "small": {
+   "file": "v3-pillar-chat-luong-640.webp",
+   "width": 640,
+   "height": 427
+  }
+ },
+ "v3/v3-pillar-chat-luong-in": {
+  "src": "v3/v3-pillar-chat-luong-in",
+  "name": "v3-pillar-chat-luong-in",
+  "derivedFrom": "assets/source/nha-xuong/nha-xuong-08.jpg",
+  "edit": "Bản tách màu CMYK tính sẵn theo concept v3. Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "large": {
+   "file": "v3-pillar-chat-luong-in-960.webp",
+   "width": 960,
+   "height": 640
+  },
+  "small": {
+   "file": "v3-pillar-chat-luong-in-640.webp",
+   "width": 640,
+   "height": 427
+  }
+ },
+ "v3/v3-sp-tui-hat-xoai": {
+  "src": "v3/v3-sp-tui-hat-xoai",
+  "name": "v3-sp-tui-hat-xoai",
+  "derivedFrom": "assets/source/tui-hat-xoai/studio-pe/tui-hat-xoai-pe-studio-51.jpg",
+  "edit": "Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "large": {
+   "file": "v3-sp-tui-hat-xoai-900.webp",
+   "width": 900,
+   "height": 900
+  },
+  "small": {
+   "file": "v3-sp-tui-hat-xoai-600.webp",
+   "width": 600,
+   "height": 600
+  }
+ },
+ "v3/v3-sp-tui-niem-phong": {
+  "src": "v3/v3-sp-tui-niem-phong",
+  "name": "v3-sp-tui-niem-phong",
+  "derivedFrom": "assets/source/tui-niem-phong/studio/tui-niem-phong-studio-14.jpg",
+  "edit": "Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "large": {
+   "file": "v3-sp-tui-niem-phong-900.webp",
+   "width": 900,
+   "height": 900
+  },
+  "small": {
+   "file": "v3-sp-tui-niem-phong-600.webp",
+   "width": 600,
+   "height": 600
+  }
+ },
+ "v3/v3-sp-tui-sieu-thi": {
+  "src": "v3/v3-sp-tui-sieu-thi",
+  "name": "v3-sp-tui-sieu-thi",
+  "derivedFrom": "assets/source/tui-sieu-thi/studio/tui-sieu-thi-studio-02.jpg",
+  "edit": "Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "large": {
+   "file": "v3-sp-tui-sieu-thi-900.webp",
+   "width": 900,
+   "height": 900
+  },
+  "small": {
+   "file": "v3-sp-tui-sieu-thi-600.webp",
+   "width": 600,
+   "height": 600
+  }
+ },
+ "v3/v3-sp-tui-ep-quai": {
+  "src": "v3/v3-sp-tui-ep-quai",
+  "name": "v3-sp-tui-ep-quai",
+  "derivedFrom": "assets/source/tui-ep-quai/studio/tui-ep-quai-studio-22.jpg",
+  "edit": "Cắt khung, thu nhỏ. Sản phẩm không bị chỉnh sửa.",
+  "large": {
+   "file": "v3-sp-tui-ep-quai-900.webp",
+   "width": 900,
+   "height": 900
+  },
+  "small": {
+   "file": "v3-sp-tui-ep-quai-600.webp",
+   "width": 600,
+   "height": 600
+  }
  }
 }

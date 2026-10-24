@@ -606,5 +606,417 @@
         }
       }
     ]
+  },
+  "v3": {
+    "hero": {
+      "kicker": {
+        "vi": "Công ty CP Sản xuất và Thương mại Hợp Phú",
+        "en": "Hop Phu Production and Trading JSC"
+      },
+      "lines": [
+        {
+          "vi": "Sản xuất bao bì nhựa",
+          "en": "Plastic packaging,"
+        },
+        {
+          "vi": "theo yêu cầu.",
+          "en": "made to order."
+        }
+      ],
+      "lead": {
+        "vi": "Túi và màng nhựa HD, PE, PP, OPP — đúng vật liệu, đúng kích thước, in đúng nhận diện thương hiệu — cho bán lẻ, thương mại điện tử, thực phẩm, nông nghiệp và sản xuất công nghiệp.",
+        "en": "Plastic bags and film in HD, PE, PP and OPP — the right material, the right size, printed in your brand identity — for retail, e-commerce, food, agriculture and industry."
+      },
+      "primary": {
+        "vi": "Gửi yêu cầu sản xuất",
+        "en": "Send a production request"
+      },
+      "secondary": {
+        "vi": "Xem các dòng sản phẩm",
+        "en": "See our product lines"
+      },
+      "hint": {
+        "vi": "Rê chuột lên ảnh để các bản in khớp lại",
+        "en": "Hover the photo to bring the plates into register"
+      }
+    },
+    "about": {
+      "kicker": {
+        "vi": "01 — Về chúng tôi",
+        "en": "01 — About us"
+      },
+      "title": {
+        "vi": "Trách nhiệm, Uy tín, Đổi mới — trong từng chiếc túi.",
+        "en": "Responsibility, reliability, innovation — in every bag."
+      },
+      "values": [
+        {
+          "key": "tam-nhin",
+          "image": "v3/v3-val-tam-nhin",
+          "alt": {
+            "vi": "Các cuộn túi niêm phong nhiều màu của Hợp Phú",
+            "en": "Rolls of Hop Phu courier seal bags in several colours"
+          },
+          "kicker": {
+            "vi": "Tầm nhìn",
+            "en": "Vision"
+          },
+          "title": {
+            "vi": "Bao bì nhựa chất lượng cao cho thị trường Việt Nam",
+            "en": "High-quality plastic packaging for Vietnam"
+          },
+          "body": {
+            "vi": "Không ngừng cải tiến công nghệ, đưa ra thị trường những dòng sản phẩm mới với chất lượng tốt.",
+            "en": "We keep improving our technology and bringing new, high-quality product lines to market."
+          }
+        },
+        {
+          "key": "su-menh",
+          "image": "v3/v3-val-su-menh",
+          "alt": {
+            "vi": "Bảng mẫu sản phẩm hiện có tại xưởng Hợp Phú",
+            "en": "Board of current product samples at the Hop Phu workshop"
+          },
+          "kicker": {
+            "vi": "Sứ mệnh",
+            "en": "Mission"
+          },
+          "title": {
+            "vi": "Đồng hành cùng ngành công nghiệp dân sinh",
+            "en": "A partner to Vietnam’s consumer industries"
+          },
+          "body": {
+            "vi": "Là người bạn đồng hành với sự phát triển của ngành công nghiệp dân sinh, an toàn cho hệ sinh thái, thân thiện với môi trường.",
+            "en": "To grow alongside the consumer goods industry, safely for ecosystems and with care for the environment."
+          }
+        },
+        {
+          "key": "gia-tri",
+          "image": "v3/v3-val-gia-tri",
+          "alt": {
+            "vi": "Túi ép quai quai nâu trên băng chuyền tại xưởng Hợp Phú",
+            "en": "Handle bags with brown handles on the conveyor at the Hop Phu workshop"
+          },
+          "kicker": {
+            "vi": "Giá trị cốt lõi",
+            "en": "Core values"
+          },
+          "title": {
+            "vi": "Trách nhiệm · Uy tín · Đổi mới",
+            "en": "Responsibility · Reliability · Innovation"
+          },
+          "body": {
+            "vi": "Vận hành theo quy trình chính xác, chuyên nghiệp; giữ sự tin cậy của khách hàng bằng chất lượng sản phẩm và thái độ phục vụ tận tâm.",
+            "en": "We work to precise, professional processes and keep our customers’ trust through product quality and attentive service."
+          }
+        }
+      ],
+      "mottoKicker": {
+        "vi": "Phương châm",
+        "en": "Our motto"
+      },
+      "motto": {
+        "vi": "“Trách nhiệm, Uy tín, Đổi mới, xây dựng thương hiệu dựa trên sự hài lòng của khách hàng.”",
+        "en": "“Responsibility, reliability, innovation — building our brand on customer satisfaction.”"
+      },
+      "leadersTitle": {
+        "vi": "Ban lãnh đạo",
+        "en": "Leadership"
+      },
+      "more": {
+        "vi": "Tìm hiểu về Hợp Phú",
+        "en": "More about Hop Phu"
+      }
+    },
+    "products": {
+      "kicker": {
+        "vi": "02 — Sản phẩm",
+        "en": "02 — Products"
+      },
+      "title": {
+        "vi": "Chín dòng túi cho chuỗi cung ứng của bạn.",
+        "en": "Nine bag lines for your supply chain."
+      },
+      "lead": {
+        "vi": "Chọn một dòng để xem chất liệu, kích thước thông dụng và ứng dụng.",
+        "en": "Pick a line to see its material, common sizes and uses."
+      },
+      "pending": {
+        "vi": "Ảnh đang cập nhật",
+        "en": "Photo coming soon"
+      },
+      "line": {
+        "vi": "Dòng",
+        "en": "Line"
+      },
+      "material": {
+        "vi": "Chất liệu",
+        "en": "Material"
+      },
+      "sizes": {
+        "vi": "Kích thước thông dụng",
+        "en": "Common sizes"
+      },
+      "custom": {
+        "vi": "Tuỳ chỉnh",
+        "en": "Customisation"
+      },
+      "apps": {
+        "vi": "Ứng dụng",
+        "en": "Uses"
+      },
+      "quote": {
+        "vi": "Yêu cầu báo giá dòng này",
+        "en": "Request a quote for this line"
+      },
+      "page": {
+        "vi": "Xem trang sản phẩm",
+        "en": "View product page"
+      },
+      "close": {
+        "vi": "Đóng",
+        "en": "Close"
+      },
+      "madeToOrder": {
+        "vi": "Theo yêu cầu",
+        "en": "Made to order"
+      }
+    },
+    "capability": {
+      "kicker": {
+        "vi": "03 — Năng lực nhà máy",
+        "en": "03 — Factory capability"
+      },
+      "title": {
+        "vi": "Một nhà máy, ba lớp cam kết.",
+        "en": "One factory, three commitments."
+      },
+      "pillars": [
+        {
+          "key": "nha-may",
+          "image": "v3/v3-pillar-nha-may",
+          "alt": {
+            "vi": "Máy cắt dán và băng chuyền túi ép quai tại xưởng Hợp Phú",
+            "en": "Cutting and sealing machine with handle bags on the conveyor at Hop Phu"
+          },
+          "title": {
+            "vi": "Nhà máy",
+            "en": "The factory"
+          },
+          "body": {
+            "vi": "Nhà xưởng tại xã Như Quỳnh, tỉnh Hưng Yên, nằm trên trục Quốc lộ 5, giao thông thuận tiện; sản phẩm được phân phối tới các tỉnh miền Bắc và miền Trung.",
+            "en": "Our workshop is in Nhu Quynh, Hung Yen, on National Highway 5, with easy transport links; we deliver across northern and central Vietnam."
+          },
+          "points": [
+            {
+              "vi": "Máy móc, thiết bị nhập khẩu",
+              "en": "Imported machinery and equipment"
+            },
+            {
+              "vi": "Xưởng sản xuất riêng tại Hưng Yên",
+              "en": "Our own production workshop in Hung Yen"
+            },
+            {
+              "vi": "Giao hàng khắp miền Bắc và miền Trung",
+              "en": "Delivery across northern and central Vietnam"
+            }
+          ]
+        },
+        {
+          "key": "quy-trinh",
+          "image": "v3/v3-pillar-quy-trinh",
+          "alt": {
+            "vi": "Túi ép quai màu hồng chạy trên băng chuyền",
+            "en": "Pink handle bags moving along the conveyor"
+          },
+          "title": {
+            "vi": "Quy trình sản xuất",
+            "en": "Production"
+          },
+          "body": {
+            "vi": "Quy trình khép kín, liên tục cải tiến dây chuyền sản xuất để giảm thiểu phế phẩm, hàng lỗi và tăng năng suất.",
+            "en": "A closed production process, with the line continually improved to cut waste and defects and raise output."
+          },
+          "points": [
+            {
+              "vi": "Hạt nhựa nguyên sinh nhập khẩu",
+              "en": "Imported virgin resin"
+            },
+            {
+              "vi": "In logo, màu sắc theo nhận diện thương hiệu",
+              "en": "Logo and colours printed to your brand identity"
+            },
+            {
+              "vi": "Đóng gói theo quy cách khách hàng",
+              "en": "Packed to your specification"
+            }
+          ]
+        },
+        {
+          "key": "chat-luong",
+          "image": "v3/v3-pillar-chat-luong",
+          "alt": {
+            "vi": "Tay cầm túi ép quai màu hổ phách vừa ra khỏi máy",
+            "en": "A hand holding an amber handle bag just off the machine"
+          },
+          "title": {
+            "vi": "Kiểm soát chất lượng",
+            "en": "Quality control"
+          },
+          "body": {
+            "vi": "Kiểm soát chất lượng nghiêm ngặt từ nguyên liệu đầu vào đến thành phẩm đầu ra.",
+            "en": "Strict quality control from incoming raw material to finished goods."
+          },
+          "points": [
+            {
+              "vi": "Kiểm tra nguyên liệu đầu vào",
+              "en": "Incoming material checks"
+            },
+            {
+              "vi": "Kiểm định từng lô hàng",
+              "en": "Every batch inspected"
+            },
+            {
+              "vi": "Đúng thông số đã thống nhất với khách hàng",
+              "en": "Made to the specification agreed with you"
+            }
+          ]
+        }
+      ]
+    },
+    "process": {
+      "kicker": {
+        "vi": "04 — Sản xuất theo yêu cầu",
+        "en": "04 — Made to order"
+      },
+      "title": {
+        "vi": "Từ yêu cầu đến thành phẩm.",
+        "en": "From request to finished bag."
+      },
+      "lead": {
+        "vi": "Bảy bước, có điểm duyệt rõ ràng với khách hàng.",
+        "en": "Seven steps, with clear sign-off points for you."
+      },
+      "approve": {
+        "vi": "Khách hàng duyệt",
+        "en": "You approve"
+      },
+      "steps": [
+        {
+          "title": {
+            "vi": "Tiếp nhận yêu cầu",
+            "en": "Receive your request"
+          },
+          "body": {
+            "vi": "Nhận thông tin qua hotline, Zalo hoặc form: loại túi, kích thước, số lượng, file logo.",
+            "en": "By hotline, Zalo or the form: bag type, size, quantity and logo file."
+          }
+        },
+        {
+          "title": {
+            "vi": "Tư vấn vật liệu & báo giá",
+            "en": "Material advice & quote"
+          },
+          "body": {
+            "vi": "Đề xuất vật liệu, độ dày phù hợp công năng và gửi báo giá chi tiết.",
+            "en": "We suggest the material and thickness for the job and send a detailed quote."
+          }
+        },
+        {
+          "title": {
+            "vi": "Thiết kế & duyệt file in",
+            "en": "Artwork & print proof"
+          },
+          "body": {
+            "vi": "Dàn trang logo, màu in lên túi; khách hàng duyệt maquette.",
+            "en": "We lay out your logo and print colours on the bag; you approve the proof."
+          },
+          "approve": true
+        },
+        {
+          "title": {
+            "vi": "Làm mẫu",
+            "en": "Sample"
+          },
+          "body": {
+            "vi": "Sản xuất mẫu thử để khách hàng kiểm tra kích thước, độ dày, màu sắc.",
+            "en": "We make a sample so you can check size, thickness and colour."
+          },
+          "approve": true
+        },
+        {
+          "title": {
+            "vi": "Sản xuất hàng loạt",
+            "en": "Production run"
+          },
+          "body": {
+            "vi": "Thổi màng, in, cắt dán theo đúng thông số mẫu đã duyệt.",
+            "en": "Film blowing, printing, cutting and sealing to the approved sample."
+          }
+        },
+        {
+          "title": {
+            "vi": "Kiểm tra chất lượng",
+            "en": "Quality check"
+          },
+          "body": {
+            "vi": "Kiểm tra từng lô: kích thước, độ dày, mối hàn, màu in.",
+            "en": "Each batch checked for size, thickness, seals and print colour."
+          }
+        },
+        {
+          "title": {
+            "vi": "Đóng gói & giao hàng",
+            "en": "Packing & delivery"
+          },
+          "body": {
+            "vi": "Đóng gói theo quy cách và giao tận kho khách hàng.",
+            "en": "Packed to specification and delivered to your warehouse."
+          }
+        }
+      ]
+    },
+    "contact": {
+      "kicker": {
+        "vi": "05 — Liên hệ",
+        "en": "05 — Contact"
+      },
+      "title": {
+        "vi": "Ghé nhà máy, hoặc gửi yêu cầu cho chúng tôi.",
+        "en": "Visit the factory, or send us your request."
+      },
+      "factory": {
+        "vi": "Nhà máy",
+        "en": "Factory"
+      },
+      "hotline": {
+        "vi": "Hotline · Zalo",
+        "en": "Hotline · Zalo"
+      },
+      "directions": {
+        "vi": "Chỉ đường",
+        "en": "Directions"
+      },
+      "openMaps": {
+        "vi": "Mở Google Maps",
+        "en": "Open in Google Maps"
+      },
+      "mapButton": {
+        "vi": "Xem bản đồ",
+        "en": "Show map"
+      },
+      "mapTitle": {
+        "vi": "Bản đồ nhà máy Hợp Phú",
+        "en": "Map of the Hop Phu factory"
+      },
+      "mapNote": {
+        "vi": "Bản đồ tải từ Google khi bạn bấm.",
+        "en": "The map loads from Google when you click."
+      },
+      "formTitle": {
+        "vi": "Gửi yêu cầu báo giá",
+        "en": "Request a quote"
+      }
+    }
   }
 }

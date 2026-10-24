@@ -37,10 +37,10 @@
   },
   "images": {
     "hero": {
-      "src": "source/hero-niem-phong",
+      "src": "v3/v3-hero-in",
       "alt": {
-        "vi": "Các cuộn túi niêm phong nhiều màu do Hợp Phú sản xuất",
-        "en": "Rolls of courier seal bags in several colours made by Hop Phu"
+        "vi": "Túi ép quai màu kem, quai nâu, ảnh chụp studio của Hợp Phú",
+        "en": "Cream handle-sealed bag with brown handles, Hop Phu studio photo"
       }
     },
     "dieCut": {
@@ -529,5 +529,295 @@
         "en": "Pink handle bags coming off the machine on the conveyor at the Hop Phu workshop"
       }
     }
+  },
+  "v3": {
+    "_note": "Trang chủ v3 (concept Broadsheet, 2026-10-24). Ảnh có bản in tách màu: <khoá> và <khoá>-in trong images.json.",
+    "hero": {
+      "image": "v3/v3-hero",
+      "alt": {
+        "vi": "Túi ép quai màu kem, quai nâu, ảnh chụp studio của Hợp Phú",
+        "en": "Cream handle-sealed bag with brown handles, Hop Phu studio photo"
+      }
+    },
+    "lines": [
+      {
+        "id": "tui-hat-xoai",
+        "cat": "tui-hat-xoai",
+        "image": "v3/v3-sp-tui-hat-xoai",
+        "name": {
+          "vi": "Túi hạt xoài",
+          "en": "Die-cut bags"
+        },
+        "material": "LDPE · HDPE",
+        "desc": {
+          "vi": "Túi hạt xoài (túi hột xoài) có quai cắt hình hạt xoài, sản xuất từ HD hoặc LDPE nguyên sinh nhập khẩu, 1–2 lớp tuỳ chọn.",
+          "en": "Die-cut bags with a mango-seed shaped handle, made from imported virgin HD or LDPE, in one or two layers."
+        },
+        "sizes": "15x25, 20x30, 25x35, 30x42, 35x50, 40x60 cm",
+        "custom": {
+          "vi": "Kích thước, màu sắc, in tên công ty và logo",
+          "en": "Size, colour, company name and logo printing"
+        },
+        "apps": [
+          {
+            "vi": "Thời trang, phụ kiện",
+            "en": "Fashion, accessories"
+          },
+          {
+            "vi": "Mỹ phẩm, làm đẹp",
+            "en": "Cosmetics, beauty"
+          },
+          {
+            "vi": "Sự kiện, quà tặng",
+            "en": "Events, gifts"
+          },
+          {
+            "vi": "Bán lẻ",
+            "en": "Retail"
+          }
+        ]
+      },
+      {
+        "id": "tui-niem-phong",
+        "cat": "tui-niem-phong",
+        "image": "v3/v3-sp-tui-niem-phong",
+        "name": {
+          "vi": "Túi niêm phong",
+          "en": "Courier seal bags"
+        },
+        "material": "LDPE · HDPE",
+        "desc": {
+          "vi": "Túi niêm phong (túi ship, túi đóng hàng COD) chống thấm, miệng túi có băng keo chống bóc. Có loại HD 1 lớp, 2 lớp và PE 2 lớp.",
+          "en": "Waterproof courier and COD bags with a tamper-evident adhesive strip. Available in one- or two-layer HD and two-layer PE."
+        },
+        "sizes": "17x26, 20x26, 25x31, 28x38, 30x38, 32x41, 35x46, 38x48, 40x56, 45x61 cm (+4 cm nắp dán)",
+        "sizesEn": "17x26, 20x26, 25x31, 28x38, 30x38, 32x41, 35x46, 38x48, 40x56, 45x61 cm (+4 cm flap)",
+        "custom": {
+          "vi": "Kích thước, màu túi, in logo shop",
+          "en": "Size, colour, shop logo printing"
+        },
+        "apps": [
+          {
+            "vi": "Bán hàng online",
+            "en": "Online shops"
+          },
+          {
+            "vi": "Thời trang, mỹ phẩm",
+            "en": "Fashion, cosmetics"
+          },
+          {
+            "vi": "Phụ kiện, quà tặng",
+            "en": "Accessories, gifts"
+          },
+          {
+            "vi": "Sách, thực phẩm khô",
+            "en": "Books, dry food"
+          }
+        ]
+      },
+      {
+        "id": "tui-sieu-thi",
+        "cat": "tui-sieu-thi",
+        "image": "v3/v3-sp-tui-sieu-thi",
+        "name": {
+          "vi": "Túi siêu thị tự huỷ",
+          "en": "Self-degrading supermarket bags"
+        },
+        "material": "HDPE · phụ gia tự huỷ",
+        "materialEn": "HDPE · degradable additive",
+        "desc": {
+          "vi": "Túi siêu thị tự huỷ làm từ HDPE nguyên sinh kết hợp phụ gia tự huỷ, các loại từ 0,5 kg đến 20 kg.",
+          "en": "Supermarket bags in virgin HDPE with a degradable additive, from 0.5 kg to 20 kg capacity."
+        },
+        "sizes": "15x25, 20x30, 24x36, 26x43, 30x50, 35x63, 44x70, 53x80 cm",
+        "custom": {
+          "vi": "Kiểu dáng, kích thước, màu sắc, nội dung in",
+          "en": "Style, size, colour and print"
+        },
+        "apps": [
+          {
+            "vi": "Siêu thị",
+            "en": "Supermarkets"
+          },
+          {
+            "vi": "Cửa hàng tiện lợi",
+            "en": "Convenience stores"
+          },
+          {
+            "vi": "Chuỗi bán lẻ",
+            "en": "Retail chains"
+          },
+          {
+            "vi": "Chợ",
+            "en": "Markets"
+          }
+        ]
+      },
+      {
+        "id": "tui-ep-quai",
+        "cat": "tui-ep-quai",
+        "image": "v3/v3-sp-tui-ep-quai",
+        "name": {
+          "vi": "Túi ép quai",
+          "en": "Handle-sealed bags"
+        },
+        "material": "LDPE",
+        "desc": {
+          "vi": "Túi ép quai PE sản xuất từ hạt nhựa nguyên sinh LDPE, quai ép chắc, bề mặt láng mịn.",
+          "en": "PE bags in virgin LDPE with firmly sealed handles and a smooth surface."
+        },
+        "sizes": "22x30, 25x35, 30x40, 35x50, 40x55, 30x30, 35x35, 40x40 cm",
+        "custom": {
+          "vi": "Kích thước, màu túi và quai, in logo thương hiệu",
+          "en": "Size, bag and handle colour, logo printing"
+        },
+        "apps": [
+          {
+            "vi": "Thời trang",
+            "en": "Fashion"
+          },
+          {
+            "vi": "Mỹ phẩm",
+            "en": "Cosmetics"
+          },
+          {
+            "vi": "Quà tặng",
+            "en": "Gifts"
+          },
+          {
+            "vi": "Cửa hàng cao cấp",
+            "en": "Premium stores"
+          }
+        ]
+      },
+      {
+        "id": "tui-long-bao",
+        "cat": "tui-long-bao",
+        "image": null,
+        "name": {
+          "vi": "Túi lồng bao",
+          "en": "Liner bags for woven sacks"
+        },
+        "material": "HDPE · PE",
+        "desc": {
+          "vi": "Túi nilon lót trong bao dệt, làm từ HDPE, PE nguyên sinh nhập khẩu, chịu nén tốt, đường hàn chắc; loại 5 kg đến 40 kg.",
+          "en": "Plastic liners for woven sacks in imported virgin HDPE and PE, with good compression strength and firm seals; 5 kg to 40 kg."
+        },
+        "sizes": "50x80, 55x95, 65x105, 70x110 cm",
+        "custom": {
+          "vi": "Kích thước theo bao, độ dày",
+          "en": "Size to fit the sack, thickness"
+        },
+        "apps": [
+          {
+            "vi": "Gạo, ngô, tiêu, cà phê",
+            "en": "Rice, corn, pepper, coffee"
+          },
+          {
+            "vi": "Phân bón, đất sạch",
+            "en": "Fertiliser, potting soil"
+          },
+          {
+            "vi": "Chăn nuôi, thuỷ sản",
+            "en": "Livestock and aquaculture feed"
+          },
+          {
+            "vi": "Bao PP dệt, bao xuất khẩu",
+            "en": "Woven PP and export sacks"
+          }
+        ]
+      },
+      {
+        "id": "tui-lot",
+        "cat": null,
+        "image": null,
+        "name": {
+          "vi": "Túi lót",
+          "en": "Liner bags"
+        },
+        "material": null,
+        "desc": {
+          "vi": "Túi lót sản xuất theo kích thước, độ dày và chất liệu khách hàng yêu cầu.",
+          "en": "Liner bags made to the size, thickness and material you need."
+        },
+        "sizes": null,
+        "custom": {
+          "vi": "Kích thước, độ dày, chất liệu",
+          "en": "Size, thickness, material"
+        },
+        "apps": []
+      },
+      {
+        "id": "tui-bau-uom",
+        "cat": null,
+        "image": null,
+        "name": {
+          "vi": "Túi bầu ươm",
+          "en": "Nursery grow bags"
+        },
+        "material": null,
+        "desc": {
+          "vi": "Túi bầu ươm cây 2 lớp trắng/đen, chống nóng; giao ở dạng gấp phẳng, mở ra thành dạng đứng.",
+          "en": "Two-layer white/black nursery bags that resist heat; delivered flat, they open to stand upright."
+        },
+        "sizes": null,
+        "custom": {
+          "vi": "Kích thước, độ dày",
+          "en": "Size, thickness"
+        },
+        "apps": [
+          {
+            "vi": "Vườn ươm",
+            "en": "Plant nurseries"
+          },
+          {
+            "vi": "Nông nghiệp",
+            "en": "Agriculture"
+          }
+        ]
+      },
+      {
+        "id": "tui-thuc-pham",
+        "cat": "tui-dung-thuc-pham",
+        "image": null,
+        "name": {
+          "vi": "Túi thực phẩm",
+          "en": "Food bags"
+        },
+        "material": null,
+        "desc": {
+          "vi": "Túi đựng thực phẩm sản xuất theo quy cách của từng doanh nghiệp; tư vấn chất liệu, kích thước và mẫu in phù hợp với sản phẩm.",
+          "en": "Food bags made to each business’s specification, with advice on material, size and print for your product."
+        },
+        "sizes": null,
+        "custom": {
+          "vi": "Chất liệu, kích thước, mẫu in",
+          "en": "Material, size, print"
+        },
+        "apps": []
+      },
+      {
+        "id": "tui-khac",
+        "cat": null,
+        "link": "services",
+        "image": null,
+        "name": {
+          "vi": "Túi theo yêu cầu khác",
+          "en": "Other custom bags"
+        },
+        "material": "HD · PE · PP · OPP",
+        "desc": {
+          "vi": "Không thấy loại túi bạn cần? Gửi mẫu hoặc mô tả, Hợp Phú tư vấn vật liệu và quy cách để sản xuất riêng.",
+          "en": "Can’t see the bag you need? Send a sample or a description and Hop Phu will advise on material and specification."
+        },
+        "sizes": null,
+        "custom": {
+          "vi": "Vật liệu, kích thước, màu, in ấn",
+          "en": "Material, size, colour, print"
+        },
+        "apps": []
+      }
+    ],
+    "mapQuery": "Số 16 Khu Đường Tàu, Như Quỳnh, Hưng Yên"
   }
 }

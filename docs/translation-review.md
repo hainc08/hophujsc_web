@@ -42,6 +42,10 @@ Quy ước: **Có sẵn** = lấy từ trang `/en/` đang chạy trên hopphujsc
 | Form | Full name, Phone number, Company name, Packaging type, Estimated quantity, Details, dòng đồng ý, thông báo lỗi và trạng thái | Mới |
 | Footer | Products, Company, Contact, About us, Services, News, Careers, Contact page, Sitemap | Mới |
 
+## Trang chủ v3 (2026-10-24)
+
+Toàn bộ chữ tiếng Anh của trang chủ v3 nằm ở `src/data/copy.json > v3` và `src/data/site.json > v3.lines` (tên, mô tả, ứng dụng của 9 dòng). Dịch mới từ nội dung tiếng Việt; cần duyệt trước khi lên production. Một số tên dòng mới: "Self-degrading supermarket bags", "Liner bags for woven sacks", "Nursery grow bags", "Other custom bags".
+
 ## Điểm cần chủ dự án quyết định
 
 - Dùng chính tả Anh-Anh ("colour") hay Anh-Mỹ ("color")? Bản hiện tại theo Anh-Anh.

@@ -179,7 +179,14 @@ export function quoteForm(ctx, { idPrefix = 'q' } = {}) {
           <p class="field__error" id="${id(name)}-error" hidden></p>
         </div>`;
   const describedBy = (name, hint) => `aria-describedby="${hint ? `${id(name)}-hint ` : ''}${id(name)}-error"`;
-  const options = site.categories.map((c) => `<option value="${c.id}">${esc(t(c.name))}</option>`).join('');
+  // 9 dòng sản phẩm theo danh sách khách (giá trị = mã danh mục nếu có, để ?san-pham=<id> từ trang danh mục vẫn chọn sẵn),
+  // sau đó là các danh mục cũ chưa nằm trong 9 dòng (cuộn màng, may mặc) để trang của chúng vẫn chọn sẵn được.
+  const lines = (site.v3?.lines || []).filter((l) => l.id !== 'tui-khac');
+  const lineValues = new Set(lines.map((l) => l.cat || l.id));
+  const options = [
+    ...lines.map((l) => [l.cat || l.id, l.name]),
+    ...site.categories.filter((c) => !lineValues.has(c.id)).map((c) => [c.id, c.name]),
+  ].map(([value, name]) => `<option value="${value}">${esc(t(name))}</option>`).join('');
   // Thông báo lỗi và trạng thái được nhúng sẵn để JS không phải chứa chữ của từng ngôn ngữ.
   const messages = {
     errors: Object.fromEntries(Object.entries(copy.quote.errors).map(([k, v]) => [k, t(v)])),
@@ -231,7 +238,7 @@ export function siteFooter(ctx) {
         ${companyLinks}
       </ul>
     </nav>
-    <div id="lien-he">
+    <div id="footer-lien-he">
       <h2>${esc(t(f.contact))}</h2>
       <ul>
         <li>${esc(t(f.hotline))}: <a href="tel:${c.phone.tel}">${esc(c.phone.display)}</a></li>

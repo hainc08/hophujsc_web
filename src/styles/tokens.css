@@ -1,30 +1,34 @@
-/* Font dự phòng chỉnh bề rộng cho gần với Be Vietnam Pro (đo bằng canvas trên chuỗi tiếng Việt),
-   để chữ không xô lệch bố cục khi webfont tải xong. */
+/* Font dự phòng có số đo gần Source Serif 4, để chữ không xô bố cục khi webfont tải xong. */
 @font-face {
-  font-family: "Be Vietnam Fallback";
-  src: local("Arial");
-  size-adjust: 107%;
+  font-family: "Source Serif Fallback";
+  src: local("Georgia"), local("Times New Roman");
+  size-adjust: 96%;
 }
 
-/* Design tokens. Nguồn duy nhất cho màu, chữ, khoảng cách. Xem docs/design-system.md. */
+/* Design tokens (v3 "Broadsheet", 2026-10-24). Nguồn duy nhất cho màu, chữ, khoảng cách.
+   Bốn mực in: cyan, magenta, vàng process và đen. Cyan là màu hành động. */
 :root {
-  /* Nhận diện: đỏ, trắng, xám. Đỏ dùng tiết chế. */
-  --red: #c51f2b;
-  --red-hover: #a71924;
+  /* Mực in dùng cho hiệu ứng tách màu (chữ lớn, số, ảnh). Không dùng cho chữ nhỏ. */
+  --cyan: #0088b0;
+  --magenta: #d6006c;
+  --process-yellow: #edbb00;
+  /* Cyan và magenta đậm hơn cho chữ nhỏ, liên kết, nút: đạt WCAG AA */
+  --cyan-ink: #006786;      /* 5,7:1 trên nền giấy */
+  --magenta-ink: #aa0b56;   /* 6,5:1 trên nền giấy */
+  /* Tên biến --red giữ lại để các component cũ dùng tiếp; giá trị là màu hành động cyan */
+  --red: #00779b;           /* chữ trắng trên nền này 5,1:1 */
+  --red-hover: #005f7c;
   --white: #fff;
-  /* Nền trang xám ấm rất nhạt thay cho trắng tinh: bớt chói khi xem lâu (góp ý khách 2026-10-23).
-     Ô nhập, thẻ, form giữ trắng để nổi trên nền. */
-  --paper: #f6f5f2;
-  --surface: #ebe9e4;
-  --ink: #26282b;
-  --ink-deep: #1c1d1f;
-  /* Chữ phụ đậm hơn để đọc được ngoài nắng: 8,5:1 trên --paper */
-  --muted: #43484e;
-  --line: #d9d6cf;
-  --input-border: #7e838a;
-  /* Chữ phụ trên nền tối */
-  --on-dark: #e1e4e7;
-  --on-dark-muted: #c9ced3;
+  --paper: #f3f2f2;
+  --surface: #eae9e9;
+  --ink: #201e1d;
+  --ink-deep: #161514;
+  /* Chữ phụ đậm để đọc được ngoài nắng (góp ý khách 2026-10-23): 7,9:1 trên nền giấy */
+  --muted: #4d4a4a;
+  --line: #d7d3d3;
+  --input-border: #7d7979;
+  --on-dark: #e6e3e3;
+  --on-dark-muted: #cfcaca;
 
   --color-text: var(--ink);
   --color-text-muted: var(--muted);
@@ -36,8 +40,8 @@
   --color-error: #b3141f;
   --color-success: #17603a;
 
-  /* Chữ: một họ, ba độ đậm */
-  --font: "Be Vietnam Pro", "Be Vietnam Fallback", system-ui, sans-serif;
+  /* Chữ: một họ serif có dấu tiếng Việt (Source Serif 4), 400 / 600 và nghiêng 400 */
+  --font: "Source Serif 4", "Source Serif Fallback", Georgia, serif;
   --text-xs: 0.875rem; /* 14px: chữ nhỏ nhất */
   --text-sm: 0.9375rem;
   --text-base: 1.0625rem;

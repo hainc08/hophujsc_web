@@ -37,7 +37,95 @@
     }
   });
 
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  // ----- v3: chữ in tách màu nghiêng nhẹ theo con trỏ -----
+  // Chỉ chạy khi có chuột, không giảm chuyển động, và chỉ trong lúc con trỏ còn di chuyển.
+  // Biến --nx/--ny đặt trên từng .plates đang hiển thị (không đặt trên :root) để trình duyệt chỉ tính lại phần chữ đó.
+  const plates = [...document.querySelectorAll('.plates')];
+  if (plates.length && finePointer && !reduceMotion) {
+    const visible = new Set();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => (en.isIntersecting ? visible.add(en.target) : visible.delete(en.target)));
+    });
+    plates.forEach((p) => io.observe(p));
+    let tx = 0, ty = 0, nx = 0, ny = 0, raf = 0;
+    const tick = () => {
+      raf = 0;
+      nx += (tx - nx) * 0.12;
+      ny += (ty - ny) * 0.12;
+      const x = nx.toFixed(3), y = ny.toFixed(3);
+      visible.forEach((p) => {
+        p.style.setProperty('--nx', x);
+        p.style.setProperty('--ny', y);
+      });
+      if (Math.abs(tx - nx) > 0.002 || Math.abs(ty - ny) > 0.002) raf = requestAnimationFrame(tick);
+    };
+    addEventListener('pointermove', (e) => {
+      tx = (2 * e.clientX) / innerWidth - 1;
+      ty = (2 * e.clientY) / innerHeight - 1;
+      if (!raf && visible.size) raf = requestAnimationFrame(tick);
+    }, { passive: true });
+  }
+
+  // ----- v3: ảnh in tách màu. Ảnh gốc chỉ tải khi rê chuột lần đầu, hiện dần khi đã tải xong -----
+  document.querySelectorAll('[data-print]').forEach((fig) => {
+    const photo = fig.querySelector('.print__photo');
+    if (!photo || !finePointer) return;
+    fig.addEventListener('pointerenter', () => {
+      if (photo.getAttribute('src')) return;
+      photo.addEventListener('load', () => photo.classList.add('is-ready'), { once: true });
+      photo.srcset = photo.dataset.srcset;
+      photo.src = photo.dataset.src;
+    });
+  });
+
+  // ----- v3: hộp chi tiết dòng sản phẩm (dialog gốc). Không có dialog thì liên kết vẫn mở trang như thường -----
+  const openers = document.querySelectorAll('[data-line-open]');
+  openers.forEach((a) => {
+    const dialog = document.getElementById(a.dataset.lineOpen);
+    if (!dialog || typeof dialog.showModal !== 'function') return;
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      dialog.showModal();
+    });
+  });
+  document.querySelectorAll('dialog.sheet').forEach((dialog) => {
+    dialog.addEventListener('click', (e) => {
+      // Bấm ra ngoài khung nội dung (vùng nền mờ) hoặc nút đóng thì đóng hộp
+      if (e.target === dialog || e.target.closest('[data-dialog-close]')) dialog.close();
+    });
+    dialog.querySelectorAll('[data-quote-line]').forEach((a) => {
+      a.addEventListener('click', () => {
+        const select = document.querySelector('[data-quote-form] select[name="product"]');
+        if (select && [...select.options].some((o) => o.value === a.dataset.quoteLine)) select.value = a.dataset.quoteLine;
+        dialog.close();
+      });
+    });
+  });
+
+  // ----- v3: bản đồ Google chỉ tải khi người dùng bấm (nhẹ trang, không gửi dữ liệu cho Google trước) -----
+  document.querySelectorAll('[data-map]').forEach((box) => {
+    const btn = box.querySelector('.map__load');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const frame = document.createElement('iframe');
+      frame.src = box.dataset.map;
+      frame.title = box.dataset.mapTitle;
+      frame.referrerPolicy = 'no-referrer-when-downgrade';
+      box.append(frame);
+      box.classList.add('is-loaded');
+      btn.remove();
+      frame.focus();
+    });
+  });
+
   // ----- Hiệu ứng xuất hiện khi cuộn (CSS bỏ qua nếu người dùng giảm chuyển động) -----
+  // Phần tử trong cùng một nhóm xuất hiện so le 90ms.
+  document.querySelectorAll('[data-reveal-group]').forEach((g) => {
+    g.querySelectorAll(':scope > [data-reveal]').forEach((el, i) => el.style.setProperty('--reveal-delay', `${Math.min(i, 6) * 90}ms`));
+  });
   const revealables = document.querySelectorAll('[data-reveal]');
   if ('IntersectionObserver' in window) {
     document.documentElement.classList.add('reveal-ready');
