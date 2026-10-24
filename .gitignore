@@ -28,3 +28,8 @@ api/config.php
 
 # Ảnh chụp trang tham chiếu V2 (nội dung có bản quyền của bên thứ ba)
 /docs/reference/v2/
+
+# Ảnh gốc, video, tài liệu do công ty gửi (dung lượng lớn, chưa duyệt công bố): chỉ giữ trên máy.
+# Ảnh đã chọn và tối ưu cho web nằm ở assets/img/.
+/assets/source/
+/assets/Ảnh sản phẩm HP/
