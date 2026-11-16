@@ -334,17 +334,17 @@
  "2025/07/LOGO-2.png": {
   "src": "2025/07/LOGO-2.png",
   "name": "logo-2",
-  "origWidth": 377,
-  "origHeight": 389,
+  "origWidth": 1166,
+  "origHeight": 518,
   "large": {
    "file": "logo-2-377.webp",
-   "width": 377,
-   "height": 389
+   "width": 540,
+   "height": 240
   },
   "small": {
    "file": "logo-2-377.webp",
-   "width": 377,
-   "height": 389
+   "width": 540,
+   "height": 240
   }
  },
  "2025/07/TUI-EP-QUAI-NAU.jpg": {
@@ -1729,6 +1729,38 @@
   },
   "small": {
    "file": "sp-tui-ep-quai-600.webp",
+   "width": 600,
+   "height": 750
+  }
+ },
+ "catalog/tui-long-bao": {
+  "src": "catalog/tui-long-bao",
+  "name": "sp-tui-long-bao",
+  "derivedFrom": "images/Túi lồng baobao lót/1794801758021_2098124849434220744_g8943944562196494537_d8a1af80c36c4aaebe05de5a3697f5ba.jpg",
+  "edit": "Tách nền máy móc công nghiệp, đặt túi lồng bao lên nền xám #ECEAE6 khung 4:5.",
+  "large": {
+   "file": "sp-tui-long-bao-1000.webp",
+   "width": 1000,
+   "height": 1250
+  },
+  "small": {
+   "file": "sp-tui-long-bao-600.webp",
+   "width": 600,
+   "height": 750
+  }
+ },
+ "catalog/tui-bau-uom": {
+  "src": "catalog/tui-bau-uom",
+  "name": "sp-tui-bau-uom",
+  "derivedFrom": "images/Túi bầu ươm/1794801693004_2098124849434220744_g8943944562196494537_e6cfec8182d90c8814482e777b4c7b18.jpg",
+  "edit": "Tách nền sàn gỗ trong phòng, đặt túi bầu ươm 2 lớp trắng/đen lên nền xám #ECEAE6 khung 4:5.",
+  "large": {
+   "file": "sp-tui-bau-uom-1000.webp",
+   "width": 1000,
+   "height": 1250
+  },
+  "small": {
+   "file": "sp-tui-bau-uom-600.webp",
    "width": 600,
    "height": 750
   }

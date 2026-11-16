@@ -97,6 +97,7 @@ function lineDialog(ctx, line, i, total) {
   const { t, copy, lang } = ctx;
   const P = copy.v3.products;
   const sizes = lang === 'en' ? line.sizesEn || line.sizes : line.sizes;
+  const mat = line.materialDetail ? t(line.materialDetail) : material(ctx, line);
   const quoteValue = line.id === 'tui-khac' ? 'khac' : line.cat || line.id;
   return `<dialog class="sheet" id="line-${line.id}" aria-labelledby="line-${line.id}-title">
     <div class="sheet__body">
@@ -107,7 +108,7 @@ function lineDialog(ctx, line, i, total) {
         <h3 id="line-${line.id}-title" tabindex="-1" autofocus>${esc(t(line.name))}</h3>
         <p>${esc(t(line.desc))}</p>
         <dl class="sheet__facts">
-          <div><dt>${esc(t(P.material))}</dt><dd>${esc(material(ctx, line))}</dd></div>
+          <div><dt>${esc(t(P.material))}</dt><dd>${esc(mat)}</dd></div>
           ${sizes ? `<div><dt>${esc(t(P.sizes))}</dt><dd>${esc(sizes)}</dd></div>` : ''}
           <div><dt>${esc(t(P.custom))}</dt><dd>${esc(t(line.custom))}</dd></div>
           ${line.apps.length ? `<div><dt>${esc(t(P.apps))}</dt><dd class="tags">${line.apps.map((a) => `<span class="tag">${esc(t(a))}</span>`).join('')}</dd></div>` : ''}

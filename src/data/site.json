@@ -192,13 +192,10 @@
       "id": "tui-dung-thuc-pham",
       "image": null,
       "name": {
-        "vi": "Túi thực phẩm",
-        "en": "Food bags"
+        "vi": "Túi đựng thực phẩm, rau củ quả",
+        "en": "Food & Produce Packaging Bag"
       },
-      "material": {
-        "vi": "Theo yêu cầu",
-        "en": "Made to order"
-      },
+      "material": "LDPE, HDPE, PP",
       "url": {
         "vi": "/category/tui-dung-thuc-pham/",
         "en": "/en/category/food-bag/"
@@ -208,10 +205,10 @@
       "id": "tui-long-bao",
       "image": null,
       "name": {
-        "vi": "Túi lồng bao (túi lót)",
-        "en": "Liner bags"
+        "vi": "Túi lồng bao / Túi lót",
+        "en": "Industrial Liner Bag / Container Liner"
       },
-      "material": "HDPE, PE",
+      "material": "LDPE, HDPE",
       "url": {
         "vi": "/category/tui-long-bao/",
         "en": "/en/category/inner-bag/"
@@ -696,86 +693,92 @@
       {
         "id": "tui-long-bao",
         "cat": "tui-long-bao",
-        "image": null,
+        "image": "catalog/tui-long-bao",
         "name": {
-          "vi": "Túi lồng bao",
-          "en": "Liner bags for woven sacks"
+          "vi": "Túi lồng bao / Túi lót",
+          "en": "Industrial Liner Bag / Container Liner"
         },
-        "material": "HDPE · PE",
+        "material": "LDPE · HDPE",
+        "materialDetail": {
+          "vi": "LDPE, HDPE nguyên sinh hoặc tái sinh chất lượng cao theo yêu cầu kỹ thuật của khách hàng.",
+          "en": "High-grade virgin or recycled LDPE and HDPE tailored to exact technical specifications."
+        },
         "desc": {
-          "vi": "Túi nilon lót trong bao dệt, làm từ HDPE, PE nguyên sinh nhập khẩu, chịu nén tốt, đường hàn chắc; loại 5 kg đến 40 kg.",
-          "en": "Plastic liners for woven sacks in imported virgin HDPE and PE, with good compression strength and firm seals; 5 kg to 40 kg."
+          "vi": "Túi lồng bao công nghiệp của Hợp Phú được thiết kế để lót bên trong các loại bao tải (PP dệt), thùng carton… giúp chống ẩm, chống rò rỉ, bảo vệ tuyệt đối hàng hóa dạng hạt, bột hoặc chất lỏng trong quá trình lưu kho và vận chuyển dài ngày.",
+          "en": "Hợp Phú's industrial liner bags are engineered to fit inside woven PP bags, cartons… They provide exceptional moisture barriers, leak-proof protection, and secure containment for granules, powders, or liquid-based goods during long-term storage and logistics transit."
         },
-        "sizes": "50x80, 55x95, 65x105, 70x110 cm",
+        "sizes": "50 x 80, 56 x 96, 65 x 115 cm, hoặc sản xuất theo kích thước yêu cầu riêng của từng loại bao dệt, thùng carton (ví dụ: tùy chỉnh theo khổ miệng từ 50cm đến 200cm, chiều dài linh hoạt).",
+        "sizesEn": "Standard sizes include 50x80cm, 56x96cm, 65x115cm, or custom-manufactured to match specific woven bags and cartons (custom mouth widths ranging from 50cm to 200cm with flexible lengths).",
         "custom": {
-          "vi": "Kích thước theo bao, độ dày",
-          "en": "Size to fit the sack, thickness"
+          "vi": "Độ dày từ 30 mic đến 150 mic, màu sắc (trong suốt, trắng sứ, đen chống UV…), hàn đáy chắc chắn, đục lỗ thoát khí hoặc dập mép theo yêu cầu.",
+          "en": "Thickness ranging from 30 to 150 microns (mic), various color options (clear, milky white, UV-resistant black, etc.), heavy-duty bottom sealing, ventilation hole punching, or custom side gussets/edge folding."
         },
         "apps": [
           {
-            "vi": "Gạo, ngô, tiêu, cà phê",
-            "en": "Rice, corn, pepper, coffee"
+            "vi": "Nông sản (gạo, cà phê, tiêu)",
+            "en": "Agriculture (rice, coffee beans, pepper)"
           },
           {
-            "vi": "Phân bón, đất sạch",
-            "en": "Fertiliser, potting soil"
+            "vi": "Hóa chất, phân bón",
+            "en": "Chemicals, fertilizers"
           },
           {
-            "vi": "Chăn nuôi, thuỷ sản",
-            "en": "Livestock and aquaculture feed"
+            "vi": "Thức ăn chăn nuôi",
+            "en": "Animal feed"
           },
           {
-            "vi": "Bao PP dệt, bao xuất khẩu",
-            "en": "Woven PP and export sacks"
+            "vi": "Linh kiện điện tử",
+            "en": "Electronic components"
+          },
+          {
+            "vi": "Logistics xuất khẩu",
+            "en": "Export logistics"
           }
         ]
       },
       {
-        "id": "tui-lot",
-        "cat": null,
-        "image": null,
-        "name": {
-          "vi": "Túi lót",
-          "en": "Liner bags"
-        },
-        "material": null,
-        "desc": {
-          "vi": "Túi lót sản xuất theo kích thước, độ dày và chất liệu khách hàng yêu cầu.",
-          "en": "Liner bags made to the size, thickness and material you need."
-        },
-        "sizes": null,
-        "custom": {
-          "vi": "Kích thước, độ dày, chất liệu",
-          "en": "Size, thickness, material"
-        },
-        "apps": []
-      },
-      {
         "id": "tui-bau-uom",
         "cat": null,
-        "image": null,
+        "image": "catalog/tui-bau-uom",
         "name": {
-          "vi": "Túi bầu ươm",
-          "en": "Nursery grow bags"
+          "vi": "Túi bầu ươm cây",
+          "en": "Agricultural Nursery Bag / Plant Growing Bag"
         },
-        "material": null,
+        "material": "LDPE · HDPE (UV)",
+        "materialDetail": {
+          "vi": "LDPE hoặc HDPE nguyên sinh pha phụ gia chống tia cực tím (UV stabilizer) giúp tăng tuổi thọ ngoài trời.",
+          "en": "Virgin LDPE or HDPE blended with UV-stabilizer additives for extended outdoor longevity."
+        },
         "desc": {
-          "vi": "Túi bầu ươm cây 2 lớp trắng/đen, chống nóng; giao ở dạng gấp phẳng, mở ra thành dạng đứng.",
-          "en": "Two-layer white/black nursery bags that resist heat; delivered flat, they open to stand upright."
+          "vi": "Túi bầu ươm cây chuyên dụng của Hợp Phú được sản xuất từ hạt nhựa dẻo dai, có độ bền cơ học cao, chịu được thời tiết nắng mưa khắc nghiệt ngoài trời. Sản phẩm được đục lỗ thoát nước đều hai bên hông hoặc đáy giúp bộ rễ phát triển khỏe mạnh, chống úng ngập và tối ưu hóa tỷ lệ sống cho cây trồng.",
+          "en": "Hợp Phú's specialized agricultural nursery bags are crafted from high-durability, weather-resistant plastic film designed to withstand harsh outdoor conditions. Pre-punched drainage holes on the sides or bottom ensure optimal root development, prevent waterlogging, and maximize the survival rate of seedlings."
         },
-        "sizes": null,
+        "sizes": "10x12cm, 12x22cm, 15x30cm, 20x40cm, v.v., hoặc sản xuất theo kích thước và đường kính bầu theo yêu cầu riêng của khách hàng.",
+        "sizesEn": "Standard sizes include 10x12cm, 12x22cm, 15x30cm, 20x40cm, etc., or custom-manufactured to match specific pot diameters and client requirements.",
         "custom": {
-          "vi": "Kích thước, độ dày",
-          "en": "Size, thickness"
+          "vi": "Kích thước, độ dày linh hoạt theo yêu cầu, mật độ và quy cách đục lỗ thoát nước, màu sắc chủ đạo (đen hoặc trắng).",
+          "en": "Flexible dimensions and thickness, custom drainage hole patterns (spacing and quantity), and primary colors (black or white)."
         },
         "apps": [
           {
-            "vi": "Vườn ươm",
-            "en": "Plant nurseries"
+            "vi": "Trồng cây lâm nghiệp",
+            "en": "Forestry cultivation"
           },
           {
-            "vi": "Nông nghiệp",
-            "en": "Agriculture"
+            "vi": "Cây ăn quả",
+            "en": "Fruit tree propagation"
+          },
+          {
+            "vi": "Cây cảnh đô thị",
+            "en": "Urban landscaping"
+          },
+          {
+            "vi": "Vườn ươm nông nghiệp công nghệ cao",
+            "en": "High-tech agricultural nurseries"
+          },
+          {
+            "vi": "Dự án phủ xanh, trồng rừng",
+            "en": "Large-scale reforestation & greening projects"
           }
         ]
       },
@@ -784,20 +787,42 @@
         "cat": "tui-dung-thuc-pham",
         "image": null,
         "name": {
-          "vi": "Túi thực phẩm",
-          "en": "Food bags"
+          "vi": "Túi đựng thực phẩm, rau củ quả",
+          "en": "Food & Produce Packaging Bag"
         },
-        "material": null,
+        "material": "LDPE · HDPE · PP",
+        "materialDetail": {
+          "vi": "LDPE, HDPE, PP nguyên sinh an toàn thực phẩm (Food-grade plastic).",
+          "en": "Food-grade virgin LDPE, HDPE, PP."
+        },
         "desc": {
-          "vi": "Túi đựng thực phẩm sản xuất theo quy cách của từng doanh nghiệp; tư vấn chất liệu, kích thước và mẫu in phù hợp với sản phẩm.",
-          "en": "Food bags made to each business’s specification, with advice on material, size and print for your product."
+          "vi": "Túi đựng thực phẩm và rau củ quả của Hợp Phú được sản xuất từ hạt nhựa nguyên sinh cao cấp, đảm bảo an toàn vệ sinh thực phẩm theo tiêu chuẩn đóng gói công nghiệp. Túi có độ bền dẻo cao, khả năng giữ ẩm tốt giúp rau củ quả tươi lâu hơn, hoặc được đục lỗ vi mô (micro-perforated) thông minh giúp thoát khí, ngăn ngừa ngưng tụ hơi nước và chống úng hỏng.",
+          "en": "Hợp Phú’s food and fresh produce bags are manufactured from high-grade virgin plastic resins, strictly meeting food-safety standards for industrial and commercial packaging. They offer excellent tensile strength and moisture retention to keep produce fresh, or come with customized micro-perforations to allow gas exchange, prevent condensation, and eliminate spoilage."
         },
-        "sizes": null,
+        "sizes": "Đa dạng kích thước từ khổ nhỏ (đựng thực phẩm bán lẻ, siêu thị) đến khổ lớn (đóng gói nông sản xuất khẩu, kho lạnh), hoặc sản xuất theo quy cách riêng của doanh nghiệp.",
+        "sizesEn": "Available in various sizes ranging from small retail/supermarket formats to large-scale bulk sizes for agricultural cold-storage and export, or custom-manufactured to specific business requirements.",
         "custom": {
-          "vi": "Chất liệu, kích thước, mẫu in",
-          "en": "Material, size, print"
+          "vi": "Độ dày linh hoạt từ 15 đến 60 mic, tùy chọn đục lỗ thoáng khí (micro-holes), thiết kế đáy vuông/đáy nở, in ấn logo thương hiệu hoặc thông tin sản phẩm sắc nét.",
+          "en": "Flexible thickness from 15 to 60 microns (mic), optional micro-perforated ventilation holes, gusseted bottom options, and sharp custom brand logo or product printing."
         },
-        "apps": []
+        "apps": [
+          {
+            "vi": "Hệ thống siêu thị, cửa hàng tiện lợi",
+            "en": "Supermarkets & convenience stores"
+          },
+          {
+            "vi": "Nhà máy chế biến nông sản",
+            "en": "Agricultural processing plants"
+          },
+          {
+            "vi": "Thực phẩm đông lạnh",
+            "en": "Frozen foods"
+          },
+          {
+            "vi": "Hàng xuất khẩu",
+            "en": "Export logistics"
+          }
+        ]
       },
       {
         "id": "tui-khac",

@@ -80,7 +80,7 @@ export function siteHeader(ctx) {
   <div class="container site-header__inner">
     <a class="brand" href="${landing}" aria-label="${esc(t(site.company.brand))}, ${esc(t(ui.home))}">
       <img src="${ctx.asset(logo.file)}" width="${logo.width}" height="${logo.height}" alt="">
-      <span>${esc(t(site.company.shortName))}</span>
+      <span class="visually-hidden">${esc(t(site.company.shortName))}</span>
     </a>
     <nav class="nav" id="menu-chinh" aria-label="${lang === 'vi' ? 'Điều hướng chính' : 'Main navigation'}" data-menu>
       <ul class="nav__list">
@@ -230,7 +230,7 @@ export function siteFooter(ctx) {
       <div class="site-footer__col site-footer__col--brand">
         <a class="site-footer__logo-link" href="${landing}" aria-label="${esc(t(c.brand))}">
           <img class="site-footer__logo" src="${ctx.asset(logo.file)}" width="${logo.width}" height="${logo.height}" alt="${esc(t(c.brand))}">
-          <span class="site-footer__brand-text">${esc(t(c.brand))}</span>
+          <span class="visually-hidden">${esc(t(c.brand))}</span>
         </a>
         <p class="site-footer__legal-name">${esc(t(c.legalName))}</p>
         <p class="site-footer__desc">${esc(t(f.desc))}</p>
